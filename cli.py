@@ -58,7 +58,7 @@ def cmd_list(args):
 
 def cmd_models(args):
     from app.llm import list_models
-    for m in list_models(config.require("ANTHROPIC_API_KEY")):
+    for m in list_models():
         print(m)
 
 
