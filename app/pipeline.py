@@ -8,7 +8,8 @@ from .identify import identify, slug_from_linkedin
 from .ledger import Run
 from .llm import LLM
 from .research import research
-from .search import tavily_search
+from . import search as search_mod
+from .search import search as web_search
 from .verify import verify_claims
 
 
@@ -23,20 +24,21 @@ def build_llms(run: Run):
 
 def run_pipeline(run: Run) -> Run:
     try:
-        config.require("TAVILY_API_KEY")
+        if search_mod.provider() != "duckduckgo":
+            config.require({"tavily": "TAVILY_API_KEY", "brave": "BRAVE_API_KEY", "serper": "SERPER_API_KEY"}.get(search_mod.provider(), "TAVILY_API_KEY"))
         llm1, llm2 = build_llms(run)
         url = run.state["input_url"]
 
         run.set_stage("identify")
         slug = slug_from_linkedin(url)
-        identity = identify(slug, tavily_search, llm1, run.log)
+        identity = identify(slug, web_search, llm1, run.log)
         run.state["subject"] = identity
         run.save()
         run.log("identify", f"{identity['full_name']}, {identity.get('role')} at {identity.get('company')}",
                 confidence=identity["confidence"], reasoning=identity.get("reasoning"))
 
         run.set_stage("research")
-        sources = research(identity, run.id, tavily_search, run.log)
+        sources = research(identity, run.id, web_search, run.log)
         run.ledger["sources"] = sources
         run.save()
 

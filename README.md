@@ -52,6 +52,24 @@ python -m pytest -q
 
 `python cli.py models` lists the model ids your key can use.
 
+### Model API
+
+`LLM_PROVIDER=anthropic` uses the Anthropic messages API with ANTHROPIC_API_KEY.
+`LLM_PROVIDER=openai` uses any OpenAI compatible chat completions endpoint: set OPENAI_API_KEY and, if it is
+not api.openai.com, OPENAI_BASE_URL. MODEL_PRIMARY and MODEL_SECOND_OPINION must be two different ids from
+that endpoint; the stronger one goes second.
+
+### Web search
+
+`SEARCH_PROVIDER` picks the backend. All of them return the same shape and all drop LinkedIn results.
+
+| provider | key | notes |
+|---|---|---|
+| tavily | TAVILY_API_KEY | default; 1,000 free credits a month, one run uses about 32 |
+| brave | BRAVE_API_KEY | Brave Search API, JSON web results, free tier |
+| serper | SERPER_API_KEY | Google results through serper.dev, free starter credits |
+| duckduckgo | none | scrapes the HTML endpoint; rate limited and brittle, only for a demo |
+
 ## Run
 
 ```
@@ -66,7 +84,9 @@ Web app:
 uvicorn app.main:app
 ```
 
-Open http://127.0.0.1:8000, paste the URL, watch the log, open the draft, approve it.
+Open http://127.0.0.1:8000, paste the URL, watch the stages and the live log, open the draft, approve it.
+The pages under `app/templates` are static shells; `app/static/app.js` renders them from the JSON endpoints,
+so what the reviewer sees is exactly what is in `ledger.json`.
 The markdown is served at `/runs/<id>/diagnostic.md`, the full ledger at `/runs/<id>/ledger.json`.
 
 ## Layout
@@ -82,7 +102,9 @@ app/gaps.py      three gaps
 app/report.py    summary, number tracing, markdown
 app/lint.py      house rules
 app/pipeline.py  orchestration, approve, reject
-app/main.py      FastAPI
+app/main.py      FastAPI routes and JSON endpoints
+app/templates/   page shells
+app/static/      stylesheet and front end script
 cli.py           command line
 runs/<id>/       run.json, ledger.json, log.jsonl, diagnostic.md
 evidence/<id>/   one text snapshot per fetched url

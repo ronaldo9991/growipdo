@@ -1,0 +1,28 @@
+<section class="hero fade">
+  <div>
+    <div class="kicker">Track B, founder diagnostic</div>
+    <h1>Research a founder from the public record. Verify every claim twice. Let a human sign it.</h1>
+    <p class="lede">Paste a LinkedIn profile URL. The slug is resolved on the open web, sources are fetched and archived, each claim gets two independent verification passes, and the draft waits for a named approver.</p>
+  </div>
+  <div class="card">
+    <h2>Start a run</h2>
+    <form id="runForm">
+      <div class="field">
+        <input id="url" name="url" type="text" placeholder="https://www.linkedin.com/in/..." autocomplete="off" required>
+        <button class="btn primary" type="submit" id="runBtn">Run diagnostic</button>
+      </div>
+      <div class="err" id="runErr"></div>
+      <p class="hint">Only the profile slug is read from the URL. LinkedIn itself is on the never-fetch list.</p>
+    </form>
+  </div>
+</section>
+<section class="rules">
+  <div class="rule"><b>Two passes, two models</b><span>Each claim is checked by two different models over separately retrieved excerpts.</span></div>
+  <div class="rule"><b>Primary or it is partial</b><span>Only regulators, official registers and official lists can make a claim verified.</span></div>
+  <div class="rule"><b>Refused is a feature</b><span>Press-only numbers and contradicted claims are listed with the reason they failed.</span></div>
+  <div class="rule"><b>Human gate</b><span>The diagnostic stays a draft until someone approves it by name with a note.</span></div>
+</section>
+<section style="margin-top:34px">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><h2>Recent runs</h2><span class="hint" id="runCount"></span></div>
+  <div class="runs" id="runs"><div class="empty"><span class="spin"></span>Loading runs</div></div>
+</section>
