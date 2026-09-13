@@ -17,3 +17,19 @@ def test_dedupe_merges_syndicated_claims():
     merged = [c for c in out if "15 million" in c["text"]][0]
     assert merged["origin_tier"] == "company"
     assert len(merged["also_in"]) == 1
+
+
+def test_selection_round_robins_across_sources(monkeypatch):
+    from app import config
+    monkeypatch.setattr(config, "MAX_CLAIMS_PER_SOURCE_SELECTED", 2)
+    claims = []
+    words = ["alpha", "bravo", "charlie", "delta", "echo", "foxtrot", "golf", "hotel", "india", "juliet"]
+    for i, w in enumerate(words):
+        c = _c(f"{w} permission granted {i}", "primary", "regulatory", [str(i)], url="https://reg.example/x")
+        c["origin"] = "S1"; claims.append(c)
+    for i, w in enumerate(["ranked twelfth on the list", "founded in 2017 by three people", "headquartered in the UAE"]):
+        c = _c(f"Forbes says the company is {w}", "primary", "award", [], url="https://forbes.example/y")
+        c["origin"] = "S2"; claims.append(c)
+    out = dedupe_claims(claims, lambda *a, **k: None, cap=6)
+    assert sum(1 for c in out if c["origin"] == "S2") == 2
+    assert len(out) == 6

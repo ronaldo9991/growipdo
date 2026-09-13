@@ -82,11 +82,31 @@ def dedupe_claims(claims: list[dict], log, cap: int = config.MAX_CLAIMS_TOTAL) -
         else:
             c.setdefault("also_in", [])
             merged.append(c)
-    # Prefer a spread: regulatory and numeric claims first, then the rest.
+    # Spread the budget across sources: within a source, regulatory and numeric claims first; across
+    # sources, round robin ordered by tier, at most MAX_CLAIMS_PER_SOURCE_SELECTED per source per lap.
+    # Otherwise a regulator's register page fills the cap with licence boilerplate before the
+    # Forbes list or the funding release get a turn.
     def prio(c):
-        return (0 if c["category"] == "regulatory" else 1, 0 if c["numbers"] else 1, order.get(c["origin_tier"], 3))
-    merged.sort(key=prio)
+        return (0 if c["category"] == "regulatory" else 1, 0 if c["numbers"] else 1)
+    by_source: dict[str, list[dict]] = {}
+    for c in merged:
+        by_source.setdefault(c["origin"], []).append(c)
+    for lst in by_source.values():
+        lst.sort(key=prio)
+    source_order = sorted(by_source, key=lambda sid: (order.get(by_source[sid][0]["origin_tier"], 3), sid))
+    per_lap = config.MAX_CLAIMS_PER_SOURCE_SELECTED
+    selected: list[dict] = []
+    lap = 0
+    while len(selected) < cap and any(by_source.values()):
+        for sid in source_order:
+            take = by_source[sid][:per_lap]
+            by_source[sid] = by_source[sid][per_lap:]
+            for c in take:
+                if len(selected) < cap:
+                    selected.append(c)
+        lap += 1
+    merged = selected
     for i, c in enumerate(merged, start=1):
         c["id"] = f"C{i}"
-    log("claims", f"{len(claims)} raw claims, {len(merged)} after dedupe, keeping {min(len(merged), cap)}")
-    return merged[:cap]
+    log("claims", f"{len(claims)} raw claims, {len(selected) if False else len(merged)} selected after dedupe (cap {cap})")
+    return merged

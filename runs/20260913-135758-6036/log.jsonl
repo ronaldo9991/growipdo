@@ -165,3 +165,64 @@
 {"ts": "2026-09-13T14:00:34+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1325 in, 61 out", "data": {"stop": "stop"}}
 {"ts": "2026-09-13T14:00:34+00:00", "stage": "verify", "message": "F24 partially_verified: Sarwa Digital Wealth (Capital) Limited is approved for Managing Assets.", "data": {"pass1": "supported", "pass2": "supported", "reason": "primary source found but details differ: one pass found only partial support"}}
 {"ts": "2026-09-13T14:00:35+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1190 in, 56 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:37+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1368 in, 47 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:37+00:00", "stage": "verify", "message": "F25 verified: Sarwa is a regulated entity within ADGM’s jurisdiction.", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:00:38+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1174 in, 48 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:39+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1414 in, 59 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:39+00:00", "stage": "verify", "message": "F26 verified: Sarwa is an entity duly authorised and regulated by the FSRA.", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:00:40+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1177 in, 57 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:42+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1419 in, 60 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:42+00:00", "stage": "verify", "message": "F27 verified: Sarwa has confirmed to the FSRA that it has no connection to, and is not responsible for, ", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:00:43+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1199 in, 52 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:43+00:00", "stage": "llm", "message": "gpt-5.4-mini: JSON parse failed, retrying once", "data": {"error": "bad JSON from model: Expecting value: line 1 column 47 (char 46); reply began '{\"verdict\":\"supported\",\"supporting_excerpts\":[E1,E2,E3,E4,E5],\"discrepancy\":null,\"note\":\"The excerpts explicitly state that the Domains are not associated with or operated by Sarwa.\"}'"}}
+{"ts": "2026-09-13T14:00:44+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1213 in, 57 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:45+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1461 in, 49 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:45+00:00", "stage": "verify", "message": "F28 verified: The Domains are not associated with or operated by Sarwa.", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:00:46+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1192 in, 50 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:46+00:00", "stage": "llm", "message": "gpt-5.4-mini: JSON parse failed, retrying once", "data": {"error": "bad JSON from model: Expecting value: line 1 column 47 (char 46); reply began '{\"verdict\":\"supported\",\"supporting_excerpts\":[E1,E2],\"discrepancy\":null,\"note\":\"The excerpts explicitly state that only firms authorised by the FSRA can undertake Regulated Activities in ADGM.\"}'"}}
+{"ts": "2026-09-13T14:00:47+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1206 in, 76 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:48+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1466 in, 59 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:48+00:00", "stage": "verify", "message": "F29 verified: Only firms authorised by the FSRA can undertake Regulated Activities in ADGM.", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:00:49+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1217 in, 76 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:51+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1505 in, 74 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:51+00:00", "stage": "verify", "message": "F30 verified: To determine if an entity has been granted a Financial Services Permission by the FSRA to ", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:00:52+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1172 in, 59 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:53+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1482 in, 62 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:53+00:00", "stage": "verify", "message": "F31 verified: Sarwa Digital Wealth Limited has Endorsements Carrying on authorised Financial Services wi", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:00:55+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1018 in, 51 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:55+00:00", "stage": "llm", "message": "gpt-5.4-mini: JSON parse failed, retrying once", "data": {"error": "bad JSON from model: Expecting value: line 1 column 47 (char 46); reply began '{\"verdict\":\"supported\",\"supporting_excerpts\":[E1,E2,E5],\"discrepancy\":null,\"note\":\"The excerpts explicitly state that Sarwa is a fully licensed and regulated online financial advisor and wealth manage'"}}
+{"ts": "2026-09-13T14:00:55+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1032 in, 51 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:57+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1245 in, 54 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:57+00:00", "stage": "verify", "message": "F32 partially_verified: Sarwa is a fully licensed and regulated online financial advisor and wealth manager.", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-13T14:00:58+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1083 in, 51 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:59+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1262 in, 54 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:59+00:00", "stage": "verify", "message": "F33 partially_verified: Sarwa received a license to innovate from the DFSA.", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-13T14:01:01+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1224 in, 74 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:02+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1497 in, 39 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:02+00:00", "stage": "verify", "message": "F34 verified: The DFSA also found that Sarwa DIFC withheld financial information, that would have been i", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:01:03+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1151 in, 50 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:04+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1459 in, 55 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:04+00:00", "stage": "verify", "message": "F35 verified: 144 investors subscribed to the offer and committed approximately USD2.1 million.", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:01:05+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1208 in, 69 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:07+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1509 in, 67 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:07+00:00", "stage": "verify", "message": "F36 verified: The first email offering the sale of Sarwa Digital Wealth (BVI) Limited shares was sent to", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:01:08+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1152 in, 51 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:09+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1448 in, 65 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:09+00:00", "stage": "verify", "message": "F37 verified: USD 2 million in commitments was received into an escrow account from over 150 potential i", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:01:11+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1181 in, 48 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:12+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1444 in, 55 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:12+00:00", "stage": "verify", "message": "F38 verified: Sarwa Digital Wealth (Capital) Limited has FSP Number 190037.", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:01:13+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1192 in, 63 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:15+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1476 in, 58 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:15+00:00", "stage": "verify", "message": "F39 verified: Sarwa Digital Wealth (Capital) Limited has FSP Date 20 February 2020.", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:01:15+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1043 in, 56 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:15+00:00", "stage": "llm", "message": "gpt-5.4-mini: JSON parse failed, retrying once", "data": {"error": "bad JSON from model: Expecting value: line 1 column 47 (char 46); reply began '{\"verdict\":\"supported\",\"supporting_excerpts\":[E1,E2,E4,E5,E6],\"discrepancy\":null,\"note\":\"The excerpts state that Sarwa has surpassed or hit $1 billion in client assets under management/client assets.\"'"}}
+{"ts": "2026-09-13T14:01:17+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1057 in, 55 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:18+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1329 in, 58 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:18+00:00", "stage": "verify", "message": "F40 verified: Sarwa has surpassed $1 billion in client assets under management (AUM).", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:01:18+00:00", "stage": "gaps", "message": "started"}
+{"ts": "2026-09-13T14:01:26+00:00", "stage": "llm", "message": "gpt-5.6-terra: 4135 in, 558 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:26+00:00", "stage": "gaps", "message": "three gaps named", "data": {"titles": ["No public accounting for regulatory enforcement", "Unclear regulatory structure after the DIFC withdrawal", "Limited independently supported proof behind headline scale"]}}
+{"ts": "2026-09-13T14:01:26+00:00", "stage": "report", "message": "started"}
+{"ts": "2026-09-13T14:01:28+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1902 in, 212 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:01:28+00:00", "stage": "human_gate", "message": "draft ready, waiting for a human to approve or reject", "data": {"lint_warnings": 0}}

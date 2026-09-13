@@ -52,6 +52,9 @@ def query_plan(identity: dict) -> list[str]:
         f"{company} regulator fine penalty",
         f"{company} regulatory action",
         f"{company} press release funding round",
+        f'"{company}" site:globenewswire.com',
+        f'"{company}" site:prnewswire.com',
+        f"{company} milestone first fintech announcement",
         f"{company} Series B Mubadala",
         f"{company} Forbes Middle East fintech list",
         f"{company} assets under management clients users",
@@ -90,7 +93,8 @@ def research(identity: dict, run_id: str, search, log, max_sources: int = config
         candidates.values(),
         key=lambda c: (order[classify_source(c["url"], company_domains)], -len(c["queries"])),
     )[:max_sources]
-    log("research", f"fetching {len(ranked)} of {len(candidates)} candidate urls")
+    log("research", f"fetching {len(ranked)} of {len(candidates)} candidate urls",
+        fetched=[c["url"] for c in ranked], skipped=[c["url"] for c in candidates.values() if c not in ranked])
 
     client = httpx.Client(follow_redirects=True, timeout=config.FETCH_TIMEOUT,
                           headers={"User-Agent": config.USER_AGENT,

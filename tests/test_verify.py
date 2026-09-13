@@ -79,3 +79,11 @@ def test_relayed_primary_counts_as_company():
     p2 = _pass("supported", "company")
     label, reason = combine(CLAIM, p1, p2)
     assert label == "partially_verified" and "repeats the company's announcement" in reason
+
+
+def test_origin_passage_always_included(tmp_path, monkeypatch):
+    corpus = Corpus(_sources(tmp_path, monkeypatch))
+    # A query that lexically favours the DFSA page still brings the origin's best passage.
+    hits = corpus.retrieve("DFSA fined Sarwa USD 191,100 public offer prospectus", k=2, origin="S2")
+    assert hits[0]["source"] == "S2"
+    assert any(h["source"] == "S1" for h in hits)

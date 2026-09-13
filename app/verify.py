@@ -37,39 +37,52 @@ class Corpus:
                 continue
             text = read_snapshot(src["snapshot"])
             for j, p in enumerate(split_passages(text)):
+                toks = tokenize(p)
                 self.passages.append({"source": src["id"], "url": src["url"], "tier": src["tier"], "idx": j,
-                                      "text": p, "tokens": set(tokenize(p)), "numbers": number_keys(p)})
+                                      "text": p, "tokens": set(toks), "numbers": number_keys(p),
+                                      "bigrams": set(zip(toks, toks[1:]))})
         df: Counter = Counter()
         for p in self.passages:
             df.update(p["tokens"])
         n = max(1, len(self.passages))
         self.idf = {t: math.log(1 + n / (1 + c)) for t, c in df.items()}
 
-    def retrieve(self, query: str, k: int = 6, exclude_source: str | None = None,
-                 numbers_first: bool = True) -> list[dict]:
-        q_tokens = set(tokenize(query))
+    def retrieve(self, query: str, k: int = 6, origin: str | None = None) -> list[dict]:
+        """Top k passages by idf weighted term overlap, plus a bonus for exact numbers and for
+        adjacent word pairs from the query. If origin is given, the best passage from that source
+        is always included, because the claim was read from that page in the first place."""
+        q_list = tokenize(query)
+        q_tokens = set(q_list)
+        q_bigrams = {(a, b) for a, b in zip(q_list, q_list[1:])}
         q_numbers = number_keys(query)
-        # Also match number variants such as 191,100 vs 191100 vs "191.1k"
         scored = []
         for p in self.passages:
-            if exclude_source and p["source"] == exclude_source:
+            overlap = q_tokens & p["tokens"]
+            if not overlap:
                 continue
-            score = sum(self.idf.get(t, 0.0) for t in q_tokens & p["tokens"])
-            num_hits = len(q_numbers & p["numbers"])
-            if numbers_first:
-                score += 4.0 * num_hits
-            if score <= 0:
-                continue
+            score = sum(self.idf.get(t, 0.0) for t in overlap)
+            score += 4.0 * len(q_numbers & p["numbers"])
+            if q_bigrams:
+                score += 1.5 * len(q_bigrams & p["bigrams"])
             scored.append((score, p))
         scored.sort(key=lambda s: -s[0])
-        out = []
-        seen = set()
+
+        def strip(p, score):
+            return {**{k2: v for k2, v in p.items() if k2 not in ("tokens", "numbers", "bigrams")}, "score": round(score, 2)}
+
+        out, seen = [], set()
+        if origin:
+            for score, p in scored:
+                if p["source"] == origin:
+                    out.append(strip(p, score))
+                    seen.add((p["source"], p["idx"]))
+                    break
         for score, p in scored:
             key = (p["source"], p["idx"])
             if key in seen:
                 continue
             seen.add(key)
-            out.append({**{k2: v for k2, v in p.items() if k2 not in ("tokens", "numbers")}, "score": round(score, 2)})
+            out.append(strip(p, score))
             if len(out) >= k:
                 break
         return out
@@ -199,11 +212,11 @@ def verify_claims(claims: list[dict], sources: list[dict], llm_primary, llm_seco
     findings = []
     for i, claim in enumerate(claims, start=1):
         # Pass 1: full claim text as the query.
-        ex1 = corpus.retrieve(claim["text"] + " " + " ".join(claim.get("numbers") or []), k=6)
+        ex1 = corpus.retrieve(claim["text"] + " " + " ".join(claim.get("numbers") or []), k=6, origin=claim["origin"])
         p1 = run_pass(claim, ex1, llm_primary)
         # Pass 2: independent query built from the quote plus numbers, different model, more excerpts.
         q2 = (claim.get("quote") or claim["text"]) + " " + " ".join(claim.get("numbers") or [])
-        ex2 = corpus.retrieve(q2, k=8)
+        ex2 = corpus.retrieve(q2, k=8, origin=claim["origin"])
         p2 = run_pass(claim, ex2, llm_second)
         label, reason = combine(claim, p1, p2)
         finding = {

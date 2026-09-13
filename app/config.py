@@ -43,9 +43,10 @@ PRIMARY_HOSTS = (
 WIRE_HOSTS = ("globenewswire.com", "prnewswire.com", "businesswire.com", "newswire.ca", "zawya.com/en/press-release")
 
 FETCH_TIMEOUT = 25.0
-MAX_SOURCES = 24
+MAX_SOURCES = 30
 MAX_CLAIMS_PER_SOURCE = 10
-MAX_CLAIMS_TOTAL = 40
+MAX_CLAIMS_TOTAL = 48
+MAX_CLAIMS_PER_SOURCE_SELECTED = 5
 
 
 def get(name: str, default: str | None = None) -> str | None:
