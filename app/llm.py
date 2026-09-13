@@ -74,6 +74,7 @@ class LLM:
         elif self.provider == "openai":
             self.api_key = config.require("OPENAI_API_KEY")
             self.base_url = openai_base_url()
+            self._dropped: set = set()  # parameters this model has already rejected
         else:
             raise RuntimeError(f"unknown LLM_PROVIDER {self.provider!r}; use anthropic or openai")
 
@@ -95,29 +96,55 @@ class LLM:
         return out
 
     def _openai(self, system, user, max_tokens, temperature) -> str:
+        # Reasoning models (gpt-5 family) reject max_tokens and non default temperature, and they spend
+        # part of the completion budget on hidden reasoning, so the budget is raised for them.
         payload = {
             "model": self.model,
             "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
-            "max_tokens": max_tokens,
+            "max_completion_tokens": max(2000, max_tokens * 4),
             "temperature": temperature,
         }
-        # Free tiers rate limit hard. Back off on 429 and 5xx, up to five times, then give up loudly.
+        effort = config.get("OPENAI_REASONING_EFFORT")
+        if effort:
+            payload["reasoning_effort"] = effort
+        for k in self._dropped:
+            payload.pop(k, None)
         delay = 4.0
-        for attempt in range(6):
+        attempt = 0
+        while True:
             try:
-                r = httpx.post(self.base_url + "/chat/completions", json=payload, timeout=180,
+                r = httpx.post(self.base_url + "/chat/completions", json=payload, timeout=300,
                                headers={"Authorization": "Bearer " + self.api_key, "Content-Type": "application/json"})
             except httpx.HTTPError as e:
                 raise ModelError(f"{self.model}: request failed: {e}") from e
             if r.status_code == 200:
                 break
+            if r.status_code == 400 and "unsupported" in r.text.lower():
+                # Drop the one parameter the server names and try again. Logged, not hidden.
+                m = re.search(r"'([a-z_]+)' is not supported", r.text)
+                param = m.group(1) if m else None
+                if param and param in payload:
+                    if self.log:
+                        self.log("llm", f"{self.model}: server rejected {param}, retrying without it")
+                    payload.pop(param)
+                    self._dropped.add(param)
+                    if param == "max_completion_tokens":
+                        payload["max_tokens"] = max_tokens
+                    continue
+                if "temperature" in r.text and "temperature" in payload:
+                    if self.log:
+                        self.log("llm", f"{self.model}: server rejected temperature, retrying without it")
+                    payload.pop("temperature")
+                    self._dropped.add("temperature")
+                    continue
             if r.status_code in (429, 500, 502, 503, 529) and attempt < 5:
+                attempt += 1
                 wait = delay
                 ra = r.headers.get("retry-after")
                 if ra and ra.replace(".", "").isdigit():
                     wait = max(wait, float(ra))
                 if self.log:
-                    self.log("llm", f"{self.model}: HTTP {r.status_code}, waiting {wait:.0f}s then retrying", attempt=attempt + 1)
+                    self.log("llm", f"{self.model}: HTTP {r.status_code}, waiting {wait:.0f}s then retrying", attempt=attempt)
                 time.sleep(wait)
                 delay = min(delay * 2, 60)
                 continue
@@ -135,7 +162,8 @@ class LLM:
             self.log("llm", f"{self.model}: {usage.get('prompt_tokens', '?')} in, {usage.get('completion_tokens', '?')} out",
                      stop=choice.get("finish_reason"))
         if choice.get("finish_reason") == "length":
-            raise ModelError(f"{self.model} hit max_tokens={max_tokens}; raise the limit")
+            raise ModelError(f"{self.model} hit the completion budget ({payload.get('max_completion_tokens') or max_tokens}); "
+                             f"content so far: {str(content)[:120]!r}")
         return content or ""
 
     def json(self, system: str, user: str, max_tokens: int = 3000):
