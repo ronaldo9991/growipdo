@@ -1,0 +1,42 @@
+{
+  "id": "20260913-143201-4c80",
+  "status": "approved",
+  "stage": "human_gate",
+  "created_at": "2026-09-13T14:32:01+00:00",
+  "updated_at": "2026-09-13T14:38:59+00:00",
+  "input_url": "https://www.linkedin.com/in/markchahwan",
+  "subject": {
+    "full_name": "Mark Chahwan",
+    "company": "Sarwa",
+    "role": "Group Chief Executive Officer & Co-Founder",
+    "location": "UAE",
+    "company_domains": [
+      "sarwa.co"
+    ],
+    "confidence": 0.99,
+    "reasoning": "Multiple snippets explicitly identify Mark Chahwan as the co-founder and CEO/group CEO of Sarwa, including Sarwa’s own careers page.",
+    "evidence_urls": [
+      "https://www.reddit.com/r/SarwaOfficial/comments/1oi8lop/im_mark_chahwan_33_cofounder_and_ceo_of_sarwa/",
+      "https://mena.entrepreneur.com/author/mark-chahwan",
+      "https://careers.sarwa.co/people/3616112-mark-chahwan",
+      "https://www.instagram.com/p/DRzCPTxjZqP/?hl=en",
+      "https://enterpriseam.com/uae/2025/05/30/my-morning-routine-mark-chahwan-group-ceo-and-co-founder-at-sarwa/"
+    ],
+    "slug": "markchahwan"
+  },
+  "models": {
+    "primary": "gpt-5.4-mini",
+    "second_opinion": "gpt-5.6-terra"
+  },
+  "approval": {
+    "by": "Ronaldo Rajan Salamon",
+    "note": "Checked every verified finding against its cited primary page (ADGM register and fine notice, DFSA decision notice, Forbes Middle East list). Confirmed the USD 1 billion, Series B and user figures are labelled as the company's own word, that the 144 versus over 150 investor figures are both recorded with the discrepancy noted, and that the refused list only holds press-only or unsupported claims. Summary and gaps numbers all trace to findings.",
+    "at": "2026-09-13T14:38:59+00:00"
+  },
+  "error": null,
+  "counts": {
+    "verified": 33,
+    "partially_verified": 33,
+    "unverified": 6
+  }
+}

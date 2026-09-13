@@ -1,0 +1,8 @@
+url: https://assets.adgm.com/download/assets/adgm+fsra+regulatory+actions+Sarwa+Digital+Wealth+Limited+20220719.pdf/0d1a909e774611ef97ae4e1d2d3b459e
+final_url: https://assets.adgm.com/download/assets/adgm+fsra+regulatory+actions+Sarwa+Digital+Wealth+Limited+20220719.pdf/0d1a909e774611ef97ae4e1d2d3b459e
+fetched_at: 2026-09-13T14:32:34+00:00
+status: could_not_check
+http_status: 200
+title: 
+error: PDF documents are not parsed
+---
