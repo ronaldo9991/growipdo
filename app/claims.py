@@ -22,10 +22,18 @@ def extract_claims(identity: dict, sources: list[dict], llm, log,
     name = identity["full_name"]
     company = identity.get("company") or ""
     claims: list[dict] = []
+    surname = (name.split() or [name])[-1].lower()
+    company_key = (company.split() or [company])[0].lower()
     for src in sources:
         if src["status"] != "ok":
             continue
         text = read_snapshot(src["snapshot"])[:14000]
+        low = text.lower()
+        if surname not in low and (not company_key or company_key not in low):
+            # A page that never names the person or the company cannot yield a claim about them.
+            # Without this the extractor invents one from a page that is merely on topic.
+            log("claims", f"{src['id']} never names the subject, skipped", url=src["url"])
+            continue
         user = (
             f"Subject person: {name}\nSubject company: {company}\nSource URL: {src['url']}\n"
             f"Source tier: {src['tier']}\n\nPage text:\n{text}\n\nExtract at most {per_source} claims."

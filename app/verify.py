@@ -36,9 +36,11 @@ class Corpus:
             if src["status"] != "ok":
                 continue
             text = read_snapshot(src["snapshot"])
+            list_page = "/lists/" in src["url"].lower()
             for j, p in enumerate(split_passages(text)):
                 toks = tokenize(p)
                 self.passages.append({"source": src["id"], "url": src["url"], "tier": src["tier"], "idx": j,
+                                      "list_page": list_page,
                                       "text": p, "tokens": set(toks), "numbers": number_keys(p),
                                       "bigrams": set(zip(toks, toks[1:]))})
         df: Counter = Counter()
@@ -139,10 +141,15 @@ def run_pass(claim: dict, excerpts: list[dict], llm) -> dict:
     for i in ids:
         e = excerpts[i - 1]
         tier = e["tier"]
-        if i in relayed and tier in ("primary", "secondary"):
+        is_relayed = i in relayed
+        if e.get("list_page") and tier == "primary" and claim.get("category") != "award":
+            # A list publisher vouches for the placement. The company profile next to it is data the
+            # companies supplied (Forbes Middle East says so in its disclaimer), so it is company word.
+            is_relayed = True
+        if is_relayed and tier in ("primary", "secondary"):
             tier = "company"  # the page relays the company's own statement; it does not confirm it
         cited.append({"source": e["source"], "url": e["url"], "tier": tier, "page_tier": e["tier"],
-                      "relayed": i in relayed, "text": e["text"]})
+                      "relayed": is_relayed, "text": e["text"]})
     return {
         "verdict": verdict,
         "discrepancy": out.get("discrepancy"),

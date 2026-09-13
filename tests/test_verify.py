@@ -87,3 +87,20 @@ def test_origin_passage_always_included(tmp_path, monkeypatch):
     hits = corpus.retrieve("DFSA fined Sarwa USD 191,100 public offer prospectus", k=2, origin="S2")
     assert hits[0]["source"] == "S2"
     assert any(h["source"] == "S1" for h in hits)
+
+
+def test_list_page_profile_data_is_company_word(tmp_path, monkeypatch):
+    from app.verify import run_pass
+    monkeypatch.setattr(config, "ROOT", tmp_path)
+    ex = [{"source": "S9", "url": "https://www.forbesmiddleeast.com/lists/fintech-50/sarwa/", "tier": "primary", "idx": 0,
+           "list_page": True, "text": "12. Sarwa. Date of Establishment: 2017. Sarwa hit its first profit in Q1 2024."}]
+
+    class FakeLLM:
+        model = "fake"
+        def json(self, system, user, max_tokens=0):
+            return {"verdict": "supported", "supporting_excerpts": ["E1"], "relayed_excerpts": [], "discrepancy": None, "note": "n"}
+
+    rank = run_pass({"text": "Sarwa is ranked 12", "origin_url": "u", "origin_tier": "primary", "category": "award", "numbers": ["12"]}, ex, FakeLLM())
+    assert rank["cited"][0]["tier"] == "primary"
+    profit = run_pass({"text": "Sarwa was profitable in Q1 2024", "origin_url": "u", "origin_tier": "primary", "category": "traction", "numbers": []}, ex, FakeLLM())
+    assert profit["cited"][0]["tier"] == "company" and profit["cited"][0]["relayed"]

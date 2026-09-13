@@ -1,0 +1,37 @@
+{
+  "id": "20260913-141544-1ae4",
+  "status": "draft",
+  "stage": "human_gate",
+  "created_at": "2026-09-13T14:15:44+00:00",
+  "updated_at": "2026-09-13T14:21:34+00:00",
+  "input_url": "https://www.linkedin.com/in/markchahwan",
+  "subject": {
+    "full_name": "Mark Chahwan",
+    "company": "Sarwa",
+    "role": "Group Chief Executive Officer & Co-Founder",
+    "location": "UAE",
+    "company_domains": [
+      "sarwa.co"
+    ],
+    "confidence": 0.99,
+    "reasoning": "Multiple snippets explicitly identify Mark Chahwan as the co-founder and CEO/group CEO of Sarwa, including Sarwa's own careers page.",
+    "evidence_urls": [
+      "https://careers.sarwa.co/people/3616112-mark-chahwan",
+      "https://mena.entrepreneur.com/author/mark-chahwan",
+      "https://www.reddit.com/r/SarwaOfficial/comments/1oi8lop/im_mark_chahwan_33_cofounder_and_ceo_of_sarwa/",
+      "https://enterpriseam.com/uae/2025/05/30/my-morning-routine-mark-chahwan-group-ceo-and-co-founder-at-sarwa/"
+    ],
+    "slug": "markchahwan"
+  },
+  "models": {
+    "primary": "gpt-5.4-mini",
+    "second_opinion": "gpt-5.6-terra"
+  },
+  "approval": null,
+  "error": null,
+  "counts": {
+    "verified": 27,
+    "partially_verified": 27,
+    "unverified": 2
+  }
+}
