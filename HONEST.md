@@ -24,6 +24,7 @@ The radar reused the Track B ledger, and my patch to give runs a kind (radar run
 - The identify stage trusts search snippets plus one model call with a 0.6 confidence floor. A common name with a namesake in the same industry could be resolved wrongly, and nothing but the human gate would catch it.
 - Evidence snapshots live under `evidence/` locally but under the volume at `/app/runs/evidence` on Railway, so the server's audit trail is not in git; the deployed run's ledger, log and diagnostic were copied back by hand into `runs/deployed-20260913-143149-a339/`, its page snapshots were not.
 - The web pages are rendered from `ledger.json` by plain JavaScript with no build step. There is no authentication on the approve endpoint: anyone with the URL can sign a draft with any name.
+- Track A brief prints quoted post titles with their hashtags and em dashes removed mechanically, but a filler word inside a quoted title (a post called "my freelancing journey") is left as the author wrote it, so a whole-file filler grep can still hit a quotation.
 - Track A LinkedIn coverage is whatever the search engine indexed as a snippet. Posts it did not index are invisible, and comments under a post are not read at all.
 - Track A has no scheduler and no memory between weeks: every run starts from zero, so an item flagged last week comes back as new. Dedupe across weeks would need the previous ledger.
 - Track A reach is not measured. A negative post with ten readers and one with ten thousand get the same risk unless the model infers reach from the text.

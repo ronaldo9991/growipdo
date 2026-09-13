@@ -278,11 +278,17 @@ def counts_of(mentions: list[dict]) -> dict:
             "web": sum(1 for m in live if m["channel"] == "web")}
 
 
+def _t(text: str) -> str:
+    """Quoted titles and reasons are rendered without hashtags or em dashes. Search engines return post
+    titles with their hashtags; the brief is ours, so the house rules apply to what we print."""
+    return lint.mechanical_fix(text or "").strip()
+
+
 def _line(m: dict) -> str:
     when = m["date"] or "undated"
     ch = {"linkedin": "LinkedIn, snippet only", "news": "news", "web": "web"}[m["channel"]]
-    return (f"- {m['id']}. {m['title'] or m['url']} ({m['publisher']}, {ch}, {when}). Sentiment {m['final']['sentiment']}. "
-            f"{m['final']['why']}. Reason: {m['pass1']['reason']}\n  {m['url']}")
+    return (f"- {m['id']}. {_t(m['title']) or m['url']} ({m['publisher']}, {ch}, {when}). Sentiment {m['final']['sentiment']}. "
+            f"{_t(m['final']['why'])}. Reason: {_t(m['pass1']['reason'])}\n  {m['url']}")
 
 
 def write_brief(run: Run, subjects: list[str], profile: dict, mentions: list[dict], llm: LLM, log) -> tuple[str, list[str]]:
@@ -371,7 +377,7 @@ def write_brief(run: Run, subjects: list[str], profile: dict, mentions: list[dic
     L.append(f"## Nothing needed ({len(ignore)})")
     L.append("")
     for m in ignore:
-        L.append(f"- {m['id']}. {m['title'] or m['url']} ({m['publisher']}, {m['channel']}, {m['date'] or 'undated'}), {m['final']['sentiment']}. {m['url']}")
+        L.append(f"- {m['id']}. {_t(m['title']) or m['url']} ({m['publisher']}, {m['channel']}, {m['date'] or 'undated'}), {m['final']['sentiment']}. {m['url']}")
     if not ignore:
         L.append("None.")
     L.append("")
@@ -379,13 +385,13 @@ def write_brief(run: Run, subjects: list[str], profile: dict, mentions: list[dic
     L.append(f"## Set aside as namesakes ({len(not_subject)})")
     L.append("")
     for m in not_subject:
-        L.append(f"- {m['id']}. {m['title'] or m['url']}. {m['pass1']['reason'][:160]} {m['url']}")
+        L.append(f"- {m['id']}. {_t(m['title']) or m['url']}. {_t(m['pass1']['reason'])[:160]} {m['url']}")
     if not not_subject:
         L.append("None.")
     L.append("")
     L.append("## Method")
     L.append("")
-    L.append(f"Subjects were profiled from public search snippets so a classifier can tell them from namesakes: {profile.get('profile')} "
+    L.append(f"Subjects were profiled from public search snippets so a classifier can tell them from namesakes: {_t(profile.get('profile'))} "
              f"Mentions came from web and news searches; LinkedIn results were kept as search engine snippets and never fetched, nothing behind a login was read. "
              f"Every mention was classified by {run.state['models']['primary']}; anything not a confident ignore was classified again by "
              f"{run.state['models']['second_opinion']}. The final label follows fixed rules: respond now needs both to agree, any disagreement or "

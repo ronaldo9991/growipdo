@@ -119,3 +119,10 @@ def test_resolve_ambiguous_records_the_human(tmp_path, monkeypatch):
     radar.resolve_ambiguous(run, "M1", "Ronaldo", "no", "watch", "different person, a physician")
     f = run.ledger["mentions"][0]["final"]
     assert f["about_subject"] == "no" and f["risk"] == "ignore" and not f["ambiguous"] and f["decided_by"] == "Ronaldo"
+
+
+def test_brief_lines_strip_hashtags_and_em_dashes():
+    m = {"id": "M1", "title": "#podcast Growpido — the founder story", "url": "https://x", "publisher": "linkedin.com", "channel": "linkedin",
+         "date": "", "final": {"sentiment": "positive", "why": "both agree"}, "pass1": {"reason": "own post #growpido"}}
+    line = radar._line(m)
+    assert "#" not in line and "—" not in line and "podcast Growpido" in line
