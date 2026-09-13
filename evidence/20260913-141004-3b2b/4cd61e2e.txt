@@ -1,0 +1,99 @@
+url: https://www.forbesmiddleeast.com/lists/the-middle-easts-fintech-50-2025/
+final_url: https://www.forbesmiddleeast.com/lists/the-middle-easts-fintech-50-2025/
+fetched_at: 2026-09-13T14:10:36+00:00
+status: ok
+http_status: 200
+title: The Middle East’s Fintech 50 2025 - Forbes Lists
+error: 
+---
+The Middle East’s Fintech 50 2025 - Forbes Lists
+Skip to content
+Search for:
+Forbes Lists
+Search for:
+The Middle East’s Fintech 50 2025Waqar Mughal2025-03-17T07:09:47+00:00
+THE MIDDLE EAST’S
+Fintech 50
+Fintech companies in MENA have continued their growth trajectory over the last year, with 119 fintech startups raising $700 million in 2024, according to Wamda. This significant investment accounted for 30% of the total funding for MENA startups during the year, underscoring strong investor interest in the thriving sector.
+Payment solutions and buy-now, pay-later services remained the hottest space, with Saudi-based shopping and financial services app, Tabby, snatching $160 million in a Series E funding round in February 2025. This boosted its valuation to $3.3 billion, making it the region’s most valuable fintech startup, and bagging it the top spot in our Fintech 50 list 2025.
+Egyptian e-payment company Fawry comes in second, boosted by its 53.1 million customers, followed by Saudi fintech and Insurtech company Rasan, which went public on the Saudi Exchange (Tadawul) in 2024, with its market cap hitting nearly $1.9 billion on February 20, 2025.
+Our 2025 list features companies from 11 countries and 12 newcomers, including the digital assets platform CoinMENA, the U.A.E.’s Ziina, and Egypt’s Sahl. The U.A.E. is the most represented country on the list with 13 companies, followed by Egypt and Saudi Arabia with 12 and 10 companies, respectively. The 50 companies on this year’s list have processed a total of over $240 billion in transactions, having secured more than $3.8 billion in total funding.
+The Middle East’s Fintech 50
+1. Tabby
+2. Fawry
+3. Rasan
+4. Wio Bank
+5. MyFatoorah
+6. MadfoatCom
+7. MNT-Halan
+8. Thndr
+9. e& money *
+10. Valu
+11. ZainCash Iraq
+12. Sarwa
+13. Optasia
+14. Tamara
+15. AMAN Holding
+16. HyperPay
+17. PayTabs Group
+18. Tap Payments
+19. MDP
+20. Telr
+21. HPS
+22. ONE Cash
+23. Lean Technologies
+24. UPayments
+25. Tarabut
+26. Eazypay.com
+27. Paysky
+28. Lendo
+29. CoinMENA *
+30. Paymob
+31. Mercury
+32. Rain
+33. Beehive
+34. PayOne
+35. Hesabe
+36. Thawani Pay
+37. Ziina *
+38. Sahl *
+39. NEO Pay Iraq
+40. Zenda*
+41. NASS e-Payment *
+42. Lamaa for Information Technology (Lamaa Tech)
+43. Contact Financial Holding
+44. Pemo *
+45. Khazna *
+46. Klivvr *
+47. Zbooni
+48. Mamo *
+49. Wadaie *
+50. Flouci (by Kaoun) *
+Methodology
+We considered companies that are applying technology to financial sectors, including payments, insurance, digital banking, investing and wealth management, savings, crypto, and lending and personal financing. We excluded fintech operations owned by exchange houses, traditional banks, and governments.
+We gathered data through primary sources, statements, and questionnaires. We took into account:
+• The amount of money executed through digital channels in 2024.
+• The number of app downloads and active users.
+• The number of countries that the companies operate in.
+• Growth and expansion between February 2024 and February 2025.
+• Examples of innovation in digital payments.
+• Impact on consumers and businesses.
+• Funding from venture capitalists and valuation.
+Disclaimer: All data given was provided by the companies. Forbes Middle East holds no responsibility for any investment decisions.
+Methodology
+We considered companies that are applying technology to financial sectors, including payments, insurance, digital banking, investing and wealth management, savings, crypto, and lending and personal financing. We excluded fintech operations owned by exchange houses, traditional banks, and governments.
+We gathered data through primary sources, statements, and questionnaires. We took into account:
+• The amount of money executed through digital channels in 2024.
+• The number of app downloads and active users.
+• The number of countries that the companies operate in.
+• Growth and expansion between February 2024 and February 2025.
+• Examples of innovation in digital payments.
+• Impact on consumers and businesses.
+• Funding from venture capitalists and valuation.
+Disclaimer: All data given was provided by the companies. Forbes Middle East holds no responsibility for any investment decisions.
+RELATED LISTS
+Forbes Middle East
+World’s Richest Arabs 2023
+Forbes Middle East
+Top 100 Listed Companies 2023
+© 2026 Forbes Middle East. All Rights Reserved.

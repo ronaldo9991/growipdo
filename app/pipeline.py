@@ -78,6 +78,9 @@ def run_pipeline(run: Run) -> Run:
         run.set_stage("report")
         summary, summary_problems = report.write_summary(identity, findings, llm1, run.log)
         lint_notes = [f"summary: {p}" for p in summary_problems] + problems
+        failed = [f["id"] for f in findings if any(p.get("failed") for p in f["passes"])]
+        if failed:
+            lint_notes.append(f"{len(failed)} claim(s) refused because a verification pass errored: {', '.join(failed)}")
         run.ledger["summary"] = summary
         run.ledger["lint"] = lint_notes
         write_diagnostic(run)

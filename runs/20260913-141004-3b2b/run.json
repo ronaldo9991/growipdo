@@ -1,0 +1,34 @@
+{
+  "id": "20260913-141004-3b2b",
+  "status": "failed",
+  "stage": "verify",
+  "created_at": "2026-09-13T14:10:04+00:00",
+  "updated_at": "2026-09-13T14:14:49+00:00",
+  "input_url": "https://www.linkedin.com/in/markchahwan",
+  "subject": {
+    "full_name": "Mark Chahwan",
+    "company": "Sarwa",
+    "role": "Co-founder and Group CEO",
+    "location": "UAE",
+    "company_domains": [
+      "sarwa.co"
+    ],
+    "confidence": 0.99,
+    "reasoning": "The snippets consistently identify Mark Chahwan as the co-founder and CEO/group CEO of Sarwa, with Sarwa’s own careers page and multiple articles/posts matching the same name and role.",
+    "evidence_urls": [
+      "https://www.reddit.com/r/SarwaOfficial/comments/1oi8lop/im_mark_chahwan_33_cofounder_and_ceo_of_sarwa/",
+      "https://mena.entrepreneur.com/author/mark-chahwan",
+      "https://markchahwan.substack.com/",
+      "https://careers.sarwa.co/people/3616112-mark-chahwan",
+      "https://enterpriseam.com/uae/2025/05/30/my-morning-routine-mark-chahwan-group-ceo-and-co-founder-at-sarwa/"
+    ],
+    "slug": "markchahwan"
+  },
+  "models": {
+    "primary": "gpt-5.4-mini",
+    "second_opinion": "gpt-5.6-terra"
+  },
+  "approval": null,
+  "error": "ModelError: bad JSON from model: Expecting value: line 1 column 47 (char 46); reply began '{\"verdict\":\"supported\",\"supporting_excerpts\":[E1,E2,E3,E4],\"relayed_excerpts\":[E1,E2,E3,E4],\"discrepancy\":null,\"note\":\"The excerpts state verbatim that the DFSA gives notice that the Rules specified i'",
+  "counts": {}
+}

@@ -1,0 +1,561 @@
+url: https://www.forbes.com/lists/fintech50/
+final_url: https://www.forbes.com/lists/fintech50/
+fetched_at: 2026-09-13T14:10:32+00:00
+status: ok
+http_status: 200
+title: Forbes 2026 Fintech 50 | The Top Fintech Companies & Startups
+error: 
+---
+Forbes 2026 Fintech 50 | The Top Fintech Companies & Startups
+Sign Up For NewslettersGamesShare a News Tip
+Featured
+Featured
+Breaking News
+White House Watch
+Daily Cover Stories
+Forbes Daily Briefing Video Series
+The World’s Highest-Paid Tennis Players 2026
+2026 Best in State Next Gen Wealth Advisors List
+7 New Rules For Success In The First Year Of Your Career
+2026 Best Brands For Value
+Humanity At The Heart Of Work: How AI Can Unleash The Power Of People | Paid Program
+How Midsize Companies Get Trapped Between AI Promise And AI Reality | Paid Program
+The AI Risks CEOs Didn’t Budget For | Paid Program
+The Resilient Enterprise: How A Strategic Insurance Partner Helps Large Firms Navigate Evolving Threats | Paid Program
+The Hidden Tax On Enterprise AI: 1 In 5 Workers Lose A Full Day Every Week | Paid Program
+Scaling AI Editorial Video Series
+The Enterprise AI Shortcut: Why Co-Innovation Is Setting A New Speed For Adopting and Operationalizing AI | Paid Program
+The Toughest Problems Are Never Solved Alone | Paid Program
+How Chief Marketing Officers Are Scaling AI At Speed — While Preserving Brand Trust
+AI’s Nuanced Impact And A Quest To Quantify It
+Embracing And Bracing For AI
+Facing A Volatile Market, C-Suites Look To The CFO For Strategic Guidance
+America's Most Powerful Women In Sports
+CMO Unscripted: Vulnerability Is The New Superpower For Leaders In The AI Era
+The Next AI Frontier: Inside LG Electronics’ Strategic Investment In Arizona’s Tech Transformation | Paid Program
+Meeting The Moment In Enterprise: AI As AI Spending Surged 110%, Underlying Systems Didn’t Keep Up | Paid Program
+2026 50 Over 50 List | Paid Program
+Inside Smooth Technology: A Cash Back Content Series | Paid Program
+C-Suite Unscripted: CIO Edition | Paid Program
+Forbes Travel Guide’s 2026 Edge List
+Forbes Iconoclast with Maneet Ahuja | Paid Program
+The Power Of No | Paid Program
+Meet The Local Farmers Behind AB InBev's Iconic Beers | Paid Program
+The New First Responders: How Visionary Leaders Are Redefining Crisis Management
+Excellence Across Generations
+Billionaires
+Billionaires
+See All
+World's Billionaires
+Forbes 400
+America's Richest Self-Made Women
+China's Richest
+India's Richest
+Indonesia's Richest
+Korea's Richest
+Thailand's Richest
+Japan's Richest
+Australia's Richest
+Taiwan's Richest
+Singapore's Richest
+Philippines' Richest
+Hong Kong's Richest
+Malaysia's Richest
+Money & Politics
+Innovation
+Innovation
+See All
+AI Future Of Work
+Xfinity BrandVoice | Paid Program
+AI-Powered Cybersecurity
+Acxiom Insights | Paid Program
+Enterprise AI
+Nutanix BrandVoice
+AI In Healthcare
+Future of Healthcare
+Enterprise Intelligence
+Employee and Customer Experience
+AI
+Agentic AI
+Gaming
+Big Data
+Cloud
+Cloud 100
+Consumer Tech
+Creator Economy
+Cybersecurity
+Digital Transformation
+Enterprise Tech
+Future Of Work
+Healthcare
+Innovation Rules
+Retail Industry
+Science
+Social Media
+Sustainability & Climate
+Transportation
+Venture Capital
+Technology
+Leadership
+Leadership
+See All
+Under 30
+C-Suite
+CEO Network
+CFO Network
+CHRO Network
+CIO Network
+CMO Network
+Leadership Strategies
+Careers
+Education
+Forbes EQ | Paid Program
+ForbesBLK
+Forbes Research
+ForbesWomen
+Deloitte BrandVoice | Paid Program
+Dell Technologies BrandVoice | Paid Program
+Money
+Money
+See All
+ETF Investing Trends
+Banking & Insurance
+ETFs & Mutual Funds
+Fintech
+Hedge Funds & Private Equity
+Investing
+Investor Hub
+Markets
+Personal Finance
+Retirement
+Taxes
+Top Advisor | SHOOK
+Wealth Management
+CareCredit BrandVoice | Paid Program
+Forbes Digital Assets
+Forbes Digital Assets
+See All
+News
+Crypto Prices
+NFT Prices
+Research
+Learn
+Crypto Basics
+BTC
+DeFi
+Web3 Education
+NFTs
+Crypto Investments
+Events
+Crypto Portfolios
+Business
+Business
+See All
+Aerospace & Defense
+Energy
+Food & Drink
+Hollywood & Entertainment
+Law
+Manufacturing
+Media
+Policy
+Retail
+SportsMoney
+Entertainment Digest
+Enterprise Growth
+World Cup
+Small Business
+Small Business
+See All
+Entrepreneurs
+Small Business Strategy
+Small Business Taxes
+Lifestyle
+Lifestyle
+See All
+Luxury Travel
+Arts
+Boats & Planes
+Cars & Bikes
+Dining
+ForbesLife
+Forbes Travel Guide
+Spirits
+Style & Beauty
+Travel
+Vices
+Watches
+Real Estate
+Real Estate
+See All
+Commercial Real Estate
+Forbes Global Properties
+Residential Real Estate
+Forbes Vetted
+Forbes Vetted
+See All
+Mattress & Sleep
+Bed Frames
+Mattresses
+Mattress Toppers
+Pillows
+Sheets & Bedding
+Sleep Products
+Home
+Bathroom
+Cleaning & Laundry
+Decor
+Furniture
+Heating & Cooling
+Hobbies
+Home Office
+Kitchen & Dining
+Outdoor
+Pets
+Storage & Organization
+Tools
+Wine & Bar
+Fashion
+Accessories
+Clothing
+Eyewear
+Footwear
+Jewelry
+Handbags & Purses
+Lingerie & Sleepwear
+Outdoor & Fitness Apparel
+Outerwear
+Watches
+Kids & Baby Gear
+Baby Gear
+Kids Clothes & Accessories
+Nursery
+Pregnancy & Postpartum
+Toys & Books
+Gear
+Apparel & Accessories
+Bikes
+Camping & Hiking
+Climbing
+Fishing & Hunting
+Fitness
+Golf
+Running
+Tennis & Racket Sports
+Tools & Tech
+Training & Recovery
+Water Sports
+Wellness
+Winter Sports
+Beauty & Grooming
+Haircare
+Makeup
+Nailcare
+Shaving
+Skincare
+Personal Products
+Wellness & Self Care
+Tech & Electronics
+Audio
+Cameras
+Computers, Tablets & Accessories
+Gaming
+Home Office
+Online Tools
+Smart Home Devices
+Smartphones, Smartwatches & Accessories
+Streaming
+TVs
+Travel
+Cruises
+Hotels & Lodging
+Luggage
+Travel Products
+Gifts
+Father's Day
+Holiday
+Mother's Day
+Valentine's Day
+Wedding
+Deals
+Black Friday
+Cyber Monday
+Amazon Prime Day
+Beauty & Grooming
+Big Sales
+Fashion
+Gear
+Home
+Tech & Electronics
+Travel Deals
+Mattress & Sleep
+Deals
+Deals
+See All
+Fashion
+Nordstrom
+HOKA
+Quince
+Electronics
+Dell
+TopResume
+Sportswear & Gear
+Dick's Sporting Goods
+REI
+Mattress & Sleep
+Nectar
+Saatva
+Brooklinen
+Avocado
+DreamCloud
+Helix Sleep
+Bear
+Leesa
+Brooklyn Bedding
+Travel
+SeatGeek
+Vivid Seats
+Home & Garden
+Frontgate
+Wayfair
+Chewy
+Walmart
+West Elm
+Lists
+Lists
+See All
+30 Under 30
+50 Over 50
+Top Colleges
+Advisor
+Advisor
+See All
+Credit Cards
+Best Credit Cards
+Travel Credit Cards
+0% APR Credit Cards
+Balance Transfer Credit Cards
+Business Credit Cards
+Best First Credit Card
+Mortgages & Loans
+Best Mortgage Lenders
+Mortgage Refinance Lenders
+Personal Loans
+Business Loans
+Bad Credit Loans
+Debt Consolidation Loans
+Debt Relief Companies
+Student Loans Refinance
+Private Student Loans
+Banking
+Best CD Rates
+High Yield Savings Accounts
+Money Market Accounts
+Checking Accounts
+Business Checking Accounts
+Budgeting Apps
+Best Online Banks
+Insurance
+Health Insurance Companies
+Medicare
+Life Insurance Companies
+Best Car Insurance Companies
+Cheapest Car Insurance Companies
+Pet Insurance Companies
+Travel Insurance Companies
+Homeowners Insurance Companies
+Best Business Insurance Companies
+Business Services
+How to Start a Business
+LLC Services
+Payroll Services
+HR Software
+HRIS Systems
+PEO Services
+Applicant tracking Systems
+Domain Registrars
+Hosting Services
+Website Builders
+Ecomm Platforms
+Landing Page Builders
+VOIP Services
+Answering Services
+Project Management Software
+Task Management Software
+Gantt Chart Software
+VPNs
+Anti Virus Software
+Password Managers
+Home Services
+Moving Companies
+Long Distance Moving Companies
+Car Shipping Companies
+Home Warranty Companies
+Solar Companies
+Solar Panels
+Home Security Companies
+Home Security Systems
+Internet Providers
+Cheapest Internet Providers
+Fastest High Speed Internet Providers
+Pest Control Companies
+Education
+Forbes Advisor UK
+Forbes Advisor CA
+Forbes Advisor AU
+Health
+Health
+See All
+Mental Health
+Best Online Therapy
+Online Therapy that Takes Insurance
+Online Psychiatrists
+Best Online Dating Sites & Apps
+Best Senior Dating Sites
+Best LGBTQ Dating Sites
+CBD
+CBD Gummies
+CBD Oil
+CBD Creams
+CBD for Anxiety
+CBD for Pain
+Supplements
+Protein Powder
+Preworkout
+Collagen Powders
+Creatine Supplements
+CoQ10 Supplements
+Hearing Health
+Best Hearing Aids
+OTC Hearing Aids
+Affordable Hearing Aids
+Medical Devices
+Best Medical Alert Systems
+Best Medical Alert Systems with Fall Detection
+Diet & Weight Loss
+Best Weight Loss Plans
+Best GLP-1 Programs
+Best Semaglutide Providers
+Best Tirzepatide Providers
+Newsletters
+Newsletters
+See All
+Forbes Daily
+Editorial Newsletters
+Forbes Games
+Forbes Games
+See All
+Frase by Forbes
+Pinpoint by LinkedIn
+Queens by LinkedIn
+Crossclimb by LinkedIn
+Mini Crossword by Forbes
+More From Forbes
+More From Forbes
+Forbes Video
+Forbes 101
+Forbes Magazine
+Forbes Asia
+Free Issue of Forbes
+Forbes Wine Club
+Forbes Featured Games
+new
+Mini Crossword
+Quick solve. Big win.
+Play Now
+Frase
+Unscramble The Anagram
+Play Now
+Today's Highlights
+More Games By LinkedIn
+Pinpoint
+Guess The Category
+Play Now
+Queens
+Crown Each Region
+Play Now
+Crossclimb
+Unlock A Trivia Ladder
+Play Now
+© 2026 Forbes Media LLC. All Rights Reserved.
+Advertise with Forbes
+Forbes Licensing & Syndication
+Report a Security Issue
+Editorial Values and Standards
+Site Feedback
+Contact Us
+Careers at Forbes
+Tips
+Corrections
+Privacy Statement
+Your Privacy Choices
+Cookie Preferences
+Terms of Service
+AdChoices
+Reprints & Permissions
+Forbes 2026 Fintech 50 | The Top Fintech Companies & Startups
+Edited by Jeff Kauflin and Matt SchifrinFebruary 19, 2026 at 6:30 AM
+Featured Articles
+The 50 Hottest Fintech Startups In 2026
+Even as AI took center stage in 2025, many fintechs–especially those with a business-to-business focus–thrived.
+By Jeff Kauflin
+Newcomers To The Fintech 50 2026
+The 20 companies making their debut on our eleventh annual Fintech 50 show that despite a deflated funding market, founders are continuing to innovate at a rapid pace.
+By Jeff Kauflin
+The Future Of Payments: Fintech 50 2026
+From fintech giant Stripe to six-year-old startup Justt, which helps companies recover revenue lost to illegitimate chargebacks, seven payment companies made our Fintech 50 list.
+By Jeff Kauflin
+The Future Of Personal Finance: Fintech 50 2026
+These startups focus on improving the everyday elements of personal finance, including banking, access to credit and budgeting.
+By Sophia Acevedo
+The Future Of Investing: Fintech 50 2026
+From a fast-growing prediction markets startup to firms that help people invest in retirement accounts, these three investing companies made the Fintech 50 for 2026.
+By Sophia Acevedo
+The Future Of Real Estate: Fintech 50 2026
+In the age of AI, even real estate companies are starting to tap into new tools, high-tech automations and more efficient processes. Mortgage rates are high and home sales are slow, but these two real estate startups are innovating and growing rapidly.
+By Francesca Walton
+The Future Of Insurance: Fintech 50 2026
+From one startup that tries to simplify the confusion of selecting health insurance to another that uses aerial imagery instead of in-person inspectors, five insurtech businesses made our Fintech 50.
+By Jeff Kauflin
+The Future Of Crypto: Fintech 50 2026
+Digital assets are trading well off their peak, but the industry is bigger, more institutional and more consequential than it’s ever been. These five companies show where the real momentum is now.
+By Nina Bambysheva
+The Future Of Wall Street And Enterprise: Fintech 50 2026
+Financial institutions are making the most of emerging AI products to make everything about their back-office operations more efficient.
+By Hank Tucker
+The Future Of Business To Business Banking: Fintech 50 2026
+These fintech startups help businesses manage money with cards, lending and expense tools that simplify cash flow and cut back-office work without banks.
+By Brandon Kochkodin
+Inside The Trade That Made Mike Novogratz An AI Kingpin—And Could Net Him $20 Billion
+Long dismissed as a hedge fund trader who lucked into bitcoin, billionaire Michael Novogratz is now one of the most important players in AI infrastructure.
+By Nina Bambysheva
+Amplify Your Forbes Recognition
+Proudly showcase your success with Reprints & Display Products, Premium Profiles, and Award Logos.
+Reprints & Display Products
+Proudly showcase your Forbes accolade with plaques, wall displays, reprints, desktop awards, and more.
+Learn More
+Award Logos
+Leverage the power of Forbes by licensing the official logo to use in your marketing.
+Learn More
+Listmaker Voice
+Leverage the influence of your top executives with a thought leadership article published on Forbes.com
+Learn More
+Related Forbes Lists
+America's Top Charities
+AI 50
+Most Successful Mid-Cap Companies
+Browse More Forbes Lists
+© 2026 Forbes Media LLC. All Rights Reserved.
+AdChoices
+Privacy Statement
+Your Privacy Choices
+Cookie Preferences
+Digital Terms of Sale
+Terms of Service
+Contact Us
+Send Us Feedback
+Report a Security Issue
+Jobs At Forbes
+Reprints & Permissions
+Forbes Press Room
+Advertise

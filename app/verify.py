@@ -102,7 +102,8 @@ Verdict values:
   not_found: the excerpts do not address it
 Numbers must match exactly. "Over 150" is not "144". "Fintech 50, rank 12" is not "Top 20".
 Attribution matters: if an excerpt only relays what the company or the person announced or said ("Sarwa announced", "the company says", a quote from a founder, a congratulation on a milestone the company reported), it is the company's word even when it sits on a regulator's or publisher's page. List those excerpt ids in "relayed_excerpts". A regulator's own register entry, fine, notice or decision, or a publisher's own list ranking, is the source's own finding and is not relayed.
-Return JSON: {"verdict": ..., "supporting_excerpts": [excerpt ids that support or contradict], "relayed_excerpts": [excerpt ids among those that merely relay the company's own statement], "discrepancy": string or null, "note": one sentence}"""
+Return JSON: {"verdict": ..., "supporting_excerpts": ["E1", "E3"], "relayed_excerpts": ["E3"], "discrepancy": string or null, "note": one sentence}
+supporting_excerpts lists the excerpt ids that support or contradict, as quoted strings. relayed_excerpts lists those among them that merely relay the company's own statement."""
 
 
 def _format_excerpts(excerpts: list[dict]) -> str:
@@ -150,6 +151,17 @@ def run_pass(claim: dict, excerpts: list[dict], llm) -> dict:
         "excerpts": excerpts,
         "cited": cited,
     }
+
+
+def safe_pass(claim: dict, excerpts: list[dict], llm, log, name: str) -> dict:
+    """Run a pass; if the model fails even after the JSON retry, record the error on the finding
+    rather than losing the whole run. The error is logged, shown in the reason and counted as a warning."""
+    try:
+        return run_pass(claim, excerpts, llm)
+    except Exception as e:  # ModelError or transport error; recorded, not hidden
+        log("verify", f"{name} failed for claim {claim.get('id')}", error=str(e)[:300])
+        return {"verdict": "not_found", "discrepancy": None, "note": None, "model": llm.model,
+                "excerpts": excerpts, "cited": [], "failed": f"{type(e).__name__}: {str(e)[:200]}"}
 
 
 # ---------- deterministic verdict ----------
@@ -213,12 +225,17 @@ def verify_claims(claims: list[dict], sources: list[dict], llm_primary, llm_seco
     for i, claim in enumerate(claims, start=1):
         # Pass 1: full claim text as the query.
         ex1 = corpus.retrieve(claim["text"] + " " + " ".join(claim.get("numbers") or []), k=6, origin=claim["origin"])
-        p1 = run_pass(claim, ex1, llm_primary)
+        p1 = safe_pass(claim, ex1, llm_primary, log, "pass 1")
         # Pass 2: independent query built from the quote plus numbers, different model, more excerpts.
         q2 = (claim.get("quote") or claim["text"]) + " " + " ".join(claim.get("numbers") or [])
         ex2 = corpus.retrieve(q2, k=8, origin=claim["origin"])
-        p2 = run_pass(claim, ex2, llm_second)
-        label, reason = combine(claim, p1, p2)
+        p2 = safe_pass(claim, ex2, llm_second, log, "pass 2")
+        if p1.get("failed") or p2.get("failed"):
+            which = "pass 1" if p1.get("failed") else "pass 2"
+            label, reason = "unverified", f"{which} failed twice with a model error, so the claim could not be checked: " + \
+                (p1.get("failed") or p2.get("failed"))
+        else:
+            label, reason = combine(claim, p1, p2)
         finding = {
             "id": f"F{i}",
             "claim_id": claim["id"],

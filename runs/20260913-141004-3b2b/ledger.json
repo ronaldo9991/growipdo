@@ -1,0 +1,1278 @@
+{
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://www.dfsa.ae/news/dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without-approved-prospectus",
+      "final_url": "https://www.dfsa.ae/news/dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without-approved-prospectus",
+      "title": "The DFSA fines Sarwa Digital Wealth Limited for making a Public Offer of Shares without an Approved Prospectus | DFSA | THE INDEPENDENT REGULATOR OF FINANCIAL SERVICES",
+      "tier": "primary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/843e8c57.txt",
+      "chars": 7424,
+      "queries": [
+        "Sarwa DFSA decision notice",
+        "Sarwa regulator fine penalty",
+        "Sarwa regulatory action"
+      ]
+    },
+    {
+      "id": "S2",
+      "url": "https://www.adgm.com/public-registers/fsra/firms/financial-firms/sarwa-digital-wealth-capital-limited-190037",
+      "final_url": "https://www.adgm.com/public-registers/fsra/firms/financial-firms/sarwa-digital-wealth-capital-limited-190037",
+      "title": "Sarwa Digital Wealth (Capital) Limited",
+      "tier": "primary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/225d0e2f.txt",
+      "chars": 5807,
+      "queries": [
+        "Sarwa ADGM FSRA financial services permission register",
+        "Sarwa regulatory action"
+      ]
+    },
+    {
+      "id": "S3",
+      "url": "https://www.adgm.com/media/announcements/adgms-financial-regulator-fines-sarwa-digital-wealth-capital-limited",
+      "final_url": "https://www.adgm.com/media/announcements/adgms-financial-regulator-fines-sarwa-digital-wealth-capital-limited",
+      "title": "ADGM's Financial Regulator fines Sarwa Digital Wealth (Capital) Limited USD 122,500 for making an Offer of Securities in ADGM without Approved Prospectus",
+      "tier": "primary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/4acb193c.txt",
+      "chars": 7416,
+      "queries": [
+        "Sarwa regulator fine penalty",
+        "Sarwa regulatory action"
+      ]
+    },
+    {
+      "id": "S4",
+      "url": "https://www.adgm.com/media/announcements/adgms-fsra-issues-notice-regarding-unauthorised-domains-misusing-sarwas-name",
+      "final_url": "https://www.adgm.com/media/announcements/adgms-fsra-issues-notice-regarding-unauthorised-domains-misusing-sarwas-name",
+      "title": "ADGM’s FSRA issues notice regarding unauthorised domains misusing Sarwa’s name",
+      "tier": "primary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/558416ea.txt",
+      "chars": 5861,
+      "queries": [
+        "Sarwa ADGM FSRA financial services permission register"
+      ]
+    },
+    {
+      "id": "S5",
+      "url": "https://www.adgm.com/public-registers/fsra",
+      "final_url": "https://www.adgm.com/public-registers/fsra",
+      "title": "FSRA Public Register",
+      "tier": "primary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/f641a610.txt",
+      "chars": 4802,
+      "queries": [
+        "Sarwa ADGM FSRA financial services permission register"
+      ]
+    },
+    {
+      "id": "S6",
+      "url": "https://www.dfsa.ae/public-register/firms/sarwa-digital-wealth-limited",
+      "final_url": "https://www.dfsa.ae/public-register/firms/sarwa-digital-wealth-limited",
+      "title": "Firms | DFSA",
+      "tier": "primary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/427e311a.txt",
+      "chars": 5983,
+      "queries": [
+        "Sarwa DFSA decision notice"
+      ]
+    },
+    {
+      "id": "S7",
+      "url": "https://www.dfsa.ae/what-we-do/enforcement/regulatory-actions",
+      "final_url": "https://www.dfsa.ae/what-we-do/enforcement/regulatory-actions",
+      "title": "Decision Notices & Regulatory Actions | DFSA",
+      "tier": "primary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/20584ff0.txt",
+      "chars": 6408,
+      "queries": [
+        "Sarwa DFSA decision notice"
+      ]
+    },
+    {
+      "id": "S8",
+      "url": "https://www.forbesmiddleeast.com/lists/the-middle-easts-fintech-50-2025/sarwa/",
+      "final_url": "https://www.forbesmiddleeast.com/lists/the-middle-easts-fintech-50-2025/sarwa/",
+      "title": "Sarwa - The Middle East’s Fintech 50 2025 - Forbes Lists",
+      "tier": "primary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/7b4fe4ef.txt",
+      "chars": 763,
+      "queries": [
+        "Sarwa Forbes Middle East fintech list"
+      ]
+    },
+    {
+      "id": "S9",
+      "url": "https://www.forbesmiddleeast.com/lists/the-middle-easts-fintech-50-2025/",
+      "final_url": "https://www.forbesmiddleeast.com/lists/the-middle-easts-fintech-50-2025/",
+      "title": "The Middle East’s Fintech 50 2025 - Forbes Lists",
+      "tier": "primary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/4cd61e2e.txt",
+      "chars": 4320,
+      "queries": [
+        "Sarwa Forbes Middle East fintech list"
+      ]
+    },
+    {
+      "id": "S10",
+      "url": "https://www.forbes.com/lists/fintech50/",
+      "final_url": "https://www.forbes.com/lists/fintech50/",
+      "title": "Forbes 2026 Fintech 50 | The Top Fintech Companies & Startups",
+      "tier": "primary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/ba10bf69.txt",
+      "chars": 12504,
+      "queries": [
+        "Sarwa Forbes Middle East fintech list"
+      ]
+    },
+    {
+      "id": "S11",
+      "url": "https://help.sarwa.co/hc/en-us/articles/4407336316305-Is-Sarwa-regulated",
+      "final_url": "https://help.sarwa.co/hc/en-us/articles/4407336316305-Is-Sarwa-regulated",
+      "title": "Is Sarwa regulated? – Sarwa",
+      "tier": "company",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/1381e868.txt",
+      "chars": 1646,
+      "queries": [
+        "Sarwa ADGM FSRA financial services permission register",
+        "Sarwa regulatory action"
+      ]
+    },
+    {
+      "id": "S12",
+      "url": "https://www.sarwa.co/blog/press-release-uae-based-fintech-startup-sarwa-raises-84m-series-a-funding-round-led-by-kipco/",
+      "final_url": "https://www.sarwa.co/blog/press-release-uae-based-fintech-startup-sarwa-raises-84m-series-a-funding-round-led-by-kipco",
+      "title": "Sarwa raises $8.4M Series A funding round led by KIPCO - Sarwa",
+      "tier": "company",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/425a45c6.txt",
+      "chars": 11450,
+      "queries": [
+        "Sarwa press release funding round",
+        "Sarwa milestone first fintech announcement"
+      ]
+    },
+    {
+      "id": "S13",
+      "url": "https://www.sarwa.co/blog/sarwa-series-b-round/",
+      "final_url": "https://www.sarwa.co/blog/sarwa-series-b-round",
+      "title": "We Raised $15 Million in Our Series B Funding Round - Sarwa",
+      "tier": "company",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/777c3473.txt",
+      "chars": 11791,
+      "queries": [
+        "Sarwa press release funding round",
+        "Sarwa Series B Mubadala"
+      ]
+    },
+    {
+      "id": "S14",
+      "url": "https://www.sarwa.co/blog/one-billion/",
+      "final_url": "https://www.sarwa.co/blog/one-billion",
+      "title": "We hit $1B in client assets - Sarwa",
+      "tier": "company",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/1ba4064d.txt",
+      "chars": 7195,
+      "queries": [
+        "Sarwa milestone first fintech announcement",
+        "Sarwa assets under management clients users"
+      ]
+    },
+    {
+      "id": "S15",
+      "url": "https://www.sarwa.co/blog/what-is-sarwa-and-how-does-it-work/",
+      "final_url": "https://www.sarwa.co/blog/what-is-sarwa-and-how-does-it-work",
+      "title": "What Is Sarwa and How Does It Work? - Sarwa",
+      "tier": "company",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/0679f51c.txt",
+      "chars": 26168,
+      "queries": [
+        "Sarwa assets under management clients users",
+        "Sarwa profitable revenue"
+      ]
+    },
+    {
+      "id": "S16",
+      "url": "https://www.sarwa.co/invite/EVANS8830",
+      "final_url": "https://www.sarwa.co/invite/EVANS8830",
+      "title": "Sarwa | Invest, Trade and Save",
+      "tier": "company",
+      "status": "could_not_check",
+      "http_status": 200,
+      "error": "page returned almost no readable text (probably rendered by JavaScript)",
+      "snapshot": "evidence/20260913-141004-3b2b/615f33fb.txt",
+      "chars": 30,
+      "queries": [
+        "Sarwa ADGM FSRA financial services permission register"
+      ]
+    },
+    {
+      "id": "S17",
+      "url": "https://www.sarwa.co/en/disclaimer-notice",
+      "final_url": "https://www.sarwa.co/en/disclaimer-notice",
+      "title": "Sarwa | Disclaimer Notice",
+      "tier": "company",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/967d5070.txt",
+      "chars": 7800,
+      "queries": [
+        "Sarwa DFSA decision notice"
+      ]
+    },
+    {
+      "id": "S18",
+      "url": "https://www.sarwa.co/blog/why-should-i-invest/",
+      "final_url": "https://www.sarwa.co/blog/why-should-i-invest",
+      "title": "Why Should I Invest? - Sarwa",
+      "tier": "company",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/b6ac0a9b.txt",
+      "chars": 4946,
+      "queries": [
+        "Sarwa press release funding round"
+      ]
+    },
+    {
+      "id": "S19",
+      "url": "https://www.globenewswire.com/news-release/2026/05/08/3291359/0/en/sarwa-reaches-1b-in-client-assets-a-first-for-a-homegrown-uae-fintech.html",
+      "final_url": "",
+      "title": "Sarwa Reaches $1B in Client Assets, a First for a Homegrown",
+      "tier": "company",
+      "status": "could_not_check",
+      "http_status": null,
+      "error": "request failed: The read operation timed out",
+      "snapshot": "evidence/20260913-141004-3b2b/5d2cfa5a.txt",
+      "chars": 0,
+      "queries": [
+        "\"Sarwa\" site:globenewswire.com"
+      ]
+    },
+    {
+      "id": "S20",
+      "url": "https://www.globenewswire.com/en/search/organization/SARWA%2520DIGITAL%2520WEALTH?page=1",
+      "final_url": "",
+      "title": "Press Release Distribution and Management - GlobeNewswire",
+      "tier": "company",
+      "status": "could_not_check",
+      "http_status": null,
+      "error": "request failed: The read operation timed out",
+      "snapshot": "evidence/20260913-141004-3b2b/ef0886bd.txt",
+      "chars": 0,
+      "queries": [
+        "\"Sarwa\" site:globenewswire.com"
+      ]
+    },
+    {
+      "id": "S21",
+      "url": "https://www.instagram.com/p/DX9Uz97Nqhe/",
+      "final_url": "",
+      "title": "Sarwa has surpassed $1 billion in assets under ...",
+      "tier": "secondary",
+      "status": "could_not_check",
+      "http_status": null,
+      "error": "request failed: [Errno 61] Connection refused",
+      "snapshot": "evidence/20260913-141004-3b2b/faea52bb.txt",
+      "chars": 0,
+      "queries": [
+        "Sarwa milestone first fintech announcement",
+        "Sarwa assets under management clients users",
+        "Sarwa profitable revenue"
+      ]
+    },
+    {
+      "id": "S22",
+      "url": "https://www.adgm.com/media/announcements/uaes-sarwa-hits-$1-billion-in-assets-as-retail-investing-gains-scale",
+      "final_url": "https://www.adgm.com/media/announcements/uaes-sarwa-hits-$1-billion-in-assets-as-retail-investing-gains-scale",
+      "title": "UAE’s Sarwa Hits $1 Billion in Assets as Retail Investing Gains Scale",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/ef9324f0.txt",
+      "chars": 8090,
+      "queries": [
+        "Sarwa Series B Mubadala",
+        "Sarwa assets under management clients users",
+        "Sarwa profitable revenue"
+      ]
+    },
+    {
+      "id": "S23",
+      "url": "https://www.instagram.com/p/DRzCPTxjZqP/?hl=en",
+      "final_url": "",
+      "title": "Mark Chahwan, co-founder and group CEO of Sarwa ...",
+      "tier": "secondary",
+      "status": "could_not_check",
+      "http_status": null,
+      "error": "request failed: [Errno 61] Connection refused",
+      "snapshot": "evidence/20260913-141004-3b2b/5b8008cb.txt",
+      "chars": 0,
+      "queries": [
+        "Mark Chahwan Sarwa co-founder CEO interview",
+        "Mark Chahwan Sarwa founded",
+        "\"Mark Chahwan\" fintech"
+      ]
+    },
+    {
+      "id": "S24",
+      "url": "https://www.reddit.com/r/SarwaOfficial/comments/1oi8lop/im_mark_chahwan_33_cofounder_and_ceo_of_sarwa/",
+      "final_url": "https://www.reddit.com/r/SarwaOfficial/comments/1oi8lop/im_mark_chahwan_33_cofounder_and_ceo_of_sarwa/",
+      "title": "Reddit",
+      "tier": "secondary",
+      "status": "could_not_check",
+      "http_status": 200,
+      "error": "page returned almost no readable text (probably rendered by JavaScript)",
+      "snapshot": "evidence/20260913-141004-3b2b/dc43bdd6.txt",
+      "chars": 6,
+      "queries": [
+        "Mark Chahwan Sarwa co-founder CEO interview",
+        "Mark Chahwan Sarwa founded",
+        "\"Mark Chahwan\" fintech"
+      ]
+    },
+    {
+      "id": "S25",
+      "url": "https://dfsaen.thomsonreuters.com/rulebook/21-may-2024-dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without",
+      "final_url": "https://dfsaen.thomsonreuters.com/rulebook/21-may-2024-dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without",
+      "title": "21 May 2024 — The DFSA fines Sarwa Digital Wealth Limited for making a Public Offer of Shares without an Approved Prospectus | Rulebook",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/2a05e40b.txt",
+      "chars": 12825,
+      "queries": [
+        "Sarwa DFSA decision notice",
+        "Sarwa regulatory action"
+      ]
+    },
+    {
+      "id": "S26",
+      "url": "https://www.crunchbase.com/organization/sarwa-co",
+      "final_url": "https://www.crunchbase.com/organization/sarwa-co",
+      "title": "Sarwa - Crunchbase Company Profile & Funding",
+      "tier": "secondary",
+      "status": "could_not_check",
+      "http_status": 403,
+      "error": "HTTP 403",
+      "snapshot": "evidence/20260913-141004-3b2b/d01db583.txt",
+      "chars": 0,
+      "queries": [
+        "Sarwa press release funding round",
+        "Sarwa Series B Mubadala"
+      ]
+    },
+    {
+      "id": "S27",
+      "url": "https://www.bcg.com/publications/2021/bionic-innovation-interview-series-with-mark-chahwan-nadine-mezher-from-sarwa",
+      "final_url": "https://www.bcg.com/publications/2021/bionic-innovation-interview-series-with-mark-chahwan-nadine-mezher-from-sarwa",
+      "title": "Sarwa: The Path to Expert, Low-Cost, and Smart Investing",
+      "tier": "secondary",
+      "status": "could_not_check",
+      "http_status": 403,
+      "error": "HTTP 403",
+      "snapshot": "evidence/20260913-141004-3b2b/f5a599a4.txt",
+      "chars": 0,
+      "queries": [
+        "Mark Chahwan Sarwa co-founder CEO interview",
+        "Mark Chahwan Sarwa founded"
+      ]
+    },
+    {
+      "id": "S28",
+      "url": "https://en.adgm.thomsonreuters.com/rulebook/30-granting-financial-services-permission",
+      "final_url": "https://en.adgm.thomsonreuters.com/rulebook/30-granting-financial-services-permission",
+      "title": "30. Granting a Financial Services Permission | Rulebook",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/f1201b04.txt",
+      "chars": 7154,
+      "queries": [
+        "Sarwa ADGM FSRA financial services permission register"
+      ]
+    },
+    {
+      "id": "S29",
+      "url": "https://dfsaen.thomsonreuters.com/rulebook/w5492017-sarwa-digital-wealth-limited",
+      "final_url": "https://dfsaen.thomsonreuters.com/rulebook/w5492017-sarwa-digital-wealth-limited",
+      "title": "W549/2017 — Sarwa Digital Wealth Limited | Rulebook",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/d145295b.txt",
+      "chars": 17226,
+      "queries": [
+        "Sarwa DFSA decision notice"
+      ]
+    },
+    {
+      "id": "S30",
+      "url": "https://www.reddit.com/r/dubai/comments/1cx83ou/sarwa_digital_wealth_hit_with_dh701815_penalty_by/",
+      "final_url": "https://www.reddit.com/r/dubai/comments/1cx83ou/sarwa_digital_wealth_hit_with_dh701815_penalty_by/",
+      "title": "Reddit",
+      "tier": "secondary",
+      "status": "could_not_check",
+      "http_status": 200,
+      "error": "page returned almost no readable text (probably rendered by JavaScript)",
+      "snapshot": "evidence/20260913-141004-3b2b/202c5d41.txt",
+      "chars": 6,
+      "queries": [
+        "Sarwa regulator fine penalty"
+      ]
+    },
+    {
+      "id": "S31",
+      "url": "https://www.international-adviser.com/dfsa-and-adgm-take-dual-action-to-fine-dubai-abu-dhabi-based-sarwa-digital-wealth/",
+      "final_url": "https://www.international-adviser.com/dfsa-and-adgm-take-dual-action-to-fine-dubai-abu-dhabi-based-sarwa-digital-wealth/",
+      "title": "DFSA and ADGM take dual action to fine Dubai, Abu Dhabi-based Sarwa Digital Wealth | International Adviser",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/87b590b9.txt",
+      "chars": 6973,
+      "queries": [
+        "Sarwa regulator fine penalty"
+      ]
+    },
+    {
+      "id": "S32",
+      "url": "https://gulfbusiness.com/en/2024/industry/why-did-abu-dhabi-global-market-regulator-impose-a-122500-fine-on-sarwa/",
+      "final_url": "https://gulfbusiness.com/en/2024/industry/why-did-abu-dhabi-global-market-regulator-impose-a-122500-fine-on-sarwa/",
+      "title": "Why did Abu Dhabi Global Market regulator impose a $122,500 fine on Sarwa?",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260913-141004-3b2b/7278abf8.txt",
+      "chars": 4741,
+      "queries": [
+        "Sarwa regulator fine penalty"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "text": "The DFSA imposed a financial penalty of USD 191,100 (AED 701,815) on Sarwa DIFC, reduced from USD 390,000 (AED 1,432,275) following mitigation and settlement discounts.",
+      "quote": "The DFSA imposed a financial penalty of USD 191,100 (AED 701,815) on Sarwa DIFC, reduced from USD 390,000 (AED 1,432,275) following mitigation and settlement discounts.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [
+        "USD 191,100",
+        "AED 701,815",
+        "USD 390,000",
+        "AED 1,432,275"
+      ],
+      "origin": "S1",
+      "origin_url": "https://www.dfsa.ae/news/dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without-approved-prospectus",
+      "origin_tier": "primary",
+      "also_in": [
+        "https://dfsaen.thomsonreuters.com/rulebook/21-may-2024-dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without",
+        "https://www.international-adviser.com/dfsa-and-adgm-take-dual-action-to-fine-dubai-abu-dhabi-based-sarwa-digital-wealth/"
+      ],
+      "id": "C1"
+    },
+    {
+      "text": "The DFSA took action against Sarwa DIFC for making an Offer of Securities to the Public in or from the DIFC without an Approved Prospectus, in breach of the Markets Law.",
+      "quote": "The DFSA took action against Sarwa DIFC for making an Offer of Securities to the Public in or from the DIFC without an Approved Prospectus, in breach of the Markets Law.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [],
+      "origin": "S1",
+      "origin_url": "https://www.dfsa.ae/news/dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without-approved-prospectus",
+      "origin_tier": "primary",
+      "also_in": [
+        "https://dfsaen.thomsonreuters.com/rulebook/21-may-2024-dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without"
+      ],
+      "id": "C2"
+    },
+    {
+      "text": "Sarwa was included in Forbes 2026 Fintech 50.",
+      "quote": "Forbes 2026 Fintech 50 | The Top Fintech Companies & Startups",
+      "category": "award",
+      "about": "company",
+      "numbers": [
+        "2026",
+        "50"
+      ],
+      "origin": "S10",
+      "origin_url": "https://www.forbes.com/lists/fintech50/",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C3"
+    },
+    {
+      "text": "Sarwa Digital Wealth (Capital) Limited has FSP Number 190037.",
+      "quote": "FSP Number\n190037",
+      "category": "other",
+      "about": "company",
+      "numbers": [
+        "190037"
+      ],
+      "origin": "S2",
+      "origin_url": "https://www.adgm.com/public-registers/fsra/firms/financial-firms/sarwa-digital-wealth-capital-limited-190037",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C4"
+    },
+    {
+      "text": "Sarwa Digital Wealth (Capital) Limited has FSP Date 20 February 2020.",
+      "quote": "FSP Date\n20 February 2020",
+      "category": "founding",
+      "about": "company",
+      "numbers": [
+        "20 February 2020"
+      ],
+      "origin": "S2",
+      "origin_url": "https://www.adgm.com/public-registers/fsra/firms/financial-firms/sarwa-digital-wealth-capital-limited-190037",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C5"
+    },
+    {
+      "text": "The FSRA of Abu Dhabi Global Market (ADGM) has imposed a financial penalty of USD 122,500 (AED 449,881) on Sarwa Digital Wealth (Capital) Limited (Sarwa), an FSRA licensed firm in ADGM.",
+      "quote": "The FSRA of Abu Dhabi Global Market (ADGM) has imposed a financial penalty of USD 122,500 (AED 449,881) on Sarwa Digital Wealth (Capital) Limited (Sarwa), an FSRA licensed firm in ADGM.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [
+        "USD 122,500",
+        "AED 449,881"
+      ],
+      "origin": "S3",
+      "origin_url": "https://www.adgm.com/media/announcements/adgms-financial-regulator-fines-sarwa-digital-wealth-capital-limited",
+      "origin_tier": "primary",
+      "also_in": [
+        "https://www.international-adviser.com/dfsa-and-adgm-take-dual-action-to-fine-dubai-abu-dhabi-based-sarwa-digital-wealth/"
+      ],
+      "id": "C6"
+    },
+    {
+      "text": "The FSRA found that Sarwa contravened FSRA administered regulations by making an Offer of Securities in ADGM without an Approved Prospectus.",
+      "quote": "The FSRA found that Sarwa contravened FSRA administered regulations by making an Offer of Securities in ADGM without an Approved Prospectus.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [],
+      "origin": "S3",
+      "origin_url": "https://www.adgm.com/media/announcements/adgms-financial-regulator-fines-sarwa-digital-wealth-capital-limited",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C7"
+    },
+    {
+      "text": "Sarwa is an entity duly authorised and regulated by the FSRA.",
+      "quote": "The Financial Services Regulatory Authority (FSRA) of ADGM would like to bring to the attention of the financial services community and members of the public the existence of a number of domains that falsely purport to be associated with Sarwa Digital Wealth (Capital) Limited (Sarwa), an entity duly authorised and regulated by the FSRA.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [],
+      "origin": "S4",
+      "origin_url": "https://www.adgm.com/media/announcements/adgms-fsra-issues-notice-regarding-unauthorised-domains-misusing-sarwas-name",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C8"
+    },
+    {
+      "text": "Sarwa has confirmed to the FSRA that it has no connection to, and is not responsible for, any of the Domains.",
+      "quote": "Sarwa has confirmed to the FSRA that it has no connection to, and is not responsible for, any of the Domains.",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin": "S4",
+      "origin_url": "https://www.adgm.com/media/announcements/adgms-fsra-issues-notice-regarding-unauthorised-domains-misusing-sarwas-name",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C9"
+    },
+    {
+      "text": "Sarwa Digital Wealth Limited is a DIFC Company.",
+      "quote": "Legal Status:\nDIFC Company",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [],
+      "origin": "S6",
+      "origin_url": "https://www.dfsa.ae/public-register/firms/sarwa-digital-wealth-limited",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C10"
+    },
+    {
+      "text": "Sarwa Digital Wealth Limited has DFSA Reference Number F004501.",
+      "quote": "DFSA Reference Number:\nF004501",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [
+        "F004501"
+      ],
+      "origin": "S6",
+      "origin_url": "https://www.dfsa.ae/public-register/firms/sarwa-digital-wealth-limited",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C11"
+    },
+    {
+      "text": "Sarwa hit its first-ever profit milestone in Q1 2024 and has sustained it since, recently marking its first full calendar year profitability.",
+      "quote": "Sarwa hit its first-ever profit milestone in Q1 2024 and has sustained it since, recently marking its first full calendar year profitability.",
+      "category": "other",
+      "about": "company",
+      "numbers": [
+        "Q1 2024"
+      ],
+      "origin": "S8",
+      "origin_url": "https://www.forbesmiddleeast.com/lists/the-middle-easts-fintech-50-2025/sarwa/",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C12"
+    },
+    {
+      "text": "Date of Establishment: 2017",
+      "quote": "Date of Establishment: 2017",
+      "category": "founding",
+      "about": "company",
+      "numbers": [
+        "2017"
+      ],
+      "origin": "S8",
+      "origin_url": "https://www.forbesmiddleeast.com/lists/the-middle-easts-fintech-50-2025/sarwa/",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C13"
+    },
+    {
+      "text": "Sarwa is ranked 12 on The Middle East’s Fintech 50 2025 list.",
+      "quote": "12. Sarwa",
+      "category": "award",
+      "about": "company",
+      "numbers": [
+        "12"
+      ],
+      "origin": "S9",
+      "origin_url": "https://www.forbesmiddleeast.com/lists/the-middle-easts-fintech-50-2025/",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C14"
+    },
+    {
+      "text": "Sarwa is regulated by Abu Dhabi Global Market (ADGM) The Financial Services Regulatory Authority (FSRA) .",
+      "quote": "We are regulated by Abu Dhabi Global Market (ADGM) The Financial Services Regulatory Authority (FSRA) .",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [],
+      "origin": "S11",
+      "origin_url": "https://help.sarwa.co/hc/en-us/articles/4407336316305-Is-Sarwa-regulated",
+      "origin_tier": "company",
+      "also_in": [
+        "https://www.sarwa.co/blog/sarwa-series-b-round/",
+        "https://www.sarwa.co/blog/one-billion/"
+      ],
+      "id": "C15"
+    },
+    {
+      "text": "Sarwa Invest is regulated by the ADGM Financial Services Regulatory Authority.",
+      "quote": "Sarwa Invest is regulated by the ADGM Financial Services Regulatory Authority.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [],
+      "origin": "S11",
+      "origin_url": "https://help.sarwa.co/hc/en-us/articles/4407336316305-Is-Sarwa-regulated",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C16"
+    },
+    {
+      "text": "Sarwa raised more than US$ 8.4 million.",
+      "quote": "The investment round is complete: Sarwa raised more than US$ 8.4 million and what is even more exciting is the list of investors and strategic partners who joined us.",
+      "category": "funding",
+      "about": "company",
+      "numbers": [
+        "more than US$ 8.4 million"
+      ],
+      "origin": "S12",
+      "origin_url": "https://www.sarwa.co/blog/press-release-uae-based-fintech-startup-sarwa-raises-84m-series-a-funding-round-led-by-kipco/",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C17"
+    },
+    {
+      "text": "This new round brings Sarwa’s total funding to over US$ 10 million since its inception in December of 2017 by our Co-founders Mark Chahwan, Jad Sayegh and Nadine Mezher.",
+      "quote": "This new round brings Sarwa’s total funding to over US$ 10 million since its inception in December of 2017 by our Co-founders Mark Chahwan, Jad Sayegh and Nadine Mezher.",
+      "category": "funding",
+      "about": "company",
+      "numbers": [
+        "over US$ 10 million",
+        "December of 2017"
+      ],
+      "origin": "S12",
+      "origin_url": "https://www.sarwa.co/blog/press-release-uae-based-fintech-startup-sarwa-raises-84m-series-a-funding-round-led-by-kipco/",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C18"
+    },
+    {
+      "text": "Sarwa raised $15 Million in its Series B funding round.",
+      "quote": "We Raised $15 Million in Our Series B Funding Round - Sarwa",
+      "category": "funding",
+      "about": "company",
+      "numbers": [
+        "$15 Million"
+      ],
+      "origin": "S13",
+      "origin_url": "https://www.sarwa.co/blog/sarwa-series-b-round/",
+      "origin_tier": "company",
+      "also_in": [
+        "https://www.sarwa.co/blog/why-should-i-invest/"
+      ],
+      "id": "C19"
+    },
+    {
+      "text": "The Series B round was led by Mubadala Investment Company.",
+      "quote": "The Series B round was led by Mubadala Investment Company with 500 Startups, Kuwait Projects Company, Shorooq Partners, Middle East Venture Partners, DIFC, Hambro Perks Oryx Fund, HALA Ventures, and Vision Ventures also participating.",
+      "category": "funding",
+      "about": "company",
+      "numbers": [],
+      "origin": "S13",
+      "origin_url": "https://www.sarwa.co/blog/sarwa-series-b-round/",
+      "origin_tier": "company",
+      "also_in": [
+        "https://www.adgm.com/media/announcements/uaes-sarwa-hits-$1-billion-in-assets-as-retail-investing-gains-scale"
+      ],
+      "id": "C20"
+    },
+    {
+      "text": "Sarwa hit $1B in client assets.",
+      "quote": "We hit $1B in client assets - Sarwa",
+      "category": "traction",
+      "about": "company",
+      "numbers": [
+        "$1B"
+      ],
+      "origin": "S14",
+      "origin_url": "https://www.sarwa.co/blog/one-billion/",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C21"
+    },
+    {
+      "text": "Sarwa reached $1 billion in client assets.",
+      "quote": "$1 billion in client assets. Powered by your trust.",
+      "category": "traction",
+      "about": "company",
+      "numbers": [
+        "$1 billion"
+      ],
+      "origin": "S14",
+      "origin_url": "https://www.sarwa.co/blog/one-billion/",
+      "origin_tier": "company",
+      "also_in": [
+        "https://www.adgm.com/media/announcements/uaes-sarwa-hits-$1-billion-in-assets-as-retail-investing-gains-scale"
+      ],
+      "id": "C22"
+    },
+    {
+      "text": "Sarwa Digital Wealth (Capital) Limited (popularly known as ‘Sarwa’) is an all-in-one money management tool that helps everyone create wealth by making their money work for them in a smart way.",
+      "quote": "Sarwa Digital Wealth (Capital) Limited (popularly known as ‘Sarwa’) is an all-in-one money management tool that helps everyone create wealth by making their money work for them in a smart way.",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin": "S15",
+      "origin_url": "https://www.sarwa.co/blog/what-is-sarwa-and-how-does-it-work/",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C23"
+    },
+    {
+      "text": "We started in 2018 as a digital wealth management platform where users can passively invest and create wealth for the long term.",
+      "quote": "We started in 2018 as a digital wealth management platform where users can passively invest and create wealth for the long term.",
+      "category": "founding",
+      "about": "company",
+      "numbers": [
+        "2018"
+      ],
+      "origin": "S15",
+      "origin_url": "https://www.sarwa.co/blog/what-is-sarwa-and-how-does-it-work/",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C24"
+    },
+    {
+      "text": "Sarwa Digital Wealth Limited was regulated by the Dubai Financial Services Authority (“DFSA”) until 14 June 2024, in the Dubai International Financial Center (“DIFC”) and held a Category 4 license with a Retail Client Endorsement, providing arranging and Financial advisory services.",
+      "quote": "Sarwa Digital Wealth Limited was regulated by the Dubai Financial Services Authority (“DFSA”) until 14 June 2024, in the Dubai International Financial Center (“DIFC”) and held a Category 4 license with a Retail Client Endorsement, providing arranging and Financial advisory services.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [
+        "14 June 2024",
+        "Category 4"
+      ],
+      "origin": "S17",
+      "origin_url": "https://www.sarwa.co/en/disclaimer-notice",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C25"
+    },
+    {
+      "text": "Sarwa Digital Wealth (Capital) Limited’s registered address is 16-104 & 16-114, 16th Floor, Al Khatem Tower, Abu Dhabi Global Market, Al Maryah Island, Abu Dhabi, United Arab Emirates.",
+      "quote": "Sarwa Digital Wealth (Capital) Limited’s registered address is 16-104 & 16-114, 16th Floor, Al Khatem Tower, Abu Dhabi Global Market, Al Maryah Island, Abu Dhabi, United Arab Emirates.",
+      "category": "other",
+      "about": "company",
+      "numbers": [
+        "16-104 & 16-114",
+        "16th Floor"
+      ],
+      "origin": "S17",
+      "origin_url": "https://www.sarwa.co/en/disclaimer-notice",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C26"
+    },
+    {
+      "text": "Sarwa is an investing and money management platform on a mission to help everyone put their money to work.",
+      "quote": "Sarwa is an investing and money management platform on a mission to help everyone put their money to work.",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin": "S18",
+      "origin_url": "https://www.sarwa.co/blog/why-should-i-invest/",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C27"
+    },
+    {
+      "text": "The one-stop app offers hands-off auto-investing with Sarwa Invest, do-it-yourself trading of stocks, ETFs, and crypto with Sarwa Trade, as well as high-yield low risk estimated returns with Sarwa Save.",
+      "quote": "The one-stop app offers hands-off auto-investing with Sarwa Invest, do-it-yourself trading of stocks, ETFs, and crypto with Sarwa Trade, as well as high-yield low risk estimated returns with Sarwa Save.",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin": "S18",
+      "origin_url": "https://www.sarwa.co/blog/why-should-i-invest/",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C28"
+    },
+    {
+      "text": "Sarwa became the first homegrown UAE fintech to reach this milestone.",
+      "quote": "Sarwa, one of the GCC’s leading investment and personal finance platforms, has surpassed $1 billion in client assets under management (AUM), becoming the first homegrown UAE fintech to reach this milestone.",
+      "category": "award",
+      "about": "company",
+      "numbers": [],
+      "origin": "S22",
+      "origin_url": "https://www.adgm.com/media/announcements/uaes-sarwa-hits-$1-billion-in-assets-as-retail-investing-gains-scale",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C29"
+    },
+    {
+      "text": "Sarwa is a regulated entity within ADGM’s jurisdiction.",
+      "quote": "As a regulated entity within ADGM’s jurisdiction, Sarwa reflects the calibre of firms choosing Abu Dhabi as a base for regional and global expansion.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [],
+      "origin": "S22",
+      "origin_url": "https://www.adgm.com/media/announcements/uaes-sarwa-hits-$1-billion-in-assets-as-retail-investing-gains-scale",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C30"
+    },
+    {
+      "text": "The DFSA and the FSRA of ADGM have worked closely to make their investigations more efficient, including joint communications with Sarwa, joint interviews with Sarwa staff and others, common information requests, and the sharing of intelligence and findings.",
+      "quote": "The DFSA and the FSRA of ADGM have worked closely to make their investigations more efficient, including joint communications with Sarwa, joint interviews with Sarwa staff and others, common information requests, and the sharing of intelligence and findings.",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin": "S25",
+      "origin_url": "https://dfsaen.thomsonreuters.com/rulebook/21-may-2024-dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C31"
+    },
+    {
+      "text": "Ian Johnston, Chief Executive of the DFSA, said: “Protecting retail investors is a key priority for the DFSA and the requirement to issue a DFSA Approved Prospectus is there to do exactly that.",
+      "quote": "Ian Johnston, Chief Executive of the DFSA, said: “Protecting retail investors is a key priority for the DFSA and the requirement to issue a DFSA Approved Prospectus is there to do exactly that.",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin": "S25",
+      "origin_url": "https://dfsaen.thomsonreuters.com/rulebook/21-may-2024-dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C32"
+    },
+    {
+      "text": "The DFSA hereby gives notice that the Rules specified in Table 1 to this notice are waived in relation to Sarwa Digital Wealth Limited.",
+      "quote": "The DFSA HEREBY GIVES NOTICE THAT:\nThe Rules specified in Table 1 to this notice are waived in relation to Sarwa Digital Wealth Limited.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [],
+      "origin": "S29",
+      "origin_url": "https://dfsaen.thomsonreuters.com/rulebook/w5492017-sarwa-digital-wealth-limited",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C33"
+    },
+    {
+      "text": "DFSA Firm Reference No. is F004501.",
+      "quote": "DFSA Firm Reference No.\n|\nF004501",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [
+        "F004501"
+      ],
+      "origin": "S29",
+      "origin_url": "https://dfsaen.thomsonreuters.com/rulebook/w5492017-sarwa-digital-wealth-limited",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C34"
+    },
+    {
+      "text": "The Dubai Financial Services Authority has fined Sarwa Digital Wealth $191,100 for making a Public Offer of Shares without an Approved Prospectus while in a coordinated action The Financial Services Regulatory Authority (FSRA) of Abu Dhabi Global Market (ADGM) imposed a financial penalty of $122,500 on Sarwa Digital Wealth (Capital).",
+      "quote": "The Dubai Financial Services Authority has fined Sarwa Digital Wealth $191,100 for making a Public Offer of Shares without an Approved Prospectus while in a coordinated action The Financial Services Regulatory Authority (FSRA) of Abu Dhabi Global Market (ADGM) imposed a financial penalty of $122,500 on Sarwa Digital Wealth (Capital).",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [
+        "$191,100",
+        "$122,500"
+      ],
+      "origin": "S31",
+      "origin_url": "https://www.international-adviser.com/dfsa-and-adgm-take-dual-action-to-fine-dubai-abu-dhabi-based-sarwa-digital-wealth/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C35"
+    },
+    {
+      "text": "Sarwa Digital Wealth Limited is a DFSA regulated and Dubai International Financial Centre incorporated company (Sarwa DIFC) and Sarwa Digital Wealth (Capital) Limited (Sarwa), is an FSRA licensed firm in ADGM.",
+      "quote": "Sarwa Digital Wealth Limited is a DFSA regulated and Dubai International Financial Centre incorporated company (Sarwa DIFC) and Sarwa Digital Wealth (Capital) Limited (Sarwa), is an FSRA licensed firm in ADGM.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [],
+      "origin": "S31",
+      "origin_url": "https://www.international-adviser.com/dfsa-and-adgm-take-dual-action-to-fine-dubai-abu-dhabi-based-sarwa-digital-wealth/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C36"
+    },
+    {
+      "text": "The Financial Services Regulatory Authority (FSRA) of Abu Dhabi Global Market (ADGM) has levied a fine of $122,500 (Dhs449,881) on Sarwa Digital Wealth Capital (Sarwa).",
+      "quote": "The Financial Services Regulatory Authority (FSRA) of Abu Dhabi Global Market (ADGM) has levied a fine of $122,500 (Dhs449,881) on Sarwa Digital Wealth Capital (Sarwa).",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [
+        "$122,500",
+        "Dhs449,881"
+      ],
+      "origin": "S32",
+      "origin_url": "https://gulfbusiness.com/en/2024/industry/why-did-abu-dhabi-global-market-regulator-impose-a-122500-fine-on-sarwa/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C37"
+    },
+    {
+      "text": "The penalty arises from Sarwa’s contravention of FSRA regulations by offering securities without an approved prospectus.",
+      "quote": "The penalty arises from Sarwa’s contravention of FSRA regulations by offering securities without an approved prospectus.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [],
+      "origin": "S32",
+      "origin_url": "https://gulfbusiness.com/en/2024/industry/why-did-abu-dhabi-global-market-regulator-impose-a-122500-fine-on-sarwa/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C38"
+    },
+    {
+      "text": "The first email offering the sale of Sarwa Digital Wealth (BVI) Limited shares (parent company of Sarwa DIFC and Sarwa Digital Wealth (Capital) Limited based in ADGM (Sarwa ADGM)) was sent to almost 100,000 users.",
+      "quote": "The first email offering the sale of Sarwa Digital Wealth (BVI) Limited shares (parent company of Sarwa DIFC and Sarwa Digital Wealth (Capital) Limited based in ADGM (Sarwa ADGM)) was sent to almost 100,000 users.",
+      "category": "traction",
+      "about": "company",
+      "numbers": [
+        "almost 100,000"
+      ],
+      "origin": "S1",
+      "origin_url": "https://www.dfsa.ae/news/dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without-approved-prospectus",
+      "origin_tier": "primary",
+      "also_in": [
+        "https://dfsaen.thomsonreuters.com/rulebook/21-may-2024-dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without",
+        "https://www.international-adviser.com/dfsa-and-adgm-take-dual-action-to-fine-dubai-abu-dhabi-based-sarwa-digital-wealth/"
+      ],
+      "id": "C39"
+    },
+    {
+      "text": "USD 2 million in commitments was received into an escrow account from over 150 potential investors.",
+      "quote": "USD 2 million in commitments was received into an escrow account from over 150 potential investors.",
+      "category": "funding",
+      "about": "company",
+      "numbers": [
+        "USD 2 million",
+        "over 150"
+      ],
+      "origin": "S1",
+      "origin_url": "https://www.dfsa.ae/news/dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without-approved-prospectus",
+      "origin_tier": "primary",
+      "also_in": [
+        "https://dfsaen.thomsonreuters.com/rulebook/21-may-2024-dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without",
+        "https://www.international-adviser.com/dfsa-and-adgm-take-dual-action-to-fine-dubai-abu-dhabi-based-sarwa-digital-wealth/"
+      ],
+      "id": "C40"
+    },
+    {
+      "text": "Sarwa Digital Wealth (Capital) Limited is a Private Company Limited By Shares.",
+      "quote": "Legal Status\nPrivate Company Limited By Shares",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin": "S2",
+      "origin_url": "https://www.adgm.com/public-registers/fsra/firms/financial-firms/sarwa-digital-wealth-capital-limited-190037",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C41"
+    },
+    {
+      "text": "Sarwa Digital Wealth (Capital) Limited is Active.",
+      "quote": "Status\nActive",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [],
+      "origin": "S2",
+      "origin_url": "https://www.adgm.com/public-registers/fsra/firms/financial-firms/sarwa-digital-wealth-capital-limited-190037",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C42"
+    },
+    {
+      "text": "The FSRA has also imposed a Requirement on Sarwa to undertake an independent review of its governance arrangements.",
+      "quote": "The FSRA has also imposed a Requirement on Sarwa to undertake an independent review of its governance arrangements.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [],
+      "origin": "S3",
+      "origin_url": "https://www.adgm.com/media/announcements/adgms-financial-regulator-fines-sarwa-digital-wealth-capital-limited",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C43"
+    },
+    {
+      "text": "An FSRA Investigation found that Sarwa, in and around April and May 2023 offered an opportunity to invest in securities related to a number of shares of its parent entity to its network of clients and registered users of its application.",
+      "quote": "An FSRA Investigation found that Sarwa, in and around April and May 2023 offered an opportunity to invest in securities related to a number of shares of its parent entity to its network of clients and registered users of its application.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [
+        "April and May 2023"
+      ],
+      "origin": "S3",
+      "origin_url": "https://www.adgm.com/media/announcements/adgms-financial-regulator-fines-sarwa-digital-wealth-capital-limited",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C44"
+    },
+    {
+      "text": "Sarwa has confirmed that its only official careers site is https://careers.sarwa.co/.",
+      "quote": "Sarwa has confirmed that its only official careers site is https://careers.sarwa.co/.",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin": "S4",
+      "origin_url": "https://www.adgm.com/media/announcements/adgms-fsra-issues-notice-regarding-unauthorised-domains-misusing-sarwas-name",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C45"
+    },
+    {
+      "text": "The Domains appear to be impersonating Sarwa, including by falsely presenting themselves as part of an employment or recruitment process operated by Sarwa.",
+      "quote": "The Domains appear to be impersonating Sarwa, including by falsely presenting themselves as part of an employment or recruitment process operated by Sarwa.",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin": "S4",
+      "origin_url": "https://www.adgm.com/media/announcements/adgms-fsra-issues-notice-regarding-unauthorised-domains-misusing-sarwas-name",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C46"
+    },
+    {
+      "text": "Sarwa Digital Wealth Limited had Date of Withdrawal 14-Jun-2024.",
+      "quote": "Date of Withdrawal\n14-Jun-2024",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [
+        "14-Jun-2024"
+      ],
+      "origin": "S6",
+      "origin_url": "https://www.dfsa.ae/public-register/firms/sarwa-digital-wealth-limited",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C47"
+    },
+    {
+      "text": "Sarwa Digital Wealth Limited had Date of Licence 13-Dec-2017.",
+      "quote": "Date of Licence\n13-Dec-2017",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [
+        "13-Dec-2017"
+      ],
+      "origin": "S6",
+      "origin_url": "https://www.dfsa.ae/public-register/firms/sarwa-digital-wealth-limited",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C48"
+    },
+    {
+      "text": "Founders: Mark Chahwan, Jad Sayegh, Nadine Mezher",
+      "quote": "Founders: Mark Chahwan, Jad Sayegh, Nadine Mezher",
+      "category": "founding",
+      "about": "person",
+      "numbers": [],
+      "origin": "S8",
+      "origin_url": "https://www.forbesmiddleeast.com/lists/the-middle-easts-fintech-50-2025/sarwa/",
+      "origin_tier": "primary",
+      "also_in": [
+        "https://www.sarwa.co/blog/press-release-uae-based-fintech-startup-sarwa-raises-84m-series-a-funding-round-led-by-kipco/"
+      ],
+      "id": "C49"
+    },
+    {
+      "text": "Sarwa allows users to trade U.S. stocks, ETFs, cryptocurrencies, and options through Sarwa Trade.",
+      "quote": "Sarwa allows users to trade U.S. stocks, ETFs, cryptocurrencies, and options through Sarwa Trade.",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin": "S8",
+      "origin_url": "https://www.forbesmiddleeast.com/lists/the-middle-easts-fintech-50-2025/sarwa/",
+      "origin_tier": "primary",
+      "also_in": [],
+      "id": "C50"
+    },
+    {
+      "text": "Sarwa is a fully licensed and regulated online financial advisor and wealth manager.",
+      "quote": "We are a fully licensed and regulated online financial advisor and wealth manager.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [],
+      "origin": "S11",
+      "origin_url": "https://help.sarwa.co/hc/en-us/articles/4407336316305-Is-Sarwa-regulated",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C51"
+    },
+    {
+      "text": "Sarwa was the first firm within the Dubai International Financial Centre (DIFC) to be granted an Innovation Testing License.",
+      "quote": "Sarwa was the first firm within the Dubai International Financial Centre (DIFC) to be granted an Innovation Testing License and was part of the first cohort of DIFC FinTech Hive.",
+      "category": "regulatory",
+      "about": "company",
+      "numbers": [
+        "first"
+      ],
+      "origin": "S12",
+      "origin_url": "https://www.sarwa.co/blog/press-release-uae-based-fintech-startup-sarwa-raises-84m-series-a-funding-round-led-by-kipco/",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C52"
+    },
+    {
+      "text": "Sarwa was part of the first cohort of DIFC FinTech Hive.",
+      "quote": "Sarwa was the first firm within the Dubai International Financial Centre (DIFC) to be granted an Innovation Testing License and was part of the first cohort of DIFC FinTech Hive.",
+      "category": "other",
+      "about": "company",
+      "numbers": [
+        "first"
+      ],
+      "origin": "S12",
+      "origin_url": "https://www.sarwa.co/blog/press-release-uae-based-fintech-startup-sarwa-raises-84m-series-a-funding-round-led-by-kipco/",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C53"
+    },
+    {
+      "text": "Sarwa had over 40,000 registered users.",
+      "quote": "Today, with over 40,000 registered users, the support of the community, and an incredible team, Sarwa continues to push forward on its mission: smart investing made easy, accessible to all regardless of their background, age, or net worth.",
+      "category": "traction",
+      "about": "company",
+      "numbers": [
+        "over 40,000"
+      ],
+      "origin": "S13",
+      "origin_url": "https://www.sarwa.co/blog/sarwa-series-b-round/",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C54"
+    },
+    {
+      "text": "Sarwa launched three years ago.",
+      "quote": "Three years ago we launched Sarwa with a small team and a simple mission: to help people in the MENA region achieve financial independence by demystifying the tools the ultra-wealthy had at their disposal.",
+      "category": "founding",
+      "about": "company",
+      "numbers": [
+        "Three years ago"
+      ],
+      "origin": "S13",
+      "origin_url": "https://www.sarwa.co/blog/sarwa-series-b-round/",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C55"
+    },
+    {
+      "text": "Sarwa took 7 years to get to its first $500 million in client assets.",
+      "quote": "It took us 7 years to get to our first $500 million in client assets, and then 18 months to get to the next $500 million.",
+      "category": "traction",
+      "about": "company",
+      "numbers": [
+        "7 years",
+        "$500 million"
+      ],
+      "origin": "S14",
+      "origin_url": "https://www.sarwa.co/blog/one-billion/",
+      "origin_tier": "company",
+      "also_in": [],
+      "id": "C56"
+    }
+  ],
+  "findings": [],
+  "gaps": [],
+  "summary": "",
+  "lint": []
+}

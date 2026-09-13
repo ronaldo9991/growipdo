@@ -34,8 +34,15 @@ def parse_json(text: str):
     try:
         obj, _ = decoder.raw_decode(s[start:])
         return obj
-    except json.JSONDecodeError as e:
-        raise ModelError(f"bad JSON from model: {e}; reply began {s[:200]!r}") from e
+    except json.JSONDecodeError as first:
+        # One known model habit: bare identifiers inside arrays, e.g. [E1, E2] for excerpt ids.
+        repaired = re.sub(r'(?<=[\[,])\s*([A-Za-z]\d+)\s*(?=[,\]])', r'"\1"', s[start:])
+        try:
+            obj, _ = decoder.raw_decode(repaired)
+            return obj
+        except json.JSONDecodeError:
+            pass
+        raise ModelError(f"bad JSON from model: {first}; reply began {s[:200]!r}") from first
 
 
 def provider() -> str:

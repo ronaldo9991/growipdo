@@ -1,0 +1,8 @@
+url: https://www.globenewswire.com/news-release/2026/05/08/3291359/0/en/sarwa-reaches-1b-in-client-assets-a-first-for-a-homegrown-uae-fintech.html
+final_url: 
+fetched_at: 2026-09-13T14:11:54+00:00
+status: could_not_check
+http_status: None
+title: 
+error: request failed: The read operation timed out
+---

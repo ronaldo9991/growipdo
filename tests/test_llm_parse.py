@@ -17,3 +17,8 @@ def test_array():
 def test_no_json_raises():
     with pytest.raises(ModelError):
         parse_json("no json here")
+
+
+def test_bare_excerpt_ids_are_repaired():
+    out = parse_json('{"verdict":"supported","supporting_excerpts":[E1,E2, E3],"relayed_excerpts":[],"note":"x"}')
+    assert out["supporting_excerpts"] == ["E1", "E2", "E3"]
