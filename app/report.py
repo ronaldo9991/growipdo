@@ -119,6 +119,10 @@ def render(run_state: dict, identity: dict, sources: list[dict], findings: list[
             lines.append(f"  Pass 1 ({p1['model']}): {p1['verdict']}. Pass 2 ({p2['model']}): {p2['verdict']}.")
             if show_reason or f["label"] != "verified":
                 lines.append(f"  Why: {f['reason']}")
+            for p in (p1, p2):
+                if f["label"] == "verified" and p.get("discrepancy"):
+                    lines.append(f"  Note: {p['discrepancy']}")
+                    break
             lines.append("")
 
     block("Verified", verified, False)

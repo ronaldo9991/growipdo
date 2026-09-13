@@ -33,3 +33,10 @@ def test_selection_round_robins_across_sources(monkeypatch):
     out = dedupe_claims(claims, lambda *a, **k: None, cap=6)
     assert sum(1 for c in out if c["origin"] == "S2") == 2
     assert len(out) == 6
+
+
+def test_quote_must_be_in_page():
+    from app.claims import quote_in_page, _norm
+    page = _norm("The DFSA has fined Sarwa Digital Wealth Limited USD 191,100 for making a public offer.\nMore text here.")
+    assert quote_in_page("The DFSA has fined Sarwa Digital Wealth Limited USD 191,100", page)
+    assert not quote_in_page("Sarwa was included in the Forbes 2026 Fintech 50 list", page)

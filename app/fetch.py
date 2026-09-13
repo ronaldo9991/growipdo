@@ -14,7 +14,8 @@ from .util import now_iso, sha8, normalize_ws
 
 SKIP_TAGS = {"script", "style", "noscript", "svg", "template", "iframe"}
 BLOCK_TAGS = {"p", "div", "br", "li", "tr", "h1", "h2", "h3", "h4", "h5", "h6", "section", "article",
-              "header", "footer", "td", "th", "dd", "dt", "blockquote", "pre", "table"}
+              "header", "footer", "dd", "dt", "blockquote", "pre", "table"}
+CELL_TAGS = {"td", "th"}  # kept on one line with separators so a table row reads as a row
 
 
 class _Text(HTMLParser):
@@ -32,6 +33,8 @@ class _Text(HTMLParser):
             self._in_title = True
         if tag in BLOCK_TAGS:
             self.parts.append("\n")
+        if tag in CELL_TAGS:
+            self.parts.append(" | ")
 
     def handle_endtag(self, tag):
         if tag in SKIP_TAGS and self.skip:
@@ -105,9 +108,20 @@ def fetch(url: str, run_id: str, client: httpx.Client | None = None) -> FetchRes
                                     headers={"User-Agent": config.USER_AGENT,
                                              "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
                                              "Accept-Language": "en-US,en;q=0.9"})
-    try:
-        r = client.get(url)
-    except httpx.HTTPError as e:
+    r = None
+    err = None
+    for attempt in range(2):  # slow hosts get one more try; a refusal is never retried harder
+        try:
+            r = client.get(url)
+            break
+        except httpx.TimeoutException as e:
+            err = e
+            continue
+        except httpx.HTTPError as e:
+            err = e
+            break
+    if r is None:
+        e = err
         res = FetchResult(url=url, status="could_not_check", error=f"request failed: {e}")
         res.snapshot = _snapshot(run_id, res)
         if own:

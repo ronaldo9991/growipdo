@@ -12,7 +12,8 @@ Rules:
 - Quote the sentence the claim comes from, verbatim, in "quote".
 - Only claims about the subject person or the subject company. Ignore claims about other companies, generic market statistics, and page boilerplate.
 - Prefer claims that a reviewer would want checked: regulatory status, licences, fines, funding amounts, investors, client or user counts, assets, revenue or profit, awards and list rankings, "first" or "largest" claims, founding date, founders and roles.
-- Do not invent. If the page has nothing relevant, return an empty list.
+- Do not invent. If the page has nothing relevant, return an empty list. The subject must actually be named in the quoted sentence or its immediate context; a page about a list or topic that never mentions the subject yields no claims.
+- Order the claims by importance, most important first.
 Return JSON: {"claims": [{"text": string, "quote": string, "category": one of regulatory|funding|traction|award|role|founding|other, "about": "person"|"company", "numbers": [strings as written]}]}"""
 
 
@@ -36,8 +37,15 @@ def extract_claims(identity: dict, sources: list[dict], llm, log,
             raise
         items = out.get("claims") if isinstance(out, dict) else out
         n = 0
+        dropped = 0
+        page_norm = _norm(text)
         for item in items or []:
             if not isinstance(item, dict) or not item.get("text"):
+                continue
+            if not quote_in_page(item.get("quote") or "", page_norm):
+                dropped += 1
+                log("claims", f"dropped a claim from {src['id']}: its quote is not in the page",
+                    claim=item["text"][:120], quote=(item.get("quote") or "")[:120])
                 continue
             claims.append(
                 {
@@ -54,8 +62,33 @@ def extract_claims(identity: dict, sources: list[dict], llm, log,
             n += 1
             if n >= per_source:
                 break
-        log("claims", f"{n} claims from {src['id']} ({src['tier']})")
+        log("claims", f"{n} claims from {src['id']} ({src['tier']})" + (f", {dropped} dropped" if dropped else ""))
     return claims
+
+
+def _norm(t: str) -> str:
+    return " ".join(tokenize(t))
+
+
+def quote_in_page(quote: str, page_norm: str) -> bool:
+    """The quote must appear in the page: exact after normalisation, or at least 80 percent of its
+    word tokens in order-free overlap with some window when the parser split it across lines."""
+    q = _norm(quote)
+    if not q:
+        return False
+    if q in page_norm:
+        return True
+    q_tokens = q.split()
+    if len(q_tokens) < 4:
+        return False
+    words = page_norm.split()
+    window = len(q_tokens) + 6
+    needed = int(len(q_tokens) * 0.8 + 0.999)
+    qset = set(q_tokens)
+    for i in range(0, max(1, len(words) - window + 1), 3):
+        if len(qset & set(words[i:i + window])) >= needed:
+            return True
+    return False
 
 
 def _similar(a: dict, b: dict) -> bool:
@@ -82,17 +115,14 @@ def dedupe_claims(claims: list[dict], log, cap: int = config.MAX_CLAIMS_TOTAL) -
         else:
             c.setdefault("also_in", [])
             merged.append(c)
-    # Spread the budget across sources: within a source, regulatory and numeric claims first; across
-    # sources, round robin ordered by tier, at most MAX_CLAIMS_PER_SOURCE_SELECTED per source per lap.
+    # Spread the budget across sources: round robin ordered by tier, at most
+    # MAX_CLAIMS_PER_SOURCE_SELECTED per source per lap.
     # Otherwise a regulator's register page fills the cap with licence boilerplate before the
     # Forbes list or the funding release get a turn.
-    def prio(c):
-        return (0 if c["category"] == "regulatory" else 1, 0 if c["numbers"] else 1)
+    # Within a source the model's own order is kept: it was told to put the most important first.
     by_source: dict[str, list[dict]] = {}
     for c in merged:
         by_source.setdefault(c["origin"], []).append(c)
-    for lst in by_source.values():
-        lst.sort(key=prio)
     source_order = sorted(by_source, key=lambda sid: (order.get(by_source[sid][0]["origin_tier"], 3), sid))
     per_lap = config.MAX_CLAIMS_PER_SOURCE_SELECTED
     selected: list[dict] = []
@@ -108,5 +138,5 @@ def dedupe_claims(claims: list[dict], log, cap: int = config.MAX_CLAIMS_TOTAL) -
     merged = selected
     for i, c in enumerate(merged, start=1):
         c["id"] = f"C{i}"
-    log("claims", f"{len(claims)} raw claims, {len(selected) if False else len(merged)} selected after dedupe (cap {cap})")
+    log("claims", f"{len(claims)} raw claims, {len(merged)} selected after dedupe (cap {cap})")
     return merged

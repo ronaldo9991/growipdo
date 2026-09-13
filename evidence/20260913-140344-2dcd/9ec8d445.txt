@@ -1,0 +1,8 @@
+url: https://www.prnewswire.com/news-releases/pan-finance-magazine-announces-their-2021-q3-award-winners-301371182.html
+final_url: 
+fetched_at: 2026-09-13T14:04:18+00:00
+status: could_not_check
+http_status: None
+title: 
+error: request failed: [Errno 54] Connection reset by peer
+---

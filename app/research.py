@@ -89,10 +89,22 @@ def research(identity: dict, run_id: str, search, log, max_sources: int = config
 
     # Rank: primary first, then company, then by how many queries hit it.
     order = {"primary": 0, "company": 1, "secondary": 2}
-    ranked = sorted(
+    ranked_all = sorted(
         candidates.values(),
         key=lambda c: (order[classify_source(c["url"], company_domains)], -len(c["queries"])),
-    )[:max_sources]
+    )
+    # The company's own pages are capped so press and interviews get slots too; a founder's public
+    # presence is what the press repeats, and press-only numbers are what the refused list is for.
+    ranked, company_n = [], 0
+    for c in ranked_all:
+        tier = classify_source(c["url"], company_domains)
+        if tier == "company":
+            if company_n >= config.MAX_COMPANY_SOURCES:
+                continue
+            company_n += 1
+        ranked.append(c)
+        if len(ranked) >= max_sources:
+            break
     log("research", f"fetching {len(ranked)} of {len(candidates)} candidate urls",
         fetched=[c["url"] for c in ranked], skipped=[c["url"] for c in candidates.values() if c not in ranked])
 

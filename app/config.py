@@ -42,11 +42,12 @@ PRIMARY_HOSTS = (
 # Wire services that carry company issued releases. Treated as the company's own word.
 WIRE_HOSTS = ("globenewswire.com", "prnewswire.com", "businesswire.com", "newswire.ca", "zawya.com/en/press-release")
 
-FETCH_TIMEOUT = 25.0
-MAX_SOURCES = 30
+FETCH_TIMEOUT = 40.0
+MAX_SOURCES = 32
+MAX_COMPANY_SOURCES = 10
 MAX_CLAIMS_PER_SOURCE = 10
-MAX_CLAIMS_TOTAL = 48
-MAX_CLAIMS_PER_SOURCE_SELECTED = 5
+MAX_CLAIMS_TOTAL = 56
+MAX_CLAIMS_PER_SOURCE_SELECTED = 2
 
 
 def get(name: str, default: str | None = None) -> str | None:

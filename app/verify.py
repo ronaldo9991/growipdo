@@ -96,7 +96,7 @@ VERIFY_SYSTEM = """You are a fact checker. You are given one claim and a set of 
   secondary = press coverage, blogs, aggregators
 Judge the claim strictly against the excerpts. Do not use outside knowledge.
 Verdict values:
-  supported: an excerpt states the same fact with the same numbers, names and dates
+  supported: an excerpt states the same fact with the same numbers, names and dates. If a different source gives a different figure for what may be the same event, the verdict is still supported when one excerpt matches exactly; put the other figure and its source in "discrepancy" so the reader sees both.
   partially_supported: an excerpt supports part of it, or the numbers or wording differ (say exactly how)
   contradicted: an excerpt states something incompatible
   not_found: the excerpts do not address it

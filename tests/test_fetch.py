@@ -17,3 +17,8 @@ def test_linkedin_blocked(tmp_path, monkeypatch):
     res = fetch("https://www.linkedin.com/in/markchahwan", "testrun")
     assert res.status == "blocked"
     assert (tmp_path / "testrun").exists()
+
+
+def test_table_rows_keep_cells_together():
+    text, _ = html_to_text("<table><tr><th>Type</th><th>Date</th></tr><tr><td>Advising on Investments or Credit</td><td>16 Aug 2020</td></tr></table>")
+    assert "Advising on Investments or Credit | 16 Aug 2020" in text
