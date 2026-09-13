@@ -53,3 +53,69 @@ def test_channel():
     assert radar.channel_of("https://gulfbusiness.com/x", "web") == "news"
     assert radar.channel_of("https://example.com/x", "news") == "news"
     assert radar.channel_of("https://example.com/x", "web") == "web"
+
+
+def test_second_opinion_when_title_lacks_subject():
+    c = _p("yes", "ignore", "positive", 0.9)
+    assert not radar.needs_second_opinion(c, {"subject": "Nidhi Hooda", "title": "Nidhi Hooda's Post"})
+    assert radar.needs_second_opinion(c, {"subject": "Nidhi Hooda", "title": "Nidhi Vohra appointed CBO"})
+
+
+class FakeLLM:
+    model = "fake"
+    def __init__(self, reply="Thank you for raising this. We will look into it and follow up."):
+        self.reply = reply
+        self.calls = 0
+    def text(self, system, user, max_tokens=0, temperature=0.0):
+        self.calls += 1
+        return self.reply
+
+
+def _radar_run(tmp_path, monkeypatch):
+    from app import config
+    from app.ledger import Run
+    monkeypatch.setattr(config, "RUNS_DIR", tmp_path)
+    run = Run.create("Nidhi Hooda", kind="radar")
+    run.state["models"] = {"primary": "a", "second_opinion": "b"}
+    run.ledger["profile"] = {"profile": "Founder of Growpido", "disambiguators": []}
+    run.ledger["mentions"] = [{"id": "M1", "subject": "Nidhi Hooda", "title": "Complaint about Growpido", "snippet": "Not happy",
+                               "url": "https://x", "channel": "web", "final": {"about_subject": "yes", "risk": "respond_now", "sentiment": "negative", "ambiguous": False, "why": "both agree"},
+                               "pass1": {"reason": "complaint", "model": "a"}, "pass2": None}]
+    run.ledger["responses"] = {}
+    run.state["status"] = "draft"
+    run.save()
+    return run
+
+
+def test_no_draft_exists_until_a_human_approves_drafting(tmp_path, monkeypatch):
+    run = _radar_run(tmp_path, monkeypatch)
+    llm = FakeLLM()
+    assert run.ledger["responses"] == {} and llm.calls == 0
+    import pytest
+    with pytest.raises(RuntimeError):
+        radar.request_response(run, "M1", "", "", llm=llm)  # no name, no draft
+    assert llm.calls == 0
+    radar.request_response(run, "M1", "Ronaldo", "keep it short and factual", llm=llm)
+    r = run.ledger["responses"]["M1"]
+    assert llm.calls == 1 and r["status"] == "draft" and r["requested_by"] == "Ronaldo"
+
+
+def test_draft_needs_second_approval_and_is_never_sent(tmp_path, monkeypatch):
+    run = _radar_run(tmp_path, monkeypatch)
+    radar.request_response(run, "M1", "Ronaldo", "keep it short", llm=FakeLLM())
+    import pytest
+    with pytest.raises(RuntimeError):
+        radar.approve_response(run, "M2", "Ronaldo", "")  # nothing waiting on M2
+    radar.approve_response(run, "M1", "Ronaldo", "edited the tone", edited="Thanks for flagging this, we are looking into it.")
+    r = run.ledger["responses"]["M1"]
+    assert r["status"] == "approved" and r["edited"] and r["approved_by"] == "Ronaldo"
+    assert "sent" not in r  # the system records readiness, it never posts
+
+
+def test_resolve_ambiguous_records_the_human(tmp_path, monkeypatch):
+    run = _radar_run(tmp_path, monkeypatch)
+    run.ledger["mentions"][0]["final"] = {"about_subject": "unsure", "risk": "watch", "sentiment": "neutral", "ambiguous": True, "why": "split"}
+    run.save()
+    radar.resolve_ambiguous(run, "M1", "Ronaldo", "no", "watch", "different person, a physician")
+    f = run.ledger["mentions"][0]["final"]
+    assert f["about_subject"] == "no" and f["risk"] == "ignore" and not f["ambiguous"] and f["decided_by"] == "Ronaldo"

@@ -207,8 +207,15 @@ def classify_one(m: dict, profile: dict, llm: LLM) -> dict:
             "reason": str(out.get("reason") or ""), "quote": str(out.get("quote") or ""), "model": llm.model}
 
 
-def needs_second_opinion(c: dict) -> bool:
-    return c["about_subject"] != "yes" or c["risk"] != "ignore" or c["sentiment"] in ("negative", "mixed") or c["confidence"] < 0.75
+def needs_second_opinion(c: dict, m: dict | None = None) -> bool:
+    """Anything that is not a confident, positive-or-neutral ignore gets a second reading. So does any
+    mention whose title does not even name the subject: a namesake slipped through as a confident ignore
+    in the first live run, and a cheap second reading is the right price for catching that."""
+    if c["about_subject"] != "yes" or c["risk"] != "ignore" or c["sentiment"] in ("negative", "mixed") or c["confidence"] < 0.75:
+        return True
+    if m is not None and not mentions_subject(m["subject"], m.get("title") or ""):
+        return True
+    return False
 
 
 def decide(p1: dict, p2: dict | None) -> dict:
@@ -237,7 +244,7 @@ def decide(p1: dict, p2: dict | None) -> dict:
 def classify_all(mentions: list[dict], profile: dict, llm1: LLM, llm2: LLM, log) -> None:
     for m in mentions:
         p1 = classify_one(m, profile, llm1)
-        p2 = classify_one(m, profile, llm2) if needs_second_opinion(p1) else None
+        p2 = classify_one(m, profile, llm2) if needs_second_opinion(p1, m) else None
         m["pass1"], m["pass2"] = p1, p2
         m["final"] = decide(p1, p2)
         log("classify", f"{m['id']} {m['final']['risk']}{' AMBIGUOUS' if m['final']['ambiguous'] else ''}: {m['title'][:70]}",
