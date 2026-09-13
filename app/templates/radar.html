@@ -1,0 +1,29 @@
+<section class="hero fade">
+  <div>
+    <div class="kicker">Track A, reputation radar</div>
+    <h1>Every public mention, triaged twice, escalated when unsure, briefed once a week.</h1>
+    <p class="lede">Subjects are profiled from public snippets so the classifier can tell them from namesakes. LinkedIn mentions are counted from search snippets and never fetched. Nothing is drafted or posted without a named person approving first.</p>
+  </div>
+  <div class="card">
+    <h2>Run this week's radar</h2>
+    <form id="radarForm">
+      <label class="lbl">Subjects, comma separated</label>
+      <div class="field">
+        <input id="subjects" name="subjects" type="text" value="Nidhi Hooda, Growpido" autocomplete="off" required>
+        <button class="btn primary" type="submit" id="radarBtn">Run radar</button>
+      </div>
+      <div class="err" id="radarErr"></div>
+      <p class="hint">Public web and news only. Nobody is contacted.</p>
+    </form>
+  </div>
+</section>
+<section class="rules">
+  <div class="rule"><b>Two readings per mention</b><span>A second model re-reads anything that is not a confident ignore.</span></div>
+  <div class="rule"><b>Respond now needs agreement</b><span>If the two disagree, the item is held at watch and flagged ambiguous.</span></div>
+  <div class="rule"><b>Namesakes set aside</b><span>Not about the subject, both agree: it is listed, not counted.</span></div>
+  <div class="rule"><b>Two gates before a reply</b><span>A human approves drafting, then approves the draft. The system never posts.</span></div>
+</section>
+<section style="margin-top:34px">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><h2>Weekly briefs</h2><span class="hint" id="runCount"></span></div>
+  <div class="runs" id="runs" data-kind="radar"><div class="empty"><span class="spin"></span>Loading</div></div>
+</section>

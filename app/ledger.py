@@ -31,10 +31,6 @@ class Run:
     @classmethod
     def create(cls, input_url: str) -> "Run":
         run_id = new_run_id()
-        folder = config.RUNS_DIR / run_id
-        folder.mkdir(parents=True, exist_ok=True)
-        run = cls(run_id, folder)
-        run.state["input_url"] = input_url
         run.save()
         run.log("run", "created", url=input_url)
         return run
@@ -95,3 +91,7 @@ class Run:
     @property
     def diagnostic_path(self) -> Path:
         return self.folder / "diagnostic.md"
+
+    @property
+    def brief_path(self) -> Path:
+        return self.folder / "brief.md"

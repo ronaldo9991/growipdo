@@ -1,0 +1,21 @@
+<div id="app" data-run="{{run_id}}" data-kind="radar">
+  <div class="head fade">
+    <div>
+      <div style="font:600 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)">Weekly brief, run {{run_id}}</div>
+      <h1 id="subject">Brief</h1>
+      <div class="meta" id="meta"></div>
+    </div>
+    <div class="actions">
+      <span class="chip plain" id="statusChip"></span>
+      <a class="btn" href="/radar/runs/{{run_id}}">Run detail</a>
+      <a class="btn" href="/radar/runs/{{run_id}}/brief.md">brief.md</a>
+    </div>
+  </div>
+  <div class="cols">
+    <div class="card"><div class="doc" id="doc"><span class="spin"></span>Loading</div></div>
+    <div class="stack">
+      <div class="card gate" id="gate"></div>
+      <div class="card" id="warnCard" hidden><h2>House rules warnings</h2><ul class="warnlist" id="warns"></ul></div>
+    </div>
+  </div>
+</div>

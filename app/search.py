@@ -31,15 +31,18 @@ def provider() -> str:
     return (config.get("SEARCH_PROVIDER") or "tavily").strip().lower()
 
 
-def _clean(results: list[dict], query: str) -> list[dict]:
+def _clean(results: list[dict], query: str, keep_blocked: bool = False) -> list[dict]:
+    """keep_blocked=True keeps LinkedIn results as search snippets only. They are never fetched;
+    fetch() refuses the host regardless. Track A uses this to count public LinkedIn mentions."""
     out, seen = [], set()
     for r in results:
         url = (r.get("url") or "").split("#")[0]
-        if not url or url in seen or is_blocked(url):
+        if not url or url in seen or (is_blocked(url) and not keep_blocked):
             continue
         seen.add(url)
         out.append({"url": url, "title": (r.get("title") or "").strip(), "snippet": (r.get("snippet") or "").strip(),
-                    "score": r.get("score"), "query": query})
+                    "score": r.get("score"), "query": query, "date": r.get("date") or "", "source": r.get("source") or "",
+                    "blocked": is_blocked(url)})
     return out
 
 
@@ -75,13 +78,24 @@ def brave(query: str, max_results: int) -> list[dict]:
     return [{"url": i.get("url"), "title": i.get("title"), "snippet": i.get("description"), "score": None} for i in items]
 
 
-def serper(query: str, max_results: int) -> list[dict]:
-    r = _post("https://google.serper.dev/search", json={"q": query, "num": max_results},
+def serper(query: str, max_results: int, news: bool = False) -> list[dict]:
+    endpoint = "https://google.serper.dev/news" if news else "https://google.serper.dev/search"
+    r = _post(endpoint, json={"q": query, "num": max_results},
               headers={"X-API-KEY": config.require("SERPER_API_KEY"), "Content-Type": "application/json"})
     if r.status_code != 200:
         raise SearchError(f"serper returned {r.status_code} for {query!r}: {r.text[:300]}")
-    items = r.json().get("organic") or []
-    return [{"url": i.get("link"), "title": i.get("title"), "snippet": i.get("snippet"), "score": None} for i in items]
+    items = (r.json().get("news") if news else r.json().get("organic")) or []
+    return [{"url": i.get("link"), "title": i.get("title"), "snippet": i.get("snippet"), "score": None,
+             "date": i.get("date") or "", "source": i.get("source") or ""} for i in items]
+
+
+def tavily_news(query: str, max_results: int) -> list[dict]:
+    r = _post("https://api.tavily.com/search", json={"api_key": config.require("TAVILY_API_KEY"), "query": query,
+                                                     "max_results": max_results, "topic": "news", "days": 30})
+    if r.status_code != 200:
+        raise SearchError(f"tavily returned {r.status_code} for {query!r}: {r.text[:300]}")
+    return [{"url": i.get("url"), "title": i.get("title"), "snippet": i.get("content"), "score": i.get("score"),
+             "date": i.get("published_date") or ""} for i in r.json().get("results", [])]
 
 
 _DDG_LINK = re.compile(r'<a[^>]+class="result__a"[^>]+href="([^"]+)"[^>]*>(.*?)</a>', re.DOTALL)
@@ -123,11 +137,23 @@ def duckduckgo(query: str, max_results: int) -> list[dict]:
 PROVIDERS = {"tavily": tavily, "brave": brave, "serper": serper, "duckduckgo": duckduckgo}
 
 
-def search(query: str, max_results: int = 8) -> list[dict]:
+def search(query: str, max_results: int = 8, keep_blocked: bool = False) -> list[dict]:
     name = provider()
     if name not in PROVIDERS:
         raise SearchError(f"unknown SEARCH_PROVIDER {name!r}; use one of {', '.join(PROVIDERS)}")
-    return _clean(PROVIDERS[name](query, max_results), query)
+    return _clean(PROVIDERS[name](query, max_results), query, keep_blocked=keep_blocked)
+
+
+def search_news(query: str, max_results: int = 8, keep_blocked: bool = False) -> list[dict]:
+    """News results where the provider has a news mode; otherwise a web search with 'news' appended."""
+    name = provider()
+    if name == "serper":
+        raw = serper(query, max_results, news=True)
+    elif name == "tavily":
+        raw = tavily_news(query, max_results)
+    else:
+        raw = PROVIDERS[name](query + " news", max_results)
+    return _clean(raw, query, keep_blocked=keep_blocked)
 
 
 # Backwards compatible name used by the pipeline.
