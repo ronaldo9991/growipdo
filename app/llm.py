@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 
 import httpx
 
@@ -100,12 +101,26 @@ class LLM:
             "max_tokens": max_tokens,
             "temperature": temperature,
         }
-        try:
-            r = httpx.post(self.base_url + "/chat/completions", json=payload, timeout=180,
-                           headers={"Authorization": "Bearer " + self.api_key, "Content-Type": "application/json"})
-        except httpx.HTTPError as e:
-            raise ModelError(f"{self.model}: request failed: {e}") from e
-        if r.status_code != 200:
+        # Free tiers rate limit hard. Back off on 429 and 5xx, up to five times, then give up loudly.
+        delay = 4.0
+        for attempt in range(6):
+            try:
+                r = httpx.post(self.base_url + "/chat/completions", json=payload, timeout=180,
+                               headers={"Authorization": "Bearer " + self.api_key, "Content-Type": "application/json"})
+            except httpx.HTTPError as e:
+                raise ModelError(f"{self.model}: request failed: {e}") from e
+            if r.status_code == 200:
+                break
+            if r.status_code in (429, 500, 502, 503, 529) and attempt < 5:
+                wait = delay
+                ra = r.headers.get("retry-after")
+                if ra and ra.replace(".", "").isdigit():
+                    wait = max(wait, float(ra))
+                if self.log:
+                    self.log("llm", f"{self.model}: HTTP {r.status_code}, waiting {wait:.0f}s then retrying", attempt=attempt + 1)
+                time.sleep(wait)
+                delay = min(delay * 2, 60)
+                continue
             raise ModelError(f"{self.model}: HTTP {r.status_code}: {r.text[:400]}")
         data = r.json()
         try:
