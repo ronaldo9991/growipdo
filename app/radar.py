@@ -300,7 +300,8 @@ def write_brief(run: Run, subjects: list[str], profile: dict, mentions: list[dic
                       f"({m['channel']}, {m['date'] or 'undated'}): {m['pass1']['reason'][:200]}" for m in respond + ambiguous + watch)
     user = (f"Subjects: {', '.join(subjects)}\nWeek: {start} to {end}\nCounts: {c}\n\nItems needing attention:\n{items or '(none)'}\n\n"
             f"Write the three bullets.")
-    allowed = [str(v) for v in c.values()] + [m["title"] + " " + m["snippet"] + " " + (m.get("pass1", {}).get("reason") or "") for m in mentions]
+    allowed = [str(v) for v in c.values()]
+    allowed += [start, end] + [m["title"] + " " + m["snippet"] + " " + (m.get("date") or "") + " " + (m.get("pass1", {}).get("reason") or "") for m in mentions]
     opening = llm.text(BRIEF_SYSTEM, user, max_tokens=400).strip()
     problems = [str(i) for i in lint.lint_text(opening)] + [f"number {n!r} not in the items" for n in lint.untraced_numbers(opening, allowed)]
     if problems:

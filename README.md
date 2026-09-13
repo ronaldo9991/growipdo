@@ -1,26 +1,53 @@
-# prospect-diagnostic
+# Growpido task: both tracks
 
-From a LinkedIn URL, research a UAE founder on the public web, check every factual claim twice against a
-primary source, label each finding verified, partially verified or refused, name the three biggest gaps in
-how they show up publicly, and produce a one page diagnostic that a named human must approve before it
-leaves the building.
+One plain Python app, two tracks, one rule: nothing reaches a client without a source and a signature.
+The home page routes to either track and a toggle in the header switches between them.
 
-Built for Growpido's AI and Automation Engineer task, Track B.
+**Track A, Reputation Radar** (`/radar`): finds public mentions of Nidhi Hooda and Growpido across LinkedIn
+search snippets, news and the open web, classifies each by sentiment and risk (ignore, watch, respond now)
+with two models, holds anything ambiguous for a human, writes a weekly brief readable in three minutes, and
+never drafts a response until a named person approves drafting one, then approves the draft.
 
-## What it does not do
+**Track B, Prospect to Diagnostic** (`/diagnostic`): from a LinkedIn URL, research a UAE founder on the
+public web, check every factual claim twice against a primary source, label each finding verified,
+partially verified or refused, name the three biggest gaps in how they show up publicly, and produce a one
+page diagnostic that a named human must approve before it leaves the building.
 
-- It never fetches LinkedIn. The URL is only parsed for the profile slug; the slug is resolved on the open web.
-  LinkedIn hosts are on a never-fetch list and LinkedIn search results are dropped before anyone reads them.
-- It never logs in anywhere and never contacts anyone.
-- It never weakens a verdict to make the page look better. A claim only the company states comes out
-  partially verified at best. A claim only the press repeats is refused.
+Built for Growpido's AI and Automation Engineer task.
 
-## How a run works
+## Track A: how a radar run works
+
+1. profile: the subjects are profiled from public search snippets, with disambiguators (company, city,
+   role) so the classifier can tell them from namesakes.
+2. collect: web and news searches per subject. LinkedIn results are kept as search engine snippets and are
+   never fetched; nothing behind a login is read. Other pages are fetched and archived under `evidence/`.
+   A result that does not even name the subject is dropped before classification.
+3. classify: MODEL_PRIMARY reads every mention (is it about the subject, sentiment, risk, confidence, the
+   sentence that drove it). MODEL_SECOND_OPINION re-reads anything that is not a confident, non negative
+   ignore, and any mention whose title does not name the subject. Fixed rules in `app/radar.py` decide:
+   respond now needs both to agree; any disagreement or any doubt about identity is marked ambiguous and
+   held at watch for a human.
+4. brief: `brief.md` with a three bullet opening (linted, numbers traced to the items), the week in numbers,
+   respond now, ambiguous held for a human with both readings, watch, nothing needed, namesakes set aside.
+5. human gate: a named person approves the brief. Ambiguous items are decided on the run page with a name.
+   For a respond now item, gate 1 approves drafting (only then does the model write), gate 2 approves or
+   edits the draft. Approved means ready for a person to post; the system never posts anything.
+
+## What neither track does
+
+- Neither fetches LinkedIn. Track B parses the URL for the slug and resolves it on the open web; Track A keeps
+  LinkedIn results as search engine snippets. LinkedIn hosts are on a never-fetch list in `app/fetch.py`.
+- Neither logs in anywhere or contacts anyone.
+- Neither weakens a verdict to make the page look better. A claim only the company states comes out
+  partially verified at best. A claim only the press repeats is refused. A mention the two models disagree on
+  is held for a human, not guessed.
+
+## Track B: how a run works
 
 1. identify: derive name guesses from the slug, search the public web, ask the model who this is.
    Confidence under 0.6 stops the run for a human.
 2. research: run a fixed query plan (regulators, official lists, company releases, funding, traction, interviews),
-   fetch up to 24 pages with httpx, save every page as text under `evidence/<run_id>/`. Pages that return
+   fetch up to 36 pages with httpx, save every page as text under `evidence/<run_id>/`. Pages that return
    403, PDFs, and JavaScript only pages are recorded as "could not check", not spoofed harder.
    Each source is tiered: primary (regulator, official register, publisher of an official list), company
    (its own site or a wire release it issued), secondary (press).
@@ -72,6 +99,11 @@ that endpoint; the stronger one goes second.
 
 ## Run
 
+Track A: open http://127.0.0.1:8000/radar, subjects default to "Nidhi Hooda, Growpido", or
+`curl -X POST /radar/run -d 'subjects=Nidhi Hooda, Growpido'`. Output at `runs/radar/<id>/brief.md`.
+
+Track B:
+
 ```
 python cli.py run https://www.linkedin.com/in/<slug>
 python cli.py log <run_id>
@@ -101,12 +133,14 @@ app/verify.py    lexical retrieval, two passes, verdict rules
 app/gaps.py      three gaps
 app/report.py    summary, number tracing, markdown
 app/lint.py      house rules
-app/pipeline.py  orchestration, approve, reject
+app/pipeline.py  Track B orchestration, approve, reject
+app/radar.py     Track A: profile, collect, classify, decide, brief, gates
 app/main.py      FastAPI routes and JSON endpoints
 app/templates/   page shells
 app/static/      stylesheet and front end script
 cli.py           command line
-runs/<id>/       run.json, ledger.json, log.jsonl, diagnostic.md
+runs/<id>/       Track B: run.json, ledger.json, log.jsonl, diagnostic.md
+runs/radar/<id>/ Track A: run.json, ledger.json, log.jsonl, brief.md
 evidence/<id>/   one text snapshot per fetched url
 ```
 
