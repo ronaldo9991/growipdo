@@ -28,16 +28,26 @@ class Run:
         }
         self.ledger: dict = {"sources": [], "claims": [], "findings": [], "gaps": [], "summary": "", "lint": []}
 
+    @staticmethod
+    def base(kind: str = "diagnostic") -> Path:
+        """Track B runs live directly under runs/; Track A (radar) runs under runs/radar/."""
+        return config.RUNS_DIR / "radar" if kind == "radar" else config.RUNS_DIR
+
     @classmethod
-    def create(cls, input_url: str) -> "Run":
+    def create(cls, input_url: str, kind: str = "diagnostic") -> "Run":
         run_id = new_run_id()
+        folder = cls.base(kind) / run_id
+        folder.mkdir(parents=True, exist_ok=True)
+        run = cls(run_id, folder)
+        run.state["input_url"] = input_url
+        run.state["kind"] = kind
         run.save()
         run.log("run", "created", url=input_url)
         return run
 
     @classmethod
-    def load(cls, run_id: str) -> "Run":
-        folder = config.RUNS_DIR / run_id
+    def load(cls, run_id: str, kind: str = "diagnostic") -> "Run":
+        folder = cls.base(kind) / run_id
         if not (folder / "run.json").exists():
             raise FileNotFoundError(f"no run {run_id}")
         run = cls(run_id, folder)
@@ -48,10 +58,11 @@ class Run:
         return run
 
     @staticmethod
-    def list_ids() -> list[str]:
-        if not config.RUNS_DIR.exists():
+    def list_ids(kind: str = "diagnostic") -> list[str]:
+        base = Run.base(kind)
+        if not base.exists():
             return []
-        return sorted([p.name for p in config.RUNS_DIR.iterdir() if (p / "run.json").exists()], reverse=True)
+        return sorted([p.name for p in base.iterdir() if (p / "run.json").exists()], reverse=True)
 
     def save(self) -> None:
         self.state["updated_at"] = now_iso()
