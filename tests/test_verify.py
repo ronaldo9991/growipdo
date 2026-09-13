@@ -72,3 +72,10 @@ def test_not_found_is_refused():
 def test_partial_with_primary():
     label, _ = combine(CLAIM, _pass("partially_supported", "primary", "rank 12 on a 50 list"), _pass("supported", "primary"))
     assert label == "partially_verified"
+
+
+def test_relayed_primary_counts_as_company():
+    p1 = {"verdict": "supported", "cited": [{"source": "S", "url": "https://www.adgm.com/media/announcements/x", "tier": "company", "relayed": True, "text": "t"}], "discrepancy": None, "note": "n"}
+    p2 = _pass("supported", "company")
+    label, reason = combine(CLAIM, p1, p2)
+    assert label == "partially_verified" and "repeats the company's announcement" in reason

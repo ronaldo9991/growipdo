@@ -88,7 +88,8 @@ Verdict values:
   contradicted: an excerpt states something incompatible
   not_found: the excerpts do not address it
 Numbers must match exactly. "Over 150" is not "144". "Fintech 50, rank 12" is not "Top 20".
-Return JSON: {"verdict": ..., "supporting_excerpts": [excerpt ids that support or contradict], "discrepancy": string or null, "note": one sentence}"""
+Attribution matters: if an excerpt only relays what the company or the person announced or said ("Sarwa announced", "the company says", a quote from a founder, a congratulation on a milestone the company reported), it is the company's word even when it sits on a regulator's or publisher's page. List those excerpt ids in "relayed_excerpts". A regulator's own register entry, fine, notice or decision, or a publisher's own list ranking, is the source's own finding and is not relayed.
+Return JSON: {"verdict": ..., "supporting_excerpts": [excerpt ids that support or contradict], "relayed_excerpts": [excerpt ids among those that merely relay the company's own statement], "discrepancy": string or null, "note": one sentence}"""
 
 
 def _format_excerpts(excerpts: list[dict]) -> str:
@@ -111,19 +112,30 @@ def run_pass(claim: dict, excerpts: list[dict], llm) -> dict:
     verdict = str(out.get("verdict") or "not_found").lower()
     if verdict not in ("supported", "partially_supported", "contradicted", "not_found"):
         verdict = "not_found"
-    ids = []
-    for x in out.get("supporting_excerpts") or []:
-        m = re.search(r"(\d+)", str(x))
-        if m and 1 <= int(m.group(1)) <= len(excerpts):
-            ids.append(int(m.group(1)))
-    cited = [excerpts[i - 1] for i in ids]
+    def _ids(key):
+        found = []
+        for x in out.get(key) or []:
+            m = re.search(r"(\d+)", str(x))
+            if m and 1 <= int(m.group(1)) <= len(excerpts):
+                found.append(int(m.group(1)))
+        return found
+    ids = _ids("supporting_excerpts")
+    relayed = set(_ids("relayed_excerpts"))
+    cited = []
+    for i in ids:
+        e = excerpts[i - 1]
+        tier = e["tier"]
+        if i in relayed and tier in ("primary", "secondary"):
+            tier = "company"  # the page relays the company's own statement; it does not confirm it
+        cited.append({"source": e["source"], "url": e["url"], "tier": tier, "page_tier": e["tier"],
+                      "relayed": i in relayed, "text": e["text"]})
     return {
         "verdict": verdict,
         "discrepancy": out.get("discrepancy"),
         "note": out.get("note"),
         "model": llm.model,
         "excerpts": excerpts,
-        "cited": [{"source": e["source"], "url": e["url"], "tier": e["tier"], "text": e["text"]} for e in cited],
+        "cited": cited,
     }
 
 
@@ -170,8 +182,11 @@ def combine(claim: dict, p1: dict, p2: dict) -> tuple[str, str]:
         detail = ""
         if "partially_supported" in (v1, v2):
             detail = " and details differ: " + str(p1.get("discrepancy") or p2.get("discrepancy") or "")
-        return "partially_verified", ("stated only by the company itself (own site or issued release); "
-                                      "no regulator or independent primary source confirms it" + detail)
+        relayed_pages = sorted({c["url"] for p in (p1, p2) for c in p["cited"] if c.get("relayed")})
+        where = "stated only by the company itself (own site or issued release)"
+        if relayed_pages:
+            where += "; " + relayed_pages[0] + " repeats the company's announcement rather than confirming it"
+        return "partially_verified", where + "; no regulator or independent primary source confirms it" + detail
     # secondary only
     if origin_primary:
         return "partially_verified", "primary origin but the passes only matched press restatements"

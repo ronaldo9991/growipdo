@@ -1,0 +1,167 @@
+{"ts": "2026-09-13T13:57:58+00:00", "stage": "run", "message": "created", "data": {"url": "https://www.linkedin.com/in/markchahwan"}}
+{"ts": "2026-09-13T13:57:58+00:00", "stage": "identify", "message": "started"}
+{"ts": "2026-09-13T13:58:02+00:00", "stage": "identify", "message": "7 search results from 2 queries", "data": {"queries": ["markchahwan founder", "markchahwan CEO company UAE"]}}
+{"ts": "2026-09-13T13:58:04+00:00", "stage": "llm", "message": "gpt-5.4-mini: 676 in, 225 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:58:04+00:00", "stage": "identify", "message": "Mark Chahwan, Co-founder and Group CEO at Sarwa", "data": {"confidence": 0.99, "reasoning": "The snippets repeatedly identify Mark Chahwan as the co-founder and CEO/group CEO of Sarwa, with Sarwa career and media pages directly matching the name."}}
+{"ts": "2026-09-13T13:58:04+00:00", "stage": "research", "message": "started"}
+{"ts": "2026-09-13T13:58:05+00:00", "stage": "research", "message": "6 results: 'Sarwa ADGM FSRA financial services permission register'"}
+{"ts": "2026-09-13T13:58:07+00:00", "stage": "research", "message": "6 results: 'Sarwa DFSA decision notice'"}
+{"ts": "2026-09-13T13:58:09+00:00", "stage": "research", "message": "5 results: 'Sarwa regulator fine penalty'"}
+{"ts": "2026-09-13T13:58:10+00:00", "stage": "research", "message": "5 results: 'Sarwa regulatory action'"}
+{"ts": "2026-09-13T13:58:12+00:00", "stage": "research", "message": "6 results: 'Sarwa press release funding round'"}
+{"ts": "2026-09-13T13:58:13+00:00", "stage": "research", "message": "5 results: 'Sarwa Series B Mubadala'"}
+{"ts": "2026-09-13T13:58:15+00:00", "stage": "research", "message": "5 results: 'Sarwa Forbes Middle East fintech list'"}
+{"ts": "2026-09-13T13:58:16+00:00", "stage": "research", "message": "5 results: 'Sarwa assets under management clients users'"}
+{"ts": "2026-09-13T13:58:20+00:00", "stage": "research", "message": "4 results: 'Sarwa profitable revenue'"}
+{"ts": "2026-09-13T13:58:22+00:00", "stage": "research", "message": "5 results: 'Mark Chahwan Sarwa co-founder CEO interview'"}
+{"ts": "2026-09-13T13:58:24+00:00", "stage": "research", "message": "5 results: 'Mark Chahwan Sarwa founded'"}
+{"ts": "2026-09-13T13:58:26+00:00", "stage": "research", "message": "5 results: '\"Mark Chahwan\" fintech'"}
+{"ts": "2026-09-13T13:58:26+00:00", "stage": "research", "message": "fetching 24 of 49 candidate urls"}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S1 ok primary https://www.adgm.com/media/announcements/adgms-financial-regulator-fines-sarwa-digital-wealth-capital-limited", "data": {"http_status": 200, "chars": 7416, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S2 ok primary https://www.dfsa.ae/news/dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without-approved-prospectus", "data": {"http_status": 200, "chars": 7424, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S3 ok primary https://www.adgm.com/public-registers/fsra/firms/financial-firms/sarwa-digital-wealth-capital-limited-190037", "data": {"http_status": 200, "chars": 5807, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S4 ok primary https://www.adgm.com/media/announcements/uaes-sarwa-hits-$1-billion-in-assets-as-retail-investing-gains-scale", "data": {"http_status": 200, "chars": 8090, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S5 ok primary https://www.adgm.com/media/announcements/adgms-fsra-issues-notice-regarding-unauthorised-domains-misusing-sarwas-name", "data": {"http_status": 200, "chars": 5861, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S6 ok primary https://www.adgm.com/public-registers/fsra", "data": {"http_status": 200, "chars": 4802, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S7 ok primary https://www.dfsa.ae/public-register/firms/sarwa-digital-wealth-limited", "data": {"http_status": 200, "chars": 6033, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S8 ok primary https://www.dfsa.ae/what-we-do/enforcement/regulatory-actions", "data": {"http_status": 200, "chars": 6408, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S9 ok primary https://www.forbesmiddleeast.com/lists/the-middle-easts-fintech-50-2025/sarwa/", "data": {"http_status": 200, "chars": 763, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S10 ok primary https://www.forbesmiddleeast.com/lists/the-middle-easts-fintech-50-2025/", "data": {"http_status": 200, "chars": 4320, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S11 ok primary https://www.forbes.com/lists/fintech50/", "data": {"http_status": 200, "chars": 12504, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S12 ok company https://help.sarwa.co/hc/en-us/articles/4407336316305-Is-Sarwa-regulated", "data": {"http_status": 200, "chars": 1646, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S13 ok company https://www.sarwa.co/blog/sarwa-series-b-round/", "data": {"http_status": 200, "chars": 11791, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S14 ok company https://www.sarwa.co/blog/what-is-sarwa-and-how-does-it-work/", "data": {"http_status": 200, "chars": 26168, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S15 ok company https://www.sarwa.co/en/disclaimer-notice", "data": {"http_status": 200, "chars": 7800, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S16 ok company https://www.sarwa.co/blog/press-release-uae-based-fintech-startup-sarwa-raises-84m-series-a-funding-round-led-by-kipco/", "data": {"http_status": 200, "chars": 11450, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S17 ok company https://www.sarwa.co/blog/why-should-i-invest/", "data": {"http_status": 200, "chars": 4946, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S18 ok company https://www.sarwa.co/blog/one-billion/", "data": {"http_status": 200, "chars": 7195, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S19 ok company https://www.sarwa.co/blog/diversified-long-term-investing-thats-low-cost-and-automated/", "data": {"http_status": 200, "chars": 10667, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S20 ok company https://www.sarwa.co/blog/sarwacos-story/", "data": {"http_status": 200, "chars": 9888, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S21 ok company https://careers.sarwa.co/people/3616112-mark-chahwan", "data": {"http_status": 200, "chars": 2501, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S22 could_not_check secondary https://www.reddit.com/r/SarwaOfficial/comments/1oi8lop/im_mark_chahwan_33_cofounder_and_ceo_of_sarwa/", "data": {"http_status": 200, "chars": 6, "error": "page returned almost no readable text (probably rendered by JavaScript)"}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S23 ok secondary https://dfsaen.thomsonreuters.com/rulebook/21-may-2024-dfsa-fines-sarwa-digital-wealth-limited-making-public-offer-shares-without", "data": {"http_status": 200, "chars": 12795, "error": null}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "research", "message": "S24 could_not_check secondary https://www.instagram.com/p/DX9Uz97Nqhe/", "data": {"http_status": null, "chars": 0, "error": "request failed: [Errno 61] Connection refused"}}
+{"ts": "2026-09-13T13:58:30+00:00", "stage": "claims", "message": "started"}
+{"ts": "2026-09-13T13:58:34+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1809 in, 835 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:58:34+00:00", "stage": "claims", "message": "10 claims from S1 (primary)"}
+{"ts": "2026-09-13T13:58:37+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1930 in, 566 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:58:37+00:00", "stage": "claims", "message": "6 claims from S2 (primary)"}
+{"ts": "2026-09-13T13:58:40+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1635 in, 517 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:58:40+00:00", "stage": "claims", "message": "10 claims from S3 (primary)"}
+{"ts": "2026-09-13T13:58:43+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1947 in, 479 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:58:43+00:00", "stage": "claims", "message": "6 claims from S4 (primary)"}
+{"ts": "2026-09-13T13:58:45+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1561 in, 464 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:58:45+00:00", "stage": "claims", "message": "7 claims from S5 (primary)"}
+{"ts": "2026-09-13T13:58:46+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1307 in, 7 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:58:46+00:00", "stage": "claims", "message": "0 claims from S6 (primary)"}
+{"ts": "2026-09-13T13:58:49+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1731 in, 403 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:58:49+00:00", "stage": "claims", "message": "10 claims from S7 (primary)"}
+{"ts": "2026-09-13T13:58:50+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1772 in, 7 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:58:50+00:00", "stage": "claims", "message": "0 claims from S8 (primary)"}
+{"ts": "2026-09-13T13:58:52+00:00", "stage": "llm", "message": "gpt-5.4-mini: 506 in, 419 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:58:52+00:00", "stage": "claims", "message": "8 claims from S9 (primary)"}
+{"ts": "2026-09-13T13:58:53+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1371 in, 50 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:58:53+00:00", "stage": "claims", "message": "1 claims from S10 (primary)"}
+{"ts": "2026-09-13T13:58:54+00:00", "stage": "llm", "message": "gpt-5.4-mini: 3293 in, 61 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:58:54+00:00", "stage": "claims", "message": "1 claims from S11 (primary)"}
+{"ts": "2026-09-13T13:58:56+00:00", "stage": "llm", "message": "gpt-5.4-mini: 680 in, 291 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:58:56+00:00", "stage": "claims", "message": "5 claims from S12 (company)"}
+{"ts": "2026-09-13T13:59:00+00:00", "stage": "llm", "message": "gpt-5.4-mini: 2638 in, 744 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:00+00:00", "stage": "claims", "message": "8 claims from S13 (company)"}
+{"ts": "2026-09-13T13:59:04+00:00", "stage": "llm", "message": "gpt-5.4-mini: 3089 in, 825 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:04+00:00", "stage": "claims", "message": "10 claims from S14 (company)"}
+{"ts": "2026-09-13T13:59:07+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1755 in, 668 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:07+00:00", "stage": "claims", "message": "6 claims from S15 (company)"}
+{"ts": "2026-09-13T13:59:11+00:00", "stage": "llm", "message": "gpt-5.4-mini: 2641 in, 768 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:11+00:00", "stage": "claims", "message": "8 claims from S16 (company)"}
+{"ts": "2026-09-13T13:59:15+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1280 in, 663 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:15+00:00", "stage": "claims", "message": "8 claims from S17 (company)"}
+{"ts": "2026-09-13T13:59:19+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1790 in, 750 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:19+00:00", "stage": "claims", "message": "10 claims from S18 (company)"}
+{"ts": "2026-09-13T13:59:23+00:00", "stage": "llm", "message": "gpt-5.4-mini: 2443 in, 781 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:23+00:00", "stage": "claims", "message": "10 claims from S19 (company)"}
+{"ts": "2026-09-13T13:59:26+00:00", "stage": "llm", "message": "gpt-5.4-mini: 2317 in, 623 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:26+00:00", "stage": "claims", "message": "10 claims from S20 (company)"}
+{"ts": "2026-09-13T13:59:27+00:00", "stage": "llm", "message": "gpt-5.4-mini: 854 in, 125 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:27+00:00", "stage": "claims", "message": "3 claims from S21 (company)"}
+{"ts": "2026-09-13T13:59:32+00:00", "stage": "llm", "message": "gpt-5.4-mini: 3354 in, 1045 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:32+00:00", "stage": "claims", "message": "10 claims from S23 (secondary)"}
+{"ts": "2026-09-13T13:59:32+00:00", "stage": "claims", "message": "147 raw claims, 109 after dedupe, keeping 40"}
+{"ts": "2026-09-13T13:59:32+00:00", "stage": "verify", "message": "started"}
+{"ts": "2026-09-13T13:59:32+00:00", "stage": "verify", "message": "corpus: 751 passages from 22 sources"}
+{"ts": "2026-09-13T13:59:33+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1203 in, 76 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:34+00:00", "stage": "llm", "message": "gpt-5.6-terra: server rejected temperature, retrying without it"}
+{"ts": "2026-09-13T13:59:35+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1521 in, 77 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:35+00:00", "stage": "verify", "message": "F1 verified: The FSRA of Abu Dhabi Global Market (ADGM) has imposed a financial penalty of USD 122,500 ", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T13:59:36+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1139 in, 74 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:38+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1434 in, 58 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:38+00:00", "stage": "verify", "message": "F2 verified: An FSRA Investigation found that Sarwa, in and around April and May 2023 offered an opport", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T13:59:39+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1243 in, 63 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:40+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1521 in, 62 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:40+00:00", "stage": "verify", "message": "F3 verified: The DFSA imposed a financial penalty of USD 191,100 (AED 701,815) on Sarwa DIFC.", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T13:59:41+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1233 in, 65 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:43+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1530 in, 66 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:43+00:00", "stage": "verify", "message": "F4 verified: The DFSA imposed a financial penalty of USD 390,000 (AED 1,432,275) on Sarwa DIFC before m", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T13:59:44+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1254 in, 58 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:45+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1428 in, 60 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:45+00:00", "stage": "verify", "message": "F5 verified: Sarwa Digital Wealth (Capital) Limited has an approved activity effective date of 16 Aug 2", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T13:59:46+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1198 in, 66 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:48+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1498 in, 60 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:48+00:00", "stage": "verify", "message": "F6 verified: Sarwa Digital Wealth (Capital) Limited has an approved activity effective date of 20 Feb 2", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T13:59:49+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1163 in, 50 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:50+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1483 in, 51 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:50+00:00", "stage": "verify", "message": "F7 verified: Sarwa Digital Wealth Limited has DFSA Reference Number: F004501.", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T13:59:51+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1287 in, 54 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:52+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1547 in, 55 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:52+00:00", "stage": "verify", "message": "F8 verified: Sarwa Digital Wealth Limited has Date of Withdrawal 14-Jun-2024.", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T13:59:54+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1249 in, 60 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:55+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1598 in, 54 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:55+00:00", "stage": "verify", "message": "F9 verified: Sarwa Digital Wealth Limited has Date of Licence 13-Dec-2017.", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T13:59:56+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1150 in, 67 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:58+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1404 in, 70 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T13:59:58+00:00", "stage": "verify", "message": "F10 partially_verified: Sarwa is regulated by Abu Dhabi Global Market (ADGM) The Financial Services Regulatory Aut", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-13T13:59:59+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1076 in, 57 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:00+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1330 in, 47 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:00+00:00", "stage": "verify", "message": "F11 partially_verified: Sarwa Invest is regulated by the ADGM Financial Services Regulatory Authority.", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-13T14:00:01+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1176 in, 73 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:03+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1396 in, 85 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:03+00:00", "stage": "verify", "message": "F12 partially_verified: Sarwa Digital Wealth (Capital) Limited holds a Category 3C license with a Retail Client an", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-13T14:00:04+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1175 in, 62 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:05+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1433 in, 72 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:05+00:00", "stage": "verify", "message": "F13 verified: Sarwa Digital Wealth Limited was regulated by the Dubai Financial Services Authority (“DFS", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:00:06+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1168 in, 50 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:08+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1412 in, 54 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:08+00:00", "stage": "verify", "message": "F14 partially_verified: Sarwa Digital Wealth Limited held a Category 4 license with a Retail Client Endorsement.", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-13T14:00:09+00:00", "stage": "llm", "message": "gpt-5.4-mini: 956 in, 61 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:10+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1161 in, 73 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:10+00:00", "stage": "verify", "message": "F15 partially_verified: Sarwa does not hold an Islamic Window endorsement from the Financial Services Regulatory A", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-13T14:00:11+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1125 in, 54 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:13+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1364 in, 58 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:13+00:00", "stage": "verify", "message": "F16 partially_verified: Sarwa was the first firm within the Dubai International Financial Centre (DIFC) to be gran", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-13T14:00:14+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1154 in, 70 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:15+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1419 in, 93 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:15+00:00", "stage": "verify", "message": "F17 partially_verified: Sarwa Digital Wealth (Capital) Limited is regulated by the Financial Services Regulatory A", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-13T14:00:16+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1156 in, 70 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:16+00:00", "stage": "llm", "message": "gpt-5.4-mini: JSON parse failed, retrying once", "data": {"error": "bad JSON from model: Expecting value: line 1 column 47 (char 46); reply began '{\"verdict\":\"supported\",\"supporting_excerpts\":[E1,E2,E3,E4,E5,E6],\"discrepancy\":null,\"note\":\"The excerpts explicitly state that the FSRA found Sarwa contravened FSRA administered regulations by making '"}}
+{"ts": "2026-09-13T14:00:17+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1169 in, 70 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:19+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1430 in, 66 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:19+00:00", "stage": "verify", "message": "F18 verified: The FSRA found that Sarwa contravened FSRA administered regulations by making an Offer of ", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:00:20+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1101 in, 53 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:22+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1375 in, 61 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:22+00:00", "stage": "verify", "message": "F19 verified: The FSRA has also imposed a Requirement on Sarwa to undertake an independent review of its", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:00:23+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1186 in, 61 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:24+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1480 in, 53 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:24+00:00", "stage": "verify", "message": "F20 verified: The DFSA published today a Decision Notice against Sarwa Digital Wealth Limited, a DFSA re", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:00:25+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1191 in, 72 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:27+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1480 in, 42 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:27+00:00", "stage": "verify", "message": "F21 verified: The DFSA took action against Sarwa DIFC for making an Offer of Securities to the Public in", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:00:28+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1156 in, 48 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:29+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1424 in, 55 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:29+00:00", "stage": "verify", "message": "F22 verified: Sarwa Digital Wealth (Capital) Limited has Status Active.", "data": {"pass1": "supported", "pass2": "supported", "reason": "both passes matched a primary source"}}
+{"ts": "2026-09-13T14:00:30+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1157 in, 64 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:32+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1346 in, 63 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:32+00:00", "stage": "verify", "message": "F23 unverified: Sarwa Digital Wealth (Capital) Limited is approved for Advising on Investments or Credit.", "data": {"pass1": "not_found", "pass2": "supported", "reason": "pass 1 found no source stating this; it only appears in https://www.adgm.com/public-registers/fsra/firms/financial-firms/sarwa-digital-wealth-capital-limited-190037 (primary)"}}
+{"ts": "2026-09-13T14:00:33+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1153 in, 52 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:34+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1325 in, 61 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-13T14:00:34+00:00", "stage": "verify", "message": "F24 partially_verified: Sarwa Digital Wealth (Capital) Limited is approved for Managing Assets.", "data": {"pass1": "supported", "pass2": "supported", "reason": "primary source found but details differ: one pass found only partial support"}}
+{"ts": "2026-09-13T14:00:35+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1190 in, 56 out", "data": {"stop": "stop"}}

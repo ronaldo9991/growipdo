@@ -1,6 +1,7 @@
 """Stage 2: search the public web, fetch pages, snapshot them, classify each source."""
 from __future__ import annotations
 
+import re
 from concurrent.futures import ThreadPoolExecutor
 
 import httpx
@@ -22,6 +23,12 @@ def classify_source(url: str, company_domains: list[str]) -> str:
             if (host == h or host.endswith("." + h)) and ("/" + prefix) in path:
                 return "primary"
         elif host == p or host.endswith("." + p):
+            # A regulator's register and enforcement pages are its own findings. Its news and media
+            # pages often relay a firm's announcement, so they are treated as secondary unless the
+            # URL says the page is a regulatory act.
+            if re.search(r"/(media|news|announcements|press)/", path) and not re.search(
+                    r"fine|penalt|enforc|notice|decision|censure|prohibit|warning|alert|action|register|licen", path):
+                return "secondary"
             return "primary"
     for d in company_domains:
         if host == d or host.endswith("." + d):

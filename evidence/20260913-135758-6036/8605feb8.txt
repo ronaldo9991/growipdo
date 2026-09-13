@@ -1,0 +1,107 @@
+url: https://www.sarwa.co/blog/diversified-long-term-investing-thats-low-cost-and-automated/
+final_url: https://www.sarwa.co/blog/diversified-long-term-investing-thats-low-cost-and-automated
+fetched_at: 2026-09-13T13:58:29+00:00
+status: ok
+http_status: 200
+title: How Does Sarwa Work? Diversified, Long-Term Investing - Sarwa
+error: 
+---
+How Does Sarwa Work? Diversified, Long-Term Investing - Sarwa
+Help desk
+Help desk
+Home
+Trade
+Invest
+Crypto
+Save
+Pricing
+Try us out
+Login
+Login
+Login
+Home
+Invest
+Trade
+Crypto
+Save
+Pricing
+FAQ
+Privacy policy
+Data management
+Contact
+Try us out!
+How Does Sarwa Work? Diversified, Long-Term Investing that’s low cost and automated.
+You have questions about investing, ETFs, or Sarwa? We are here to help. In this section, You will find answers about pricing, diversification, and the portfolios we use. Didn’t find your question? Email us at social@sarwa.co and our Sarwa financial experts will be happy to answer.
+We are Sarwa
+A one-stop shop for self-directed trading and auto-investing. We're making powerful money management tools available for all.
+Learn more.
+Sarwa is an online automated investment platform that uses both a technology and human element to offer affordable and accessible investing. What does this mean to you, our clients? When you sign up with us, you can invest in expert designed portfolios that give you access to international markets, you can speak to an advisor about any concerns you have, all while having a great user experience.
+To make an investment, you answer few questions, approve a recommended portfolio, upload a couple of documents and fund your account. That’s it! you’re an investor.
+What is Sarwa based on?
+Sarwa is built on 4 pillars.
+Low-cost
+Full transparency
+On-demand access to human advice
+Ease of use
+What is a robo-advisor hybrid?
+A standard robo-advisor is an automated investment platform that constructs and maintains client portfolios through technology. Sarwa is considered a robo-advisor hybrid, meaning we offer both an automated investment platform along with access to expert human advice from financial advisors. Rather than having to choose between a completely automated system or a complete human experience, a hybrid model gives Sarwa clients the best of both worlds!
+How much does it cost?
+Sarwa charges a fee of 0.85% of your account per year. No commission, no surprises. This fee is partially charged at the end of every month on the average account value for the month. So let’s say you started investing $10,000, you will pay us around $7 per month for our service! the price of a cup of coffee.
+This pricing strategy is designed this way to ensure that Sarwa and its clients are always on the same side of the table, forming more of a partnership: if your account is doing better, Sarwa does better, and if your account is doing worse, Sarwa does worse- that’s how it should be.
+What is the minimum amount I can start with?
+The minimum amount of money needed to gain access to a portfolio on the Sarwa platform is $5, that’s it.
+What are the monthly minimum contributions?
+There are NO monthly or quarterly contributions requirements
+What happens if I want to close my account or withdraw Funds?
+Sarwa clients enjoy complete liquidity without penalties. This means clients can remove their funds whenever they would like. *processing time is about 3/4 days*
+Who holds the money & executes the trades?
+Sarwa partners with a third party custodian/broker: Interactive Brokers. the account you open and fund is under your name. Sarwa does not hold any cash or execute any of the trades themselves.
+What happens if I leave the country?
+Even if you leave Dubai, your account will not be affected. After all, it is under your name in our custodian bank.
+What happens if Sarwa disappears?
+With the use of Interactive Brokers, client accounts are protected. Cash values in the accounts are insured up to $500,000 & all investments are held in the clients’ names so they will always be owned by the clients.
+What is a portfolio?
+A portfolio is the investments you will own. think about it as being a folder that has all your investments in one place. the choice of investments in your portfolio reflects how much risk/return is recommended for you.
+What are the Sarwa portfolios?
+Sarwa currently offers three portfolios based on clients’ unique risk tolerance – basically how much risk you would like to take on. These include conservative, balanced & growth portfolios. All portfolios are composed of Blackrock and Vanguard ETFs. These ETFs which are constructed by two of the most well-respected investment managers give clients access to the global market and efficiently achieve diversification.
+What is Diversification?
+We’ve all heard the expression “do not put all your eggs in one basket”. This saying is a perfect example of the principles of diversification. Diversification is the idea of spreading your money across different investments (stocks, bonds, real estate, etc.), preferably those with no/limited correlation. The idea here is that the overall stock market is volatile and filled with unexpected outcomes. Diversifying, or separating your eggs into different baskets ensures that in volatile economic times, your investments are not all acting in the same way. If you drop one of your baskets, you’ll still have other eggs to make an omelet- similarly, due to having a variety of investments, one of your underperforming securities won’t significantly impact your portfolio.
+What are ETFs?
+An ETF (Exchange-Traded Fund) is a ‘basket’ of securities (for example bonds, stocks, and real estate) bundled into a fund. this allows investors to easily diversify their portfolios. ETFs are traded like stocks on stock exchanges and often times track an index such as the Dow Jones or S&P 500. Rather than buying many individual stocks, bonds, real estate, etc., one can use an ETF to create the same level of diversity, at a fraction of the price.
+How does rebalancing work?
+Automatic rebalancing is a free service for all Sarwa clients.
+Over time, as the value of individual ETFs in a diversified portfolio deviate from their target allocation, our automated technology ensures that your portfolio weights are rebalanced in response to price changes.
+The difference between the target weights for your portfolio and the actual weights in your current portfolio is what we call drift. The issue with a high drift is that it reduces the efficiency with your portfolio and exposes you to more/less risk than your target portfolio allocation we set out in the plan.
+Currently, we rebalance semi-annually or when the drift (absolute variance) of your portfolio reaches 20%.
+Ready to invest in your future?
+Start now
+Ready to invest in your future? Talk to our advisory team, we will be happy to help.
+Start now
+Important Disclosure:
+The information provided in this blog is for general informational purposes only. It should not be considered as personalised investment advice. Each investor should do their due diligence before making any decision that may impact their financial situation and should have an investment strategy that reflects their risk profile and goals. The examples provided are for illustrative purposes. Past performance does not guarantee future results. Data shared from third parties is obtained from what are considered reliable sources; however, it cannot be guaranteed. Any articles, daily news, analysis, and/or other information contained in the blog should not be relied upon for investment purposes. The content provided is neither an offer to sell nor purchase any security. Opinions, news, research, analysis, prices, or other information contained on our Blog Services, or emailed to you, are provided as general market commentary. Sarwa does not warrant that the information is accurate, reliable or complete. Any third-party information provided does not reflect the views of Sarwa. Sarwa shall not be liable for any losses arising directly or indirectly from misuse of information. Each decision as to whether a self-directed investment is appropriate or proper is an independent decision by the reader. All investing is subject to risk, including the possible loss of the money invested.
+Post navigation
+Previous Previous post:
+Is investing really for me? Short answer: Yes!
+Next Next post: The Magic of Compound Interest. Why You Should Start Investing. Now.
+Home
+Invest
+Trade
+Crypto
+Save
+Pricing
+FAQ
+Privacy policy
+Data management
+Contact
+About
+Sarwa is an investing and money management platform on a mission to help everyone put their money to work. The one-stop app offers hands-off auto-investing with Sarwa Invest, do-it-yourself trading of stocks, ETFs, and crypto with Sarwa Trade, as well as high-yield low risk estimated returns with Sarwa Save.
+Social
+Sarwa seeks to encourage and educate the public about the different aspects of personal finance and investment in a way that's tailored to the needs of today's professionals. Support us by following us on social media, and receive our blog posts on your feed.
+Sarwa Digital Wealth (Capital) Limited is regulated by the Financial Services Regulatory Authority (“FSRA”) in the Abu Dhabi Global Markets (“ADGM”) and holds a Category 3C license with a Retail Client and Holding and Controlling Clients Investments and Money Endorsement. Sarwa Digital Wealth (Capital) Limited’s registered address is 16-104 & 16-114, 16th Floor, WeWok Hub71, Al Khatem Tower, Abu Dhabi Global Market, Al Maryah Island, Abu Dhabi, United Arab Emirates.
+https://www.adgm.com/public-registers/fsra/fsf/sarwa-digital-wealth-capital-limited
+All Promotional materials are provided from/by Sarwa Digital Wealth (Capital) Limited and is intended only for jurisdictions where it is authorised to provide services and does not constitute an offer or solicitation to provide services in any jurisdiction where it is not permitted to do so. Sarwa is not a bank. We can unlock high-yield accounts through our banking partners. Options trading entails significant risk and is not appropriate for all customers and may involve the potential of losing the entire investment in a relatively short period of time. Sarwa does not hold an Islamic Window endorsement from the Financial Services Regulatory Authority (FSRA). Clients are advised to conduct their own due diligence to ensure that investments align with their personal requirements.
+Past performance is no guarantee of future results. Historical returns, expected returns, and probability projections are provided for informational and illustrative purposes and may not reflect actual future performance. Information contained on this website is of a general nature only and does not consider your financial objectives or personal circumstances. All investing involves risk, including the possible loss of money you invest.
+Please visit our Disclaimer Notice page for further information.
+© 2020-2026 Sarwa Digital Wealth (Capital) Limited. All rights reserved.
+Top
+2390
