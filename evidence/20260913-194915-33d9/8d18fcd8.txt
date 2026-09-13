@@ -1,0 +1,8 @@
+url: https://www.facebook.com/groups/213677252051549/posts/9145147548904430/
+final_url: https://www.facebook.com/groups/213677252051549/posts/9145147548904430/
+fetched_at: 2026-09-13T19:49:40+00:00
+status: could_not_check
+http_status: 400
+title: 
+error: HTTP 400
+---

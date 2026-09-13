@@ -1,0 +1,38 @@
+{
+  "id": "20260913-194915-33d9",
+  "status": "approved",
+  "stage": "human_gate",
+  "created_at": "2026-09-13T19:49:15+00:00",
+  "updated_at": "2026-09-13T19:52:24+00:00",
+  "input_url": "Nidhi Hooda, Growpido",
+  "subject": {
+    "full_name": "Nidhi Hooda, Growpido",
+    "role": "reputation radar",
+    "company": "",
+    "location": "",
+    "confidence": 1.0
+  },
+  "models": {
+    "primary": "gpt-5.4-mini",
+    "second_opinion": "gpt-5.6-terra"
+  },
+  "approval": {
+    "by": "Ronaldo Rajan Salamon",
+    "note": "Read all 40 mentions. Confirmed LinkedIn items are search snippets only and nothing behind a login was read. Decided the two ambiguous items myself: her own post is hers, the cake reel is a namesake. Nothing this week needs a response and no draft reply exists.",
+    "at": "2026-09-13T19:52:24+00:00"
+  },
+  "error": null,
+  "counts": {
+    "total": 40,
+    "about_subject": 37,
+    "not_subject": 3,
+    "respond_now": 0,
+    "watch": 0,
+    "ignore": 37,
+    "ambiguous": 0,
+    "linkedin": 26,
+    "news": 0,
+    "web": 11
+  },
+  "kind": "radar"
+}

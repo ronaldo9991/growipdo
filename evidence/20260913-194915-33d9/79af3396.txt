@@ -1,0 +1,85 @@
+url: https://www.growpido.com/terms
+final_url: https://www.growpido.com/terms
+fetched_at: 2026-09-13T19:49:41+00:00
+status: ok
+http_status: 200
+title: Terms & Conditions | Growpido
+error: 
+---
+Terms & Conditions | Growpido
+GrowpidoThe MethodProofInsightsAbout
+Book a Call
+Legal
+Terms of Engagement
+Terms and Conditions
+DRAFT for legal review before publishing. Replace all [bracketed] placeholders. Not legal advice.
+Last updated: 27-06-2026
+These Terms and Conditions (the "Terms") govern your access to and use of www.growpido.com and any related pages, content, forms, and communications (together, the "Site"), operated by [Legal Entity Name], a company in the process of registration in the Meydan Free Zone, Dubai, United Arab Emirates ("Growpido," "we," "us," or "our").
+By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site.
+1. Who we are and what the Site is
+Growpido is a strategic influence and narrative advisory. The Site presents information about our services and allows you to learn about our work, read our insights, subscribe to our communications, and submit an application to be considered for a mandate. The Site is informational. Nothing on it is an offer, a solicitation, or a binding commitment to provide services.
+2. Applications and no obligation
+Submitting an application, booking a call, or otherwise contacting us through the Site does not create a client relationship and does not obligate either party. We review every application, but we are under no obligation to accept any application or to respond in any particular way. A client relationship begins only when both parties sign a separate written engagement agreement. Any pricing, scope, or timeline discussed before that agreement is indicative only.
+3. Your data and privacy
+We protect your data. Any personal information you provide through the Site is handled in accordance with our Privacy Policy, which is incorporated into these Terms by reference. Please review it to understand what we collect and how we use and safeguard it.
+4. Acceptable use
+You agree to use the Site lawfully and not to:
+use the Site in any way that breaches applicable laws or regulations;
+submit false, misleading, or fraudulent information;
+attempt to gain unauthorised access to the Site, its servers, or any connected systems;
+introduce viruses, malware, or other harmful code;
+copy, scrape, harvest, or republish Site content except as permitted in Section 5; or
+use the Site to infringe the rights of others or to send unsolicited communications.
+We may suspend or restrict access to anyone who misuses the Site.
+5. Intellectual property
+All content on the Site, including text, essays, frameworks, the GROWPIDO OS™ methodology, logos, design, and the "Authority without noise" brand language, is owned by Growpido or its licensors and is protected by intellectual property laws. You may view and share links to our content for personal, non-commercial purposes with attribution. You may not reproduce, adapt, distribute, or commercially exploit any content without our prior written permission.
+Trademarks, names, and logos displayed on the Site may not be used without the owner's consent.
+6. No professional, financial, or legal advice
+Content on the Site, including our insights and frameworks, is provided for general informational purposes only. It does not constitute legal, financial, investment, or other professional advice, and you should not rely on it as such. You are responsible for obtaining your own professional advice before acting on anything you read on the Site.
+7. No guarantee of results
+Reputation, visibility, and narrative outcomes depend on many factors outside our control, including your participation, your market, and third-party platforms. Any results, figures, metrics, case studies, or testimonials shown on the Site describe past outcomes for specific clients and circumstances. They are illustrative and are not a promise, guarantee, or prediction that you or anyone else will achieve the same or similar results.
+8. Third-party links and platforms
+The Site may link to or rely on third-party websites and platforms, such as LinkedIn, YouTube, search engines, and AI engines. We do not control and are not responsible for the content, policies, or availability of those third parties. Your use of them is governed by their own terms.
+9. Disclaimers
+The Site is provided on an "as is" and "as available" basis. To the fullest extent permitted by law, we disclaim all warranties, express or implied, including warranties of merchantability, fitness for a particular purpose, accuracy, and non-infringement. We do not warrant that the Site will be uninterrupted, error free, secure, or free of harmful components.
+10. Limitation of liability
+To the fullest extent permitted by law, Growpido and its founders, officers, employees, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, data, goodwill, or reputation, arising out of or related to your use of, or inability to use, the Site. Our total aggregate liability arising from or relating to the Site will not exceed [currency and amount, for example AED 1,000]. Nothing in these Terms excludes liability that cannot be excluded under applicable law.
+11. Indemnity
+You agree to indemnify and hold harmless Growpido and its founders, officers, employees, and agents from any claims, damages, losses, liabilities, and expenses, including reasonable legal fees, arising out of your breach of these Terms or your misuse of the Site.
+12. Confidentiality and discretion
+Discretion is central to how we work. Where any confidential or sensitive information is exchanged through the Site or in connection with a prospective engagement, both parties agree to treat it as confidential and not to disclose it without consent, except as required by law.
+13. Changes to the Site and to these Terms
+We may modify, suspend, or discontinue any part of the Site at any time without notice. We may also update these Terms from time to time. The revised version will be posted here with a new "Last updated" date, and your continued use of the Site after changes take effect means you accept the revised Terms.
+14. Governing law and jurisdiction
+These Terms are governed by the laws of the Emirate of Dubai and the federal laws of the United Arab Emirates as applicable, including the regulations of the Meydan Free Zone. Any dispute arising out of or relating to these Terms or the Site will be subject to the exclusive jurisdiction of the competent courts of [Dubai / applicable Meydan Free Zone forum], unless otherwise required by mandatory law in your country of residence.
+15. General
+If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force. Our failure to enforce any right is not a waiver of that right. These Terms, together with the Privacy Policy, are the entire agreement between you and us regarding the Site.
+16. Contact us
+For any question about these Terms, contact:
+Growpido L.L.C-FZ Meydan Free Zone, Dubai, United Arab Emirates Email: nidhi@growpido.com
+Back to Home
+Growpido
+Strategic Influence & Narrative Advisory. We engineer how respected leaders are perceived on LinkedIn, search, and AI.
+NH
+“Your profile is your pitch deck. We run it.”
+Growpido L.L.C-FZ
+Meydan Grandstand, 6th floor, Meydan Road, Nad Al Sheba, Dubai, U.A.E.
+United Arab Emirates
+License No. 2649858.01
+nidhi@growpido.com
+Services
+LinkedIn Reputation
+Custom AI Agents
+Platform
+The Method
+Proof & Cases
+About
+The Private Brief
+Reputation intelligence for executives. Strictly confidential.
+Subscribe
+Legal
+Privacy Posture
+Terms of Engagement
+Request a Mandate
+© 2026 Growpido L.L.C-FZ. All rights reserved. · License No. 2649858.01
+Authority without noise.
