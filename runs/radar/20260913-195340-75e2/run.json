@@ -1,0 +1,38 @@
+{
+  "id": "20260913-195340-75e2",
+  "status": "approved",
+  "stage": "human_gate",
+  "created_at": "2026-09-13T19:53:40+00:00",
+  "updated_at": "2026-09-13T19:57:52+00:00",
+  "input_url": "Nidhi Hooda, Growpido",
+  "subject": {
+    "full_name": "Nidhi Hooda, Growpido",
+    "role": "reputation radar",
+    "company": "",
+    "location": "",
+    "confidence": 1.0
+  },
+  "models": {
+    "primary": "gpt-5.4-mini",
+    "second_opinion": "gpt-5.6-terra"
+  },
+  "approval": {
+    "by": "Ronaldo Rajan Salamon",
+    "note": "Read all 40 mentions. LinkedIn items are search snippets only and nothing behind a login was read. Decided the two ambiguous items myself as namesakes. Nothing this week needs a response and no draft reply exists.",
+    "at": "2026-09-13T19:57:52+00:00"
+  },
+  "error": null,
+  "counts": {
+    "total": 40,
+    "about_subject": 35,
+    "not_subject": 5,
+    "respond_now": 0,
+    "watch": 0,
+    "ignore": 35,
+    "ambiguous": 0,
+    "linkedin": 25,
+    "news": 0,
+    "web": 10
+  },
+  "kind": "radar"
+}
