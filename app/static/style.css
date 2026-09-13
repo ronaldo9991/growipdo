@@ -210,3 +210,7 @@ body[data-track="a"] .seg[data-seg="a"],body[data-track="b"] .seg[data-seg="b"]{
 .inline-form{display:grid;gap:8px;margin-top:10px}
 .inline-form .row{display:flex;gap:8px;flex-wrap:wrap}
 .inline-form input.text{flex:1;min-width:160px}
+/* fixes: grid items must be allowed to shrink below the input's intrinsic width; home kicker */
+.hero > *,.cols > *,.tracks > *{min-width:0}
+.field input{width:0}
+.hero-home .kicker{font:600 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
