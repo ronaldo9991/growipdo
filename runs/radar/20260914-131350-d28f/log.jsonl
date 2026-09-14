@@ -112,3 +112,5 @@
 {"ts": "2026-09-14T13:15:45+00:00", "stage": "llm", "message": "gpt-5.4-mini: 489 in, 78 out", "data": {"stop": "stop"}}
 {"ts": "2026-09-14T13:15:45+00:00", "stage": "classify", "message": "M40 ignore: Growpido - Crunchbase Company Profile & Funding", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
 {"ts": "2026-09-14T13:15:45+00:00", "stage": "brief", "message": "started"}
+{"ts": "2026-09-14T13:15:47+00:00", "stage": "llm", "message": "gpt-5.4-mini: 449 in, 130 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:47+00:00", "stage": "human_gate", "message": "brief drafted, waiting for a human", "data": {"counts": {"total": 40, "about_subject": 37, "not_subject": 3, "respond_now": 0, "watch": 0, "ignore": 34, "ambiguous": 3, "linkedin": 26, "news": 0, "web": 11}}}

@@ -84,8 +84,23 @@ def test_previous_mentions_and_mark_seen(tmp_path, monkeypatch):
     assert pid == old.id
     ms = [{"url": "https://linkedin.com/posts/x/"}, {"url": "https://other.example/y"}]
     radar.mark_seen(ms, prev)
-    assert ms[0]["seen_before"] and ms[0]["seen_as"]["risk"] == "watch"
+    assert ms[0]["seen_before"] and ms[0]["seen_as"]["risk"] == "watch" and ms[0]["seen_as"]["run"] == old.id
     assert not ms[1]["seen_before"]
+
+
+def test_human_decision_is_carried_forward(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "RUNS_DIR", tmp_path)
+    old = Run.create("Nidhi Hooda", kind="radar")
+    old.ledger["mentions"] = [{"id": "M5", "url": "https://x/1", "final": {"about_subject": "no", "risk": "ignore", "ambiguous": False, "why": "namesake", "decided_by": "Ronaldo"}},
+                              {"id": "M6", "url": "https://x/2", "final": {"about_subject": "yes", "risk": "watch", "ambiguous": True, "why": "split"}}]
+    old.state["status"] = "approved"; old.save()
+    new = Run.create("Nidhi Hooda", kind="radar")
+    _, prev = radar.previous_mentions(new.id)
+    ms = [{"url": "https://x/1", "pass1": {"sentiment": "neutral"}}, {"url": "https://x/2", "pass1": {"sentiment": "neutral"}}]
+    radar.mark_seen(ms, prev)
+    f = radar.carry_forward(ms[0])
+    assert f and f["about_subject"] == "no" and f["risk"] == "ignore" and not f["ambiguous"] and "Ronaldo" in f["why"] and f["carried_from"] == old.id
+    assert radar.carry_forward(ms[1]) is None   # an undecided ambiguous item is not carried, it is asked again
 
 
 # 5. approver token

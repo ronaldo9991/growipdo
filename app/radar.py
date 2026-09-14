@@ -199,7 +199,7 @@ def previous_mentions(current_run_id: str) -> tuple[str | None, dict[str, dict]]
             chosen = r
     if chosen is None:
         return None, {}
-    return chosen.id, {_norm_url(m["url"]): {"id": m["id"], "final": m.get("final") or {}} for m in chosen.ledger.get("mentions", [])}
+    return chosen.id, {_norm_url(m["url"]): {"id": m["id"], "run": chosen.id, "final": m.get("final") or {}} for m in chosen.ledger.get("mentions", [])}
 
 
 def mark_seen(mentions: list[dict], prev: dict[str, dict]) -> None:
@@ -207,7 +207,8 @@ def mark_seen(mentions: list[dict], prev: dict[str, dict]) -> None:
         hit = prev.get(_norm_url(m["url"]))
         m["seen_before"] = bool(hit)
         if hit:
-            m["seen_as"] = {"id": hit["id"], "risk": (hit.get("final") or {}).get("risk"), "decided_by": (hit.get("final") or {}).get("decided_by")}
+            f = hit.get("final") or {}
+            m["seen_as"] = {"id": hit["id"], "run": hit.get("run"), "risk": f.get("risk"), "decided_by": f.get("decided_by"), "final": f}
 
 
 # ---------- classification ----------
@@ -305,12 +306,26 @@ def apply_reach(final: dict, reach: dict) -> dict:
     return final
 
 
+def carry_forward(m: dict) -> dict | None:
+    """A decision a named human made on this exact URL in an earlier run stands. The item is still
+    classified again (both passes are recorded) so a change in tone would show, but it is not held
+    ambiguous a second time for the same question."""
+    seen = m.get("seen_as") or {}
+    if not seen.get("decided_by"):
+        return None
+    prev = seen.get("final") or {}
+    return {"about_subject": prev.get("about_subject", "yes"), "sentiment": m["pass1"]["sentiment"],
+            "risk": prev.get("risk", "ignore"), "ambiguous": False,
+            "why": f"decided by {seen['decided_by']} in run {seen.get('run')}, carried forward: {prev.get('why', '')}",
+            "carried_from": seen.get("run")}
+
+
 def classify_all(mentions: list[dict], profile: dict, llm1: LLM, llm2: LLM, log) -> None:
     for m in mentions:
         p1 = classify_one(m, profile, llm1)
         p2 = classify_one(m, profile, llm2) if needs_second_opinion(p1, m) else None
         m["pass1"], m["pass2"] = p1, p2
-        m["final"] = apply_reach(decide(p1, p2), m.get("reach") or {})
+        m["final"] = carry_forward(m) or apply_reach(decide(p1, p2), m.get("reach") or {})
         log("classify", f"{m['id']} {m['final']['risk']}{' AMBIGUOUS' if m['final']['ambiguous'] else ''}: {m['title'][:70]}",
             pass1=p1["risk"], pass2=p2["risk"] if p2 else None, about=m["final"]["about_subject"])
 
