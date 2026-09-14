@@ -24,7 +24,10 @@ _TEMPLATES = {p.stem: p.read_text(encoding="utf-8") for p in (HERE / "templates"
 
 
 def page(name: str, title: str, track: str = "", **vars) -> HTMLResponse:
-    html = _TEMPLATES["_head"] + _TEMPLATES[name] + _TEMPLATES["_foot"]
+    body = _TEMPLATES[name]
+    if name != "home":
+        body = _TEMPLATES["_page_open"] + body + _TEMPLATES["_page_close"]
+    html = _TEMPLATES["_head"] + body + _TEMPLATES["_foot"]
     vars = {"title": title, "script": "", "track": track, **vars}
     for k, v in vars.items():
         html = html.replace("{{" + k + "}}", str(v))
@@ -71,7 +74,7 @@ def _list(kind: str) -> list[dict]:
 
 @app.get("/", response_class=HTMLResponse)
 def home():
-    return page("home", "Growpido Task")
+    return page("home", "Growpido", track="home")
 
 
 @app.get("/health")

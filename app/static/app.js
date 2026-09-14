@@ -6,9 +6,25 @@
   const chip = (label, cls) => `<span class="chip ${cls || label}">${esc(String(label).replace(/_/g, " "))}</span>`;
   async function getJSON(url) { const r = await fetch(url, { headers: { Accept: "application/json" } }); if (!r.ok) throw new Error(`${r.status} ${url}`); return r.json(); }
 
-  /* sidebar: mark the active track */
+  /* nav pill: mark the active page */
   const track = document.body.dataset.track || "home";
-  $$(".nav a[data-nav]").forEach((a) => a.classList.toggle("on", a.dataset.nav === track));
+  $$(".topnav a[data-nav]").forEach((a) => a.classList.toggle("on", a.dataset.nav === track));
+
+  /* words pull up: split the text, stagger each word, once, when in view (port of WordsPullUp) */
+  $$(".pull[data-pull]").forEach((el) => {
+    const words = el.dataset.pull.split(" ");
+    el.innerHTML = words.map((w, i) => {
+      const last = i === words.length - 1;
+      const ast = last && el.dataset.asterisk ? '<span class="ast">*</span>' : "";
+      return `<span class="w" style="transition-delay:${i * 80}ms;margin-right:${last ? 0 : "0.25em"}">${esc(w)}${ast}</span>`;
+    }).join("");
+    const on = () => el.classList.add("on");
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { on(); io.disconnect(); } });
+      io.observe(el);
+    } else on();
+  });
+  $$(".reveal").forEach((el) => setTimeout(() => el.classList.add("on"), parseInt(el.dataset.delay || "0", 10)));
 
   /* run lists: every .runs[data-kind] on the page */
   async function renderLists() {
