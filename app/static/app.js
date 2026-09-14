@@ -6,6 +6,21 @@
   const chip = (label, cls) => `<span class="chip ${cls || label}">${esc(String(label).replace(/_/g, " "))}</span>`;
   async function getJSON(url) { const r = await fetch(url, { headers: { Accept: "application/json" } }); if (!r.ok) throw new Error(`${r.status} ${url}`); return r.json(); }
 
+  /* approver token: kept in sessionStorage, attached to every gate action, asked for once per tab */
+  window.__token = () => { try { return sessionStorage.getItem("approver_token") || ""; } catch (e) { return ""; } };
+  window.__gate = { required: false };
+  getJSON("/api/gate").then((g) => { window.__gate = g; document.dispatchEvent(new Event("gate-info")); }).catch(() => {});
+  window.__tokenField = () => !window.__gate.required ? "" :
+    `<label class="lbl">Approver token</label><input class="text" type="password" name="token" value="${esc(window.__token())}" placeholder="Set by APPROVER_TOKEN" required oninput="try{sessionStorage.setItem('approver_token',this.value)}catch(e){}">`;
+  window.__gateNote = () => window.__gate.required ? "" : `<p class="hint">No approver token is configured on this deployment, so the gate is open to anyone with the link. Set APPROVER_TOKEN to lock it.</p>`;
+
+  /* radar schedule notice */
+  const sch = $("#schedule");
+  if (sch) getJSON("/api/radar/schedule").then((x) => {
+    sch.textContent = x.enabled ? `Scheduled every ${x.schedule} UTC for ${x.subjects}. Next run ${x.next.replace("T", " ").slice(0, 16)} UTC${x.last_run_id ? `, last scheduled run ${x.last_run_id}` : ""}.`
+      : "Not scheduled. Set RADAR_SCHEDULE, for example mon 09:00, to run this every week without a click.";
+  }).catch(() => {});
+
   /* nav pill: mark the active page */
   const track = document.body.dataset.track || "home";
   $$(".topnav a[data-nav]").forEach((a) => a.classList.toggle("on", a.dataset.nav === track));
@@ -91,6 +106,7 @@
     return r.json();
   }
   async function postForm(url, data) {
+    if (!data.token && window.__token()) data = { ...data, token: window.__token() };
     const body = new URLSearchParams(data);
     const r = await fetch(url, { method: "POST", body, headers: { Accept: "application/json" } });
     const j = await r.json().catch(() => ({}));
@@ -158,6 +174,10 @@
       $("#gaps").innerHTML = L.gaps.map((g, i) => `<div class="gap"><span class="n">${i + 1}</span><b class="t">${esc(g.title)}</b>
         <p>${esc(g.what_is_missing)} ${esc(g.why_it_matters)}</p><p class="fix">Fix: ${esc(g.fix)}</p><div class="ev">Evidence: ${esc((g.evidence || []).join(", "))}</div></div>`).join("");
     }
+    // conflicts
+    const C = L.conflicts || [];
+    $("#conflictsCard").hidden = !C.length;
+    if (C.length) $("#conflicts").innerHTML = C.map((c) => `<div class="gap"><b class="t">${esc(c.ids.join(" and "))}</b><p>${esc(c.what)}</p>${c.claims.map((x) => `<p class="hint">${esc(x)}</p>`).join("")}${c.sources.map((u) => `<a class="src" href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>`).join("")}</div>`).join("");
     // findings
     const F = L.findings || [];
     if (F.length) {
@@ -209,7 +229,8 @@
         <p class="hint">Read the refused list and open the sources before you sign. Your name and note go into the ledger and the diagnostic header.</p>
         ${warns.length && page === "run" ? `<ul class="warnlist">${warns.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>` : ""}
         ${page === "run" ? `<p><a class="btn" href="/runs/${esc(rid)}/draft">Open the full draft</a></p>` : ""}
-        <form id="approveForm"><label class="lbl">Your name</label><input class="text" name="by" required placeholder="Full name">
+        ${window.__gateNote()}
+        <form id="approveForm">${window.__tokenField()}<label class="lbl">Your name</label><input class="text" name="by" required placeholder="Full name">
         <label class="lbl">What did you check?</label><textarea class="text" name="note" rows="3" required placeholder="At least 10 characters"></textarea>
         <div class="err" id="gateErr"></div>
         <div style="display:flex;gap:10px;margin-top:12px"><button class="btn primary" type="submit">Approve</button><button class="btn danger" type="button" id="rejectBtn">Reject</button></div></form>`;
@@ -228,15 +249,15 @@
       g.innerHTML = `<h2>Human gate</h2><p class="hint"><span class="spin"></span>Waiting for the pipeline to produce a draft.</p>`;
     }
   }
-  async function runPage() {
+  async function runPage(once) {
     const app = $("#app"); if (!app || !$("#stages") || app.dataset.kind === "radar") return;
     const rid = app.dataset.run;
     async function tick() {
       try {
         const [d, log] = await Promise.all([getJSON(`/runs/${rid}/ledger.json`), getJSON(`/runs/${rid}/log`)]);
         renderRun(d); renderLog(log);
-        if (["created", "running"].includes(d.run.status)) setTimeout(tick, 3000);
-      } catch (ex) { $("#runError").textContent = ex.message; setTimeout(tick, 5000); }
+        if (!once && ["created", "running"].includes(d.run.status)) setTimeout(tick, 3000);
+      } catch (ex) { $("#runError").textContent = ex.message; if (!once) setTimeout(tick, 5000); }
     }
     tick();
   }
@@ -277,7 +298,8 @@
     } catch (ex) { $("#doc").innerHTML = `<div class="empty">${esc(ex.message)}</div>`; }
   }
 
-  index(); runPage(); draftPage();
+  index(); runPage(false); draftPage();
+  document.addEventListener("gate-info", () => { runPage(true); draftPage(); });
 })();
 
 /* ---------- Track A: radar ---------- */
@@ -288,6 +310,7 @@
   const when = (iso) => (iso ? iso.replace("T", " ").slice(0, 16) + " UTC" : "");
   async function getJSON(url) { const r = await fetch(url, { headers: { Accept: "application/json" } }); if (!r.ok) throw new Error(`${r.status} ${url}`); return r.json(); }
   async function postForm(url, data) {
+    if (!data.token && window.__token()) data = { ...data, token: window.__token() };
     const r = await fetch(url, { method: "POST", body: new URLSearchParams(data), headers: { Accept: "application/json" } });
     const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.detail || `${r.status}`); return j;
   }
@@ -336,7 +359,7 @@
       }
     }
     return `<details class="mention" ${f.ambiguous || f.risk === "respond_now" ? "open" : ""}>
-      <summary><span class="fid">${esc(m.id)}</span><div><div class="title">${esc(m.title || m.url)}</div><div class="sub">${chip(m.channel)} <span>${esc(m.publisher)}</span> <span>${esc(m.date || "undated")}</span> <span>${esc(m.subject)}</span></div></div>
+      <summary><span class="fid">${esc(m.id)}</span><div><div class="title">${esc(m.title || m.url)}</div><div class="sub">${chip(m.channel)} ${m.seen_before === true ? chip("seen before", "plain") : m.seen_before === false ? chip("new", "plain") : ""} ${m.reach ? chip("reach " + m.reach.bucket, "plain") : ""} <span>${esc(m.publisher)}</span> <span>${esc(m.date || "undated")}</span> <span>${esc(m.subject)}</span></div></div>
       <div class="chips">${f.ambiguous ? chip("ambiguous") : ""}${f.about_subject === "no" ? chip("namesake", "plain") : chip(f.risk || "pending")}${f.sentiment ? chip(f.sentiment, f.sentiment + " plain") : ""}</div></summary>
       <div class="body">
         <p><a class="src" href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.url)}</a></p>
@@ -376,7 +399,8 @@
       const amb = (L.mentions || []).filter((m) => m.final && m.final.ambiguous).length;
       g.innerHTML = `<h2>Human gate</h2><p class="hint">Approving circulates the brief as it stands. ${amb ? `<b>${amb} ambiguous item${amb > 1 ? "s are" : " is"} still undecided</b>; you can approve anyway, they stay listed as held.` : "No ambiguous items remain."}</p>
         ${page === "run" ? `<p><a class="btn" href="/radar/runs/${esc(rid)}/brief">Read the full brief</a></p>` : ""}
-        <form id="approveForm"><label class="lbl">Your name</label><input class="text" name="by" required placeholder="Full name">
+        ${window.__gateNote()}
+        <form id="approveForm">${window.__tokenField()}<label class="lbl">Your name</label><input class="text" name="by" required placeholder="Full name">
         <label class="lbl">What did you check?</label><textarea class="text" name="note" rows="3" required placeholder="At least 10 characters"></textarea>
         <div class="err" id="gateErr"></div><div style="margin-top:12px"><button class="btn primary" type="submit">Approve brief</button></div></form>`;
       $("#approveForm").addEventListener("submit", async (e) => {
@@ -474,4 +498,5 @@
     } catch (ex) { $("#doc").innerHTML = `<div class="empty">${esc(ex.message)}</div>`; }
   }
   radarIndex(); radarRun(false); radarBrief();
+  document.addEventListener("gate-info", () => { radarRun(true); radarBrief(); });
 })();

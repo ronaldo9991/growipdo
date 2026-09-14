@@ -47,6 +47,10 @@ MAX_SOURCES = 36
 MAX_COMPANY_SOURCES = 12
 MAX_CLAIMS_PER_SOURCE = 10
 MAX_CLAIMS_TOTAL = 72
+VERIFY_WORKERS = int(os.environ.get("VERIFY_WORKERS") or 4)   # claims verified concurrently
+APPROVER_TOKEN = os.environ.get("APPROVER_TOKEN") or ""        # required on every human gate action when set
+RADAR_SCHEDULE = os.environ.get("RADAR_SCHEDULE") or ""        # e.g. "mon 09:00" (UTC); empty disables the scheduler
+RADAR_SUBJECTS = os.environ.get("RADAR_SUBJECTS") or "Nidhi Hooda, Growpido"
 MAX_CLAIMS_PER_SOURCE_SELECTED = 3
 
 

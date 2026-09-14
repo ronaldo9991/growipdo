@@ -10,6 +10,7 @@
       <a class="btn" id="draftLink" href="/runs/{{run_id}}/draft" hidden>Review draft</a>
       <a class="btn" href="/runs/{{run_id}}/diagnostic.md" id="mdLink" hidden>diagnostic.md</a>
       <a class="btn" href="/runs/{{run_id}}/ledger.json" target="_blank" rel="noopener">ledger.json</a>
+      <a class="btn" href="/runs/{{run_id}}/evidence.zip">evidence.zip</a>
     </div>
   </div>
   <div class="stages" id="stages"></div>
@@ -19,6 +20,7 @@
     <div class="stack">
       <div class="card" id="summaryCard" hidden><h2>Summary</h2><div id="summary" class="doc"></div></div>
       <div class="card" id="gapsCard" hidden><h2>Three biggest gaps</h2><div id="gaps"></div></div>
+      <div class="card" id="conflictsCard" hidden><h2>Conflicts between sources</h2><p class="hint">These findings stand, but another source gives a different figure for the same thing. Quote neither number without naming its source.</p><div id="conflicts"></div></div>
       <div class="card" id="findingsCard" hidden><h2>Findings ledger</h2><div class="tabs" id="tabs"></div><div id="findings"></div></div>
       <div class="card"><h2>Log</h2><div class="log" id="log"></div></div>
     </div>

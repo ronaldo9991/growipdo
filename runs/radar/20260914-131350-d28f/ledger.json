@@ -1,0 +1,29 @@
+{
+  "sources": [],
+  "claims": [],
+  "findings": [],
+  "gaps": [],
+  "summary": "",
+  "lint": [],
+  "subjects": [
+    "Nidhi Hooda",
+    "Growpido"
+  ],
+  "profile": {
+    "profile": "Nidhi Hooda is the founder of Growpido LLC. The snippets describe her as a reputation architect and strategic influence or narrative advisor. Growpido is a Dubai, U.A.E. based reputation advisory and executive branding company. It says the firm works with founders, fund managers, family offices, and DIFC leaders and CEOs.",
+    "disambiguators": [
+      "Founder of Growpido LLC",
+      "Based in Dubai, U.A.E.",
+      "Reputation advisory and executive branding",
+      "Works with founders, fund managers, family offices, DIFC leaders and CEOs"
+    ],
+    "evidence_urls": [
+      "https://growpido.com/about",
+      "https://ae.linkedin.com/in/nidhihooda",
+      "https://www.instagram.com/p/Dckxn-8DBmD/",
+      "https://www.crunchbase.com/person/nidhi-hooda-199c",
+      "https://growpido.com/",
+      "https://www.crunchbase.com/organization/growpido"
+    ]
+  }
+}

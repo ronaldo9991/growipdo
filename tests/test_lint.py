@@ -40,3 +40,9 @@ def test_list_markers_and_ids_ignored():
 def test_mechanical_fix():
     assert "—" not in lint.mechanical_fix("a — b #tag")
     assert "#" not in lint.mechanical_fix("a — b #tag")
+
+
+def test_dirham_prefix_is_one_number():
+    from app.util import number_keys
+    assert number_keys("a Dh449,881 penalty") == {"449881"}
+    assert number_keys("AED 449,881") == {"449881"}

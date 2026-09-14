@@ -5,6 +5,7 @@ a response until a named human has approved drafting one.
 LinkedIn is never fetched. LinkedIn mentions come in as search engine snippets only and are labelled so."""
 from __future__ import annotations
 
+import math
 import re
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
@@ -97,6 +98,25 @@ def channel_of(url: str, mode: str) -> str:
     return "web"
 
 
+_ENGAGE = re.compile(r"(\d[\d,]*)\s*(comments?|likes?|reactions?|reposts?|shares?|followers?|views?)", re.IGNORECASE)
+
+
+def reach_of(m: dict) -> dict:
+    """A rough audience estimate from what the search engine shows: engagement counts in the title or
+    snippet and the channel's typical reach. It is an estimate for triage, not a measurement."""
+    text = f"{m.get('title') or ''} {m.get('snippet') or ''}"
+    engagement = 0
+    signals = []
+    for num, kind in _ENGAGE.findall(text):
+        n = int(num.replace(",", ""))
+        engagement += n
+        signals.append(f"{n} {kind.lower()}")
+    weight = {"news": 3.0, "linkedin": 2.0, "web": 1.0}.get(m.get("channel"), 1.0)
+    score = round(weight * (1 + math.log10(1 + engagement)), 2)
+    bucket = "high" if score >= 4.0 else "medium" if score >= 2.0 else "low"
+    return {"score": score, "bucket": bucket, "engagement": engagement, "signals": signals}
+
+
 def mentions_subject(subject: str, *texts: str) -> bool:
     key = subject.split()[-1].lower() if " " in subject else subject.lower()
     blob = " ".join(t or "" for t in texts).lower()
@@ -152,7 +172,42 @@ def collect(subjects: list[str], run_id: str, log) -> list[dict]:
             m["text_chars"] = 0
     for i, m in enumerate(items, start=1):
         m["id"] = f"M{i}"
+        m["reach"] = reach_of(m)
     return items
+
+
+# ---------- memory between weeks ----------
+
+def _norm_url(u: str) -> str:
+    return (u or "").split("#")[0].split("?")[0].rstrip("/").lower().replace("http://", "https://").replace("://www.", "://")
+
+
+def previous_mentions(current_run_id: str) -> tuple[str | None, dict[str, dict]]:
+    """URLs from the most recent earlier radar run, approved preferred, so this week's brief can say
+    what is new. Returns (previous run id, {normalized url: {id, final}})."""
+    ids = [r for r in Run.list_ids("radar") if r != current_run_id and not r.startswith("deployed-")]
+    chosen = None
+    for rid in ids:
+        try:
+            r = Run.load(rid, "radar")
+        except Exception:
+            continue
+        if r.state.get("status") == "approved":
+            chosen = r
+            break
+        if chosen is None and r.state.get("status") in ("draft", "approved"):
+            chosen = r
+    if chosen is None:
+        return None, {}
+    return chosen.id, {_norm_url(m["url"]): {"id": m["id"], "final": m.get("final") or {}} for m in chosen.ledger.get("mentions", [])}
+
+
+def mark_seen(mentions: list[dict], prev: dict[str, dict]) -> None:
+    for m in mentions:
+        hit = prev.get(_norm_url(m["url"]))
+        m["seen_before"] = bool(hit)
+        if hit:
+            m["seen_as"] = {"id": hit["id"], "risk": (hit.get("final") or {}).get("risk"), "decided_by": (hit.get("final") or {}).get("decided_by")}
 
 
 # ---------- classification ----------
@@ -241,12 +296,21 @@ def decide(p1: dict, p2: dict | None) -> dict:
             "why": f"passes disagree on risk ({p1['risk']} vs {p2['risk']}); held at {cautious} for a human"}
 
 
+def apply_reach(final: dict, reach: dict) -> dict:
+    """Reach only ever raises attention, never lowers it, and never invents respond now: a negative or
+    mixed item that both passes would ignore is held at watch when its audience looks large."""
+    if final["about_subject"] != "no" and final["risk"] == "ignore" and final["sentiment"] in ("negative", "mixed") \
+            and reach.get("bucket") == "high":
+        return {**final, "risk": "watch", "why": final["why"] + f"; raised to watch for reach ({', '.join(reach.get('signals') or ['channel'])})"}
+    return final
+
+
 def classify_all(mentions: list[dict], profile: dict, llm1: LLM, llm2: LLM, log) -> None:
     for m in mentions:
         p1 = classify_one(m, profile, llm1)
         p2 = classify_one(m, profile, llm2) if needs_second_opinion(p1, m) else None
         m["pass1"], m["pass2"] = p1, p2
-        m["final"] = decide(p1, p2)
+        m["final"] = apply_reach(decide(p1, p2), m.get("reach") or {})
         log("classify", f"{m['id']} {m['final']['risk']}{' AMBIGUOUS' if m['final']['ambiguous'] else ''}: {m['title'][:70]}",
             pass1=p1["risk"], pass2=p2["risk"] if p2 else None, about=m["final"]["about_subject"])
 
@@ -287,7 +351,10 @@ def _t(text: str) -> str:
 def _line(m: dict) -> str:
     when = m["date"] or "undated"
     ch = {"linkedin": "LinkedIn, snippet only", "news": "news", "web": "web"}[m["channel"]]
-    return (f"- {m['id']}. {_t(m['title']) or m['url']} ({m['publisher']}, {ch}, {when}). Sentiment {m['final']['sentiment']}. "
+    seen = "seen before" if m.get("seen_before") else "new"
+    r = m.get("reach") or {}
+    reach = f"reach {r.get('bucket', 'low')}" + (f" ({', '.join(r['signals'])})" if r.get("signals") else "")
+    return (f"- {m['id']}. {_t(m['title']) or m['url']} ({m['publisher']}, {ch}, {when}, {seen}, {reach}). Sentiment {m['final']['sentiment']}. "
             f"{_t(m['final']['why'])}. Reason: {_t(m['pass1']['reason'])}\n  {m['url']}")
 
 
@@ -301,13 +368,16 @@ def write_brief(run: Run, subjects: list[str], profile: dict, mentions: list[dic
     watch = [m for m in live if m["final"]["risk"] == "watch" and not m["final"]["ambiguous"]]
     ignore = [m for m in live if m["final"]["risk"] == "ignore"]
     this_week = [m for m in live if m["date"] and m["date"] >= start]
+    new = [m for m in live if not m.get("seen_before")]
+    prev_id = run.ledger.get("previous_run")
 
     items = "\n".join(f"{m['id']} [{m['final']['risk']}{', ambiguous' if m['final']['ambiguous'] else ''}] {m['title'][:120]} "
                       f"({m['channel']}, {m['date'] or 'undated'}): {m['pass1']['reason'][:200]}" for m in respond + ambiguous + watch)
-    user = (f"Subjects: {', '.join(subjects)}\nWeek: {start} to {end}\nCounts: {c}\n\nItems needing attention:\n{items or '(none)'}\n\n"
-            f"Write the three bullets.")
+    user = (f"Subjects: {', '.join(subjects)}\nWeek: {start} to {end}\nCounts: {c}\n"
+            f"New since the last run: {len(new)} of {len(live)}" + (f" (compared with run {prev_id})" if prev_id else " (no earlier run)") +
+            f"\n\nItems needing attention:\n{items or '(none)'}\n\nWrite the three bullets.")
     allowed = [str(v) for v in c.values()]
-    allowed += [start, end] + [m["title"] + " " + m["snippet"] + " " + (m.get("date") or "") + " " + (m.get("pass1", {}).get("reason") or "") for m in mentions]
+    allowed += [start, end, str(len(new)), str(len(live))] + [m["title"] + " " + m["snippet"] + " " + (m.get("date") or "") + " " + (m.get("pass1", {}).get("reason") or "") for m in mentions]
     opening = llm.text(BRIEF_SYSTEM, user, max_tokens=400).strip()
     problems = [str(i) for i in lint.lint_text(opening)] + [f"number {n!r} not in the items" for n in lint.untraced_numbers(opening, allowed)]
     if problems:
@@ -340,7 +410,8 @@ def write_brief(run: Run, subjects: list[str], profile: dict, mentions: list[dic
     L.append(f"{c['total']} public mentions found, {c['about_subject']} about the subjects, {c['not_subject']} about namesakes and set aside. "
              f"{c['respond_now']} need a response, {c['watch']} to watch, {c['ambiguous']} ambiguous and waiting for a human, {c['ignore']} need nothing. "
              f"By channel: {c['linkedin']} LinkedIn (search snippets only, never fetched), {c['news']} news, {c['web']} web. "
-             f"{len(this_week)} carry a date inside the week; the rest are undated or older and are listed as background.")
+             f"{len(this_week)} carry a date inside the week; the rest are undated or older and are listed as background. "
+             + (f"{len(new)} are new since run {prev_id}; {len(live) - len(new)} were already in it." if prev_id else "No earlier run to compare with, so everything counts as new."))
     L.append("")
     L.append(f"## Respond now ({len(respond)})")
     L.append("")
@@ -429,6 +500,11 @@ def run_radar(run: Run) -> Run:
         mentions = collect(subjects, run.id, run.log)
         if not mentions:
             raise RuntimeError("no public mentions found for the subjects")
+        prev_id, prev = previous_mentions(run.id)
+        mark_seen(mentions, prev)
+        run.ledger["previous_run"] = prev_id
+        run.log("collect", f"{sum(1 for m in mentions if m['seen_before'])} of {len(mentions)} mentions were already in run {prev_id}" if prev_id
+                else "no earlier radar run to compare with; everything counts as new")
         run.ledger["mentions"] = mentions
         run.save()
 

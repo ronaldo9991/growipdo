@@ -59,14 +59,14 @@ def tokenize(text: str) -> list[str]:
 
 
 NUMBER_RE = re.compile(
-    r"(?<![\w\[/])(?:USD|AED|US\$|\$|€|£)?\s?\d[\d,]*(?:\.\d+)?\s?(?:billion|million|thousand|bn|mn|m|k|%|percent)?(?![\w\]/])",
+    r"(?<![\w\[/])(?:USD|AED|Dhs?|US\$|\$|€|£)?\s?\d[\d,]*(?:\.\d+)?\s?(?:billion|million|thousand|bn|mn|m|k|%|percent)?(?![\w\]/])",
     re.IGNORECASE,
 )
 
 
 def normalize_number(raw: str) -> str:
     """Turn '$1 billion', 'USD 1,000,000,000', '1bn' into a comparable key."""
-    s = raw.lower().replace(",", "").replace("usd", "").replace("aed", "")
+    s = raw.lower().replace(",", "").replace("usd", "").replace("aed", "").replace("dhs", "").replace("dh", "")
     s = s.replace("us$", "").replace("$", "").replace("€", "").replace("£", "").strip()
     m = re.match(r"(\d+(?:\.\d+)?)\s*(billion|million|thousand|bn|mn|m|k|%|percent)?", s)
     if not m:
@@ -88,6 +88,20 @@ def find_numbers(text: str) -> list[str]:
 
 def number_keys(text: str) -> set[str]:
     return {normalize_number(n) for n in find_numbers(text)}
+
+
+def numbers_with_units(text: str) -> list[tuple[float, str]]:
+    """(value, unit) pairs where unit is usd, aed, pct or none. Years and bare identifiers stay unit none."""
+    out = []
+    for raw in find_numbers(text or ""):
+        low = raw.lower()
+        unit = "usd" if ("usd" in low or "$" in low) else "aed" if ("aed" in low or low.startswith("dh")) else "pct" if ("%" in low or "percent" in low) else "none"
+        key = normalize_number(raw).rstrip("%")
+        try:
+            out.append((float(key), unit))
+        except ValueError:
+            continue
+    return out
 
 
 def dumps(obj) -> str:

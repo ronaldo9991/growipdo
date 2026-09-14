@@ -6,14 +6,16 @@ Pages are static shells under app/templates rendered by JavaScript from the JSON
 reviewer sees is the data in the ledger."""
 from __future__ import annotations
 
+import io
 import threading
+import zipfile
 from pathlib import Path
 
 from fastapi import FastAPI, Form, HTTPException, Request
-from fastapi.responses import HTMLResponse, JSONResponse, PlainTextResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, JSONResponse, PlainTextResponse, RedirectResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
-from . import pipeline, radar
+from . import config, pipeline, radar, scheduler
 from .ledger import Run
 
 app = FastAPI(title="growpido-task")
@@ -45,6 +47,35 @@ def _load(run_id: str, kind: str = "diagnostic") -> Run:
         return Run.load(run_id, kind)
     except FileNotFoundError:
         raise HTTPException(404, f"no run {run_id}")
+
+
+def require_token(request: Request, token: str = "") -> None:
+    """Every human gate action needs APPROVER_TOKEN when one is configured. Without one the gate is
+    open, which the run page says out loud so nobody mistakes a demo for a locked door."""
+    expected = config.APPROVER_TOKEN
+    if not expected:
+        return
+    given = token or request.headers.get("x-approver-token") or ""
+    if given != expected:
+        raise HTTPException(403, "approver token missing or wrong")
+
+
+def evidence_zip(run: Run) -> StreamingResponse:
+    """The run folder plus its evidence snapshots as one zip, so the audit trail on the server can be
+    pulled back into the repo or handed to a reviewer."""
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+        for f in sorted(run.folder.glob("*")):
+            if f.is_file():
+                z.write(f, f"{run.id}/run/{f.name}")
+        ev = config.EVIDENCE_DIR / run.id
+        if ev.exists():
+            for f in sorted(ev.glob("*")):
+                if f.is_file():
+                    z.write(f, f"{run.id}/evidence/{f.name}")
+    buf.seek(0)
+    return StreamingResponse(buf, media_type="application/zip",
+                             headers={"Content-Disposition": f'attachment; filename="{run.id}-evidence.zip"'})
 
 
 def _bg(fn, run_id: str, kind: str):
@@ -79,7 +110,19 @@ def home():
 
 @app.get("/health")
 def health():
-    return {"ok": True}
+    return {"ok": True, "scheduler": scheduler.status()["enabled"]}
+
+
+def _scheduled_radar(subjects: str) -> str:
+    run = Run.create(", ".join(radar.parse_subjects(subjects)), kind="radar")
+    run.log("run", "started by the weekly scheduler", schedule=config.RADAR_SCHEDULE)
+    threading.Thread(target=_bg, args=(radar.run_radar, run.id, "radar"), daemon=True).start()
+    return run.id
+
+
+@app.on_event("startup")
+def _start_scheduler():
+    scheduler.start(_scheduled_radar)
 
 
 # ---------- Track B ----------
@@ -122,7 +165,8 @@ def draft_page(run_id: str):
 
 
 @app.post("/runs/{run_id}/approve")
-def approve(request: Request, run_id: str, by: str = Form(...), note: str = Form(...)):
+def approve(request: Request, run_id: str, by: str = Form(...), note: str = Form(...), token: str = Form("")):
+    require_token(request, token)
     run = _load(run_id)
     try:
         pipeline.approve(run, by, note)
@@ -134,7 +178,8 @@ def approve(request: Request, run_id: str, by: str = Form(...), note: str = Form
 
 
 @app.post("/runs/{run_id}/reject")
-def reject(request: Request, run_id: str, by: str = Form(...), note: str = Form(...)):
+def reject(request: Request, run_id: str, by: str = Form(...), note: str = Form(...), token: str = Form("")):
+    require_token(request, token)
     run = _load(run_id)
     try:
         pipeline.reject(run, by, note)
@@ -156,12 +201,21 @@ def diagnostic_md(run_id: str):
 @app.get("/runs/{run_id}/ledger.json")
 def ledger_json(run_id: str):
     run = _load(run_id)
-    return JSONResponse({"run": run.state, "ledger": run.ledger})
+    ledger = dict(run.ledger)
+    if "conflicts" not in ledger and ledger.get("findings"):
+        from .report import find_conflicts  # runs from before the field existed get it computed on read
+        ledger["conflicts"] = find_conflicts(ledger["findings"])
+    return JSONResponse({"run": run.state, "ledger": ledger})
 
 
 @app.get("/runs/{run_id}/log")
 def log_json(run_id: str):
     return JSONResponse(_load(run_id).read_log())
+
+
+@app.get("/runs/{run_id}/evidence.zip")
+def evidence_b(run_id: str):
+    return evidence_zip(_load(run_id))
 
 
 # ---------- Track A ----------
@@ -226,24 +280,42 @@ def _guard(fn, *args):
         raise HTTPException(400, str(e))
 
 
+@app.get("/radar/runs/{run_id}/evidence.zip")
+def evidence_a(run_id: str):
+    return evidence_zip(_load(run_id, "radar"))
+
+
+@app.get("/api/radar/schedule")
+def radar_schedule():
+    return scheduler.status()
+
+
+@app.get("/api/gate")
+def gate_info():
+    return {"token_required": bool(config.APPROVER_TOKEN)}
+
+
 @app.post("/radar/runs/{run_id}/approve")
-def radar_approve(run_id: str, by: str = Form(...), note: str = Form(...)):
+def radar_approve(request: Request, run_id: str, by: str = Form(...), note: str = Form(...), token: str = Form("")):
+    require_token(request, token)
     run = _load(run_id, "radar")
     _guard(radar.approve_brief, run, by, note)
     return {"ok": True, "status": run.state["status"]}
 
 
 @app.post("/radar/runs/{run_id}/mentions/{mention_id}/decide")
-def radar_decide(run_id: str, mention_id: str, by: str = Form(...), about_subject: str = Form(...),
-                 risk: str = Form(...), note: str = Form("")):
+def radar_decide(request: Request, run_id: str, mention_id: str, by: str = Form(...), about_subject: str = Form(...),
+                 risk: str = Form(...), note: str = Form(""), token: str = Form("")):
+    require_token(request, token)
     run = _load(run_id, "radar")
     _guard(radar.resolve_ambiguous, run, mention_id, by, about_subject, risk, note)
     return {"ok": True}
 
 
 @app.post("/radar/runs/{run_id}/mentions/{mention_id}/request")
-def radar_request(run_id: str, mention_id: str, by: str = Form(...), note: str = Form(...)):
+def radar_request(request: Request, run_id: str, mention_id: str, by: str = Form(...), note: str = Form(...), token: str = Form("")):
     """Gate 1: the human approves drafting. The draft is written in the background so the page stays live."""
+    require_token(request, token)
     run = _load(run_id, "radar")
     m = next((x for x in run.ledger.get("mentions", []) if x["id"] == mention_id), None)
     if not m:
@@ -267,14 +339,17 @@ def radar_request(run_id: str, mention_id: str, by: str = Form(...), note: str =
 
 
 @app.post("/radar/runs/{run_id}/mentions/{mention_id}/approve")
-def radar_approve_response(run_id: str, mention_id: str, by: str = Form(...), note: str = Form(""), edited: str = Form("")):
+def radar_approve_response(request: Request, run_id: str, mention_id: str, by: str = Form(...), note: str = Form(""),
+                           edited: str = Form(""), token: str = Form("")):
+    require_token(request, token)
     run = _load(run_id, "radar")
     _guard(radar.approve_response, run, mention_id, by, note, edited)
     return {"ok": True}
 
 
 @app.post("/radar/runs/{run_id}/mentions/{mention_id}/decline")
-def radar_decline_response(run_id: str, mention_id: str, by: str = Form(...), note: str = Form("")):
+def radar_decline_response(request: Request, run_id: str, mention_id: str, by: str = Form(...), note: str = Form(""), token: str = Form("")):
+    require_token(request, token)
     run = _load(run_id, "radar")
     _guard(radar.decline_response, run, mention_id, by, note)
     return {"ok": True}

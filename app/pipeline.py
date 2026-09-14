@@ -60,6 +60,9 @@ def run_pipeline(run: Run) -> Run:
         }
         run.save()
 
+        run.ledger["conflicts"] = report.find_conflicts(findings)
+        run.save()
+
         run.set_stage("gaps")
         gaps = find_gaps(identity, findings, sources, llm2, run.log)
         problems = report.check_gaps(gaps, findings)

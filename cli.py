@@ -44,6 +44,9 @@ def cmd_log(args):
 
 
 def cmd_approve(args):
+    if config.APPROVER_TOKEN and args.token != config.APPROVER_TOKEN:
+        print("APPROVER_TOKEN is set; pass --token", file=sys.stderr)
+        sys.exit(2)
     run = Run.load(args.run_id)
     pipeline.approve(run, args.by, args.note)
     print(f"approved: {run.diagnostic_path}")
@@ -68,7 +71,7 @@ def main(argv=None):
     s = sub.add_parser("run"); s.add_argument("url"); s.set_defaults(fn=cmd_run)
     s = sub.add_parser("log"); s.add_argument("run_id"); s.set_defaults(fn=cmd_log)
     s = sub.add_parser("approve"); s.add_argument("run_id"); s.add_argument("--by", required=True)
-    s.add_argument("--note", required=True); s.set_defaults(fn=cmd_approve)
+    s.add_argument("--note", required=True); s.add_argument("--token", default=""); s.set_defaults(fn=cmd_approve)
     s = sub.add_parser("list"); s.set_defaults(fn=cmd_list)
     s = sub.add_parser("models"); s.set_defaults(fn=cmd_models)
     args = p.parse_args(argv)

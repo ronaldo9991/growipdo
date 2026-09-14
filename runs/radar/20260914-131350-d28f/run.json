@@ -1,0 +1,23 @@
+{
+  "id": "20260914-131350-d28f",
+  "status": "running",
+  "stage": "collect",
+  "created_at": "2026-09-14T13:13:50+00:00",
+  "updated_at": "2026-09-14T13:14:01+00:00",
+  "input_url": "Nidhi Hooda, Growpido",
+  "subject": {
+    "full_name": "Nidhi Hooda, Growpido",
+    "role": "reputation radar",
+    "company": "",
+    "location": "",
+    "confidence": 1.0
+  },
+  "models": {
+    "primary": "gpt-5.4-mini",
+    "second_opinion": "gpt-5.6-terra"
+  },
+  "approval": null,
+  "error": null,
+  "counts": {},
+  "kind": "radar"
+}

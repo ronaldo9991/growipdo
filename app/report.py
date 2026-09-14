@@ -2,13 +2,72 @@
 from __future__ import annotations
 
 from . import lint
-from .util import now_iso
+from .util import now_iso, tokenize, number_keys, find_numbers, numbers_with_units
 
 SUMMARY_SYSTEM = """Write the summary paragraph of a one page diagnostic about how a founder shows up publicly.
 120 to 170 words, plain English, one paragraph, no bullet points, no headings.
 Use only the verified and partially verified findings given. Say which numbers are only the company's own word.
 Every number you write must appear verbatim in one of the findings given. Do not round, convert or add numbers.
 No em dashes. No hashtags. No filler words such as leverage, robust, journey, landscape, navigate, empower, unlock, seamless, testament, pivotal, delve, innovative, crucial."""
+
+
+def _near(x: float, y: float, tol: float = 0.15) -> bool:
+    """Close but not equal: 150 and 144, 2e6 and 2.1e6."""
+    if x == y or x == 0 or y == 0:
+        return False
+    return abs(x - y) / max(abs(x), abs(y)) <= tol
+
+
+def _comparable(v: float, unit: str) -> bool:
+    """Years and bare identifiers (licence numbers, notice numbers) are not figures to reconcile."""
+    if unit == "none" and (1900 <= v <= 2100 or v >= 10000):
+        return False
+    return True
+
+
+def find_conflicts(findings: list[dict]) -> list[dict]:
+    """Accepted findings that disagree with another source about the same figure.
+
+    Two routes in. A pass recorded a discrepancy that mentions a number on a finding that still passed:
+    both sources are real, they differ on the figure. Or two accepted findings in the same category share
+    two or more content words and carry numbers that are close but not equal, which is what the same
+    event reported by two sources looks like (over 150 versus 144 investors). Different events with
+    different numbers (two separate fines, two funding rounds) are not conflicts and are left alone."""
+    accepted = [f for f in findings if f["label"] in ("verified", "partially_verified")]
+    out, seen = [], set()
+    for f in accepted:
+        for p in f.get("passes") or []:
+            d = (p.get("discrepancy") or "").strip()
+            if d and find_numbers(d) and f["id"] not in seen:
+                seen.add(f["id"])
+                out.append({"ids": [f["id"]], "claims": [f["claim"]], "what": d,
+                            "sources": sorted({c["url"] for q in f["passes"] for c in (q.get("cited") or [])})[:4]})
+                break
+    for i, a in enumerate(accepted):
+        na = [(v, u) for v, u in numbers_with_units(a["claim"]) if _comparable(v, u)]
+        if not na:
+            continue
+        ta = {t for t in tokenize(a["claim"]) if not t[0].isdigit()}
+        for b in accepted[i + 1:]:
+            if b["category"] != a["category"]:
+                continue
+            nb = [(v, u) for v, u in numbers_with_units(b["claim"]) if _comparable(v, u)]
+            if not nb or {x for x in na} & {y for y in nb}:
+                continue
+            pairs = [(x, y) for x, ux in na for y, uy in nb if ux == uy and _near(x, y)]
+            if not pairs:
+                continue
+            tb = {t for t in tokenize(b["claim"]) if not t[0].isdigit()}
+            if len(ta & tb) < 2:
+                continue
+            key = tuple(sorted((a["id"], b["id"])))
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append({"ids": [a["id"], b["id"]], "claims": [a["claim"], b["claim"]],
+                        "what": "same subject, nearly the same figure reported differently: " + "; ".join(f"{x:g} versus {y:g}" for x, y in pairs),
+                        "sources": sorted({u for f in (a, b) for u in (f.get("sources") or [f["origin_url"]])})[:4]})
+    return out
 
 
 def allowed_texts(findings: list[dict]) -> list[str]:
@@ -128,6 +187,24 @@ def render(run_state: dict, identity: dict, sources: list[dict], findings: list[
     block("Verified", verified, False)
     block("Partially verified", partial, True)
     block("Refused", refused, True)
+
+    conflicts = find_conflicts(findings)
+    lines.append(f"## Conflicts between sources ({len(conflicts)})")
+    lines.append("")
+    if conflicts:
+        lines.append("These findings stand, but another source gives a different figure for the same thing. "
+                     "Do not quote either number without saying which source it comes from.")
+        lines.append("")
+        for c in conflicts:
+            lines.append(f"- {' and '.join(c['ids'])}. {c['what']}")
+            for cl in c["claims"]:
+                lines.append(f"  Claim: {cl}")
+            for u in c["sources"]:
+                lines.append(f"  Source: {u}")
+            lines.append("")
+    else:
+        lines.append("No accepted finding disagrees with another source.")
+        lines.append("")
 
     bad = [s for s in sources if s["status"] != "ok"]
     lines.append(f"## Could not check ({len(bad)})")

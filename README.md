@@ -149,4 +149,21 @@ evidence/<id>/   one text snapshot per fetched url
 Railway with Nixpacks: `Procfile` and `runtime.txt` are enough. Mount a volume at `/app/runs` so the ledger
 survives redeploys, and set `EVIDENCE_DIR=/app/runs/evidence` so the snapshots do too.
 
+## Seven things added after the first submission
+
+1. Conflicts between sources: accepted findings that disagree on the same figure are listed in the diagnostic
+   and on the run page, so neither number is quoted without its source.
+2. Concurrent verification: claims are checked VERIFY_WORKERS at a time; findings keep claim order.
+3. Weekly scheduler: set RADAR_SCHEDULE (for example `mon 09:00`, UTC) and RADAR_SUBJECTS and the radar runs
+   itself once a week, in process, with the last start recorded so a restart does not double run.
+4. Memory between weeks: each radar run compares its mentions with the previous run (approved preferred) and
+   the brief says what is new and what was already seen, with the earlier decision carried on the item.
+5. Approver token: set APPROVER_TOKEN and every approve, reject, decide and draft action must carry it. The
+   run page says plainly when no token is configured.
+6. Evidence bundle: `/runs/<id>/evidence.zip` and `/radar/runs/<id>/evidence.zip` return the run folder and its
+   page snapshots, so the server's audit trail can be pulled back into the repo.
+7. Reach estimate: engagement counts in a mention's title or snippet plus the channel give a low, medium or high
+   reach; a negative item both passes would ignore is held at watch when its reach is high. It never creates a
+   respond now on its own.
+
 See `HONEST.md` for what broke while making it run and where the code is still weak.

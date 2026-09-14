@@ -1,0 +1,7 @@
+{"ts": "2026-09-14T13:13:50+00:00", "stage": "run", "message": "created", "data": {"url": "Nidhi Hooda, Growpido"}}
+{"ts": "2026-09-14T13:13:50+00:00", "stage": "run", "message": "started by the weekly scheduler", "data": {"schedule": "mon 09:00"}}
+{"ts": "2026-09-14T13:13:50+00:00", "stage": "profile", "message": "started"}
+{"ts": "2026-09-14T13:14:01+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1076 in, 196 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:01+00:00", "stage": "profile", "message": "subject profile written from public snippets", "data": {"disambiguators": ["Founder of Growpido LLC", "Based in Dubai, U.A.E.", "Reputation advisory and executive branding", "Works with founders, fund managers, family offices, DIFC leaders and CEOs"]}}
+{"ts": "2026-09-14T13:14:01+00:00", "stage": "collect", "message": "started"}
+{"ts": "2026-09-14T13:14:02+00:00", "stage": "collect", "message": "8 results: '\"Nidhi Hooda\"' (web)"}

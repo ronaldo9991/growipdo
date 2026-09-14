@@ -4,6 +4,9 @@ from __future__ import annotations
 import math
 import re
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
+
+from . import config
 
 from .fetch import read_snapshot
 from .util import tokenize, number_keys, normalize_number, find_numbers
@@ -225,43 +228,47 @@ def combine(claim: dict, p1: dict, p2: dict) -> tuple[str, str]:
     return "unverified", "only repeated by secondary press; no primary or company source found"
 
 
+def verify_one(i: int, claim: dict, corpus: "Corpus", llm_primary, llm_second, log) -> dict:
+    # Pass 1: full claim text as the query.
+    ex1 = corpus.retrieve(claim["text"] + " " + " ".join(claim.get("numbers") or []), k=6, origin=claim["origin"])
+    p1 = safe_pass(claim, ex1, llm_primary, log, "pass 1")
+    # Pass 2: independent query built from the quote plus numbers, different model, more excerpts.
+    q2 = (claim.get("quote") or claim["text"]) + " " + " ".join(claim.get("numbers") or [])
+    ex2 = corpus.retrieve(q2, k=8, origin=claim["origin"])
+    p2 = safe_pass(claim, ex2, llm_second, log, "pass 2")
+    if p1.get("failed") or p2.get("failed"):
+        which = "pass 1" if p1.get("failed") else "pass 2"
+        label, reason = "unverified", f"{which} failed twice with a model error, so the claim could not be checked: " + \
+            (p1.get("failed") or p2.get("failed"))
+    else:
+        label, reason = combine(claim, p1, p2)
+    finding = {
+        "id": f"F{i}",
+        "claim_id": claim["id"],
+        "claim": claim["text"],
+        "quote": claim.get("quote"),
+        "category": claim["category"],
+        "about": claim["about"],
+        "numbers": claim.get("numbers") or [],
+        "origin_url": claim["origin_url"],
+        "origin_tier": claim["origin_tier"],
+        "also_in": claim.get("also_in") or [],
+        "label": label,
+        "reason": reason,
+        "passes": [{k: v for k, v in p.items() if k != "excerpts"} for p in (p1, p2)],
+        "sources": sorted({c["url"] for p in (p1, p2) for c in p["cited"]}),
+    }
+    log("verify", f"{finding['id']} {label}: {claim['text'][:90]}", pass1=p1["verdict"], pass2=p2["verdict"], reason=reason)
+    return finding
+
+
 def verify_claims(claims: list[dict], sources: list[dict], llm_primary, llm_second, log) -> list[dict]:
+    """Each claim is verified independently, so claims run concurrently. Findings keep claim order.
+    The worker count is small on purpose: the model endpoints rate limit, and the wrapper backs off."""
     corpus = Corpus(sources)
-    log("verify", f"corpus: {len(corpus.passages)} passages from {sum(1 for s in sources if s['status']=='ok')} sources")
-    findings = []
-    for i, claim in enumerate(claims, start=1):
-        # Pass 1: full claim text as the query.
-        ex1 = corpus.retrieve(claim["text"] + " " + " ".join(claim.get("numbers") or []), k=6, origin=claim["origin"])
-        p1 = safe_pass(claim, ex1, llm_primary, log, "pass 1")
-        # Pass 2: independent query built from the quote plus numbers, different model, more excerpts.
-        q2 = (claim.get("quote") or claim["text"]) + " " + " ".join(claim.get("numbers") or [])
-        ex2 = corpus.retrieve(q2, k=8, origin=claim["origin"])
-        p2 = safe_pass(claim, ex2, llm_second, log, "pass 2")
-        if p1.get("failed") or p2.get("failed"):
-            which = "pass 1" if p1.get("failed") else "pass 2"
-            label, reason = "unverified", f"{which} failed twice with a model error, so the claim could not be checked: " + \
-                (p1.get("failed") or p2.get("failed"))
-        else:
-            label, reason = combine(claim, p1, p2)
-        finding = {
-            "id": f"F{i}",
-            "claim_id": claim["id"],
-            "claim": claim["text"],
-            "quote": claim.get("quote"),
-            "category": claim["category"],
-            "about": claim["about"],
-            "numbers": claim.get("numbers") or [],
-            "origin_url": claim["origin_url"],
-            "origin_tier": claim["origin_tier"],
-            "also_in": claim.get("also_in") or [],
-            "label": label,
-            "reason": reason,
-            "passes": [
-                {k: v for k, v in p.items() if k != "excerpts"} for p in (p1, p2)
-            ],
-            "sources": sorted({c["url"] for p in (p1, p2) for c in p["cited"]}),
-        }
-        findings.append(finding)
-        log("verify", f"{finding['id']} {label}: {claim['text'][:90]}",
-            pass1=p1["verdict"], pass2=p2["verdict"], reason=reason)
+    log("verify", f"corpus: {len(corpus.passages)} passages from {sum(1 for s in sources if s['status']=='ok')} sources; "
+                  f"{config.VERIFY_WORKERS} claims at a time")
+    with ThreadPoolExecutor(max_workers=max(1, config.VERIFY_WORKERS)) as pool:
+        findings = list(pool.map(lambda ic: verify_one(ic[0], ic[1], corpus, llm_primary, llm_second, log),
+                                 list(enumerate(claims, start=1))))
     return findings
