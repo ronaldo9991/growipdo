@@ -6,6 +6,14 @@
   const chip = (label, cls) => `<span class="chip ${cls || label}">${esc(String(label).replace(/_/g, " "))}</span>`;
   async function getJSON(url) { const r = await fetch(url, { headers: { Accept: "application/json" } }); if (!r.ok) throw new Error(`${r.status} ${url}`); return r.json(); }
 
+  /* theme switch */
+  const tb = $("#themeBtn");
+  if (tb) tb.addEventListener("click", () => {
+    const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+
   /* sliding indicator for every [data-toggle] */
   function placeIndicator(t) {
     const ind = $(".ind", t); if (!ind) return;
@@ -62,7 +70,7 @@
           const c = r.counts || {};
           const href = r.kind === "radar" ? `/radar/runs/${esc(r.id)}` : `/runs/${esc(r.id)}`;
           const counts = r.kind === "radar"
-            ? `<span class="r">${c.respond_now ?? "-"} respond</span><span class="p">${c.watch ?? "-"} watch</span><span style="color:#c4b5fd">${c.ambiguous ?? "-"} ambiguous</span>`
+            ? `<span class="r">${c.respond_now ?? "-"} respond</span><span class="p">${c.watch ?? "-"} watch</span><span class="a">${c.ambiguous ?? "-"} ambiguous</span>`
             : `<span class="v">${c.verified ?? "-"} ok</span><span class="p">${c.partially_verified ?? "-"} partial</span><span class="r">${c.unverified ?? "-"} refused</span>`;
           const sub = r.kind === "radar" ? "Track A · weekly brief" : "Track B · diagnostic" + (r.role ? " · " + esc(r.role) : "");
           return `<a class="run-row in" href="${href}"><div><div class="name">${esc(r.subject || r.input_url)}</div><div class="sub">${sub}</div></div>
@@ -422,7 +430,7 @@
     const prevV = [...statsEl.querySelectorAll(".stat b")].map((b) => b.dataset.v);
     statsEl.innerHTML = `<div class="stat"><b>${c.about_subject ?? (L.mentions || []).length}</b><span>mentions about them</span></div>
       <div class="stat r"><b>${c.respond_now ?? 0}</b><span>respond now</span></div><div class="stat p"><b>${c.watch ?? 0}</b><span>watch</span></div>
-      <div class="stat" style="border-color:rgba(139,92,246,.4)"><b style="color:#c4b5fd">${c.ambiguous ?? 0}</b><span>ambiguous, held</span></div>`;
+      <div class="stat a"><b>${c.ambiguous ?? 0}</b><span>ambiguous, held</span></div>`;
     [...statsEl.querySelectorAll(".stat b")].forEach((b, i) => { if (prevV[i] != null) b.dataset.v = prevV[i]; });
     window.__animateStats(statsEl);
     window.__rail($("#stages"), STAGES, s.stage, ["draft", "approved"].includes(s.status));
