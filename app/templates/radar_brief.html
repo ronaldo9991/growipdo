@@ -1,12 +1,12 @@
 <div id="app" data-run="{{run_id}}" data-kind="radar">
-  <div class="head fade">
+  <div class="page-head in">
     <div>
-      <div class="kicker" style="color:var(--ink-3)">Weekly brief, run {{run_id}}</div>
-      <h1 id="subject">Brief</h1>
+      <div class="crumb"><a href="/radar">Track A</a> / <a href="/radar/runs/{{run_id}}">run <span class="mono">{{run_id}}</span></a> / brief</div>
+      <h1 id="subject">Weekly brief</h1>
       <div class="meta" id="meta"></div>
     </div>
     <div class="actions">
-      <span class="chip plain" id="statusChip"></span>
+      <span class="chip" id="statusChip"></span>
       <a class="btn" href="/radar/runs/{{run_id}}">Run detail</a>
       <a class="btn" href="/radar/runs/{{run_id}}/brief.md">brief.md</a>
     </div>

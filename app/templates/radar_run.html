@@ -1,12 +1,12 @@
 <div id="app" data-run="{{run_id}}" data-kind="radar">
-  <div class="head fade">
+  <div class="page-head in">
     <div>
-      <div class="kicker" style="color:var(--ink-3)">Radar run {{run_id}}</div>
+      <div class="crumb"><a href="/radar">Track A</a> / run <span class="mono">{{run_id}}</span></div>
       <h1 id="subject">Profiling subjects</h1>
       <div class="meta" id="meta"></div>
     </div>
     <div class="actions">
-      <span class="chip plain" id="statusChip">created</span>
+      <span class="chip" id="statusChip">created</span>
       <a class="btn" id="briefLink" href="/radar/runs/{{run_id}}/brief" hidden>Read the brief</a>
       <a class="btn" href="/radar/runs/{{run_id}}/brief.md" id="mdLink" hidden>brief.md</a>
       <a class="btn" href="/radar/runs/{{run_id}}/ledger.json" target="_blank" rel="noopener">ledger.json</a>
@@ -19,12 +19,8 @@
     <div class="stack">
       <div class="card" id="ambCard" hidden><h2>Ambiguous, held for you</h2><p class="hint">The two classifiers disagreed. The system did not guess. Decide each one and it moves out of this list with your name on it.</p><div id="ambiguous"></div></div>
       <div class="card" id="respondCard" hidden><h2>Respond now</h2><p class="hint">No reply exists until you approve drafting one. Then the draft waits for your approval. The system never posts.</p><div id="respond"></div></div>
-      <div class="card" id="mentionsCard" hidden>
-        <h2>All mentions</h2>
-        <div class="tabs" id="tabs"></div>
-        <div id="mentions"></div>
-      </div>
-      <div class="card"><h2>Live log</h2><div class="log" id="log"></div></div>
+      <div class="card" id="mentionsCard" hidden><h2>All mentions</h2><div class="tabs" id="tabs"></div><div id="mentions"></div></div>
+      <div class="card"><h2>Log</h2><div class="log" id="log"></div></div>
     </div>
     <div class="stack">
       <div class="card gate" id="gate"></div>

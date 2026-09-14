@@ -1,12 +1,12 @@
 <div id="app" data-run="{{run_id}}">
-  <div class="head fade">
+  <div class="page-head in">
     <div>
-      <div class="kicker" style="color:var(--ink-3)">Run <span id="rid">{{run_id}}</span></div>
+      <div class="crumb"><a href="/diagnostic">Track B</a> / run <span class="mono">{{run_id}}</span></div>
       <h1 id="subject">Identifying subject</h1>
       <div class="meta" id="meta"></div>
     </div>
     <div class="actions">
-      <span class="chip plain" id="statusChip">created</span>
+      <span class="chip" id="statusChip">created</span>
       <a class="btn" id="draftLink" href="/runs/{{run_id}}/draft" hidden>Review draft</a>
       <a class="btn" href="/runs/{{run_id}}/diagnostic.md" id="mdLink" hidden>diagnostic.md</a>
       <a class="btn" href="/runs/{{run_id}}/ledger.json" target="_blank" rel="noopener">ledger.json</a>
@@ -19,12 +19,8 @@
     <div class="stack">
       <div class="card" id="summaryCard" hidden><h2>Summary</h2><div id="summary" class="doc"></div></div>
       <div class="card" id="gapsCard" hidden><h2>Three biggest gaps</h2><div id="gaps"></div></div>
-      <div class="card" id="findingsCard" hidden>
-        <h2>Findings ledger</h2>
-        <div class="tabs" id="tabs"></div>
-        <div id="findings"></div>
-      </div>
-      <div class="card"><h2>Live log</h2><div class="log" id="log"></div></div>
+      <div class="card" id="findingsCard" hidden><h2>Findings ledger</h2><div class="tabs" id="tabs"></div><div id="findings"></div></div>
+      <div class="card"><h2>Log</h2><div class="log" id="log"></div></div>
     </div>
     <div class="stack">
       <div class="card gate" id="gate"></div>

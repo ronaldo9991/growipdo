@@ -1,12 +1,12 @@
 <div id="app" data-run="{{run_id}}">
-  <div class="head fade">
+  <div class="page-head in">
     <div>
-      <div class="kicker" style="color:var(--ink-3)">Review draft, run {{run_id}}</div>
+      <div class="crumb"><a href="/diagnostic">Track B</a> / <a href="/runs/{{run_id}}">run <span class="mono">{{run_id}}</span></a> / review</div>
       <h1 id="subject">Diagnostic</h1>
       <div class="meta" id="meta"></div>
     </div>
     <div class="actions">
-      <span class="chip plain" id="statusChip"></span>
+      <span class="chip" id="statusChip"></span>
       <a class="btn" href="/runs/{{run_id}}">Run detail</a>
       <a class="btn" href="/runs/{{run_id}}/diagnostic.md">diagnostic.md</a>
     </div>

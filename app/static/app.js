@@ -6,50 +6,9 @@
   const chip = (label, cls) => `<span class="chip ${cls || label}">${esc(String(label).replace(/_/g, " "))}</span>`;
   async function getJSON(url) { const r = await fetch(url, { headers: { Accept: "application/json" } }); if (!r.ok) throw new Error(`${r.status} ${url}`); return r.json(); }
 
-  /* theme switch */
-  const tb = $("#themeBtn");
-  if (tb) tb.addEventListener("click", () => {
-    const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = next;
-    try { localStorage.setItem("theme", next); } catch (e) {}
-  });
-
-  /* sliding indicator for every [data-toggle] */
-  function placeIndicator(t) {
-    const ind = $(".ind", t); if (!ind) return;
-    const track = document.body.dataset.track;
-    const on = $(".seg.on", t) || $(`.seg[data-seg="${track}"]`, t);
-    if (!on) { ind.style.width = "0"; return; }
-    ind.style.width = on.offsetWidth + "px";
-    ind.style.transform = `translateX(${on.offsetLeft - parseFloat(getComputedStyle(t).paddingLeft)}px)`;
-    requestAnimationFrame(() => t.classList.add("ready"));
-  }
-  function placeAll() { $$("[data-toggle]").forEach(placeIndicator); }
-  window.addEventListener("resize", placeAll);
-  document.fonts && document.fonts.ready.then(placeAll);
-
-  /* home: panels switch in place, header and big toggle stay in sync */
-  function setTrack(track, push) {
-    document.body.dataset.track = track;
-    $$(".panel").forEach((p) => p.classList.toggle("on", p.dataset.panel === track));
-    $$('[data-toggle="home"] .seg').forEach((s) => s.classList.toggle("on", s.dataset.seg === track));
-    try { localStorage.setItem("track", track); } catch (e) {}
-    if (push) history.replaceState(null, "", "#" + track);
-    placeAll();
-  }
-  const home = $('[data-toggle="home"]');
-  if (home) {
-    let initial = (location.hash || "").replace("#", "");
-    if (!["a", "b"].includes(initial)) { try { initial = localStorage.getItem("track") || "a"; } catch (e) { initial = "a"; } }
-    if (!["a", "b"].includes(initial)) initial = "a";
-    setTrack(initial, false);
-    $$('[data-toggle="home"] .seg').forEach((s) => s.addEventListener("click", () => setTrack(s.dataset.seg, true)));
-    // header links switch panels on the home page instead of navigating
-    $$('[data-toggle="nav"] .seg').forEach((s) => s.addEventListener("click", (e) => { e.preventDefault(); setTrack(s.dataset.seg, true); }));
-    window.addEventListener("hashchange", () => { const h = location.hash.replace("#", ""); if (["a", "b"].includes(h)) setTrack(h, false); });
-  } else {
-    placeAll();
-  }
+  /* sidebar: mark the active track */
+  const track = document.body.dataset.track || "home";
+  $$(".nav a[data-nav]").forEach((a) => a.classList.toggle("on", a.dataset.nav === track));
 
   /* run lists: every .runs[data-kind] on the page */
   async function renderLists() {
@@ -73,7 +32,7 @@
             ? `<span class="r">${c.respond_now ?? "-"} respond</span><span class="p">${c.watch ?? "-"} watch</span><span class="a">${c.ambiguous ?? "-"} ambiguous</span>`
             : `<span class="v">${c.verified ?? "-"} ok</span><span class="p">${c.partially_verified ?? "-"} partial</span><span class="r">${c.unverified ?? "-"} refused</span>`;
           const sub = r.kind === "radar" ? "Track A · weekly brief" : "Track B · diagnostic" + (r.role ? " · " + esc(r.role) : "");
-          return `<a class="run-row in" href="${href}"><div><div class="name">${esc(r.subject || r.input_url)}</div><div class="sub">${sub}</div></div>
+          return `<a class="run-row" href="${href}"><div><div class="name">${esc(r.subject || r.input_url)}</div><div class="sub">${sub}</div></div>
             <div class="sub">${esc(r.id)}</div><div class="counts">${counts}</div>${chip(r.status)}</a>`;
         }).join("") : '<div class="empty">No runs yet.</div>';
       } catch (ex) { el.innerHTML = `<div class="empty">Could not load runs: ${esc(ex.message)}</div>`; }

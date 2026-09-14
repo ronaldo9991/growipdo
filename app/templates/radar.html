@@ -1,10 +1,12 @@
-<section class="hero">
+<div class="page-head in">
   <div>
-    <div class="kicker in">Track A, reputation radar</div>
-    <h1 class="in">Every public mention, triaged twice, escalated when unsure, briefed once a week.</h1>
-    <p class="lede in">Subjects are profiled from public snippets so the classifier can tell them from namesakes. LinkedIn mentions are counted from search snippets and never fetched. Nothing is drafted or posted without a named person approving first.</p>
+    <div class="crumb">Track A</div>
+    <h1>Reputation Radar</h1>
+    <p class="desc">Every public mention of the subjects, triaged twice, escalated when the two readings disagree, briefed once a week. LinkedIn mentions are counted from search snippets and never fetched.</p>
   </div>
-  <div class="card in">
+</div>
+<div class="grid two in">
+  <div class="card">
     <h2>Run this week's radar</h2>
     <form id="radarForm">
       <label class="lbl">Subjects, comma separated</label>
@@ -16,14 +18,14 @@
       <p class="hint">Public web and news only. Nobody is contacted.</p>
     </form>
   </div>
-</section>
-<section class="rules">
-  <div class="rule in"><b>Two readings per mention</b><span>A second model re-reads anything that is not a confident ignore.</span></div>
-  <div class="rule in"><b>Respond now needs agreement</b><span>If the two disagree, the item is held at watch and flagged ambiguous.</span></div>
-  <div class="rule in"><b>Namesakes set aside</b><span>Not about the subject, both agree: it is listed, not counted.</span></div>
-  <div class="rule in"><b>Two gates before a reply</b><span>A human approves drafting, then approves the draft. The system never posts.</span></div>
-</section>
-<section style="margin-top:34px">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><h2>Weekly briefs</h2><span class="hint" data-count="radar"></span></div>
+  <div class="rules">
+    <div class="rule"><b>Two readings</b><span>A second model re-reads anything that is not a confident ignore.</span></div>
+    <div class="rule"><b>Respond now needs agreement</b><span>Disagreement is held at watch and flagged ambiguous.</span></div>
+    <div class="rule"><b>Namesakes set aside</b><span>Not about the subject: listed, not counted.</span></div>
+    <div class="rule"><b>Two gates before a reply</b><span>Approve drafting, then approve the draft. Never posted.</span></div>
+  </div>
+</div>
+<div class="section in">
+  <div class="section-head"><h2>Weekly briefs</h2><span class="hint" data-count="radar"></span></div>
   <div class="runs" data-kind="radar"><div class="skel"></div><div class="skel"></div></div>
-</section>
+</div>
