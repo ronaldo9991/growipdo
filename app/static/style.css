@@ -4,15 +4,15 @@
   --bg:#f6f7fb;--bg-2:#ffffff;--panel:#ffffff;--panel-2:#f1f4f9;
   --line:rgba(15,23,42,.08);--line-2:rgba(15,23,42,.16);
   --ink:#0f172a;--ink-2:#475569;--ink-3:#8a94a6;
-  --accent:#2563eb;--accent-2:#7c3aed;--accent-ink:#ffffff;--accent-soft:rgba(37,99,235,.10);--accent-ring:rgba(37,99,235,.18);
+  --accent:#b8531f;--accent-2:#8a3a12;--accent-ink:#ffffff;--accent-soft:rgba(184,83,31,.10);--accent-ring:rgba(184,83,31,.20);
   --ok:#059669;--ok-bg:rgba(5,150,105,.10);--ok-line:rgba(5,150,105,.30);
   --warn:#c2700a;--warn-bg:rgba(217,119,6,.12);--warn-line:rgba(217,119,6,.32);
   --bad:#dc2626;--bad-bg:rgba(220,38,38,.09);--bad-line:rgba(220,38,38,.30);
   --amb:#6d28d9;--amb-bg:rgba(124,58,237,.10);--amb-line:rgba(124,58,237,.30);
-  --tier-primary:#0369a1;--tier-company:#6d28d9;--tier-secondary:#8a94a6;--news:#b45309;
-  --grid:rgba(15,23,42,.07);--orb-a:rgba(37,99,235,.35);--orb-b:rgba(124,58,237,.30);--orb-opacity:.5;
+  --tier-primary:#7c2d12;--tier-company:#6d28d9;--tier-secondary:#8a94a6;--news:#92400e;
+  --grid:rgba(15,23,42,.07);--orb-a:rgba(184,83,31,.30);--orb-b:rgba(245,158,11,.22);--orb-opacity:.5;
   --shadow:0 10px 30px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.05);--shadow-2:0 18px 44px rgba(15,23,42,.10);
-  --glow:rgba(37,99,235,.35);--glass:rgba(255,255,255,.7);
+  --glow:rgba(184,83,31,.30);--glass:rgba(255,255,255,.7);
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --display:"Space Grotesk","Inter",system-ui,sans-serif;
@@ -23,15 +23,15 @@ html[data-theme="dark"]{
   --bg:#070a12;--bg-2:#0b1020;--panel:rgba(255,255,255,.035);--panel-2:rgba(255,255,255,.07);
   --line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.18);
   --ink:#e8ecf6;--ink-2:#a9b2c7;--ink-3:#6e778c;
-  --accent:#5ee7ff;--accent-2:#8b5cf6;--accent-ink:#06121a;--accent-soft:rgba(94,231,255,.10);--accent-ring:rgba(94,231,255,.14);
+  --accent:#f0955a;--accent-2:#c2410c;--accent-ink:#1a0d06;--accent-soft:rgba(240,149,90,.12);--accent-ring:rgba(240,149,90,.16);
   --ok:#34d399;--ok-bg:rgba(52,211,153,.12);--ok-line:rgba(52,211,153,.35);
   --warn:#fbbf24;--warn-bg:rgba(251,191,36,.12);--warn-line:rgba(251,191,36,.35);
   --bad:#fb7185;--bad-bg:rgba(251,113,133,.12);--bad-line:rgba(251,113,133,.35);
   --amb:#c4b5fd;--amb-bg:rgba(139,92,246,.14);--amb-line:rgba(139,92,246,.4);
-  --tier-primary:#7dd3fc;--tier-company:#c4b5fd;--tier-secondary:#6e778c;--news:#fcd34d;
-  --grid:rgba(255,255,255,.06);--orb-a:rgba(94,231,255,.55);--orb-b:rgba(139,92,246,.55);--orb-opacity:.35;
+  --tier-primary:#fdba74;--tier-company:#c4b5fd;--tier-secondary:#6e778c;--news:#fcd34d;
+  --grid:rgba(255,255,255,.06);--orb-a:rgba(240,149,90,.45);--orb-b:rgba(194,65,12,.45);--orb-opacity:.35;
   --shadow:0 20px 60px rgba(0,0,0,.45);--shadow-2:0 24px 70px rgba(0,0,0,.5);
-  --glow:rgba(94,231,255,.35);--glass:rgba(255,255,255,.04);
+  --glow:rgba(240,149,90,.30);--glass:rgba(255,255,255,.04);
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;transition:background .3s,color .3s}
@@ -83,8 +83,9 @@ html[data-theme="dark"] .theme .sun{display:block}html[data-theme="dark"] .theme
 .btn{appearance:none;border:1px solid var(--line-2);background:var(--panel);color:var(--ink);font:600 14px var(--sans);padding:10px 16px;border-radius:10px;cursor:pointer;white-space:nowrap;transition:transform .12s var(--ease),background .2s,border-color .2s,box-shadow .2s,filter .2s}
 .btn:hover{background:var(--panel-2);border-color:var(--line-2);transform:translateY(-1px);text-decoration:none}
 .btn:active{transform:translateY(1px)}
-.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-ink);border-color:transparent;box-shadow:0 8px 24px var(--glow)}
-.btn.primary:hover{filter:brightness(1.05);box-shadow:0 12px 30px var(--glow)}
+.btn.primary{background:var(--ink);color:var(--bg-2);border-color:transparent;box-shadow:0 8px 24px rgba(15,23,42,.18)}
+html[data-theme="dark"] .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-ink);box-shadow:0 8px 24px var(--glow)}
+.btn.primary:hover{filter:brightness(1.08);box-shadow:0 12px 30px var(--glow)}
 .btn.danger{border-color:var(--bad-line);color:var(--bad)}
 .btn.danger:hover{background:var(--bad-bg)}
 .btn[disabled]{opacity:.55;cursor:not-allowed}
