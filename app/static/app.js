@@ -1,3 +1,99 @@
+/* ---------- shared: toggle, run lists, counters ---------- */
+(function () {
+  const $ = (s, r) => (r || document).querySelector(s);
+  const $$ = (s, r) => [...(r || document).querySelectorAll(s)];
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const chip = (label, cls) => `<span class="chip ${cls || label}">${esc(String(label).replace(/_/g, " "))}</span>`;
+  async function getJSON(url) { const r = await fetch(url, { headers: { Accept: "application/json" } }); if (!r.ok) throw new Error(`${r.status} ${url}`); return r.json(); }
+
+  /* sliding indicator for every [data-toggle] */
+  function placeIndicator(t) {
+    const ind = $(".ind", t); if (!ind) return;
+    const track = document.body.dataset.track;
+    const on = $(".seg.on", t) || $(`.seg[data-seg="${track}"]`, t);
+    if (!on) { ind.style.width = "0"; return; }
+    ind.style.width = on.offsetWidth + "px";
+    ind.style.transform = `translateX(${on.offsetLeft - parseFloat(getComputedStyle(t).paddingLeft)}px)`;
+    requestAnimationFrame(() => t.classList.add("ready"));
+  }
+  function placeAll() { $$("[data-toggle]").forEach(placeIndicator); }
+  window.addEventListener("resize", placeAll);
+  document.fonts && document.fonts.ready.then(placeAll);
+
+  /* home: panels switch in place, header and big toggle stay in sync */
+  function setTrack(track, push) {
+    document.body.dataset.track = track;
+    $$(".panel").forEach((p) => p.classList.toggle("on", p.dataset.panel === track));
+    $$('[data-toggle="home"] .seg').forEach((s) => s.classList.toggle("on", s.dataset.seg === track));
+    try { localStorage.setItem("track", track); } catch (e) {}
+    if (push) history.replaceState(null, "", "#" + track);
+    placeAll();
+  }
+  const home = $('[data-toggle="home"]');
+  if (home) {
+    let initial = (location.hash || "").replace("#", "");
+    if (!["a", "b"].includes(initial)) { try { initial = localStorage.getItem("track") || "a"; } catch (e) { initial = "a"; } }
+    if (!["a", "b"].includes(initial)) initial = "a";
+    setTrack(initial, false);
+    $$('[data-toggle="home"] .seg').forEach((s) => s.addEventListener("click", () => setTrack(s.dataset.seg, true)));
+    // header links switch panels on the home page instead of navigating
+    $$('[data-toggle="nav"] .seg').forEach((s) => s.addEventListener("click", (e) => { e.preventDefault(); setTrack(s.dataset.seg, true); }));
+    window.addEventListener("hashchange", () => { const h = location.hash.replace("#", ""); if (["a", "b"].includes(h)) setTrack(h, false); });
+  } else {
+    placeAll();
+  }
+
+  /* run lists: every .runs[data-kind] on the page */
+  async function renderLists() {
+    const els = $$(".runs[data-kind]"); if (!els.length) return;
+    const cache = {};
+    async function load(kind) {
+      if (!cache[kind]) cache[kind] = getJSON(kind === "radar" ? "/api/radar/runs" : "/api/runs").then((rs) => rs.map((r) => ({ ...r, kind })));
+      return cache[kind];
+    }
+    for (const el of els) {
+      const kinds = el.dataset.kind === "mixed" ? ["radar", "diagnostic"] : [el.dataset.kind];
+      try {
+        let rows = (await Promise.all(kinds.map(load))).flat();
+        rows.sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
+        const counter = $(`[data-count="${el.dataset.kind}"]`);
+        if (counter) counter.textContent = rows.length ? `${rows.length} run${rows.length === 1 ? "" : "s"}` : "";
+        el.innerHTML = rows.length ? rows.map((r) => {
+          const c = r.counts || {};
+          const href = r.kind === "radar" ? `/radar/runs/${esc(r.id)}` : `/runs/${esc(r.id)}`;
+          const counts = r.kind === "radar"
+            ? `<span class="r">${c.respond_now ?? "-"} respond</span><span class="p">${c.watch ?? "-"} watch</span><span style="color:#c4b5fd">${c.ambiguous ?? "-"} ambiguous</span>`
+            : `<span class="v">${c.verified ?? "-"} ok</span><span class="p">${c.partially_verified ?? "-"} partial</span><span class="r">${c.unverified ?? "-"} refused</span>`;
+          const sub = r.kind === "radar" ? "Track A · weekly brief" : "Track B · diagnostic" + (r.role ? " · " + esc(r.role) : "");
+          return `<a class="run-row in" href="${href}"><div><div class="name">${esc(r.subject || r.input_url)}</div><div class="sub">${sub}</div></div>
+            <div class="sub">${esc(r.id)}</div><div class="counts">${counts}</div>${chip(r.status)}</a>`;
+        }).join("") : '<div class="empty">No runs yet.</div>';
+      } catch (ex) { el.innerHTML = `<div class="empty">Could not load runs: ${esc(ex.message)}</div>`; }
+    }
+  }
+  renderLists();
+
+  /* counters: animate a .stat b from its previous value to the new one */
+  window.__animateStats = function (container) {
+    $$(".stat b", container).forEach((b) => {
+      const target = parseInt(b.textContent, 10); if (isNaN(target)) return;
+      const prev = parseInt(b.dataset.v ?? "0", 10);
+      b.dataset.v = String(target);
+      if (prev === target) return;
+      const stat = b.closest(".stat"); stat.classList.remove("bump"); void stat.offsetWidth; stat.classList.add("bump");
+      const t0 = performance.now(), dur = 600;
+      (function step(t) { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); b.textContent = String(Math.round(prev + (target - prev) * e)); if (k < 1) requestAnimationFrame(step); })(t0);
+    });
+  };
+  /* stage rail: width by index of the current stage */
+  window.__rail = function (stagesEl, stages, current, terminal) {
+    let rail = $(".rail", stagesEl); if (!rail) { rail = document.createElement("span"); rail.className = "rail"; stagesEl.appendChild(rail); }
+    const i = stages.indexOf(current);
+    const frac = terminal ? 1 : i < 0 ? 0 : (i + 0.5) / stages.length;
+    requestAnimationFrame(() => { rail.style.width = (frac * 100) + "%"; });
+  };
+})();
+
 /* prospect-diagnostic front end. Plain JS, talks to the JSON endpoints, no build step. */
 (function () {
   const $ = (s, r) => (r || document).querySelector(s);
@@ -36,21 +132,6 @@
         err.textContent = ex.message; btn.disabled = false; btn.textContent = "Run diagnostic";
       }
     });
-    try {
-      const runs = await getJSON("/api/runs");
-      $("#runCount").textContent = runs.length ? `${runs.length} run${runs.length === 1 ? "" : "s"}` : "";
-      $("#runs").innerHTML = runs.length ? runs.map((r) => {
-        const c = r.counts || {};
-        return `<a class="run-row fade" href="/runs/${esc(r.id)}">
-          <div><div class="name">${esc(r.subject || r.input_url)}</div><div class="sub">${esc(r.role || "")}${r.company ? " at " + esc(r.company) : ""}</div></div>
-          <div class="sub">${esc(r.id)}</div>
-          <div class="counts"><span class="v">${c.verified ?? "-"} ok</span><span class="p">${c.partially_verified ?? "-"} partial</span><span class="r">${c.unverified ?? "-"} refused</span></div>
-          ${chip(r.status)}
-        </a>`;
-      }).join("") : '<div class="empty">No runs yet. Paste a profile URL above.</div>';
-    } catch (ex) {
-      $("#runs").innerHTML = `<div class="empty">Could not load runs: ${esc(ex.message)}</div>`;
-    }
   }
 
   /* ---------- run detail ---------- */
@@ -76,11 +157,16 @@
     // stats
     const c = s.counts || {};
     const n = (L.findings || []).length;
-    $("#stats").innerHTML = `
+    const statsEl = $("#stats");
+    const prevV = [...statsEl.querySelectorAll(".stat b")].map((b) => b.dataset.v);
+    statsEl.innerHTML = `
       <div class="stat"><b>${(L.sources || []).length}</b><span>sources</span></div>
       <div class="stat v"><b>${c.verified ?? 0}</b><span>verified</span></div>
       <div class="stat p"><b>${c.partially_verified ?? 0}</b><span>partially verified</span></div>
       <div class="stat r"><b>${c.unverified ?? 0}</b><span>refused of ${n}</span></div>`;
+    [...statsEl.querySelectorAll(".stat b")].forEach((b, i) => { if (prevV[i] != null) b.dataset.v = prevV[i]; });
+    window.__animateStats(statsEl);
+    window.__rail($("#stages"), STAGES, s.stage, ["draft", "approved", "rejected"].includes(s.status));
     // summary
     if (L.summary) { $("#summaryCard").hidden = false; $("#summary").innerHTML = `<p>${esc(L.summary)}</p>`; }
     // gaps
@@ -121,7 +207,10 @@
   function renderLog(entries) {
     const el = $("#log"); if (!el) return;
     const atBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 30;
-    el.innerHTML = entries.map((e) => `<div><span class="t">${esc(e.ts.slice(11, 19))}</span><span class="s">${esc(e.stage)}</span><span>${esc(e.message)}${e.data && e.data.error ? ` <span class="e">${esc(e.data.error)}</span>` : ""}</span></div>`).join("");
+    const have = el.childElementCount;
+    if (have > entries.length) el.innerHTML = "";
+    const start = have > entries.length ? 0 : have;
+    el.insertAdjacentHTML("beforeend", entries.slice(start).map((e) => `<div><span class="t">${esc(e.ts.slice(11, 19))}</span><span class="s">${esc(e.stage)}</span><span>${esc(e.message)}${e.data && e.data.error ? ` <span class="e">${esc(e.data.error)}</span>` : ""}</span></div>`).join(""));
     if (atBottom) el.scrollTop = el.scrollHeight;
   }
   function renderGate(s, L, page) {
@@ -221,31 +310,6 @@
   }
   const STAGES = ["profile", "collect", "classify", "brief", "human_gate"];
   const HINT = { profile: "who the subjects are", collect: "search, news, snippets", classify: "two readings each", brief: "three minute read", human_gate: "approve, decide, draft" };
-
-  /* home page and radar index share the runs list */
-  async function lists() {
-    const el = $("#runs"); if (!el || !(el.dataset.kind === "radar" || el.dataset.mixed)) return;
-    try {
-      const kinds = el.dataset.mixed ? ["radar", "diagnostic"] : ["radar"];
-      let rows = [];
-      for (const k of kinds) {
-        const runs = await getJSON(k === "radar" ? "/api/radar/runs" : "/api/runs");
-        rows = rows.concat(runs.map((r) => ({ ...r, kind: k })));
-      }
-      rows.sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
-      $("#runCount").textContent = rows.length ? `${rows.length} run${rows.length === 1 ? "" : "s"}` : "";
-      el.innerHTML = rows.length ? rows.map((r) => {
-        const c = r.counts || {};
-        const href = r.kind === "radar" ? `/radar/runs/${esc(r.id)}` : `/runs/${esc(r.id)}`;
-        const counts = r.kind === "radar"
-          ? `<span class="r">${c.respond_now ?? "-"} respond</span><span class="p">${c.watch ?? "-"} watch</span><span style="color:#c4b5fd">${c.ambiguous ?? "-"} ambiguous</span>`
-          : `<span class="v">${c.verified ?? "-"} ok</span><span class="p">${c.partially_verified ?? "-"} partial</span><span class="r">${c.unverified ?? "-"} refused</span>`;
-        return `<a class="run-row fade" href="${href}">
-          <div><div class="name">${esc(r.subject || r.input_url)}</div><div class="sub">${r.kind === "radar" ? "Track A · weekly brief" : "Track B · diagnostic" + (r.role ? " · " + esc(r.role) : "")}</div></div>
-          <div class="sub">${esc(r.id)}</div><div class="counts">${counts}</div>${chip(r.status)}</a>`;
-      }).join("") : '<div class="empty">No runs yet.</div>';
-    } catch (ex) { el.innerHTML = `<div class="empty">Could not load runs: ${esc(ex.message)}</div>`; }
-  }
 
   function radarIndex() {
     const form = $("#radarForm"); if (!form) return;
@@ -354,9 +418,14 @@
       let cls = ""; if (s.status === "failed" && i === cur) cls = "failed"; else if (["draft", "approved"].includes(s.status)) cls = "done"; else if (i < cur) cls = "done"; else if (i === cur) cls = "active";
       return `<div class="stage ${cls}"><b>${esc(st.replace("_", " "))}</b><span>${esc(HINT[st])}</span></div>`;
     }).join("");
-    $("#stats").innerHTML = `<div class="stat"><b>${c.about_subject ?? (L.mentions || []).length}</b><span>mentions about them</span></div>
+    const statsEl = $("#stats");
+    const prevV = [...statsEl.querySelectorAll(".stat b")].map((b) => b.dataset.v);
+    statsEl.innerHTML = `<div class="stat"><b>${c.about_subject ?? (L.mentions || []).length}</b><span>mentions about them</span></div>
       <div class="stat r"><b>${c.respond_now ?? 0}</b><span>respond now</span></div><div class="stat p"><b>${c.watch ?? 0}</b><span>watch</span></div>
       <div class="stat" style="border-color:rgba(139,92,246,.4)"><b style="color:#c4b5fd">${c.ambiguous ?? 0}</b><span>ambiguous, held</span></div>`;
+    [...statsEl.querySelectorAll(".stat b")].forEach((b, i) => { if (prevV[i] != null) b.dataset.v = prevV[i]; });
+    window.__animateStats(statsEl);
+    window.__rail($("#stages"), STAGES, s.stage, ["draft", "approved"].includes(s.status));
     if (L.profile) { $("#profileCard").hidden = false; $("#profile").innerHTML = `<p>${esc(L.profile.profile)}</p><p>${(L.profile.disambiguators || []).map((x) => chip(x, "plain")).join(" ")}</p>`; }
     const M = (L.mentions || []).filter((m) => m.final);
     if (M.length) {
@@ -375,7 +444,9 @@
   }
   function renderLog(entries) {
     const el = $("#log"); if (!el) return; const atBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 30;
-    el.innerHTML = entries.map((e) => `<div><span class="t">${esc(e.ts.slice(11, 19))}</span><span class="s">${esc(e.stage)}</span><span>${esc(e.message)}${e.data && e.data.error ? ` <span class="e">${esc(e.data.error)}</span>` : ""}</span></div>`).join("");
+    const have = el.childElementCount; if (have > entries.length) el.innerHTML = "";
+    const start = have > entries.length ? 0 : have;
+    el.insertAdjacentHTML("beforeend", entries.slice(start).map((e) => `<div><span class="t">${esc(e.ts.slice(11, 19))}</span><span class="s">${esc(e.stage)}</span><span>${esc(e.message)}${e.data && e.data.error ? ` <span class="e">${esc(e.data.error)}</span>` : ""}</span></div>`).join(""));
     if (atBottom) el.scrollTop = el.scrollHeight;
   }
   async function radarRun(once) {
@@ -419,5 +490,5 @@
       renderGate(s, d.ledger, rid, "brief");
     } catch (ex) { $("#doc").innerHTML = `<div class="empty">${esc(ex.message)}</div>`; }
   }
-  lists(); radarIndex(); radarRun(false); radarBrief();
+  radarIndex(); radarRun(false); radarBrief();
 })();

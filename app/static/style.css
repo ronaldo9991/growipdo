@@ -214,3 +214,76 @@ body[data-track="a"] .seg[data-seg="a"],body[data-track="b"] .seg[data-seg="b"]{
 .hero > *,.cols > *,.tracks > *{min-width:0}
 .field input{width:0}
 .hero-home .kicker{font:600 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+
+/* ===================== motion system ===================== */
+:root{--ease:cubic-bezier(.2,.7,.2,1);--dur:.45s}
+/* background drift: two soft orbs on GPU transforms, very slow */
+.orb{position:fixed;z-index:-1;border-radius:50%;filter:blur(70px);opacity:.35;pointer-events:none;will-change:transform}
+.orb.a{width:640px;height:640px;left:-200px;top:-220px;background:radial-gradient(circle,rgba(94,231,255,.55),transparent 65%);animation:drift-a 28s ease-in-out infinite alternate}
+.orb.b{width:560px;height:560px;right:-180px;top:-120px;background:radial-gradient(circle,rgba(139,92,246,.55),transparent 65%);animation:drift-b 34s ease-in-out infinite alternate}
+@keyframes drift-a{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(120px,80px,0) scale(1.12)}}
+@keyframes drift-b{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-140px,90px,0) scale(1.08)}}
+/* entrances: anything with .in gets a staggered fade-up */
+.in{opacity:0;transform:translateY(10px);animation:rise var(--dur) var(--ease) forwards}
+.in:nth-child(1){animation-delay:.02s}.in:nth-child(2){animation-delay:.08s}.in:nth-child(3){animation-delay:.14s}.in:nth-child(4){animation-delay:.2s}
+.in:nth-child(5){animation-delay:.26s}.in:nth-child(6){animation-delay:.32s}.in:nth-child(7){animation-delay:.38s}.in:nth-child(n+8){animation-delay:.44s}
+@keyframes rise{to{opacity:1;transform:none}}
+.fade{animation:rise var(--dur) var(--ease)}
+/* sliding segmented toggle */
+.toggle{position:relative;display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:999px;background:var(--panel);isolation:isolate}
+.toggle .ind{position:absolute;top:4px;bottom:4px;left:4px;width:0;border-radius:999px;background:var(--panel-2);box-shadow:inset 0 0 0 1px var(--line-2),0 4px 14px rgba(0,0,0,.25);transition:transform .35s var(--ease),width .35s var(--ease);z-index:-1;opacity:0}
+.toggle.ready .ind{opacity:1}
+.seg{padding:6px 14px;border-radius:999px;font:600 12.5px var(--sans);color:var(--ink-2);white-space:nowrap;transition:color .25s;position:relative;background:transparent;border:0;cursor:pointer}
+.seg:hover{text-decoration:none;color:var(--ink)}
+body[data-track="a"] .seg[data-seg="a"],body[data-track="b"] .seg[data-seg="b"],.seg.on{color:var(--ink);background:transparent;box-shadow:none}
+.toggle.big{display:inline-flex;padding:6px;margin:18px 0 6px}
+.toggle.big .seg{padding:12px 26px;font-size:15px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;line-height:1.2}
+.toggle.big .seg small{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.toggle.big .seg.on small{color:var(--accent)}
+.toggle.big .ind{top:6px;bottom:6px;left:6px}
+/* home panels swap in place */
+.panels{position:relative;margin-top:12px}
+.panel{display:none}
+.panel.on{display:block;animation:swap .4s var(--ease)}
+@keyframes swap{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.panel[data-panel="a"].on{animation-name:swap-l}
+@keyframes swap-l{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+/* stage timeline: progress rail and ticks */
+.stages{position:relative}
+.stages::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:2px;background:var(--line);border-radius:2px}
+.rail{position:absolute;left:0;bottom:-10px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0;transition:width .8s var(--ease);box-shadow:0 0 12px rgba(94,231,255,.5)}
+.stage{transition:border-color .3s,box-shadow .3s,transform .3s}
+.stage.done b::after{content:"";display:inline-block;width:7px;height:11px;margin-left:8px;border:solid var(--ok);border-width:0 2px 2px 0;transform:rotate(45deg) scale(0);animation:tick .35s var(--ease) forwards;vertical-align:-1px}
+@keyframes tick{to{transform:rotate(45deg) scale(1)}}
+.stage.active{transform:translateY(-1px)}
+.stages{margin-bottom:26px}
+/* stats: counters and pulse on change */
+.stat b{transition:color .3s}
+.stat.bump b{animation:bump .5s var(--ease)}
+@keyframes bump{0%{transform:scale(1)}40%{transform:scale(1.12)}100%{transform:scale(1)}}
+/* cards, rows, buttons */
+.card,.rule,.track,.run-row,.finding,.mention,.gap,.stat{transition:border-color .25s,transform .25s var(--ease),box-shadow .25s}
+.rule:hover,.stat:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.run-row:hover{transform:translateX(3px)}
+.btn{transition:transform .12s var(--ease),background .2s,border-color .2s,box-shadow .2s,filter .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary:hover{box-shadow:0 12px 30px rgba(94,231,255,.32)}
+.btn:focus-visible,.seg:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* expandable bodies fade in */
+details[open] .body{animation:rise .3s var(--ease)}
+.finding summary,.mention summary{transition:background .2s}
+.finding[open] summary,.mention[open] summary,.finding summary:hover,.mention summary:hover{background:var(--panel-2)}
+/* log lines */
+.log div{animation:rise .25s var(--ease)}
+/* chips */
+.chip{transition:transform .2s var(--ease)}
+.chip.approved{animation:glow 1.6s var(--ease) 1}
+@keyframes glow{0%{box-shadow:0 0 0 0 rgba(52,211,153,.5)}100%{box-shadow:0 0 0 14px rgba(52,211,153,0)}}
+/* skeleton while loading lists */
+.skel{height:56px;border-radius:12px;background:linear-gradient(90deg,var(--panel),var(--panel-2),var(--panel));background-size:200% 100%;animation:shimmer 1.4s linear infinite;margin-bottom:10px}
+@keyframes shimmer{from{background-position:200% 0}to{background-position:-200% 0}}
+/* reduced motion */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .in{opacity:1;transform:none}.orb{display:none}
+}

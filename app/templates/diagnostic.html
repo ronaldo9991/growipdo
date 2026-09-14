@@ -1,10 +1,10 @@
-<section class="hero fade">
+<section class="hero">
   <div>
-    <div class="kicker">Track B, prospect to diagnostic</div>
-    <h1>Research a founder from the public record. Verify every claim twice. Let a human sign it.</h1>
-    <p class="lede">Paste a LinkedIn profile URL. The slug is resolved on the open web, sources are fetched and archived, each claim gets two independent verification passes, and the draft waits for a named approver.</p>
+    <div class="kicker in">Track B, prospect to diagnostic</div>
+    <h1 class="in">Research a founder from the public record. Verify every claim twice. Let a human sign it.</h1>
+    <p class="lede in">Paste a LinkedIn profile URL. The slug is resolved on the open web, sources are fetched and archived, each claim gets two independent verification passes, and the draft waits for a named approver.</p>
   </div>
-  <div class="card">
+  <div class="card in">
     <h2>Start a run</h2>
     <form id="runForm">
       <div class="field">
@@ -17,12 +17,12 @@
   </div>
 </section>
 <section class="rules">
-  <div class="rule"><b>Two passes, two models</b><span>Each claim is checked by two different models over separately retrieved excerpts.</span></div>
-  <div class="rule"><b>Primary or it is partial</b><span>Only regulators, official registers and official lists can make a claim verified.</span></div>
-  <div class="rule"><b>Refused is a feature</b><span>Press-only numbers and contradicted claims are listed with the reason they failed.</span></div>
-  <div class="rule"><b>Human gate</b><span>The diagnostic stays a draft until someone approves it by name with a note.</span></div>
+  <div class="rule in"><b>Two passes, two models</b><span>Each claim is checked by two different models over separately retrieved excerpts.</span></div>
+  <div class="rule in"><b>Primary or it is partial</b><span>Only regulators, official registers and official lists can make a claim verified.</span></div>
+  <div class="rule in"><b>Refused is a feature</b><span>Press-only numbers and contradicted claims are listed with the reason they failed.</span></div>
+  <div class="rule in"><b>Human gate</b><span>The diagnostic stays a draft until someone approves it by name with a note.</span></div>
 </section>
 <section style="margin-top:34px">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><h2>Recent runs</h2><span class="hint" id="runCount"></span></div>
-  <div class="runs" id="runs" data-kind="diagnostic"><div class="empty"><span class="spin"></span>Loading runs</div></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><h2>Recent runs</h2><span class="hint" data-count="diagnostic"></span></div>
+  <div class="runs" data-kind="diagnostic"><div class="skel"></div><div class="skel"></div></div>
 </section>

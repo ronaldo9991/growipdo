@@ -10,12 +10,14 @@
 <link rel="stylesheet" href="/static/style.css">
 </head>
 <body data-track="{{track}}">
+<div class="orb a"></div><div class="orb b"></div>
 <div class="wrap">
 <header class="top">
   <a class="brand" href="/"><span class="dot"></span><span>Growpido Task<small>Public record, human gated</small></span></a>
-  <div class="toggle" role="tablist" aria-label="Track">
-    <a href="/radar" class="seg" data-seg="a">Track A · Radar</a>
-    <a href="/diagnostic" class="seg" data-seg="b">Track B · Diagnostic</a>
+  <div class="toggle" role="tablist" aria-label="Track" data-toggle="nav">
+    <span class="ind" aria-hidden="true"></span>
+    <a href="/radar" class="seg" data-seg="a" role="tab">Track A · Radar</a>
+    <a href="/diagnostic" class="seg" data-seg="b" role="tab">Track B · Diagnostic</a>
   </div>
   <nav><a href="https://github.com/ronaldo9991/growipdo" target="_blank" rel="noopener">Source</a></nav>
 </header>
