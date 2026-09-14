@@ -1,0 +1,2340 @@
+{
+  "sources": [],
+  "claims": [],
+  "findings": [],
+  "gaps": [],
+  "summary": "",
+  "lint": [],
+  "subjects": [
+    "Nidhi Hooda",
+    "Growpido"
+  ],
+  "profile": {
+    "profile": "Nidhi Hooda is described as the founder of Growpido LLC, based in Dubai, U.A.E. She is presented as a reputation architect who builds executive reputation, strategic influence, and narrative advisory for founders, fund managers, family offices, and CEOs. Growpido is described as a Dubai-based company that builds executive reputation, AI search authority, and brand on LinkedIn. The company is also described as a marketing services firm and a personal branding or reputation advisory agency.",
+    "disambiguators": [
+      "Dubai, U.A.E.",
+      "Founder of Growpido LLC",
+      "Executive reputation and narrative advisory",
+      "Works with founders, fund managers, family offices, and CEOs",
+      "LinkedIn and AI search authority"
+    ],
+    "evidence_urls": [
+      "https://growpido.com/about",
+      "https://ae.linkedin.com/in/nidhihooda",
+      "https://www.crunchbase.com/person/nidhi-hooda-199c",
+      "https://growpido.com/",
+      "https://ae.linkedin.com/company/growpido-linkedin"
+    ]
+  },
+  "previous_run": "20260913-195340-75e2",
+  "mentions": [
+    {
+      "url": "https://ae.linkedin.com/in/nidhihooda",
+      "title": "Nidhi Hooda‏ - ‏Building the Reputation of DIFC Leaders & ...",
+      "snippet": "Nidhi Hooda. Building the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions | Assisted $30Mn+ deal pipeline | Founder, Growpido LLC | Scaling ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "",
+      "date_raw": "",
+      "publisher": "ae.linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\"",
+        "\"Nidhi Hooda\" linkedin",
+        "\"Growpido\"",
+        "\"Growpido\" linkedin",
+        "\"Nidhi Hooda\" \"Growpido\""
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M1",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M1",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The snippet matches the named subject and her described role as founder of Growpido LLC. It is promotional and positive, with no complaint, accusation, or issue requiring action.",
+        "quote": "\"Nidhi Hooda. Building the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions | Assisted $30Mn+ deal pipeline | Founder, Growpido LLC | Scaling ...\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhihooda_contentcreationasafounder-linkedinpersonalbranding-activity-7246014137535737856-UP9s",
+      "title": "Nidhi Hooda | 33 comments",
+      "snippet": "Nidhi Hooda!!, Your insights on content creation as a founder hit the mark! Building a personal brand while leading a business is no easy task, ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2025-09-14",
+      "date_raw": "1 year ago",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\" linkedin",
+        "\"Growpido\" linkedin",
+        "\"Nidhi Hooda\" \"Growpido\""
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M2",
+      "reach": {
+        "score": 5.06,
+        "bucket": "high",
+        "engagement": 33,
+        "signals": [
+          "33 comments"
+        ]
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M2",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The mention appears to be about Nidhi Hooda and praises her insights on content creation and personal branding. It is a positive LinkedIn engagement with no complaint, accusation, or action needed.",
+        "quote": "\"Your insights on content creation as a founder hit the mark! Building a personal brand while leading a business is no easy task,\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_personalbrandingexpert-activity-7283707224546320384-PVjD",
+      "title": "Nidhi Hooda's Post",
+      "snippet": "Nidhi Hooda's Post. View profile for Nidhi Hooda. Nidhi Hooda. Buidling the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2025-09-14",
+      "date_raw": "1 year ago",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\" linkedin",
+        "\"Nidhi Hooda\" review OR complaint OR scam"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M3",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M3",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The snippet appears to be a post by the named subject and describes her own work and results. It is positive/self-promotional with no complaint, accusation, or issue requiring action.",
+        "quote": "Buidling the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions ...",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_personalbranding-sustainablebusinessmodels-activity-7254719069155708928--aup",
+      "title": "Nidhi Hooda | 38 comments - LinkedIn",
+      "snippet": "Is this also a podcast Nidhi Hooda · Like · Reply · 3 Reactions 4 Reactions. Prateek Arora, graphic. Prateek Arora. Content Writer | Content ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2024-10-22",
+      "date_raw": "Oct 22, 2024",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\" interview OR podcast OR webinar",
+        "\"Growpido\" interview OR podcast OR webinar"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M4",
+      "reach": {
+        "score": 5.33,
+        "bucket": "high",
+        "engagement": 45,
+        "signals": [
+          "38 comments",
+          "3 reactions",
+          "4 reactions"
+        ]
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M5",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.93,
+        "reason": "The mention appears to be a LinkedIn post by the named person and does not contain any complaint, accusation, or other actionable negative content. The snippet is just a brief comment thread with no clear sentiment about her specifically.",
+        "quote": "Is this also a podcast Nidhi Hooda",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://ae.linkedin.com/company/growpido-linkedin",
+      "title": "Growpido LLC",
+      "snippet": "الموقع الإلكتروني: https://growpido.com · المجال المهني: خدمات التسويق · حجم الشركة: ‏١١- ٥٠ موظف · المقر الرئيسي: ‏Dubai‏, ‏Dubai‏ · النوع: شركة يملكها عدد قليل من ...",
+      "subject": "Growpido",
+      "channel": "linkedin",
+      "date": "",
+      "date_raw": "",
+      "publisher": "ae.linkedin.com",
+      "queries": [
+        "\"Growpido\"",
+        "\"Growpido\" linkedin"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M5",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M6",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The mention appears to be about Growpido LLC, the Dubai-based company in the profile, and it is just a company listing with basic business details. There is no complaint, accusation, or other actionable negative content.",
+        "quote": "المقر الرئيسي: ‏Dubai‏, ‏Dubai‏ · النوع: ‏شركة يملكها عدد قليل من ...",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_personalbranding-leadershipvoice-foundermindset-activity-7400055557606264837-TA0o",
+      "title": "I can bet my life on this. | Nidhi Hooda",
+      "snippet": "Nidhi Hooda's Post. View profile for Nidhi Hooda. Nidhi Hooda. Building the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2025-12-18",
+      "date_raw": "9 months ago",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\""
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M6",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M7",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The snippet appears to be a post by the subject herself and describes her work and results in a positive way. There is no complaint, accusation, or issue requiring action.",
+        "quote": "\"Nidhi Hooda's Post. View profile for Nidhi Hooda. Nidhi Hooda. Building the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions ...\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/pub/dir/Nidhi/Hooda",
+      "title": "20+ \"Nidhi Hooda\" profiles",
+      "snippet": "Nidhi Hooda. Building the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions | Assisted $30Mn+ deal pipeline | Founder, Growpido LLC ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "",
+      "date_raw": "",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\" linkedin"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M7",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M8",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.96,
+        "reason": "The snippet appears to describe the named subject and presents her in a positive, promotional way. It is a directory/search result with no complaint, accusation, or actionable issue.",
+        "quote": "Building the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions | Assisted $30Mn+ deal pipeline | Founder, Growpido LLC",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhihooda_personalbrandingexpert-linkedinmarketing-activity-7069885723818045441-r2Ne",
+      "title": "Nidhi Hooda | 28 comments",
+      "snippet": "View profile for Nidhi Hooda. Nidhi Hooda. Building the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions | Assisted $30Mn+ ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2023-09-15",
+      "date_raw": "3 years ago",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\" linkedin"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M8",
+      "reach": {
+        "score": 4.92,
+        "bucket": "high",
+        "engagement": 28,
+        "signals": [
+          "28 comments"
+        ]
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M9",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The snippet appears to be about the named subject and describes her own professional work and results. It is promotional/neutral-positive with no complaint, accusation, or issue requiring action.",
+        "quote": "Building the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions | Assisted $30Mn+ ...",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_dubai-movingtodubai-growpido-activity-7445324833162240000-iGcN",
+      "title": "Nidhi Hooda's Post",
+      "snippet": "Nidhi Hooda's Post. View profile for Nidhi Hooda. Nidhi Hooda. Building the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2026-04-17",
+      "date_raw": "5 months ago",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\" linkedin"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M9",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M10",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The snippet appears to be a post by the named subject and describes her own work and results. It is positive/self-promotional with no complaint, accusation, or factual issue requiring action.",
+        "quote": "Building the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions ...",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_personalbrandingexpert-activity-7292438781545103361-nuBb",
+      "title": "#personalbrandingexpert | Nidhi Hooda | 82 comments - LinkedIn",
+      "snippet": "Nidhi Hooda's Post ... According to a Harvard Business Review study, leaders who admit their mistakes and flaws are actually seen as more ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2025-02-03",
+      "date_raw": "Feb 3, 2025",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\" review OR complaint OR scam"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M10",
+      "reach": {
+        "score": 5.84,
+        "bucket": "high",
+        "engagement": 82,
+        "signals": [
+          "82 comments"
+        ]
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M11",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.96,
+        "reason": "The snippet appears to be a LinkedIn post by Nidhi Hooda and does not contain any complaint, accusation, or negative claim about her. It is a general post referencing a Harvard Business Review study, so no action is needed.",
+        "quote": "Nidhi Hooda's Post ... According to a Harvard Business Review study, leaders who admit their mistakes and flaws are actually seen as more ...",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhihooda_personalbranding-reputation-activity-7471068637332721664-qNjs",
+      "title": "Storytelling vs Story-Selling for Founders on LinkedIn | Nidhi Hooda ...",
+      "snippet": "Storytelling vs Story-Selling for Founders on LinkedIn. View profile for Nidhi Hooda. Nidhi Hooda. Building the Reputation of DIFC Leaders & ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2026-06-11",
+      "date_raw": "Jun 11, 2026",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\" review OR complaint OR scam"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M11",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M4",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The snippet appears to be a LinkedIn post by the named subject about her own topic area, with no complaint, accusation, or negative content. It is subject-related but not something that needs action.",
+        "quote": "\"Storytelling vs Story-Selling for Founders on LinkedIn. View profile for Nidhi Hooda. Nidhi Hooda. Building the Reputation of DIFC Leaders & ...\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_podcast-businesscoach-personalbrandingexpert-activity-7253979762883231744-q84B",
+      "title": "#podcast #businesscoach #personalbrandingexpert | Nidhi Hooda",
+      "snippet": "Vamsi has transformed his career. Looking forward to the podcast and learning from his experiences. Keep up the great work, Nidhi Hooda!",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2024-10-20",
+      "date_raw": "Oct 20, 2024",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\" interview OR podcast OR webinar"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M12",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M12",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The snippet appears to be a positive LinkedIn post by or about Nidhi Hooda, praising her work and mentioning an upcoming podcast. There is no complaint, accusation, or actionable issue.",
+        "quote": "Keep up the great work, Nidhi Hooda!",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_personalbrandingexpert-activity-7331211070574919680-ySlE",
+      "title": "#personalbrandingexpert | Nidhi Hooda | 32 comments - LinkedIn",
+      "snippet": "It is simple Nidhi Hooda Share the “what to do” to build trust. Sell the “how to do it” to build the business. Because there's a huge difference ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2025-05-21",
+      "date_raw": "May 21, 2025",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\" interview OR podcast OR webinar"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M13",
+      "reach": {
+        "score": 5.04,
+        "bucket": "high",
+        "engagement": 32,
+        "signals": [
+          "32 comments"
+        ]
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M13",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The snippet appears to be a post by Nidhi Hooda about personal branding and business trust, which matches the subject profile. It is self-authored or promotional content with no complaint, accusation, or issue requiring action.",
+        "quote": "It is simple Nidhi Hooda Share the “what to do” to build trust. Sell the “how to do it” to build the business.",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_chennaitrip-personalbranding-activity-7253262663441371136-ubeT",
+      "title": "Nidhi Hooda's Post - chennaitrip #personalbranding - LinkedIn",
+      "snippet": "Nidhi Hooda. Building the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions | Assisted $30Mn+ deal pipeline | Founder, Growpido ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2024-10-18",
+      "date_raw": "Oct 18, 2024",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\" interview OR podcast OR webinar"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M14",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M14",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The snippet appears to be the subject's own LinkedIn post and presents her in a positive, promotional way. There is no complaint, accusation, or factual issue requiring action.",
+        "quote": "Building the Reputation of DIFC Leaders & CEOs | Turned 250 → 700K impressions | Assisted $30Mn+ deal pipeline | Founder, Growpido",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/karan-tanna-ghost-kitchens-india_bestadvice-foodtech-activity-7283777894042996736-qhh0",
+      "title": "#bestadvice #foodtech | Karan Tanna | 13 comments - LinkedIn",
+      "snippet": "Nidhi Hooda. Buidling the Reputation of DIFC Leaders & CEOs | Turned ... Full Mel Robbins Podcast episode linked in the comments.",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2025-01-11",
+      "date_raw": "Jan 11, 2025",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\" interview OR podcast OR webinar"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M15",
+      "reach": {
+        "score": 4.29,
+        "bucket": "high",
+        "engagement": 13,
+        "signals": [
+          "13 comments"
+        ]
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M15",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "both passes agree"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.95,
+        "reason": "The snippet appears to reference the named subject in a professional context and does not contain any complaint, accusation, or negative claim. It looks like a mention of her work rather than a post about a problem.",
+        "quote": "Nidhi Hooda. Buidling the Reputation of DIFC Leaders & CEOs | Turned ...",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "unsure",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.62,
+        "reason": "The snippet names Nidhi Hooda and references building the reputation of DIFC leaders and CEOs, which is broadly consistent with the profile, but it does not confirm Growpido, Dubai, or other disambiguators. There is no complaint, accusation, or actionable issue.",
+        "quote": "Nidhi Hooda. Buidling the Reputation of DIFC Leaders & CEOs",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "decided by Ronaldo Rajan Salamon: Someone else's post that mentions her in passing. Nothing to act on.",
+        "decided_by": "Ronaldo Rajan Salamon",
+        "decided_at": "2026-09-14T13:20:12+00:00"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_fears-personalbrandingexpert-activity-7235511258920185856-uXoS",
+      "title": "I was constantly living in fear and not everyone admits it. Nah, you won't find any personal branding tips today, but the raw openness of an entrepreneur. When I started Growth Korner, some fears kept me on my toes. All the confidence was an outer facade bec",
+      "snippet": "24 months ago",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2024-09-24",
+      "date_raw": "24 months ago",
+      "publisher": "LinkedIn",
+      "queries": [
+        "\"Nidhi Hooda\""
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M16",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": false,
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.96,
+        "reason": "The post appears to be the subject's own content on LinkedIn and is a personal reflection about entrepreneurship, not a complaint or negative mention. There is no actionable issue for reputation monitoring.",
+        "quote": "\"I was constantly living in fear and not everyone admits it.\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "unsure",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.74,
+        "reason": "The LinkedIn URL contains the name Nidhi Hooda, but the post says the entrepreneur started \"Growth Korner,\" which does not match the profile's Growpido LLC disambiguator. The content is a personal reflection rather than a complaint or accusation.",
+        "quote": "When I started Growth Korner, some fears kept me on my toes.",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "decided by Ronaldo Rajan Salamon: Her own LinkedIn post. Nothing to act on.",
+        "decided_by": "Ronaldo Rajan Salamon",
+        "decided_at": "2026-09-14T13:20:25+00:00"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhihooda_hiring-founders-activity-7472512103774306305-zqaK",
+      "title": "I'm stepping back from one of my favorite parts of my work in my company. We're hiring a LinkedIn Ghostwriter. For three years, I've been the writer at Growpido. I wrote almost every founder's voice myself. I loved it. It's the work that built this company. But I've re",
+      "snippet": "2 months ago",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2026-07-16",
+      "date_raw": "2 months ago",
+      "publisher": "LinkedIn",
+      "queries": [
+        "\"Nidhi Hooda\""
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M17",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M18",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "both passes agree"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The post appears to be from Nidhi Hooda about her own company and hiring for a role, with no complaint, accusation, or negative issue. It is self-authored content and does not require action.",
+        "quote": "\"I'm stepping back from one of my favorite parts of my work in my company. We're hiring a LinkedIn Ghostwriter.\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.99,
+        "reason": "The post is authored by Nidhi Hooda and discusses Growpido hiring a LinkedIn Ghostwriter. It is the subject's own business update and contains no complaint or adverse claim.",
+        "quote": "For three years, I've been the writer at Growpido. I wrote almost every founder's voice myself.",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "both passes agree"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhihooda_personalbrandingexpert-activity-7356183842661064706-ws91",
+      "title": "I'm proud to share that our client hired for 3 major positions in 2 weeks with no recruitment fees. His previous hires took 5 months. What changed? We built his personal brand. Before Growpido: Generic LinkedIn, company posts only, zero thought leadership….",
+      "snippet": "13 months ago",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2025-08-20",
+      "date_raw": "13 months ago",
+      "publisher": "LinkedIn",
+      "queries": [
+        "\"Nidhi Hooda\""
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M18",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": false,
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The post appears to be the subject's own content promoting Growpido and a client result, with no complaint or negative issue. It is about Nidhi Hooda based on the LinkedIn handle and the personal branding context.",
+        "quote": "\"I'm proud to share that our client hired for 3 major positions in 2 weeks with no recruitment fees.\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The post is from a LinkedIn URL identifying nidhihooda and explicitly references Growpido's personal-branding work. It reports a successful client hiring outcome.",
+        "quote": "What changed? We built his personal brand. Before Growpido: Generic LinkedIn, company posts only, zero thought leadership…",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "both passes agree"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhihooda_worked-till-2-am-last-night-clients-growpido-activity-7491001623100469248-Fx3C",
+      "title": "Nidhi Hooda's Post",
+      "snippet": "Worked till 2 AM last night. Clients, Growpido LLC finances, the scale-up plan, my diet & workout plan… & then I ordered food online because ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2026-08-15",
+      "date_raw": "1 month ago",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Growpido\" linkedin"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M19",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M19",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "This appears to be the subject's own LinkedIn post and is a personal/work update with no complaint, accusation, or external risk. It does not indicate a negative issue needing action.",
+        "quote": "Worked till 2 AM last night. Clients, Growpido LLC finances, the scale-up plan, my diet & workout plan…",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhihooda_personalbrandingexpert-activity-7371450518247956481-twjP",
+      "title": "Why Founders Should Build Their Personal Brand",
+      "snippet": "Your experience with Growpido truly highlights the strategic advantages of building visibility early on. Looking forward to more of your ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2025-09-14",
+      "date_raw": "1 year ago",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Growpido\" linkedin"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M20",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M20",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "both passes agree"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.96,
+        "reason": "The snippet appears to refer to Nidhi Hooda and her work with Growpido in a positive way. It is promotional or complimentary content with no complaint, accusation, or issue requiring action.",
+        "quote": "Your experience with Growpido truly highlights the strategic advantages of building visibility early on.",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.91,
+        "reason": "The LinkedIn post URL identifies Nidhi Hooda, and the snippet positively references Growpido and its strategic value. No complaint, factual error, or other action-needed issue is present.",
+        "quote": "Your experience with Growpido truly highlights the strategic advantages of building visibility early on.",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "both passes agree"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/growpido-linkedin_we-put-our-standard-in-writing-so-that-saying-activity-7490267111387271168-gj9R",
+      "title": "Setting Clear Standards in Advisory Work - LinkedIn",
+      "snippet": "Disha Chaudhary. Building Growpido | Strategic Influence, Authority & Reputation on LinkedIn | Executive Network Strategist | @Growpido. 2w.",
+      "subject": "Growpido",
+      "channel": "linkedin",
+      "date": "2026-08-03",
+      "date_raw": "Aug 3, 2026",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Growpido\" review OR complaint OR scam"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M21",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": false,
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.95,
+        "reason": "The snippet appears to be a Growpido LinkedIn post or profile content, which matches the subject. It is self-promotional and does not contain a complaint, accusation, or other issue needing action.",
+        "quote": "\"Disha Chaudhary. Building Growpido | Strategic Influence, Authority & Reputation on LinkedIn | Executive Network Strategist | @Growpido.\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.93,
+        "reason": "The LinkedIn snippet explicitly identifies the poster as building Growpido and describes services aligned with the company profile. It appears to be affiliated promotional or professional content, with no action needed.",
+        "quote": "Building Growpido | Strategic Influence, Authority & Reputation on LinkedIn",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "mixed",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "both passes agree"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/bighand_intheroom-intheroom-legaloperations-activity-7488201717918892033-WEoe",
+      "title": "BigHand posted on the topic | LinkedIn",
+      "snippet": "View organization page for Growpido LLC. Growpido LLC. 1,611 followers ... https://www.curia.ca keeps document review, chronology building and ...",
+      "subject": "Growpido",
+      "channel": "linkedin",
+      "date": "2026-07-29",
+      "date_raw": "Jul 29, 2026",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Growpido\" review OR complaint OR scam"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M22",
+      "reach": {
+        "score": 8.41,
+        "bucket": "high",
+        "engagement": 1611,
+        "signals": [
+          "1611 followers"
+        ]
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M22",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "both passes agree"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.95,
+        "reason": "The snippet appears to reference the organization Growpido LLC, which matches the subject profile, but it is only a LinkedIn post preview with no substantive claim about the subject. There is no positive or negative content requiring action.",
+        "quote": "View organization page for Growpido LLC.",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.84,
+        "reason": "The snippet explicitly names Growpido LLC, matching the subject company, but provides no substantive claim or commentary about it.",
+        "quote": "View organization page for Growpido LLC. Growpido LLC. 1,611 followers",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "both passes agree"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/growpido-linkedin_executivebranding-brandstrategy-mentalavailability-activity-7430480886992699392-1RXL",
+      "title": "Building Durable Brands Through Mental Availability | Growpido ...",
+      "snippet": "Building Durable Brands Through Mental Availability. View organization page for Growpido LLC · Growpido LLC. 1,211 followers. 4mo. Report this post; Close menu.",
+      "subject": "Growpido",
+      "channel": "linkedin",
+      "date": "",
+      "date_raw": "",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Growpido\" review OR complaint OR scam"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M23",
+      "reach": {
+        "score": 8.17,
+        "bucket": "high",
+        "engagement": 1211,
+        "signals": [
+          "1211 followers"
+        ]
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M21",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The mention is a LinkedIn post from Growpido LLC, which matches the subject profile. It appears to be the company’s own content and is informational rather than negative or actionable.",
+        "quote": "\"Building Durable Brands Through Mental Availability. View organization page for Growpido LLC\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/eleonorecrespo_modeler-agent-in-cursor-and-claude-code-activity-7459950792331132928-a_xt",
+      "title": "Build Pigment models in your AI tools with Cursor and Claude",
+      "snippet": "... Growpido LLC | Scaling in Dubai & GCC. 4mo. Report this comment; Close ... I review, refactor, and optimize 4. Ship in days instead of ...",
+      "subject": "Growpido",
+      "channel": "linkedin",
+      "date": "2026-05-12",
+      "date_raw": "May 12, 2026",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Growpido\" review OR complaint OR scam"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M24",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": false,
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.86,
+        "reason": "The snippet appears to mention Growpido LLC in a LinkedIn comment or profile context, but it does not contain any complaint, accusation, or substantive claim about the subject. It looks like a neutral mention of the company name alongside unrelated content.",
+        "quote": "Growpido LLC | Scaling in Dubai & GCC.",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "unsure",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.84,
+        "reason": "The snippet names Growpido LLC and Dubai/GCC, but it appears in a comment context with no clear indication that the post or comment concerns the Dubai reputation advisory company. There is no negative, actionable, or reputationally risky content visible.",
+        "quote": "Growpido LLC | Scaling in Dubai & GCC. 4mo. Report this comment",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "decided by Ronaldo Rajan Salamon: Growpido appears only as a commenter on someone else's post. Nothing to act on.",
+        "decided_by": "Ronaldo Rajan Salamon",
+        "decided_at": "2026-09-14T13:20:37+00:00"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhihooda_once-an-employee-came-to-me-and-told-me-she-activity-7474670508903518208-9yvF",
+      "title": "Nidhi Hooda's Post - LinkedIn",
+      "snippet": "Once an employee came to me and told me she wanted to leave Growpido LLC. I didn't ask why. I just said \"okay,\" but my \"okay\" hurt her the ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2026-06-21",
+      "date_raw": "Jun 21, 2026",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Growpido\" interview OR podcast OR webinar"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M25",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M23",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The mention appears to be a post by Nidhi Hooda about her own company and an employee interaction, so it is about the named subject. It is self-authored content with no complaint, accusation, or external risk signal.",
+        "quote": "\"Once an employee came to me and told me she wanted to leave Growpido LLC.\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_growpido-activity-7369653183075291137-HOH1",
+      "title": "#growpido | Nidhi Hooda | 24 comments - LinkedIn",
+      "snippet": "I and Growpido went on a team lunch last week at 32nd Avenue and what an amazing day it was. We went for lunch to celebrate recent wins.",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2025-09-05",
+      "date_raw": "Sep 5, 2025",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Growpido\" interview OR podcast OR webinar"
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M26",
+      "reach": {
+        "score": 4.8,
+        "bucket": "high",
+        "engagement": 24,
+        "signals": [
+          "24 comments"
+        ]
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M24",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The snippet appears to be the subject's own LinkedIn post about a team lunch and celebrating recent wins. It is positive and does not require action.",
+        "quote": "I and Growpido went on a team lunch last week at 32nd Avenue and what an amazing day it was.",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.linkedin.com/posts/thearableaderscom_nidhi-hooda-founder-of-growpido-llc-and-activity-7505154506255478784-rwDf",
+      "title": "The Arab Leaders' Post",
+      "snippet": "Nidhi Hooda, Founder of Growpido LLC and self-described “Reputation Architect,” brings over six years of distinguished experience in ...",
+      "subject": "Nidhi Hooda",
+      "channel": "linkedin",
+      "date": "2026-09-14",
+      "date_raw": "6 hours ago",
+      "publisher": "linkedin.com",
+      "queries": [
+        "\"Nidhi Hooda\" \"Growpido\""
+      ],
+      "blocked": true,
+      "fetch_status": "snippet_only",
+      "snapshot": "",
+      "text_chars": 0,
+      "id": "M27",
+      "reach": {
+        "score": 2.0,
+        "bucket": "medium",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": false,
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.96,
+        "reason": "The snippet clearly refers to the named subject and describes her in a positive, promotional way. It appears to be a profile or feature post, so no action is needed.",
+        "quote": "Nidhi Hooda, Founder of Growpido LLC and self-described “Reputation Architect,” brings over six years of distinguished experience in ...",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.99,
+        "reason": "The post explicitly identifies Nidhi Hooda as the Founder of Growpido LLC and describes her experience favorably. No complaint, allegation, or factual issue is apparent from the snippet.",
+        "quote": "Nidhi Hooda, Founder of Growpido LLC and self-described “Reputation Architect,” brings over six years of distinguished experience in ...",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "both passes agree"
+      }
+    },
+    {
+      "url": "https://www.instagram.com/p/Dckxn-8DBmD/",
+      "title": "Ms. Nidhi Hooda, Founder of Growpido LLC and self ...",
+      "snippet": "Nidhi Hooda, Founder of Growpido LLC and self-described “Reputation Architect,” brings over six years of distinguished experience in strategic ...",
+      "subject": "Nidhi Hooda",
+      "channel": "web",
+      "date": "2026-08-31",
+      "date_raw": "2 weeks ago",
+      "publisher": "instagram.com",
+      "queries": [
+        "\"Nidhi Hooda\"",
+        "\"Nidhi Hooda\" interview OR podcast OR webinar",
+        "\"Growpido\"",
+        "\"Growpido\" linkedin",
+        "\"Growpido\" interview OR podcast OR webinar",
+        "\"Nidhi Hooda\" \"Growpido\""
+      ],
+      "blocked": false,
+      "fetch_status": "could_not_check",
+      "snapshot": "evidence/20260914-131727-45fb/72f1484e.txt",
+      "text_chars": 0,
+      "id": "M28",
+      "reach": {
+        "score": 1.0,
+        "bucket": "low",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M26",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The mention clearly refers to the named subject and describes her in a positive, promotional way. There is no complaint, accusation, or other issue requiring action.",
+        "quote": "\"Nidhi Hooda, Founder of Growpido LLC and self-described “Reputation Architect,” brings over six years of distinguished experience in strategic ...\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.facebook.com/TheArabLeaders/posts/ms-nidhi-hooda-founder-of-growpido-llc-and-self-described-reputation-architect-b/122189683736627658/",
+      "title": "Nidhi Hooda, reputation architect and founder of Growpido LLC",
+      "snippet": "Ms. Nidhi Hooda, Founder of Growpido LLC and self-described “Reputation Architect,” brings over six years of distinguished experience in strategic...",
+      "subject": "Nidhi Hooda",
+      "channel": "web",
+      "date": "",
+      "date_raw": "",
+      "publisher": "facebook.com",
+      "queries": [
+        "\"Nidhi Hooda\"",
+        "\"Nidhi Hooda\" interview OR podcast OR webinar",
+        "\"Growpido\"",
+        "\"Growpido\" interview OR podcast OR webinar",
+        "\"Nidhi Hooda\" \"Growpido\""
+      ],
+      "blocked": false,
+      "fetch_status": "could_not_check",
+      "snapshot": "evidence/20260914-131727-45fb/146e1b81.txt",
+      "text_chars": 0,
+      "id": "M29",
+      "reach": {
+        "score": 1.0,
+        "bucket": "low",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M27",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The mention appears to be about the named subject and is a descriptive profile-style post with no complaint, accusation, or negative claim. It is essentially promotional or informational about her role and experience.",
+        "quote": "Ms. Nidhi Hooda, Founder of Growpido LLC and self-described “Reputation Architect,” brings over six years of distinguished experience in strategic...",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://growpido.com/about",
+      "title": "About Growpido & Founder Nidhi Hooda",
+      "snippet": "Founded by Nidhi Hooda in Dubai, U.A.E. Growpido builds executive reputation and narrative architecture for elite founders, fund managers, ...",
+      "subject": "Nidhi Hooda",
+      "channel": "web",
+      "date": "",
+      "date_raw": "",
+      "publisher": "growpido.com",
+      "queries": [
+        "\"Nidhi Hooda\"",
+        "\"Nidhi Hooda\" linkedin",
+        "\"Growpido\" linkedin",
+        "\"Nidhi Hooda\" \"Growpido\""
+      ],
+      "blocked": false,
+      "fetch_status": "ok",
+      "snapshot": "evidence/20260914-131727-45fb/d810a12b.txt",
+      "text_chars": 3675,
+      "id": "M30",
+      "reach": {
+        "score": 1.0,
+        "bucket": "low",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M28",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.99,
+        "reason": "The mention is clearly about Nidhi Hooda and her company Growpido, presenting her as the founder and describing her services and credentials. It is promotional and does not contain a complaint, accusation, or factual issue requiring action.",
+        "quote": "\"Nidhi Hooda, Founder of Growpido — Strategic Influence & Narrative Advisory\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://topmate.io/nidhi_hooda_linkedincoach",
+      "title": "Nidhi Hooda (@nidhi_hooda_linkedincoach)",
+      "snippet": "Nidhi Hooda. I help founders build personal brands | LinkedIn Personal Branding Expert & Consultant | Your LinkedIn post ghostwriter. 4.7/512 ratings. 128 ...",
+      "subject": "Nidhi Hooda",
+      "channel": "web",
+      "date": "",
+      "date_raw": "",
+      "publisher": "topmate.io",
+      "queries": [
+        "\"Nidhi Hooda\"",
+        "\"Nidhi Hooda\" linkedin",
+        "\"Nidhi Hooda\" review OR complaint OR scam"
+      ],
+      "blocked": false,
+      "fetch_status": "ok",
+      "snapshot": "evidence/20260914-131727-45fb/9df220e0.txt",
+      "text_chars": 11260,
+      "id": "M31",
+      "reach": {
+        "score": 1.0,
+        "bucket": "low",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M29",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The page is clearly for Nidhi Hooda and presents her as a LinkedIn personal branding expert and consultant, which matches the subject profile closely. It is promotional and testimonial content with no complaint, accusation, or factual issue requiring action.",
+        "quote": "\"Nidhi Hooda (@nidhi_hooda_linkedincoach) | Topmate\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.crunchbase.com/person/nidhi-hooda-199c",
+      "title": "Nidhi Hooda - Crunchbase Person Profile",
+      "snippet": "Nidhi Hooda gets people known for the right reasons. She is the founder of Growpido, a reputation advisory in Dubai. She works with founders, fund managers, ...",
+      "subject": "Nidhi Hooda",
+      "channel": "web",
+      "date": "",
+      "date_raw": "",
+      "publisher": "crunchbase.com",
+      "queries": [
+        "\"Nidhi Hooda\"",
+        "\"Nidhi Hooda\" \"Growpido\""
+      ],
+      "blocked": false,
+      "fetch_status": "could_not_check",
+      "snapshot": "evidence/20260914-131727-45fb/d4445860.txt",
+      "text_chars": 0,
+      "id": "M32",
+      "reach": {
+        "score": 1.0,
+        "bucket": "low",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M30",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The mention matches the described person and business profile, and it reads like a neutral directory/profile listing with no complaint or negative claim. No action is needed.",
+        "quote": "She is the founder of Growpido, a reputation advisory in Dubai.",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://growpido.com/",
+      "title": "Growpido | Executive Reputation & Strategic Narrative ...",
+      "snippet": "Growpido. We build executive reputation and AI search authority for founders, fund managers, and family offices.We build brand on LinkedIn. Choose ...",
+      "subject": "Growpido",
+      "channel": "web",
+      "date": "",
+      "date_raw": "",
+      "publisher": "growpido.com",
+      "queries": [
+        "\"Growpido\"",
+        "\"Growpido\" linkedin"
+      ],
+      "blocked": false,
+      "fetch_status": "ok",
+      "snapshot": "evidence/20260914-131727-45fb/ad3de6a3.txt",
+      "text_chars": 337,
+      "id": "M33",
+      "reach": {
+        "score": 1.0,
+        "bucket": "low",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M31",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "This is Growpido’s own website describing its services, so it is about the subject and not a complaint or issue. The tone is promotional and positive, with no action needed.",
+        "quote": "\"We build executive reputation and AI search authority for founders, fund managers, and family offices.\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.glassdoor.co.in/Reviews/Employee-Review-Growpido-E10805662-RVW100189030.htm",
+      "title": "Growpido : learn, grow and success",
+      "snippet": "Growpido reviews. A free inside look at company reviews and salaries posted anonymously by employees.",
+      "subject": "Growpido",
+      "channel": "web",
+      "date": "",
+      "date_raw": "",
+      "publisher": "glassdoor.co.in",
+      "queries": [
+        "\"Growpido\"",
+        "\"Growpido\" review OR complaint OR scam"
+      ],
+      "blocked": false,
+      "fetch_status": "could_not_check",
+      "snapshot": "evidence/20260914-131727-45fb/5845f595.txt",
+      "text_chars": 0,
+      "id": "M34",
+      "reach": {
+        "score": 1.0,
+        "bucket": "low",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M32",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.96,
+        "reason": "This appears to be a Glassdoor company review page for Growpido, which matches the subject company. The snippet is generic and does not contain a complaint, accusation, or other actionable negative claim about the subject.",
+        "quote": "Growpido reviews. A free inside look at company reviews and salaries posted anonymously by employees.",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    },
+    {
+      "url": "https://www.practo.com/delhi/doctor/nidhi-hooda-general-physician",
+      "title": "Dr. NIDHI HOODA - General Physician",
+      "snippet": "Dr. NIDHI HOODA is a Doctor and has an experience of 6 years in this field. The doctor completed MBBS from Guru Gobind Singh Indraprastha University in 2020 ...",
+      "subject": "Nidhi Hooda",
+      "channel": "web",
+      "date": "",
+      "date_raw": "",
+      "publisher": "practo.com",
+      "queries": [
+        "\"Nidhi Hooda\""
+      ],
+      "blocked": false,
+      "fetch_status": "ok",
+      "snapshot": "evidence/20260914-131727-45fb/2d4398e2.txt",
+      "text_chars": 3518,
+      "id": "M35",
+      "reach": {
+        "score": 1.0,
+        "bucket": "low",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M33",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "no",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "both passes say this is not about the subject"
+        }
+      },
+      "pass1": {
+        "about_subject": "no",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The mention is about a Delhi doctor profile on Practo, not the Dubai-based founder of Growpido LLC described in the subject profile. There is no indication this is the same person or that it concerns the subject's reputation.",
+        "quote": "Dr. NIDHI HOODA is a Doctor and has an experience of 6 years in this field.",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "no",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.99,
+        "reason": "This is a profile for a Delhi-based general physician with an MBBS and Delhi Medical Council registration, which does not match the Dubai-based Growpido founder and reputation advisor.",
+        "quote": "Dr. NIDHI HOODA is a Doctor and has an experience of 6 years in this field.",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "no",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "both passes say this is not about the subject"
+      }
+    },
+    {
+      "url": "https://www.researchgate.net/profile/Nidhi-Hooda-2",
+      "title": "Nidhi HOODA | Deparment of Forensic Scinece | Research profile",
+      "snippet": "Nidhi Hooda. Master of Science; Assistant Professor at Shree Guru Gobind Singh Tricentenary University ... Join ResearchGate to contact this researcher and ...",
+      "subject": "Nidhi Hooda",
+      "channel": "web",
+      "date": "",
+      "date_raw": "",
+      "publisher": "researchgate.net",
+      "queries": [
+        "\"Nidhi Hooda\" review OR complaint OR scam"
+      ],
+      "blocked": false,
+      "fetch_status": "could_not_check",
+      "snapshot": "evidence/20260914-131727-45fb/52cbbf0e.txt",
+      "text_chars": 0,
+      "id": "M36",
+      "reach": {
+        "score": 1.0,
+        "bucket": "low",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M34",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "no",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "both passes say this is not about the subject"
+        }
+      },
+      "pass1": {
+        "about_subject": "no",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "This appears to be a ResearchGate profile for an academic researcher, not the Dubai-based founder of Growpido LLC described in the subject profile. The mention is not negative and does not require action.",
+        "quote": "\"Nidhi Hooda. Master of Science; Assistant Professor at Shree Guru Gobind Singh Tricentenary University ... Join ResearchGate to contact this researcher and ...\"",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "no",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.99,
+        "reason": "The mention identifies a different Nidhi Hooda, an assistant professor in forensic science at Shree Guru Gobind Singh Tricentenary University, not the Dubai-based Growpido founder.",
+        "quote": "Assistant Professor at Shree Guru Gobind Singh Tricentenary University",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "no",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "both passes say this is not about the subject"
+      }
+    },
+    {
+      "url": "https://indianjournals.com/article/jpafmat-24-1-008",
+      "title": "Forensic characterization of Tetrahydrocannabinol (THC) in ...",
+      "snippet": "Nidhi Hooda1, Uttam Singh2, Neelkamal Sharma3,*, Kapil Sharma4, Arun ... 2.Cannabis abuse and addiction: A contemporary literature review.",
+      "subject": "Nidhi Hooda",
+      "channel": "web",
+      "date": "2024-12-24",
+      "date_raw": "Dec 24, 2024",
+      "publisher": "indianjournals.com",
+      "queries": [
+        "\"Nidhi Hooda\" review OR complaint OR scam"
+      ],
+      "blocked": false,
+      "fetch_status": "ok",
+      "snapshot": "evidence/20260914-131727-45fb/f78df9d1.txt",
+      "text_chars": 2727,
+      "id": "M37",
+      "reach": {
+        "score": 1.0,
+        "bucket": "low",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M35",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "no",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "both passes say this is not about the subject"
+        }
+      },
+      "pass1": {
+        "about_subject": "no",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "This appears to be an academic author listing for a different Nidhi Hooda, not the Dubai-based founder of Growpido LLC described in the profile. The page is a forensic medicine journal article and gives no indication it is about the subject in the profile.",
+        "quote": "Author: Nidhi Hooda1, Uttam Singh2, Neelkamal Sharma3,*, Kapil Sharma4, Arun Sharma5",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "no",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.99,
+        "reason": "This is an academic forensic research article authored by a Nidhi Hooda affiliated with MD University in Rohtak, India, not the Dubai-based Growpido founder described in the profile.",
+        "quote": "\"1Research Scholar, DOFS, MD University, Rohtak, India\"",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "no",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "both passes say this is not about the subject"
+      }
+    },
+    {
+      "url": "https://www.facebook.com/nidhi.hooda.7543/posts/its-movienight-/2237246380027802/",
+      "title": "It's #MovieNight - Facebook",
+      "snippet": "Nidhi Hooda is in Gurugram, India. Reels󰞋Jul 23 ... Nidhi Hooda is in Gurugram, India. ... Here is my review of the film, what did you all make of it? :).",
+      "subject": "Nidhi Hooda",
+      "channel": "web",
+      "date": "",
+      "date_raw": "",
+      "publisher": "facebook.com",
+      "queries": [
+        "\"Nidhi Hooda\" review OR complaint OR scam"
+      ],
+      "blocked": false,
+      "fetch_status": "could_not_check",
+      "snapshot": "evidence/20260914-131727-45fb/0d8f4bf5.txt",
+      "text_chars": 0,
+      "id": "M38",
+      "reach": {
+        "score": 1.0,
+        "bucket": "low",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M36",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": "Ronaldo Rajan Salamon",
+        "final": {
+          "about_subject": "no",
+          "sentiment": "neutral",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "decided by Ronaldo Rajan Salamon: A personal Facebook page I cannot tie to the founder. Treated as a namesake; nothing to act on either way.",
+          "decided_by": "Ronaldo Rajan Salamon",
+          "decided_at": "2026-09-13T19:57:32+00:00"
+        }
+      },
+      "pass1": {
+        "about_subject": "unsure",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.62,
+        "reason": "The mention appears to be a Facebook post by someone named Nidhi Hooda, but the snippet only shows a movie night/review and does not identify the Dubai-based founder from the profile. There is no clear complaint, accusation, or reputational issue about the subject.",
+        "quote": "Here is my review of the film, what did you all make of it? :).",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "unsure",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "confidence": 0.82,
+        "reason": "The mention is a personal movie review by someone named Nidhi Hooda in Gurugram, with no connection to Growpido, Dubai, or reputation advisory stated. It may be a different person with the same name.",
+        "quote": "Nidhi Hooda is in Gurugram, India. ... Here is my review of the film, what did you all make of it? :)",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "no",
+        "sentiment": "neutral",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "decided by Ronaldo Rajan Salamon in run 20260913-195340-75e2, carried forward: decided by Ronaldo Rajan Salamon: A personal Facebook page I cannot tie to the founder. Treated as a namesake; nothing to act on either way.",
+        "carried_from": "20260913-195340-75e2"
+      }
+    },
+    {
+      "url": "https://www.instagram.com/p/DcnQMBxSnPR/",
+      "title": "Nidhi Vohra has been appointed as Chief Business Officer at Sirona ...",
+      "snippet": "The Arab Leaders proudly recognize Ms. Nidhi Hooda for her exceptional leadership, transformational impact and lasting contribution to the ...",
+      "subject": "Nidhi Hooda",
+      "channel": "web",
+      "date": "2026-08-28",
+      "date_raw": "Aug 28, 2026",
+      "publisher": "instagram.com",
+      "queries": [
+        "\"Nidhi Hooda\" review OR complaint OR scam"
+      ],
+      "blocked": false,
+      "fetch_status": "could_not_check",
+      "snapshot": "evidence/20260914-131727-45fb/a9638108.txt",
+      "text_chars": 0,
+      "id": "M39",
+      "reach": {
+        "score": 1.0,
+        "bucket": "low",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M37",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": "Ronaldo Rajan Salamon",
+        "final": {
+          "about_subject": "no",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "decided by Ronaldo Rajan Salamon: The post is about Nidhi Vohra, a different person. Namesake.",
+          "decided_by": "Ronaldo Rajan Salamon",
+          "decided_at": "2026-09-13T19:57:41+00:00"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.86,
+        "reason": "The mention appears to refer to the named subject and is a recognition/appointment style post with positive language. There is no complaint, accusation, or actionable issue for the subject.",
+        "quote": "The Arab Leaders proudly recognize Ms. Nidhi Hooda for her exceptional leadership, transformational impact and lasting contribution to the ...",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": {
+        "about_subject": "unsure",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.58,
+        "reason": "The snippet names Nidhi Hooda and praises her leadership, but provides no Dubai, Growpido, or executive reputation advisory details to confirm it is the subject rather than another person with the same name.",
+        "quote": "The Arab Leaders proudly recognize Ms. Nidhi Hooda for her exceptional leadership, transformational impact and lasting contribution to the ...",
+        "model": "gpt-5.6-terra"
+      },
+      "final": {
+        "about_subject": "no",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "decided by Ronaldo Rajan Salamon in run 20260913-195340-75e2, carried forward: decided by Ronaldo Rajan Salamon: The post is about Nidhi Vohra, a different person. Namesake.",
+        "carried_from": "20260913-195340-75e2"
+      }
+    },
+    {
+      "url": "https://topmate.io/nidhi_hooda_linkedincoach/659724",
+      "title": "Personal Branding Package for 1 month mentorship with Nidhi Hooda",
+      "snippet": "Personal Branding Package for 1 month mentorship with Nidhi Hooda · Change starts here! · Package · ₹20000 · Topmate. ... Webinar | 60mins per session. 1 x ...",
+      "subject": "Nidhi Hooda",
+      "channel": "web",
+      "date": "",
+      "date_raw": "",
+      "publisher": "topmate.io",
+      "queries": [
+        "\"Nidhi Hooda\" interview OR podcast OR webinar"
+      ],
+      "blocked": false,
+      "fetch_status": "ok",
+      "snapshot": "evidence/20260914-131727-45fb/a94113cd.txt",
+      "text_chars": 2347,
+      "id": "M40",
+      "reach": {
+        "score": 1.0,
+        "bucket": "low",
+        "engagement": 0,
+        "signals": []
+      },
+      "seen_before": true,
+      "seen_as": {
+        "id": "M38",
+        "run": "20260913-195340-75e2",
+        "risk": "ignore",
+        "decided_by": null,
+        "final": {
+          "about_subject": "yes",
+          "sentiment": "positive",
+          "risk": "ignore",
+          "ambiguous": false,
+          "why": "one pass, confident ignore"
+        }
+      },
+      "pass1": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "confidence": 0.98,
+        "reason": "The page is a service listing for Nidhi Hooda offering a personal branding mentorship package, which matches the subject profile. It is promotional and does not contain a complaint, accusation, or other issue needing action.",
+        "quote": "Personal Branding Package for 1 month mentorship with Nidhi Hooda",
+        "model": "gpt-5.4-mini"
+      },
+      "pass2": null,
+      "final": {
+        "about_subject": "yes",
+        "sentiment": "positive",
+        "risk": "ignore",
+        "ambiguous": false,
+        "why": "one pass, confident ignore"
+      }
+    }
+  ],
+  "responses": {},
+  "brief": "# Reputation radar: weekly brief for Nidhi Hooda, Growpido\n\nWeek 2026-09-08 to 2026-09-14. Run 20260914-131727-45fb. Reading time about three minutes.\n\nStatus: APPROVED by Ronaldo Rajan Salamon on 2026-09-14T13:20:50+00:00\nApprover note: Read all 40 mentions. 35 were already in last week's approved run and the two namesakes I decided then were carried forward, not asked again. Decided the three new ambiguous items myself. Nothing this week needs a response and no draft reply exists.\n\n## Read this first\n\n- 3 ambiguous LinkedIn items mention Nidhi Hooda or Growpido, and none show a complaint or negative claim, so no action is needed unless you want to review them.\n- 5 items are not about the subject and 32 are ignore, so the week is mostly quiet with 35 about the subject out of 40 total.\n- 5 new items came in since the last run, so decide whether to keep watching the 3 ambiguous mentions or leave them as is.\n\n## The week in numbers\n\n40 public mentions found, 35 about the subjects, 5 about namesakes and set aside. 0 need a response, 0 to watch, 3 ambiguous and waiting for a human, 32 need nothing. By channel: 27 LinkedIn (search snippets only, never fetched), 0 news, 8 web. 1 carry a date inside the week; the rest are undated or older and are listed as background. 5 are new since run 20260913-195340-75e2; 30 were already in it.\n\n## Respond now (0)\n\nNothing this week needs a response.\n\n## Ambiguous, held for a human (3)\n\nThe two classifiers disagreed or could not tell whether the item is about the subject. The system did not guess: each item is held at watch and shown here with both readings.\n\n- M15. bestadvice foodtech | Karan Tanna | 13 comments - LinkedIn (linkedin.com, LinkedIn, snippet only, 2025-01-11, seen before, reach high (13 comments)). Sentiment neutral. passes disagree on whether this is the subject (yes vs unsure); a human decides. Reason: The snippet appears to reference the named subject in a professional context and does not contain any complaint, accusation, or negative claim. It looks like a mention of her work rather than a post about a problem.\n  https://www.linkedin.com/posts/karan-tanna-ghost-kitchens-india_bestadvice-foodtech-activity-7283777894042996736-qhh0\n  Pass 1 (gpt-5.4-mini): about yes, ignore, confidence 0.95. Pass 2 (gpt-5.6-terra): about unsure, ignore, confidence 0.62.\n- M16. I was constantly living in fear and not everyone admits it. Nah, you won't find any personal branding tips today, but the raw openness of an entrepreneur. When I started Growth Korner, some fears kept me on my toes. All the confidence was an outer facade bec (LinkedIn, LinkedIn, snippet only, 2024-09-24, new, reach medium). Sentiment neutral. passes disagree on whether this is the subject (yes vs unsure); a human decides. Reason: The post appears to be the subject's own content on LinkedIn and is a personal reflection about entrepreneurship, not a complaint or negative mention. There is no actionable issue for reputation monitoring.\n  https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_fears-personalbrandingexpert-activity-7235511258920185856-uXoS\n  Pass 1 (gpt-5.4-mini): about yes, ignore, confidence 0.96. Pass 2 (gpt-5.6-terra): about unsure, ignore, confidence 0.74.\n- M24. Build Pigment models in your AI tools with Cursor and Claude (linkedin.com, LinkedIn, snippet only, 2026-05-12, new, reach medium). Sentiment neutral. passes disagree on whether this is the subject (yes vs unsure); a human decides. Reason: The snippet appears to mention Growpido LLC in a LinkedIn comment or profile context, but it does not contain any complaint, accusation, or substantive claim about the subject. It looks like a neutral mention of the company name alongside unrelated content.\n  https://www.linkedin.com/posts/eleonorecrespo_modeler-agent-in-cursor-and-claude-code-activity-7459950792331132928-a_xt\n  Pass 1 (gpt-5.4-mini): about yes, ignore, confidence 0.86. Pass 2 (gpt-5.6-terra): about unsure, ignore, confidence 0.84.\n\n## Watch (0)\n\nNothing to watch.\n\n## Nothing needed (32)\n\n- M1. Nidhi Hooda‏ - ‏Building the Reputation of DIFC Leaders & ... (ae.linkedin.com, linkedin, undated), positive. https://ae.linkedin.com/in/nidhihooda\n- M2. Nidhi Hooda | 33 comments (linkedin.com, linkedin, 2025-09-14), positive. https://www.linkedin.com/posts/nidhihooda_contentcreationasafounder-linkedinpersonalbranding-activity-7246014137535737856-UP9s\n- M3. Nidhi Hooda's Post (linkedin.com, linkedin, 2025-09-14), positive. https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_personalbrandingexpert-activity-7283707224546320384-PVjD\n- M4. Nidhi Hooda | 38 comments - LinkedIn (linkedin.com, linkedin, 2024-10-22), neutral. https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_personalbranding-sustainablebusinessmodels-activity-7254719069155708928--aup\n- M5. Growpido LLC (ae.linkedin.com, linkedin, undated), neutral. https://ae.linkedin.com/company/growpido-linkedin\n- M6. I can bet my life on this. | Nidhi Hooda (linkedin.com, linkedin, 2025-12-18), positive. https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_personalbranding-leadershipvoice-foundermindset-activity-7400055557606264837-TA0o\n- M7. 20+ \"Nidhi Hooda\" profiles (linkedin.com, linkedin, undated), positive. https://www.linkedin.com/pub/dir/Nidhi/Hooda\n- M8. Nidhi Hooda | 28 comments (linkedin.com, linkedin, 2023-09-15), positive. https://www.linkedin.com/posts/nidhihooda_personalbrandingexpert-linkedinmarketing-activity-7069885723818045441-r2Ne\n- M9. Nidhi Hooda's Post (linkedin.com, linkedin, 2026-04-17), positive. https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_dubai-movingtodubai-growpido-activity-7445324833162240000-iGcN\n- M10. personalbrandingexpert | Nidhi Hooda | 82 comments - LinkedIn (linkedin.com, linkedin, 2025-02-03), neutral. https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_personalbrandingexpert-activity-7292438781545103361-nuBb\n- M11. Storytelling vs Story-Selling for Founders on LinkedIn | Nidhi Hooda ... (linkedin.com, linkedin, 2026-06-11), neutral. https://www.linkedin.com/posts/nidhihooda_personalbranding-reputation-activity-7471068637332721664-qNjs\n- M12. podcast businesscoach personalbrandingexpert | Nidhi Hooda (linkedin.com, linkedin, 2024-10-20), positive. https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_podcast-businesscoach-personalbrandingexpert-activity-7253979762883231744-q84B\n- M13. personalbrandingexpert | Nidhi Hooda | 32 comments - LinkedIn (linkedin.com, linkedin, 2025-05-21), positive. https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_personalbrandingexpert-activity-7331211070574919680-ySlE\n- M14. Nidhi Hooda's Post - chennaitrip personalbranding - LinkedIn (linkedin.com, linkedin, 2024-10-18), positive. https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_chennaitrip-personalbranding-activity-7253262663441371136-ubeT\n- M17. I'm stepping back from one of my favorite parts of my work in my company. We're hiring a LinkedIn Ghostwriter. For three years, I've been the writer at Growpido. I wrote almost every founder's voice myself. I loved it. It's the work that built this company. But I've re (LinkedIn, linkedin, 2026-07-16), neutral. https://www.linkedin.com/posts/nidhihooda_hiring-founders-activity-7472512103774306305-zqaK\n- M18. I'm proud to share that our client hired for 3 major positions in 2 weeks with no recruitment fees. His previous hires took 5 months. What changed? We built his personal brand. Before Growpido: Generic LinkedIn, company posts only, zero thought leadership…. (LinkedIn, linkedin, 2025-08-20), positive. https://www.linkedin.com/posts/nidhihooda_personalbrandingexpert-activity-7356183842661064706-ws91\n- M19. Nidhi Hooda's Post (linkedin.com, linkedin, 2026-08-15), neutral. https://www.linkedin.com/posts/nidhihooda_worked-till-2-am-last-night-clients-growpido-activity-7491001623100469248-Fx3C\n- M20. Why Founders Should Build Their Personal Brand (linkedin.com, linkedin, 2025-09-14), positive. https://www.linkedin.com/posts/nidhihooda_personalbrandingexpert-activity-7371450518247956481-twjP\n- M21. Setting Clear Standards in Advisory Work - LinkedIn (linkedin.com, linkedin, 2026-08-03), mixed. https://www.linkedin.com/posts/growpido-linkedin_we-put-our-standard-in-writing-so-that-saying-activity-7490267111387271168-gj9R\n- M22. BigHand posted on the topic | LinkedIn (linkedin.com, linkedin, 2026-07-29), neutral. https://www.linkedin.com/posts/bighand_intheroom-intheroom-legaloperations-activity-7488201717918892033-WEoe\n- M23. Building Durable Brands Through Mental Availability | Growpido ... (linkedin.com, linkedin, undated), neutral. https://www.linkedin.com/posts/growpido-linkedin_executivebranding-brandstrategy-mentalavailability-activity-7430480886992699392-1RXL\n- M25. Nidhi Hooda's Post - LinkedIn (linkedin.com, linkedin, 2026-06-21), neutral. https://www.linkedin.com/posts/nidhihooda_once-an-employee-came-to-me-and-told-me-she-activity-7474670508903518208-9yvF\n- M26. growpido | Nidhi Hooda | 24 comments - LinkedIn (linkedin.com, linkedin, 2025-09-05), positive. https://www.linkedin.com/posts/nidhi-hooda-personalbrandingexpert_growpido-activity-7369653183075291137-HOH1\n- M27. The Arab Leaders' Post (linkedin.com, linkedin, 2026-09-14), positive. https://www.linkedin.com/posts/thearableaderscom_nidhi-hooda-founder-of-growpido-llc-and-activity-7505154506255478784-rwDf\n- M28. Ms. Nidhi Hooda, Founder of Growpido LLC and self ... (instagram.com, web, 2026-08-31), positive. https://www.instagram.com/p/Dckxn-8DBmD/\n- M29. Nidhi Hooda, reputation architect and founder of Growpido LLC (facebook.com, web, undated), neutral. https://www.facebook.com/TheArabLeaders/posts/ms-nidhi-hooda-founder-of-growpido-llc-and-self-described-reputation-architect-b/122189683736627658/\n- M30. About Growpido & Founder Nidhi Hooda (growpido.com, web, undated), positive. https://growpido.com/about\n- M31. Nidhi Hooda (@nidhi_hooda_linkedincoach) (topmate.io, web, undated), neutral. https://topmate.io/nidhi_hooda_linkedincoach\n- M32. Nidhi Hooda - Crunchbase Person Profile (crunchbase.com, web, undated), neutral. https://www.crunchbase.com/person/nidhi-hooda-199c\n- M33. Growpido | Executive Reputation & Strategic Narrative ... (growpido.com, web, undated), positive. https://growpido.com/\n- M34. Growpido : learn, grow and success (glassdoor.co.in, web, undated), neutral. https://www.glassdoor.co.in/Reviews/Employee-Review-Growpido-E10805662-RVW100189030.htm\n- M40. Personal Branding Package for 1 month mentorship with Nidhi Hooda (topmate.io, web, undated), positive. https://topmate.io/nidhi_hooda_linkedincoach/659724\n\n## Set aside as namesakes (5)\n\n- M35. Dr. NIDHI HOODA - General Physician. The mention is about a Delhi doctor profile on Practo, not the Dubai-based founder of Growpido LLC described in the subject profile. There is no indication this https://www.practo.com/delhi/doctor/nidhi-hooda-general-physician\n- M36. Nidhi HOODA | Deparment of Forensic Scinece | Research profile. This appears to be a ResearchGate profile for an academic researcher, not the Dubai-based founder of Growpido LLC described in the subject profile. The mention  https://www.researchgate.net/profile/Nidhi-Hooda-2\n- M37. Forensic characterization of Tetrahydrocannabinol (THC) in .... This appears to be an academic author listing for a different Nidhi Hooda, not the Dubai-based founder of Growpido LLC described in the profile. The page is a f https://indianjournals.com/article/jpafmat-24-1-008\n- M38. It's MovieNight - Facebook. The mention appears to be a Facebook post by someone named Nidhi Hooda, but the snippet only shows a movie night/review and does not identify the Dubai-based fo https://www.facebook.com/nidhi.hooda.7543/posts/its-movienight-/2237246380027802/\n- M39. Nidhi Vohra has been appointed as Chief Business Officer at Sirona .... The mention appears to refer to the named subject and is a recognition/appointment style post with positive language. There is no complaint, accusation, or acti https://www.instagram.com/p/DcnQMBxSnPR/\n\n## Method\n\nSubjects were profiled from public search snippets so a classifier can tell them from namesakes: Nidhi Hooda is described as the founder of Growpido LLC, based in Dubai, U.A.E. She is presented as a reputation architect who builds executive reputation, strategic influence, and narrative advisory for founders, fund managers, family offices, and CEOs. Growpido is described as a Dubai-based company that builds executive reputation, AI search authority, and brand on LinkedIn. The company is also described as a marketing services firm and a personal branding or reputation advisory agency. Mentions came from web and news searches; LinkedIn results were kept as search engine snippets and never fetched, nothing behind a login was read. Every mention was classified by gpt-5.4-mini; anything not a confident ignore was classified again by gpt-5.6-terra. The final label follows fixed rules: respond now needs both to agree, any disagreement or any doubt about identity is marked ambiguous and held for a human. Nobody was contacted.\n",
+  "brief_opening_locked": true
+}
