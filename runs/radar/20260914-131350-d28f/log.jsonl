@@ -5,3 +5,110 @@
 {"ts": "2026-09-14T13:14:01+00:00", "stage": "profile", "message": "subject profile written from public snippets", "data": {"disambiguators": ["Founder of Growpido LLC", "Based in Dubai, U.A.E.", "Reputation advisory and executive branding", "Works with founders, fund managers, family offices, DIFC leaders and CEOs"]}}
 {"ts": "2026-09-14T13:14:01+00:00", "stage": "collect", "message": "started"}
 {"ts": "2026-09-14T13:14:02+00:00", "stage": "collect", "message": "8 results: '\"Nidhi Hooda\"' (web)"}
+{"ts": "2026-09-14T13:14:04+00:00", "stage": "collect", "message": "8 results: '\"Nidhi Hooda\" linkedin' (web)"}
+{"ts": "2026-09-14T13:14:05+00:00", "stage": "collect", "message": "8 results: '\"Nidhi Hooda\" review OR complaint OR scam' (web)"}
+{"ts": "2026-09-14T13:14:06+00:00", "stage": "collect", "message": "8 results: '\"Nidhi Hooda\" interview OR podcast OR webinar' (web)"}
+{"ts": "2026-09-14T13:14:08+00:00", "stage": "collect", "message": "10 results: '\"Nidhi Hooda\"' (news)"}
+{"ts": "2026-09-14T13:14:11+00:00", "stage": "collect", "message": "8 results: '\"Growpido\"' (web)"}
+{"ts": "2026-09-14T13:14:12+00:00", "stage": "collect", "message": "8 results: '\"Growpido\" linkedin' (web)"}
+{"ts": "2026-09-14T13:14:13+00:00", "stage": "collect", "message": "8 results: '\"Growpido\" review OR complaint OR scam' (web)"}
+{"ts": "2026-09-14T13:14:14+00:00", "stage": "collect", "message": "8 results: '\"Growpido\" interview OR podcast OR webinar' (web)"}
+{"ts": "2026-09-14T13:14:15+00:00", "stage": "collect", "message": "0 results: '\"Growpido\"' (news)"}
+{"ts": "2026-09-14T13:14:17+00:00", "stage": "collect", "message": "8 results: '\"Nidhi Hooda\" \"Growpido\"' (web)"}
+{"ts": "2026-09-14T13:14:17+00:00", "stage": "collect", "message": "48 distinct mentions, keeping 40", "data": {"by_channel": {"news": 0, "linkedin": 26, "web": 14}}}
+{"ts": "2026-09-14T13:14:21+00:00", "stage": "collect", "message": "34 of 40 mentions were already in run 20260913-195340-75e2"}
+{"ts": "2026-09-14T13:14:21+00:00", "stage": "classify", "message": "started"}
+{"ts": "2026-09-14T13:14:23+00:00", "stage": "llm", "message": "gpt-5.4-mini: 512 in, 98 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:23+00:00", "stage": "classify", "message": "M1 ignore: Nidhi Hooda‏ - ‏Building the Reputation of DIFC Leaders & ...", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:25+00:00", "stage": "llm", "message": "gpt-5.4-mini: 524 in, 99 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:25+00:00", "stage": "classify", "message": "M2 ignore: Nidhi Hooda | 33 comments", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:26+00:00", "stage": "llm", "message": "gpt-5.4-mini: 532 in, 111 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:26+00:00", "stage": "classify", "message": "M3 ignore: Nidhi Hooda's Post", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:28+00:00", "stage": "llm", "message": "gpt-5.4-mini: 538 in, 79 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:28+00:00", "stage": "classify", "message": "M4 ignore: Nidhi Hooda | 38 comments - LinkedIn", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:29+00:00", "stage": "llm", "message": "gpt-5.4-mini: 513 in, 91 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:29+00:00", "stage": "classify", "message": "M5 ignore: Growpido LLC", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:31+00:00", "stage": "llm", "message": "gpt-5.4-mini: 531 in, 110 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:31+00:00", "stage": "classify", "message": "M6 ignore: Nidhi Hooda's Post", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:32+00:00", "stage": "llm", "message": "gpt-5.4-mini: 544 in, 102 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:32+00:00", "stage": "classify", "message": "M7 ignore: I can bet my life on this. | Nidhi Hooda", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:34+00:00", "stage": "llm", "message": "gpt-5.4-mini: 507 in, 96 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:34+00:00", "stage": "classify", "message": "M8 ignore: 20+ \"Nidhi Hooda\" profiles", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:35+00:00", "stage": "llm", "message": "gpt-5.4-mini: 528 in, 93 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:35+00:00", "stage": "classify", "message": "M9 ignore: Nidhi Hooda | 28 comments", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:37+00:00", "stage": "llm", "message": "gpt-5.4-mini: 535 in, 86 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:37+00:00", "stage": "classify", "message": "M10 ignore: Nidhi Hooda's Post", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:38+00:00", "stage": "llm", "message": "gpt-5.4-mini: 527 in, 96 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:38+00:00", "stage": "classify", "message": "M11 ignore: #personalbrandingexpert | Nidhi Hooda | 82 comments - LinkedIn", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:40+00:00", "stage": "llm", "message": "gpt-5.4-mini: 531 in, 105 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:40+00:00", "stage": "classify", "message": "M12 ignore: Storytelling vs Story-Selling for Founders on LinkedIn | Nidhi Hooda .", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:41+00:00", "stage": "llm", "message": "gpt-5.4-mini: 532 in, 70 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:41+00:00", "stage": "classify", "message": "M13 ignore: #podcast #businesscoach #personalbrandingexpert | Nidhi Hooda", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:43+00:00", "stage": "llm", "message": "gpt-5.4-mini: 536 in, 97 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:43+00:00", "stage": "classify", "message": "M14 ignore: #personalbrandingexpert | Nidhi Hooda | 32 comments - LinkedIn", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:44+00:00", "stage": "llm", "message": "gpt-5.4-mini: 542 in, 97 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:44+00:00", "stage": "classify", "message": "M15 ignore: Nidhi Hooda's Post - chennaitrip #personalbranding - LinkedIn", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:45+00:00", "stage": "llm", "message": "gpt-5.4-mini: 539 in, 91 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:46+00:00", "stage": "llm", "message": "gpt-5.6-terra: server rejected temperature, retrying without it"}
+{"ts": "2026-09-14T13:14:48+00:00", "stage": "llm", "message": "gpt-5.6-terra: 539 in, 86 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:48+00:00", "stage": "classify", "message": "M16 ignore: #bestadvice #foodtech | Karan Tanna | 13 comments - LinkedIn", "data": {"pass1": "ignore", "pass2": "ignore", "about": "yes"}}
+{"ts": "2026-09-14T13:14:49+00:00", "stage": "llm", "message": "gpt-5.4-mini: 545 in, 84 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:52+00:00", "stage": "llm", "message": "gpt-5.6-terra: 545 in, 102 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:52+00:00", "stage": "classify", "message": "M17 ignore: Every entrepreneur has that one client who tests every boundary. I als", "data": {"pass1": "ignore", "pass2": "ignore", "about": "yes"}}
+{"ts": "2026-09-14T13:14:54+00:00", "stage": "llm", "message": "gpt-5.4-mini: 510 in, 82 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:56+00:00", "stage": "llm", "message": "gpt-5.6-terra: 510 in, 89 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:56+00:00", "stage": "classify", "message": "M18 ignore: Why Founders Should Build Their Personal Brand", "data": {"pass1": "ignore", "pass2": "ignore", "about": "yes"}}
+{"ts": "2026-09-14T13:14:58+00:00", "stage": "llm", "message": "gpt-5.4-mini: 534 in, 94 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:58+00:00", "stage": "classify", "message": "M19 ignore: Nidhi Hooda - personalbrandingexpert #gratitude #growth", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:14:59+00:00", "stage": "llm", "message": "gpt-5.4-mini: 522 in, 78 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:14:59+00:00", "stage": "classify", "message": "M20 ignore: Nidhi Hooda | 14 comments", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:15:00+00:00", "stage": "llm", "message": "gpt-5.4-mini: 531 in, 94 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:02+00:00", "stage": "llm", "message": "gpt-5.6-terra: 531 in, 85 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:02+00:00", "stage": "classify", "message": "M21 ignore: Setting Clear Standards in Advisory Work - LinkedIn", "data": {"pass1": "ignore", "pass2": "ignore", "about": "yes"}}
+{"ts": "2026-09-14T13:15:03+00:00", "stage": "llm", "message": "gpt-5.4-mini: 524 in, 83 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:06+00:00", "stage": "llm", "message": "gpt-5.6-terra: 524 in, 128 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:06+00:00", "stage": "classify", "message": "M22 ignore: BigHand posted on the topic | LinkedIn", "data": {"pass1": "ignore", "pass2": "ignore", "about": "yes"}}
+{"ts": "2026-09-14T13:15:07+00:00", "stage": "llm", "message": "gpt-5.4-mini: 527 in, 81 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:07+00:00", "stage": "classify", "message": "M23 ignore: Building Durable Brands Through Mental Availability | Growpido ...", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:15:08+00:00", "stage": "llm", "message": "gpt-5.4-mini: 536 in, 89 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:11+00:00", "stage": "llm", "message": "gpt-5.6-terra: 536 in, 87 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:11+00:00", "stage": "classify", "message": "M24 watch AMBIGUOUS: Build Pigment models in your AI tools with Cursor and Claude", "data": {"pass1": "ignore", "pass2": "ignore", "about": "unsure"}}
+{"ts": "2026-09-14T13:15:12+00:00", "stage": "llm", "message": "gpt-5.4-mini: 533 in, 84 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:12+00:00", "stage": "classify", "message": "M25 ignore: #growpido | Nidhi Hooda | 24 comments - LinkedIn", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:15:13+00:00", "stage": "llm", "message": "gpt-5.4-mini: 522 in, 90 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:16+00:00", "stage": "llm", "message": "gpt-5.6-terra: 522 in, 92 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:16+00:00", "stage": "classify", "message": "M26 ignore: The Arab Leaders' Post", "data": {"pass1": "ignore", "pass2": "ignore", "about": "yes"}}
+{"ts": "2026-09-14T13:15:17+00:00", "stage": "llm", "message": "gpt-5.4-mini: 505 in, 94 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:17+00:00", "stage": "classify", "message": "M27 ignore: Ms. Nidhi Hooda, Founder of Growpido LLC and self ...", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:15:18+00:00", "stage": "llm", "message": "gpt-5.4-mini: 525 in, 93 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:18+00:00", "stage": "classify", "message": "M28 ignore: Nidhi Hooda, reputation architect and founder of Growpido LLC", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:15:20+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1350 in, 90 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:20+00:00", "stage": "classify", "message": "M29 ignore: About Growpido & Founder Nidhi Hooda", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:15:21+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1760 in, 87 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:21+00:00", "stage": "classify", "message": "M30 ignore: Nidhi Hooda (@nidhi_hooda_linkedincoach)", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:15:22+00:00", "stage": "llm", "message": "gpt-5.4-mini: 502 in, 79 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:22+00:00", "stage": "classify", "message": "M31 ignore: Nidhi Hooda - Crunchbase Person Profile", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:15:23+00:00", "stage": "llm", "message": "gpt-5.4-mini: 496 in, 87 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:23+00:00", "stage": "classify", "message": "M32 ignore: Growpido : learn, grow and success", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:15:24+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1428 in, 100 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:27+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1428 in, 84 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:27+00:00", "stage": "classify", "message": "M33 ignore: Dr. NIDHI HOODA - General Physician", "data": {"pass1": "ignore", "pass2": "ignore", "about": "no"}}
+{"ts": "2026-09-14T13:15:28+00:00", "stage": "llm", "message": "gpt-5.4-mini: 505 in, 106 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:30+00:00", "stage": "llm", "message": "gpt-5.6-terra: 505 in, 92 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:30+00:00", "stage": "classify", "message": "M34 ignore: Nidhi HOODA | Deparment of Forensic Scinece | Research profile", "data": {"pass1": "ignore", "pass2": "ignore", "about": "no"}}
+{"ts": "2026-09-14T13:15:32+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1200 in, 105 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:33+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1200 in, 80 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:33+00:00", "stage": "classify", "message": "M35 ignore: Forensic characterization of Tetrahydrocannabinol (THC) in ...", "data": {"pass1": "ignore", "pass2": "ignore", "about": "no"}}
+{"ts": "2026-09-14T13:15:35+00:00", "stage": "llm", "message": "gpt-5.4-mini: 525 in, 88 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:38+00:00", "stage": "llm", "message": "gpt-5.6-terra: 525 in, 144 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:38+00:00", "stage": "classify", "message": "M36 watch AMBIGUOUS: It's #MovieNight - Facebook", "data": {"pass1": "ignore", "pass2": "ignore", "about": "unsure"}}
+{"ts": "2026-09-14T13:15:39+00:00", "stage": "llm", "message": "gpt-5.4-mini: 499 in, 90 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:42+00:00", "stage": "llm", "message": "gpt-5.6-terra: 499 in, 104 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:42+00:00", "stage": "classify", "message": "M37 watch AMBIGUOUS: Nidhi Vohra has been appointed as Chief Business Officer at Sirona ...", "data": {"pass1": "ignore", "pass2": "ignore", "about": "unsure"}}
+{"ts": "2026-09-14T13:15:43+00:00", "stage": "llm", "message": "gpt-5.4-mini: 997 in, 90 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:43+00:00", "stage": "classify", "message": "M38 ignore: Personal Branding Package for 1 month mentorship with Nidhi Hooda", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:15:44+00:00", "stage": "llm", "message": "gpt-5.4-mini: 552 in, 78 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:44+00:00", "stage": "classify", "message": "M39 ignore: Growpido | Executive Reputation & Strategic Narrative ...", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:15:45+00:00", "stage": "llm", "message": "gpt-5.4-mini: 489 in, 78 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-14T13:15:45+00:00", "stage": "classify", "message": "M40 ignore: Growpido - Crunchbase Company Profile & Funding", "data": {"pass1": "ignore", "pass2": null, "about": "yes"}}
+{"ts": "2026-09-14T13:15:45+00:00", "stage": "brief", "message": "started"}

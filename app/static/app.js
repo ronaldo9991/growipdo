@@ -9,7 +9,7 @@
   /* approver token: kept in sessionStorage, attached to every gate action, asked for once per tab */
   window.__token = () => { try { return sessionStorage.getItem("approver_token") || ""; } catch (e) { return ""; } };
   window.__gate = { required: false };
-  getJSON("/api/gate").then((g) => { window.__gate = g; document.dispatchEvent(new Event("gate-info")); }).catch(() => {});
+  getJSON("/api/gate").then((g) => { window.__gate = { required: !!g.token_required }; document.dispatchEvent(new Event("gate-info")); }).catch(() => {});
   window.__tokenField = () => !window.__gate.required ? "" :
     `<label class="lbl">Approver token</label><input class="text" type="password" name="token" value="${esc(window.__token())}" placeholder="Set by APPROVER_TOKEN" required oninput="try{sessionStorage.setItem('approver_token',this.value)}catch(e){}">`;
   window.__gateNote = () => window.__gate.required ? "" : `<p class="hint">No approver token is configured on this deployment, so the gate is open to anyone with the link. Set APPROVER_TOKEN to lock it.</p>`;
