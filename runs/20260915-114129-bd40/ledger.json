@@ -1,0 +1,2688 @@
+{
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://github.com/jayyanar",
+      "final_url": "https://github.com/jayyanar",
+      "title": "jayyanar (Ayyanar Jeyakrishnan) · GitHubLinkedInYouTube",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260915-114129-bd40/956dd899.txt",
+      "chars": 6904,
+      "queries": [
+        "\"Ayyanar Jeyakrishnan\"",
+        "identify"
+      ]
+    },
+    {
+      "id": "S2",
+      "url": "https://topmate.io/jayyanar",
+      "final_url": "https://topmate.io/jayyanar",
+      "title": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260915-114129-bd40/5ecd20b1.txt",
+      "chars": 10077,
+      "queries": [
+        "\"Ayyanar Jeyakrishnan\"",
+        "identify"
+      ]
+    },
+    {
+      "id": "S3",
+      "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "final_url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "title": "Introducing the last cohort of AWS Heroes this year – November 2024 | AWS News Blog x facebook linkedin instagram twitch youtube podcasts email",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260915-114129-bd40/f063dd8c.txt",
+      "chars": 12478,
+      "queries": [
+        "\"Ayyanar Jeyakrishnan\" founder OR CEO OR \"managing director\" OR partner",
+        "\"Ayyanar Jeyakrishnan\" interview OR podcast OR keynote"
+      ]
+    },
+    {
+      "id": "S4",
+      "url": "https://builder.aws.com/community/heroes/AyyanarJeyakrishnan",
+      "final_url": "https://builder.aws.com/community/heroes/AyyanarJeyakrishnan",
+      "title": "AWS Builder Center",
+      "tier": "secondary",
+      "status": "could_not_check",
+      "http_status": 200,
+      "error": "page returned almost no readable text (probably rendered by JavaScript)",
+      "snapshot": "evidence/20260915-114129-bd40/5c9ac2db.txt",
+      "chars": 18,
+      "queries": [
+        "\"Ayyanar Jeyakrishnan\""
+      ]
+    },
+    {
+      "id": "S5",
+      "url": "https://medium.com/@jayyanar",
+      "final_url": "https://medium.com/@jayyanar",
+      "title": "Ayyanar Jeyakrishnan",
+      "tier": "secondary",
+      "status": "could_not_check",
+      "http_status": 403,
+      "error": "HTTP 403",
+      "snapshot": "evidence/20260915-114129-bd40/7372f5c7.txt",
+      "chars": 0,
+      "queries": [
+        "\"Ayyanar Jeyakrishnan\""
+      ]
+    },
+    {
+      "id": "S6",
+      "url": "https://www.instagram.com/p/DFsP819Tud1/",
+      "final_url": "",
+      "title": "Introducing Our Speaker Lineup for AWS re:Invent 2024 Recap! Our ...",
+      "tier": "secondary",
+      "status": "could_not_check",
+      "http_status": null,
+      "error": "request failed: [Errno 61] Connection refused",
+      "snapshot": "evidence/20260915-114129-bd40/12b52960.txt",
+      "chars": 0,
+      "queries": [
+        "\"Ayyanar Jeyakrishnan\" founder OR CEO OR \"managing director\" OR partner"
+      ]
+    },
+    {
+      "id": "S7",
+      "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+      "final_url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+      "title": "Microsoft Build //localhost:bengaluru | Microsoft Reactor",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260915-114129-bd40/ba0cb3be.txt",
+      "chars": 6981,
+      "queries": [
+        "\"Ayyanar Jeyakrishnan\" Dubai OR \"Abu Dhabi\" OR UAE"
+      ]
+    },
+    {
+      "id": "S8",
+      "url": "https://topmate.io/jayyanar/118992",
+      "final_url": "https://topmate.io/jayyanar/118992",
+      "title": "Interview prep & tips with Ayyanar Jeyakrishnan (AJ)",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260915-114129-bd40/f9a94d08.txt",
+      "chars": 516,
+      "queries": [
+        "\"Ayyanar Jeyakrishnan\" interview OR podcast OR keynote"
+      ]
+    },
+    {
+      "id": "S9",
+      "url": "https://soundcloud.com/ayyanar-jeyakrishnan",
+      "final_url": "https://soundcloud.com/ayyanar-jeyakrishnan",
+      "title": "Stream Ayyanar Jeyakrishnan music | Listen to songs, albums, playlists for free on SoundCloud",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260915-114129-bd40/f8914d2c.txt",
+      "chars": 364,
+      "queries": [
+        "\"Ayyanar Jeyakrishnan\" interview OR podcast OR keynote"
+      ]
+    },
+    {
+      "id": "S10",
+      "url": "https://www.youtube.com/watch?v=pqermZA_ZG8",
+      "final_url": "https://www.youtube.com/watch?v=pqermZA_ZG8",
+      "title": "Azure MLOps workshop - DevOps for Machine Learning | Ayyanar Jeyakrishnan | AzConf | AzConf2022 - YouTube",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260915-114129-bd40/11bec841.txt",
+      "chars": 241,
+      "queries": [
+        "\"Ayyanar Jeyakrishnan\" interview OR podcast OR keynote"
+      ]
+    },
+    {
+      "id": "S11",
+      "url": "https://medium.com/@jayyanar/aws-sagemaker-geospatial-potentially-saved-fraud-4ad9aa728e13",
+      "final_url": "https://medium.com/@jayyanar/aws-sagemaker-geospatial-potentially-saved-fraud-4ad9aa728e13",
+      "title": "",
+      "tier": "secondary",
+      "status": "could_not_check",
+      "http_status": 403,
+      "error": "HTTP 403",
+      "snapshot": "evidence/20260915-114129-bd40/dd2216cc.txt",
+      "chars": 0,
+      "queries": [
+        "identify"
+      ]
+    },
+    {
+      "id": "S12",
+      "url": "https://luma.com/user/jayyanar",
+      "final_url": "https://luma.com/user/jayyanar",
+      "title": "Ayyanar Jeyakrishnan · Luma",
+      "tier": "secondary",
+      "status": "ok",
+      "http_status": 200,
+      "error": "",
+      "snapshot": "evidence/20260915-114129-bd40/3a168dfc.txt",
+      "chars": 260,
+      "queries": [
+        "identify"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "text": "Ayyanar Jeyakrishnan says, \"With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table.\"",
+      "quote": "With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table.",
+      "category": "role",
+      "about": "person",
+      "numbers": [
+        "20 years"
+      ],
+      "origin": "S1",
+      "origin_url": "https://github.com/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C1"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan says, \"I started a DataOps Labs Meetup group to share my knowledge and other people to share their experience with 2350+ Members and Counting..\"",
+      "quote": "I started a DataOps Labs Meetup group to share my knowledge and other people to share their experience with 2350+ Members and Counting..",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "2350+"
+      ],
+      "origin": "S1",
+      "origin_url": "https://github.com/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C2"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan says, \"I started a DataOps Labs India Linkedin Page with Around 1300+ Followers\"",
+      "quote": "I started a DataOps Labs India Linkedin Page with Around 1300+ Followers",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "1300+"
+      ],
+      "origin": "S1",
+      "origin_url": "https://github.com/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C3"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan is named in the video title.",
+      "quote": "Azure MLOps workshop - DevOps for Machine Learning | Ayyanar Jeyakrishnan | AzConf | AzConf2022 - YouTube",
+      "category": "role",
+      "about": "person",
+      "numbers": [],
+      "origin": "S10",
+      "origin_url": "https://www.youtube.com/watch?v=pqermZA_ZG8",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C4"
+    },
+    {
+      "text": "The video title identifies Ayyanar Jeyakrishnan in connection with AzConf.",
+      "quote": "Azure MLOps workshop - DevOps for Machine Learning | Ayyanar Jeyakrishnan | AzConf | AzConf2022 - YouTube",
+      "category": "role",
+      "about": "person",
+      "numbers": [],
+      "origin": "S10",
+      "origin_url": "https://www.youtube.com/watch?v=pqermZA_ZG8",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C5"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan has over 20 years of IT expertise.",
+      "quote": "With over 20 years of IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the ta",
+      "category": "other",
+      "about": "person",
+      "numbers": [
+        "20 years"
+      ],
+      "origin": "S12",
+      "origin_url": "https://luma.com/user/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C6"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan joined in August 2024.",
+      "quote": "Joined August 2024",
+      "category": "founding",
+      "about": "person",
+      "numbers": [
+        "August 2024"
+      ],
+      "origin": "S12",
+      "origin_url": "https://luma.com/user/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C7"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan has hosted 5 events.",
+      "quote": "5Hosted",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "5"
+      ],
+      "origin": "S12",
+      "origin_url": "https://luma.com/user/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C8"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate",
+      "quote": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate",
+      "category": "role",
+      "about": "person",
+      "numbers": [],
+      "origin": "S2",
+      "origin_url": "https://topmate.io/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C9"
+    },
+    {
+      "text": "5/520 ratings",
+      "quote": "5/520 ratings",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "5/520"
+      ],
+      "origin": "S2",
+      "origin_url": "https://topmate.io/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C10"
+    },
+    {
+      "text": "57bookings",
+      "quote": "57bookings",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "57"
+      ],
+      "origin": "S2",
+      "origin_url": "https://topmate.io/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C11"
+    },
+    {
+      "text": "Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo.",
+      "quote": "Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo.",
+      "category": "role",
+      "about": "person",
+      "numbers": [],
+      "origin": "S3",
+      "origin_url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C12"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan is a Machine Learning Hero.",
+      "quote": "Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo.",
+      "category": "award",
+      "about": "person",
+      "numbers": [],
+      "origin": "S3",
+      "origin_url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C13"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan is based in Bengaluru, India.",
+      "quote": "Ayyanar Jeyakrishnan – Bengaluru, India",
+      "category": "other",
+      "about": "person",
+      "numbers": [],
+      "origin": "S3",
+      "origin_url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C14"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan is listed as the Speaker for Microsoft Build //localhost:bengaluru.",
+      "quote": "Speaker: Ayyanar Jeyakrishnan",
+      "category": "role",
+      "about": "person",
+      "numbers": [],
+      "origin": "S7",
+      "origin_url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C15"
+    },
+    {
+      "text": "Microsoft Build //localhost:bengaluru is scheduled for 20 June, 2026.",
+      "quote": "20 June, 2026 | 5:00 AM - 8:00 AM (UTC) Coordinated Universal Time",
+      "category": "other",
+      "about": "company",
+      "numbers": [
+        "20 June, 2026"
+      ],
+      "origin": "S7",
+      "origin_url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C16"
+    },
+    {
+      "text": "Microsoft Build //localhost:bengaluru is an in-person event in Bengaluru.",
+      "quote": "Format:\nIn person (Bengaluru)",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin": "S7",
+      "origin_url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C17"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan (AJ) offers \"Interview prep & tips\".",
+      "quote": "Interview prep & tips with Ayyanar Jeyakrishnan (AJ)",
+      "category": "other",
+      "about": "person",
+      "numbers": [],
+      "origin": "S8",
+      "origin_url": "https://topmate.io/jayyanar/118992",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C18"
+    },
+    {
+      "text": "The session is priced at ₹800.",
+      "quote": "₹800",
+      "category": "other",
+      "about": "person",
+      "numbers": [
+        "₹800"
+      ],
+      "origin": "S8",
+      "origin_url": "https://topmate.io/jayyanar/118992",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C19"
+    },
+    {
+      "text": "The session lasts 15 mins.",
+      "quote": "15 mins",
+      "category": "other",
+      "about": "person",
+      "numbers": [
+        "15 mins"
+      ],
+      "origin": "S8",
+      "origin_url": "https://topmate.io/jayyanar/118992",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C20"
+    },
+    {
+      "text": "The page is for Ayyanar Jeyakrishnan.",
+      "quote": "Stream Ayyanar Jeyakrishnan music | Listen to songs, albums, playlists for free on SoundCloud",
+      "category": "other",
+      "about": "person",
+      "numbers": [],
+      "origin": "S9",
+      "origin_url": "https://soundcloud.com/ayyanar-jeyakrishnan",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C21"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan says, \"Participants Counts Session 1 - 207\"",
+      "quote": "Participants Counts Session 1 - 207",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "207"
+      ],
+      "origin": "S1",
+      "origin_url": "https://github.com/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C22"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan has attended 15 events.",
+      "quote": "15Attended",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "15"
+      ],
+      "origin": "S12",
+      "origin_url": "https://luma.com/user/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C23"
+    },
+    {
+      "text": "18testimonials",
+      "quote": "18testimonials",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "18"
+      ],
+      "origin": "S2",
+      "origin_url": "https://topmate.io/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C24"
+    },
+    {
+      "text": "Started working very early age (16).",
+      "quote": "Came from Tier III town, Started working very early age (16).",
+      "category": "other",
+      "about": "person",
+      "numbers": [
+        "16"
+      ],
+      "origin": "S2",
+      "origin_url": "https://topmate.io/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C25"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies.",
+      "quote": "He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies.",
+      "category": "other",
+      "about": "person",
+      "numbers": [],
+      "origin": "S3",
+      "origin_url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C26"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS.",
+      "quote": "Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS.",
+      "category": "other",
+      "about": "person",
+      "numbers": [],
+      "origin": "S3",
+      "origin_url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C27"
+    },
+    {
+      "text": "Ayyanar Jeyakrishnan frequently speaks at industry events and community meetups on MLOps, generative AI, and machine learning applications.",
+      "quote": "He is passionate about sharing his knowledge and frequently speaks at industry events and community meetups on MLOps, generative AI, and machine learning applications.",
+      "category": "other",
+      "about": "person",
+      "numbers": [],
+      "origin": "S3",
+      "origin_url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C28"
+    },
+    {
+      "text": "Microsoft Build //localhost:bengaluru has the topic AI Applications.",
+      "quote": "Topic: AI Applications",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin": "S7",
+      "origin_url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C29"
+    },
+    {
+      "text": "Microsoft Build //localhost:bengaluru is part of the Microsoft Build //localhost:Asia Series.",
+      "quote": "This event is part of the Microsoft Build //localhost:Asia Series.",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin": "S7",
+      "origin_url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "id": "C30"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "claim_id": "C1",
+      "claim": "Ayyanar Jeyakrishnan says, \"With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table.\"",
+      "quote": "With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table.",
+      "category": "role",
+      "about": "person",
+      "numbers": [
+        "20 years"
+      ],
+      "origin_url": "https://github.com/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "partially_verified",
+      "reason": "stated only by the company itself (own site or issued release); https://github.com/jayyanar repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": "E3 says “With over 20 years of IT expertise” while E1 and E2 say “With over 20 years of dedicated IT expertise”; the 20-year figure matches exactly.",
+          "note": "The excerpts from Ayyanar Jeyakrishnan’s own pages state the same 20+ years claim.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "visible to you. Block user Report abuse Contact GitHub support about this user’s behavior. Learn more about reporting abuse. Report abuse Overview Repositories 63 Projects 0 Packages 0 Stars 27 More Overview Repositories Projects Packages Stars jayyanar/README.md I'm Ayyanar Jeyakrishnan ; aka AJ. With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table. As a"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Stars jayyanar/README.md I'm Ayyanar Jeyakrishnan ; aka AJ. With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table. As a strategic thinker, my focus is always on the long-term goals, and I thrive in collaborative environments, working closely with diverse stakeholders, including CXOs, technology leaders, and executive teams. My professional journey has been characterized by"
+            },
+            {
+              "source": "S12",
+              "url": "https://luma.com/user/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan · Luma Discover Events Sign In Ayyanar Jeyakrishnan @jayyanar With over 20 years of IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the ta Joined August 2024 5Hosted 15Attended"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The GitHub profile README attributed to Ayyanar Jeyakrishnan states the quoted sentence exactly, including “over 20 years” of dedicated IT expertise.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "visible to you. Block user Report abuse Contact GitHub support about this user’s behavior. Learn more about reporting abuse. Report abuse Overview Repositories 63 Projects 0 Packages 0 Stars 27 More Overview Repositories Projects Packages Stars jayyanar/README.md I'm Ayyanar Jeyakrishnan ; aka AJ. With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table. As a"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "Stars jayyanar/README.md I'm Ayyanar Jeyakrishnan ; aka AJ. With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table. As a strategic thinker, my focus is always on the long-term goals, and I thrive in collaborative environments, working closely with diverse stakeholders, including CXOs, technology leaders, and executive teams. My professional journey has been characterized by"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://github.com/jayyanar",
+        "https://luma.com/user/jayyanar"
+      ]
+    },
+    {
+      "id": "F2",
+      "claim_id": "C2",
+      "claim": "Ayyanar Jeyakrishnan says, \"I started a DataOps Labs Meetup group to share my knowledge and other people to share their experience with 2350+ Members and Counting..\"",
+      "quote": "I started a DataOps Labs Meetup group to share my knowledge and other people to share their experience with 2350+ Members and Counting..",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "2350+"
+      ],
+      "origin_url": "https://github.com/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "partially_verified",
+      "reason": "stated only by the company itself (own site or issued release); https://github.com/jayyanar repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpts state the same claim, including the exact phrase about starting a DataOps Labs Meetup group and having 2350+ members and counting.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "to discuss include Generative AI, MLOps, DevOps, Cloud, and Platform Engineering. I look forward to connecting with like-minded professionals and exploring opportunities to contribute to transformative tech initiatives. Let's connect and engage in meaningful discussions about the future of technology and its impact on our world. I started a DataOps Labs Meetup group to share my knowledge and other people to share their experience with 2350+ Members and Counting.. I"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "about the future of technology and its impact on our world. I started a DataOps Labs Meetup group to share my knowledge and other people to share their experience with 2350+ Members and Counting.. I started a DataOps Labs India Linkedin Page with Around 1300+ Followers Shared all training / session materials here at YouTube for community members. https://www.youtube.com/@DataOpsLabsIndia MLOps with AWS Sagemaker Training Videos Participants Counts Session 1 -"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The GitHub profile states the quoted claim, including “2350+ Members and Counting.”",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "to discuss include Generative AI, MLOps, DevOps, Cloud, and Platform Engineering. I look forward to connecting with like-minded professionals and exploring opportunities to contribute to transformative tech initiatives. Let's connect and engage in meaningful discussions about the future of technology and its impact on our world. I started a DataOps Labs Meetup group to share my knowledge and other people to share their experience with 2350+ Members and Counting.. I"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "about the future of technology and its impact on our world. I started a DataOps Labs Meetup group to share my knowledge and other people to share their experience with 2350+ Members and Counting.. I started a DataOps Labs India Linkedin Page with Around 1300+ Followers Shared all training / session materials here at YouTube for community members. https://www.youtube.com/@DataOpsLabsIndia MLOps with AWS Sagemaker Training Videos Participants Counts Session 1 -"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://github.com/jayyanar"
+      ]
+    },
+    {
+      "id": "F3",
+      "claim_id": "C3",
+      "claim": "Ayyanar Jeyakrishnan says, \"I started a DataOps Labs India Linkedin Page with Around 1300+ Followers\"",
+      "quote": "I started a DataOps Labs India Linkedin Page with Around 1300+ Followers",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "1300+"
+      ],
+      "origin_url": "https://github.com/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "partially_verified",
+      "reason": "stated only by the company itself (own site or issued release); https://github.com/jayyanar repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpts quote Ayyanar Jeyakrishnan saying he started a DataOps Labs India LinkedIn Page with around 1300+ followers, matching the claim exactly.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "about the future of technology and its impact on our world. I started a DataOps Labs Meetup group to share my knowledge and other people to share their experience with 2350+ Members and Counting.. I started a DataOps Labs India Linkedin Page with Around 1300+ Followers Shared all training / session materials here at YouTube for community members. https://www.youtube.com/@DataOpsLabsIndia MLOps with AWS Sagemaker Training Videos Participants Counts Session 1 -"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "started a DataOps Labs India Linkedin Page with Around 1300+ Followers Shared all training / session materials here at YouTube for community members. https://www.youtube.com/@DataOpsLabsIndia MLOps with AWS Sagemaker Training Videos Participants Counts Session 1 - 207 Participants Counts Session 2 - 93 Participants Counts Session 3 - 53 Introduction QuickView of DevOps and its Benefits What is MLOps MLops Advantages and Its benefits Machine Learning Lifecycle and Personas and Technology"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The GitHub profile text states that Ayyanar Jeyakrishnan started a DataOps Labs India LinkedIn page with “Around 1300+ Followers.”",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "about the future of technology and its impact on our world. I started a DataOps Labs Meetup group to share my knowledge and other people to share their experience with 2350+ Members and Counting.. I started a DataOps Labs India Linkedin Page with Around 1300+ Followers Shared all training / session materials here at YouTube for community members. https://www.youtube.com/@DataOpsLabsIndia MLOps with AWS Sagemaker Training Videos Participants Counts Session 1 -"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "started a DataOps Labs India Linkedin Page with Around 1300+ Followers Shared all training / session materials here at YouTube for community members. https://www.youtube.com/@DataOpsLabsIndia MLOps with AWS Sagemaker Training Videos Participants Counts Session 1 - 207 Participants Counts Session 2 - 93 Participants Counts Session 3 - 53 Introduction QuickView of DevOps and its Benefits What is MLOps MLops Advantages and Its benefits Machine Learning Lifecycle and Personas and Technology"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://github.com/jayyanar"
+      ]
+    },
+    {
+      "id": "F4",
+      "claim_id": "C4",
+      "claim": "Ayyanar Jeyakrishnan is named in the video title.",
+      "quote": "Azure MLOps workshop - DevOps for Machine Learning | Ayyanar Jeyakrishnan | AzConf | AzConf2022 - YouTube",
+      "category": "role",
+      "about": "person",
+      "numbers": [],
+      "origin_url": "https://www.youtube.com/watch?v=pqermZA_ZG8",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 shows the YouTube video title includes “Ayyanar Jeyakrishnan.”",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S10",
+              "url": "https://www.youtube.com/watch?v=pqermZA_ZG8",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Azure MLOps workshop - DevOps for Machine Learning | Ayyanar Jeyakrishnan | AzConf | AzConf2022 - YouTube AboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new features © 2026 Google LLC"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 gives the YouTube video title and includes the name “Ayyanar Jeyakrishnan.”",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S10",
+              "url": "https://www.youtube.com/watch?v=pqermZA_ZG8",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Azure MLOps workshop - DevOps for Machine Learning | Ayyanar Jeyakrishnan | AzConf | AzConf2022 - YouTube AboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new features © 2026 Google LLC"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.youtube.com/watch?v=pqermZA_ZG8"
+      ]
+    },
+    {
+      "id": "F5",
+      "claim_id": "C5",
+      "claim": "The video title identifies Ayyanar Jeyakrishnan in connection with AzConf.",
+      "quote": "Azure MLOps workshop - DevOps for Machine Learning | Ayyanar Jeyakrishnan | AzConf | AzConf2022 - YouTube",
+      "category": "role",
+      "about": "person",
+      "numbers": [],
+      "origin_url": "https://www.youtube.com/watch?v=pqermZA_ZG8",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1’s video title includes both “Ayyanar Jeyakrishnan” and “AzConf,” matching the claim.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S10",
+              "url": "https://www.youtube.com/watch?v=pqermZA_ZG8",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Azure MLOps workshop - DevOps for Machine Learning | Ayyanar Jeyakrishnan | AzConf | AzConf2022 - YouTube AboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new features © 2026 Google LLC"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The YouTube video title explicitly includes both “Ayyanar Jeyakrishnan” and “AzConf.”",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S10",
+              "url": "https://www.youtube.com/watch?v=pqermZA_ZG8",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Azure MLOps workshop - DevOps for Machine Learning | Ayyanar Jeyakrishnan | AzConf | AzConf2022 - YouTube AboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new features © 2026 Google LLC"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.youtube.com/watch?v=pqermZA_ZG8"
+      ]
+    },
+    {
+      "id": "F6",
+      "claim_id": "C6",
+      "claim": "Ayyanar Jeyakrishnan has over 20 years of IT expertise.",
+      "quote": "With over 20 years of IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the ta",
+      "category": "other",
+      "about": "person",
+      "numbers": [
+        "20 years"
+      ],
+      "origin_url": "https://luma.com/user/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "partially_verified",
+      "reason": "stated only by the company itself (own site or issued release); https://github.com/jayyanar repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpts from Ayyanar Jeyakrishnan’s own profiles state that he has “over 20 years” or “over 20 years of dedicated IT expertise,” matching the claim exactly.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S12",
+              "url": "https://luma.com/user/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "Ayyanar Jeyakrishnan · Luma Discover Events Sign In Ayyanar Jeyakrishnan @jayyanar With over 20 years of IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the ta Joined August 2024 5Hosted 15Attended"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "visible to you. Block user Report abuse Contact GitHub support about this user’s behavior. Learn more about reporting abuse. Report abuse Overview Repositories 63 Projects 0 Packages 0 Stars 27 More Overview Repositories Projects Packages Stars jayyanar/README.md I'm Ayyanar Jeyakrishnan ; aka AJ. With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table. As a"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "Stars jayyanar/README.md I'm Ayyanar Jeyakrishnan ; aka AJ. With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table. As a strategic thinker, my focus is always on the long-term goals, and I thrive in collaborative environments, working closely with diverse stakeholders, including CXOs, technology leaders, and executive teams. My professional journey has been characterized by"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The cited profiles state that Ayyanar Jeyakrishnan has over 20 years of IT expertise, though these are self-descriptions.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S12",
+              "url": "https://luma.com/user/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "Ayyanar Jeyakrishnan · Luma Discover Events Sign In Ayyanar Jeyakrishnan @jayyanar With over 20 years of IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the ta Joined August 2024 5Hosted 15Attended"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "visible to you. Block user Report abuse Contact GitHub support about this user’s behavior. Learn more about reporting abuse. Report abuse Overview Repositories 63 Projects 0 Packages 0 Stars 27 More Overview Repositories Projects Packages Stars jayyanar/README.md I'm Ayyanar Jeyakrishnan ; aka AJ. With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table. As a"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "Stars jayyanar/README.md I'm Ayyanar Jeyakrishnan ; aka AJ. With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table. As a strategic thinker, my focus is always on the long-term goals, and I thrive in collaborative environments, working closely with diverse stakeholders, including CXOs, technology leaders, and executive teams. My professional journey has been characterized by"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://github.com/jayyanar",
+        "https://luma.com/user/jayyanar"
+      ]
+    },
+    {
+      "id": "F7",
+      "claim_id": "C7",
+      "claim": "Ayyanar Jeyakrishnan joined in August 2024.",
+      "quote": "Joined August 2024",
+      "category": "founding",
+      "about": "person",
+      "numbers": [
+        "August 2024"
+      ],
+      "origin_url": "https://luma.com/user/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 states that Ayyanar Jeyakrishnan was 'Joined August 2024,' matching the claim exactly.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S12",
+              "url": "https://luma.com/user/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan · Luma Discover Events Sign In Ayyanar Jeyakrishnan @jayyanar With over 20 years of IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the ta Joined August 2024 5Hosted 15Attended"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 states on Ayyanar Jeyakrishnan’s Luma profile that he “Joined August 2024.”",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S12",
+              "url": "https://luma.com/user/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan · Luma Discover Events Sign In Ayyanar Jeyakrishnan @jayyanar With over 20 years of IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the ta Joined August 2024 5Hosted 15Attended"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://luma.com/user/jayyanar"
+      ]
+    },
+    {
+      "id": "F8",
+      "claim_id": "C8",
+      "claim": "Ayyanar Jeyakrishnan has hosted 5 events.",
+      "quote": "5Hosted",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "5"
+      ],
+      "origin_url": "https://luma.com/user/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 states “5Hosted,” which matches the claim that Ayyanar Jeyakrishnan has hosted 5 events.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S12",
+              "url": "https://luma.com/user/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan · Luma Discover Events Sign In Ayyanar Jeyakrishnan @jayyanar With over 20 years of IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the ta Joined August 2024 5Hosted 15Attended"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The Luma profile for Ayyanar Jeyakrishnan displays “5 Hosted.”",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S12",
+              "url": "https://luma.com/user/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan · Luma Discover Events Sign In Ayyanar Jeyakrishnan @jayyanar With over 20 years of IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the ta Joined August 2024 5Hosted 15Attended"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://luma.com/user/jayyanar"
+      ]
+    },
+    {
+      "id": "F9",
+      "claim_id": "C9",
+      "claim": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate",
+      "quote": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate",
+      "category": "role",
+      "about": "person",
+      "numbers": [],
+      "origin_url": "https://topmate.io/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 states “Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate,” matching the claim exactly.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate Ayyanar Jeyakrishnan (AJ) Lifelong Learner, Perseverance 5/520 ratings 57bookings 18testimonials +3 more Start your page Start your page Testimonials Pinned Your wealth of knowledge, unwavering support, and genuine commitment to my development have made this mentorship invaluable. Thank you once again for your guidance, encouragement, and belief in my potential. I look forward to continuing this journey of growth and learning under your mentorship."
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The Topmate excerpt's page title exactly identifies “Ayyanar Jeyakrishnan (AJ) (@jayyanar)” as a Topmate page.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate Ayyanar Jeyakrishnan (AJ) Lifelong Learner, Perseverance 5/520 ratings 57bookings 18testimonials +3 more Start your page Start your page Testimonials Pinned Your wealth of knowledge, unwavering support, and genuine commitment to my development have made this mentorship invaluable. Thank you once again for your guidance, encouragement, and belief in my potential. I look forward to continuing this journey of growth and learning under your mentorship."
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://topmate.io/jayyanar"
+      ]
+    },
+    {
+      "id": "F10",
+      "claim_id": "C10",
+      "claim": "5/520 ratings",
+      "quote": "5/520 ratings",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "5/520"
+      ],
+      "origin_url": "https://topmate.io/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The Topmate page excerpt states “5/520 ratings,” matching the claim exactly.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate Ayyanar Jeyakrishnan (AJ) Lifelong Learner, Perseverance 5/520 ratings 57bookings 18testimonials +3 more Start your page Start your page Testimonials Pinned Your wealth of knowledge, unwavering support, and genuine commitment to my development have made this mentorship invaluable. Thank you once again for your guidance, encouragement, and belief in my potential. I look forward to continuing this journey of growth and learning under your mentorship."
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 displays “5/520 ratings” on Ayyanar Jeyakrishnan's Topmate page.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate Ayyanar Jeyakrishnan (AJ) Lifelong Learner, Perseverance 5/520 ratings 57bookings 18testimonials +3 more Start your page Start your page Testimonials Pinned Your wealth of knowledge, unwavering support, and genuine commitment to my development have made this mentorship invaluable. Thank you once again for your guidance, encouragement, and belief in my potential. I look forward to continuing this journey of growth and learning under your mentorship."
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://topmate.io/jayyanar"
+      ]
+    },
+    {
+      "id": "F11",
+      "claim_id": "C11",
+      "claim": "57bookings",
+      "quote": "57bookings",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "57"
+      ],
+      "origin_url": "https://topmate.io/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpt explicitly shows \"57 bookings,\" matching the claim exactly.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate Ayyanar Jeyakrishnan (AJ) Lifelong Learner, Perseverance 5/520 ratings 57bookings 18testimonials +3 more Start your page Start your page Testimonials Pinned Your wealth of knowledge, unwavering support, and genuine commitment to my development have made this mentorship invaluable. Thank you once again for your guidance, encouragement, and belief in my potential. I look forward to continuing this journey of growth and learning under your mentorship."
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 displays “57bookings” on Ayyanar Jeyakrishnan’s Topmate page.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate Ayyanar Jeyakrishnan (AJ) Lifelong Learner, Perseverance 5/520 ratings 57bookings 18testimonials +3 more Start your page Start your page Testimonials Pinned Your wealth of knowledge, unwavering support, and genuine commitment to my development have made this mentorship invaluable. Thank you once again for your guidance, encouragement, and belief in my potential. I look forward to continuing this journey of growth and learning under your mentorship."
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://topmate.io/jayyanar"
+      ]
+    },
+    {
+      "id": "F12",
+      "claim_id": "C12",
+      "claim": "Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo.",
+      "quote": "Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo.",
+      "category": "role",
+      "about": "person",
+      "numbers": [],
+      "origin_url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The AWS blog states that Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "cohort of new AWS Heroes! These individuals exemplify expertise and dedication to leveraging AWS technologies and sharing knowledge. Their contributions to the AWS community are greatly appreciated, and today we’re excited to celebrate them. Ayyanar Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise"
+            },
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The AWS blog explicitly identifies Ayyanar Jeyakrishnan as a Machine Learning Hero and as a Principal Engineer/Executive Director at Wells Fargo.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "cohort of new AWS Heroes! These individuals exemplify expertise and dedication to leveraging AWS technologies and sharing knowledge. Their contributions to the AWS community are greatly appreciated, and today we’re excited to celebrate them. Ayyanar Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise"
+            },
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/"
+      ]
+    },
+    {
+      "id": "F13",
+      "claim_id": "C13",
+      "claim": "Ayyanar Jeyakrishnan is a Machine Learning Hero.",
+      "quote": "Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo.",
+      "category": "award",
+      "about": "person",
+      "numbers": [],
+      "origin_url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpts explicitly describe Ayyanar Jeyakrishnan as a Machine Learning Hero.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "cohort of new AWS Heroes! These individuals exemplify expertise and dedication to leveraging AWS technologies and sharing knowledge. Their contributions to the AWS community are greatly appreciated, and today we’re excited to celebrate them. Ayyanar Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise"
+            },
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The AWS blog explicitly identifies Ayyanar Jeyakrishnan of Bengaluru, India as a “Machine Learning Hero.”",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "cohort of new AWS Heroes! These individuals exemplify expertise and dedication to leveraging AWS technologies and sharing knowledge. Their contributions to the AWS community are greatly appreciated, and today we’re excited to celebrate them. Ayyanar Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise"
+            },
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/"
+      ]
+    },
+    {
+      "id": "F14",
+      "claim_id": "C14",
+      "claim": "Ayyanar Jeyakrishnan is based in Bengaluru, India.",
+      "quote": "Ayyanar Jeyakrishnan – Bengaluru, India",
+      "category": "other",
+      "about": "person",
+      "numbers": [],
+      "origin_url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The AWS blog excerpts state “Ayyanar Jeyakrishnan – Bengaluru, India,” which exactly matches the claim.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "cohort of new AWS Heroes! These individuals exemplify expertise and dedication to leveraging AWS technologies and sharing knowledge. Their contributions to the AWS community are greatly appreciated, and today we’re excited to celebrate them. Ayyanar Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise"
+            },
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 and E2 identify Ayyanar Jeyakrishnan as being in Bengaluru, India.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "cohort of new AWS Heroes! These individuals exemplify expertise and dedication to leveraging AWS technologies and sharing knowledge. Their contributions to the AWS community are greatly appreciated, and today we’re excited to celebrate them. Ayyanar Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise"
+            },
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/"
+      ]
+    },
+    {
+      "id": "F15",
+      "claim_id": "C15",
+      "claim": "Ayyanar Jeyakrishnan is listed as the Speaker for Microsoft Build //localhost:bengaluru.",
+      "quote": "Speaker: Ayyanar Jeyakrishnan",
+      "category": "role",
+      "about": "person",
+      "numbers": [],
+      "origin_url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The event page lists “Speaker: Ayyanar Jeyakrishnan” for Microsoft Build //localhost:bengaluru.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Copilot Hands-on labs to build and test AI-powered features end-to-end Best practices for building AI-powered applications Networking with the local AI developer community Whether you're shipping your first AI feature or scaling production systems, this event is designed to give you actionable insights to accelerate your AI journey with Microsoft. Speaker: Ayyanar Jeyakrishnan Prerequisites Space is limited for this event, as such we ask that you do not bring unregistered"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "event is designed to give you actionable insights to accelerate your AI journey with Microsoft. Speaker: Ayyanar Jeyakrishnan Prerequisites Space is limited for this event, as such we ask that you do not bring unregistered guests. So we can accurately anticipate guest count, cancel your registration if you do not plan on attending. Please be ready to present your registration confirmation email at the door if requested This event is"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The Microsoft Reactor event page explicitly identifies Ayyanar Jeyakrishnan as the speaker.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Copilot Hands-on labs to build and test AI-powered features end-to-end Best practices for building AI-powered applications Networking with the local AI developer community Whether you're shipping your first AI feature or scaling production systems, this event is designed to give you actionable insights to accelerate your AI journey with Microsoft. Speaker: Ayyanar Jeyakrishnan Prerequisites Space is limited for this event, as such we ask that you do not bring unregistered"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "event is designed to give you actionable insights to accelerate your AI journey with Microsoft. Speaker: Ayyanar Jeyakrishnan Prerequisites Space is limited for this event, as such we ask that you do not bring unregistered guests. So we can accurately anticipate guest count, cancel your registration if you do not plan on attending. Please be ready to present your registration confirmation email at the door if requested This event is"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://developer.microsoft.com/en-us/reactor/events/27065/"
+      ]
+    },
+    {
+      "id": "F16",
+      "claim_id": "C16",
+      "claim": "Microsoft Build //localhost:bengaluru is scheduled for 20 June, 2026.",
+      "quote": "20 June, 2026 | 5:00 AM - 8:00 AM (UTC) Coordinated Universal Time",
+      "category": "other",
+      "about": "company",
+      "numbers": [
+        "20 June, 2026"
+      ],
+      "origin_url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpts state that Microsoft Build //localhost:bengaluru is on 20 June, 2026, matching the claim exactly.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "help developers, entrepreneurs and startups build on AI technology and more. Join us! LEARN, CONNECT, BUILD Microsoft Reactor Join Microsoft Reactor and engage with developers live Ready to get started with AI and the latest technologies? Microsoft Reactor provides events, training, and community resources to help developers, entrepreneurs and startups build on AI technology and more. Join us! Go back Microsoft Build //localhost:bengaluru 20 June, 2026 | 5:00 AM -"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "technologies? Microsoft Reactor provides events, training, and community resources to help developers, entrepreneurs and startups build on AI technology and more. Join us! Go back Microsoft Build //localhost:bengaluru 20 June, 2026 | 5:00 AM - 8:00 AM (UTC) Coordinated Universal Time Location: Bengaluru Address: JRC Palladio - Billapura cross. Sarjapur, Sarjapura - Attibele Rd, JRC Palladio, Thyvakanahally, Tyayakana Halli, Karnataka 562125 Format: In person (Bengaluru) Topic: AI Applications Language: English"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The Microsoft Reactor event page lists “Microsoft Build //localhost:bengaluru” for 20 June, 2026.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "technologies? Microsoft Reactor provides events, training, and community resources to help developers, entrepreneurs and startups build on AI technology and more. Join us! Go back Microsoft Build //localhost:bengaluru 20 June, 2026 | 5:00 AM - 8:00 AM (UTC) Coordinated Universal Time Location: Bengaluru Address: JRC Palladio - Billapura cross. Sarjapur, Sarjapura - Attibele Rd, JRC Palladio, Thyvakanahally, Tyayakana Halli, Karnataka 562125 Format: In person (Bengaluru) Topic: AI Applications Language: English"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "help developers, entrepreneurs and startups build on AI technology and more. Join us! LEARN, CONNECT, BUILD Microsoft Reactor Join Microsoft Reactor and engage with developers live Ready to get started with AI and the latest technologies? Microsoft Reactor provides events, training, and community resources to help developers, entrepreneurs and startups build on AI technology and more. Join us! Go back Microsoft Build //localhost:bengaluru 20 June, 2026 | 5:00 AM -"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://developer.microsoft.com/en-us/reactor/events/27065/"
+      ]
+    },
+    {
+      "id": "F17",
+      "claim_id": "C17",
+      "claim": "Microsoft Build //localhost:bengaluru is an in-person event in Bengaluru.",
+      "quote": "Format:\nIn person (Bengaluru)",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin_url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpts state the event is in Bengaluru and give the format as \"In person (Bengaluru),\" which matches the claim.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "8:00 AM (UTC) Coordinated Universal Time Location: Bengaluru Address: JRC Palladio - Billapura cross. Sarjapur, Sarjapura - Attibele Rd, JRC Palladio, Thyvakanahally, Tyayakana Halli, Karnataka 562125 Format: In person (Bengaluru) Topic: AI Applications Language: English This in-person event is built for developers and cloud engineers who want to design, build, and deploy real-world AI solutions on Azure. Expect a hands-on, implementation-focused experience using Microsoft Foundry and GitHub Copilot with live"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "technologies? Microsoft Reactor provides events, training, and community resources to help developers, entrepreneurs and startups build on AI technology and more. Join us! Go back Microsoft Build //localhost:bengaluru 20 June, 2026 | 5:00 AM - 8:00 AM (UTC) Coordinated Universal Time Location: Bengaluru Address: JRC Palladio - Billapura cross. Sarjapur, Sarjapura - Attibele Rd, JRC Palladio, Thyvakanahally, Tyayakana Halli, Karnataka 562125 Format: In person (Bengaluru) Topic: AI Applications Language: English"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "This in-person event is built for developers and cloud engineers who want to design, build, and deploy real-world AI solutions on Azure. Expect a hands-on, implementation-focused experience using Microsoft Foundry and GitHub Copilot with live demos, guided labs, and practical developer workflows. What to expect: Key takeaways and announcements from Microsoft Build 2026 Deep dive into Azure AI and Generative AI use cases Live demos with Microsoft Foundry and GitHub"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The Microsoft Reactor event page identifies Microsoft Build //localhost:bengaluru as located in Bengaluru and states its format is \"In person (Bengaluru).\"",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "technologies? Microsoft Reactor provides events, training, and community resources to help developers, entrepreneurs and startups build on AI technology and more. Join us! Go back Microsoft Build //localhost:bengaluru 20 June, 2026 | 5:00 AM - 8:00 AM (UTC) Coordinated Universal Time Location: Bengaluru Address: JRC Palladio - Billapura cross. Sarjapur, Sarjapura - Attibele Rd, JRC Palladio, Thyvakanahally, Tyayakana Halli, Karnataka 562125 Format: In person (Bengaluru) Topic: AI Applications Language: English"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "8:00 AM (UTC) Coordinated Universal Time Location: Bengaluru Address: JRC Palladio - Billapura cross. Sarjapur, Sarjapura - Attibele Rd, JRC Palladio, Thyvakanahally, Tyayakana Halli, Karnataka 562125 Format: In person (Bengaluru) Topic: AI Applications Language: English This in-person event is built for developers and cloud engineers who want to design, build, and deploy real-world AI solutions on Azure. Expect a hands-on, implementation-focused experience using Microsoft Foundry and GitHub Copilot with live"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://developer.microsoft.com/en-us/reactor/events/27065/"
+      ]
+    },
+    {
+      "id": "F18",
+      "claim_id": "C18",
+      "claim": "Ayyanar Jeyakrishnan (AJ) offers \"Interview prep & tips\".",
+      "quote": "Interview prep & tips with Ayyanar Jeyakrishnan (AJ)",
+      "category": "other",
+      "about": "person",
+      "numbers": [],
+      "origin_url": "https://topmate.io/jayyanar/118992",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpts explicitly show a service titled \"Interview prep & tips\" offered by Ayyanar Jeyakrishnan (AJ).",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S8",
+              "url": "https://topmate.io/jayyanar/118992",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Interview prep & tips with Ayyanar Jeyakrishnan (AJ) Interview prep & tips with Ayyanar Jeyakrishnan (AJ) Ayyanar Jeyakrishnan (AJ) Popular Interview prep & tips ₹800 15 mins About this session If you have an Interview due soon and feel unprepared, don't worry because I've got you. In this call, I give you solid tips and discuss the frequently asked questions which will help you get an idea of the process,"
+            },
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ragunathan Maniraj ‹›Show all 18 Services All1:1 CallPriority DMDigital Product Priority DM . 3 days reply Have a question? FREE Digital Product 5 AWS Solution Architect - High Level Design Optimize AWS solutions sustainably. ₹1,000₹1,200 Best Seller Video meeting . 15 mins Interview prep & tips ₹800 Popular About me Came from Tier III town, Started working very early age (16). Keep pushing boundaries of what I want to achieve"
+            },
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Best Seller Video meeting . 15 mins Interview prep & tips ₹800 Popular About me Came from Tier III town, Started working very early age (16). Keep pushing boundaries of what I want to achieve in my life and keep doing it constantly. In my career Journey, I always want to share my knowledge and my hard learnt lessons to someone who really in need, which impact their life in"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The Topmate session page lists “Interview prep & tips with Ayyanar Jeyakrishnan (AJ).”",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S8",
+              "url": "https://topmate.io/jayyanar/118992",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Interview prep & tips with Ayyanar Jeyakrishnan (AJ) Interview prep & tips with Ayyanar Jeyakrishnan (AJ) Ayyanar Jeyakrishnan (AJ) Popular Interview prep & tips ₹800 15 mins About this session If you have an Interview due soon and feel unprepared, don't worry because I've got you. In this call, I give you solid tips and discuss the frequently asked questions which will help you get an idea of the process,"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://topmate.io/jayyanar",
+        "https://topmate.io/jayyanar/118992"
+      ]
+    },
+    {
+      "id": "F19",
+      "claim_id": "C19",
+      "claim": "The session is priced at ₹800.",
+      "quote": "₹800",
+      "category": "other",
+      "about": "person",
+      "numbers": [
+        "₹800"
+      ],
+      "origin_url": "https://topmate.io/jayyanar/118992",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpts state the session is priced at ₹800, matching the claim exactly.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S8",
+              "url": "https://topmate.io/jayyanar/118992",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Interview prep & tips with Ayyanar Jeyakrishnan (AJ) Interview prep & tips with Ayyanar Jeyakrishnan (AJ) Ayyanar Jeyakrishnan (AJ) Popular Interview prep & tips ₹800 15 mins About this session If you have an Interview due soon and feel unprepared, don't worry because I've got you. In this call, I give you solid tips and discuss the frequently asked questions which will help you get an idea of the process,"
+            },
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ragunathan Maniraj ‹›Show all 18 Services All1:1 CallPriority DMDigital Product Priority DM . 3 days reply Have a question? FREE Digital Product 5 AWS Solution Architect - High Level Design Optimize AWS solutions sustainably. ₹1,000₹1,200 Best Seller Video meeting . 15 mins Interview prep & tips ₹800 Popular About me Came from Tier III town, Started working very early age (16). Keep pushing boundaries of what I want to achieve"
+            },
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Best Seller Video meeting . 15 mins Interview prep & tips ₹800 Popular About me Came from Tier III town, Started working very early age (16). Keep pushing boundaries of what I want to achieve in my life and keep doing it constantly. In my career Journey, I always want to share my knowledge and my hard learnt lessons to someone who really in need, which impact their life in"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The Topmate session listing states that “Interview prep & tips” is priced at ₹800.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S8",
+              "url": "https://topmate.io/jayyanar/118992",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Interview prep & tips with Ayyanar Jeyakrishnan (AJ) Interview prep & tips with Ayyanar Jeyakrishnan (AJ) Ayyanar Jeyakrishnan (AJ) Popular Interview prep & tips ₹800 15 mins About this session If you have an Interview due soon and feel unprepared, don't worry because I've got you. In this call, I give you solid tips and discuss the frequently asked questions which will help you get an idea of the process,"
+            },
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ragunathan Maniraj ‹›Show all 18 Services All1:1 CallPriority DMDigital Product Priority DM . 3 days reply Have a question? FREE Digital Product 5 AWS Solution Architect - High Level Design Optimize AWS solutions sustainably. ₹1,000₹1,200 Best Seller Video meeting . 15 mins Interview prep & tips ₹800 Popular About me Came from Tier III town, Started working very early age (16). Keep pushing boundaries of what I want to achieve"
+            },
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Best Seller Video meeting . 15 mins Interview prep & tips ₹800 Popular About me Came from Tier III town, Started working very early age (16). Keep pushing boundaries of what I want to achieve in my life and keep doing it constantly. In my career Journey, I always want to share my knowledge and my hard learnt lessons to someone who really in need, which impact their life in"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://topmate.io/jayyanar",
+        "https://topmate.io/jayyanar/118992"
+      ]
+    },
+    {
+      "id": "F20",
+      "claim_id": "C20",
+      "claim": "The session lasts 15 mins.",
+      "quote": "15 mins",
+      "category": "other",
+      "about": "person",
+      "numbers": [
+        "15 mins"
+      ],
+      "origin_url": "https://topmate.io/jayyanar/118992",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpts state the session is 15 mins, matching the claim exactly.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S8",
+              "url": "https://topmate.io/jayyanar/118992",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Interview prep & tips with Ayyanar Jeyakrishnan (AJ) Interview prep & tips with Ayyanar Jeyakrishnan (AJ) Ayyanar Jeyakrishnan (AJ) Popular Interview prep & tips ₹800 15 mins About this session If you have an Interview due soon and feel unprepared, don't worry because I've got you. In this call, I give you solid tips and discuss the frequently asked questions which will help you get an idea of the process,"
+            },
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ragunathan Maniraj ‹›Show all 18 Services All1:1 CallPriority DMDigital Product Priority DM . 3 days reply Have a question? FREE Digital Product 5 AWS Solution Architect - High Level Design Optimize AWS solutions sustainably. ₹1,000₹1,200 Best Seller Video meeting . 15 mins Interview prep & tips ₹800 Popular About me Came from Tier III town, Started working very early age (16). Keep pushing boundaries of what I want to achieve"
+            },
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Best Seller Video meeting . 15 mins Interview prep & tips ₹800 Popular About me Came from Tier III town, Started working very early age (16). Keep pushing boundaries of what I want to achieve in my life and keep doing it constantly. In my career Journey, I always want to share my knowledge and my hard learnt lessons to someone who really in need, which impact their life in"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The cited Topmate session listing states a duration of 15 mins.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S8",
+              "url": "https://topmate.io/jayyanar/118992",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Interview prep & tips with Ayyanar Jeyakrishnan (AJ) Interview prep & tips with Ayyanar Jeyakrishnan (AJ) Ayyanar Jeyakrishnan (AJ) Popular Interview prep & tips ₹800 15 mins About this session If you have an Interview due soon and feel unprepared, don't worry because I've got you. In this call, I give you solid tips and discuss the frequently asked questions which will help you get an idea of the process,"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://topmate.io/jayyanar",
+        "https://topmate.io/jayyanar/118992"
+      ]
+    },
+    {
+      "id": "F21",
+      "claim_id": "C21",
+      "claim": "The page is for Ayyanar Jeyakrishnan.",
+      "quote": "Stream Ayyanar Jeyakrishnan music | Listen to songs, albums, playlists for free on SoundCloud",
+      "category": "other",
+      "about": "person",
+      "numbers": [],
+      "origin_url": "https://soundcloud.com/ayyanar-jeyakrishnan",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "Multiple excerpts identify the page/account as Ayyanar Jeyakrishnan, matching the claim.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S9",
+              "url": "https://soundcloud.com/ayyanar-jeyakrishnan",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Stream Ayyanar Jeyakrishnan music | Listen to songs, albums, playlists for free on SoundCloud SoundCloud Your current browser isn't compatible with SoundCloud. Please download one of our supported browsers. Need help? Chrome | Firefox | Safari | Edge Sorry! Something went wrong Is your network connection unstable or browser outdated? I need help Popular searches"
+            },
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate Ayyanar Jeyakrishnan (AJ) Lifelong Learner, Perseverance 5/520 ratings 57bookings 18testimonials +3 more Start your page Start your page Testimonials Pinned Your wealth of knowledge, unwavering support, and genuine commitment to my development have made this mentorship invaluable. Thank you once again for your guidance, encouragement, and belief in my potential. I look forward to continuing this journey of growth and learning under your mentorship."
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "jayyanar (Ayyanar Jeyakrishnan) · GitHub Skip to content Navigation Menu Sign in Appearance settings Platform AI CODE CREATION GitHub CopilotWrite better code with AI GitHub Copilot appDirect agents from issue to merge MCP RegistryIntegrate external tools DEVELOPER WORKFLOWS ActionsAutomate any workflow CodespacesInstant dev environments IssuesPlan and track work Code ReviewManage code changes Code QualityEnforce quality at merge APPLICATION SECURITY GitHub Advanced SecurityFind and fix vulnerabilities Code securitySecure your code as"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Search/ Sign in Sign up Appearance settings You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert jayyanar Follow Overview Repositories 63 Projects 0 Packages 0 Stars 27 More Overview Repositories Projects Packages Stars jayyanar Follow Ayyanar Jeyakrishnan jayyanar"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "accounts on another tab or window. Reload to refresh your session. Dismiss alert jayyanar Follow Overview Repositories 63 Projects 0 Packages 0 Stars 27 More Overview Repositories Projects Packages Stars jayyanar Follow Ayyanar Jeyakrishnan jayyanar Follow Passionate AI Learner; My Best Quality: Perseverance 76 followers · 8 following https://www.dataopslabs.com/ https://blog.dataopslabs.com/ in/jayyanar @DataOpsLabs Achievements Achievements Organizations Block or report user Block or report jayyanar Block user Prevent this user from interacting"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "visible to you. Block user Report abuse Contact GitHub support about this user’s behavior. Learn more about reporting abuse. Report abuse Overview Repositories 63 Projects 0 Packages 0 Stars 27 More Overview Repositories Projects Packages Stars jayyanar/README.md I'm Ayyanar Jeyakrishnan ; aka AJ. With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table. As a"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The SoundCloud page excerpt explicitly identifies the page as “Ayyanar Jeyakrishnan.”",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S9",
+              "url": "https://soundcloud.com/ayyanar-jeyakrishnan",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Stream Ayyanar Jeyakrishnan music | Listen to songs, albums, playlists for free on SoundCloud SoundCloud Your current browser isn't compatible with SoundCloud. Please download one of our supported browsers. Need help? Chrome | Firefox | Safari | Edge Sorry! Something went wrong Is your network connection unstable or browser outdated? I need help Popular searches"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://github.com/jayyanar",
+        "https://soundcloud.com/ayyanar-jeyakrishnan",
+        "https://topmate.io/jayyanar"
+      ]
+    },
+    {
+      "id": "F22",
+      "claim_id": "C22",
+      "claim": "Ayyanar Jeyakrishnan says, \"Participants Counts Session 1 - 207\"",
+      "quote": "Participants Counts Session 1 - 207",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "207"
+      ],
+      "origin_url": "https://github.com/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 states “Participants Counts Session 1 - 207,” matching the claim exactly.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "started a DataOps Labs India Linkedin Page with Around 1300+ Followers Shared all training / session materials here at YouTube for community members. https://www.youtube.com/@DataOpsLabsIndia MLOps with AWS Sagemaker Training Videos Participants Counts Session 1 - 207 Participants Counts Session 2 - 93 Participants Counts Session 3 - 53 Introduction QuickView of DevOps and its Benefits What is MLOps MLops Advantages and Its benefits Machine Learning Lifecycle and Personas and Technology"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The GitHub profile identified as Ayyanar Jeyakrishnan states exactly, \"Participants Counts Session 1 - 207.\"",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "started a DataOps Labs India Linkedin Page with Around 1300+ Followers Shared all training / session materials here at YouTube for community members. https://www.youtube.com/@DataOpsLabsIndia MLOps with AWS Sagemaker Training Videos Participants Counts Session 1 - 207 Participants Counts Session 2 - 93 Participants Counts Session 3 - 53 Introduction QuickView of DevOps and its Benefits What is MLOps MLops Advantages and Its benefits Machine Learning Lifecycle and Personas and Technology"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://github.com/jayyanar"
+      ]
+    },
+    {
+      "id": "F23",
+      "claim_id": "C23",
+      "claim": "Ayyanar Jeyakrishnan has attended 15 events.",
+      "quote": "15Attended",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "15"
+      ],
+      "origin_url": "https://luma.com/user/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 states that Ayyanar Jeyakrishnan has \"Attended 15,\" which exactly matches the claim.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S12",
+              "url": "https://luma.com/user/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan · Luma Discover Events Sign In Ayyanar Jeyakrishnan @jayyanar With over 20 years of IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the ta Joined August 2024 5Hosted 15Attended"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 lists Ayyanar Jeyakrishnan's Luma profile with “15 Attended.”",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S12",
+              "url": "https://luma.com/user/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan · Luma Discover Events Sign In Ayyanar Jeyakrishnan @jayyanar With over 20 years of IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the ta Joined August 2024 5Hosted 15Attended"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://luma.com/user/jayyanar"
+      ]
+    },
+    {
+      "id": "F24",
+      "claim_id": "C24",
+      "claim": "18testimonials",
+      "quote": "18testimonials",
+      "category": "traction",
+      "about": "person",
+      "numbers": [
+        "18"
+      ],
+      "origin_url": "https://topmate.io/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 states “18 testimonials,” matching the claim exactly.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate Ayyanar Jeyakrishnan (AJ) Lifelong Learner, Perseverance 5/520 ratings 57bookings 18testimonials +3 more Start your page Start your page Testimonials Pinned Your wealth of knowledge, unwavering support, and genuine commitment to my development have made this mentorship invaluable. Thank you once again for your guidance, encouragement, and belief in my potential. I look forward to continuing this journey of growth and learning under your mentorship."
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The Topmate profile displays “18 testimonials,” and its testimonials section says “Show all 18.”",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate Ayyanar Jeyakrishnan (AJ) Lifelong Learner, Perseverance 5/520 ratings 57bookings 18testimonials +3 more Start your page Start your page Testimonials Pinned Your wealth of knowledge, unwavering support, and genuine commitment to my development have made this mentorship invaluable. Thank you once again for your guidance, encouragement, and belief in my potential. I look forward to continuing this journey of growth and learning under your mentorship."
+            },
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "to my development have made this mentorship invaluable. Thank you once again for your guidance, encouragement, and belief in my potential. I look forward to continuing this journey of growth and learning under your mentorship. Ragunathan Maniraj ‹›Show all 18 Services All1:1 CallPriority DMDigital Product Priority DM . 3 days reply Have a question? FREE Digital Product 5 AWS Solution Architect - High Level Design Optimize AWS solutions sustainably. ₹1,000₹1,200"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://topmate.io/jayyanar"
+      ]
+    },
+    {
+      "id": "F25",
+      "claim_id": "C25",
+      "claim": "Started working very early age (16).",
+      "quote": "Came from Tier III town, Started working very early age (16).",
+      "category": "other",
+      "about": "person",
+      "numbers": [
+        "16"
+      ],
+      "origin_url": "https://topmate.io/jayyanar",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "partially_verified",
+      "reason": "stated only by the company itself (own site or issued release); https://topmate.io/jayyanar repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "Both E1 and E2 state that he started working at age 16.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Ragunathan Maniraj ‹›Show all 18 Services All1:1 CallPriority DMDigital Product Priority DM . 3 days reply Have a question? FREE Digital Product 5 AWS Solution Architect - High Level Design Optimize AWS solutions sustainably. ₹1,000₹1,200 Best Seller Video meeting . 15 mins Interview prep & tips ₹800 Popular About me Came from Tier III town, Started working very early age (16). Keep pushing boundaries of what I want to achieve"
+            },
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Best Seller Video meeting . 15 mins Interview prep & tips ₹800 Popular About me Came from Tier III town, Started working very early age (16). Keep pushing boundaries of what I want to achieve in my life and keep doing it constantly. In my career Journey, I always want to share my knowledge and my hard learnt lessons to someone who really in need, which impact their life in"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The Topmate profile states that Ragunathan Maniraj \"Started working very early age (16),\" matching the claim exactly.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "Ragunathan Maniraj ‹›Show all 18 Services All1:1 CallPriority DMDigital Product Priority DM . 3 days reply Have a question? FREE Digital Product 5 AWS Solution Architect - High Level Design Optimize AWS solutions sustainably. ₹1,000₹1,200 Best Seller Video meeting . 15 mins Interview prep & tips ₹800 Popular About me Came from Tier III town, Started working very early age (16). Keep pushing boundaries of what I want to achieve"
+            },
+            {
+              "source": "S2",
+              "url": "https://topmate.io/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "Best Seller Video meeting . 15 mins Interview prep & tips ₹800 Popular About me Came from Tier III town, Started working very early age (16). Keep pushing boundaries of what I want to achieve in my life and keep doing it constantly. In my career Journey, I always want to share my knowledge and my hard learnt lessons to someone who really in need, which impact their life in"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://topmate.io/jayyanar"
+      ]
+    },
+    {
+      "id": "F26",
+      "claim_id": "C26",
+      "claim": "Ayyanar Jeyakrishnan is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies.",
+      "quote": "He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies.",
+      "category": "other",
+      "about": "person",
+      "numbers": [],
+      "origin_url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "partially_verified",
+      "reason": "stated only by the company itself (own site or issued release); https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/ repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpts state that Ayyanar Jeyakrishnan is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies, and his GitHub bio also mentions machine learning and cloud computing.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "cohort of new AWS Heroes! These individuals exemplify expertise and dedication to leveraging AWS technologies and sharing knowledge. Their contributions to the AWS community are greatly appreciated, and today we’re excited to celebrate them. Ayyanar Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise"
+            },
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "strategic thinker, my focus is always on the long-term goals, and I thrive in collaborative environments, working closely with diverse stakeholders, including CXOs, technology leaders, and executive teams. My professional journey has been characterized by hands-on, in-depth involvement in cutting-edge fields such as DevOps, Cloud Computing, Big Data, Machine Learning, and Artificial Intelligence. This comprehensive knowledge allows me to adapt and innovate in an ever-evolving tech landscape. Beyond my day-to-day"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The AWS blog explicitly describes Ayyanar Jeyakrishnan as a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "cohort of new AWS Heroes! These individuals exemplify expertise and dedication to leveraging AWS technologies and sharing knowledge. Their contributions to the AWS community are greatly appreciated, and today we’re excited to celebrate them. Ayyanar Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise"
+            },
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+        "https://github.com/jayyanar"
+      ]
+    },
+    {
+      "id": "F27",
+      "claim_id": "C27",
+      "claim": "Ayyanar Jeyakrishnan’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS.",
+      "quote": "Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS.",
+      "category": "other",
+      "about": "person",
+      "numbers": [],
+      "origin_url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "partially_verified",
+      "reason": "stated only by the company itself (own site or issued release); https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/ repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 states exactly that Ayyanar Jeyakrishnan’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline deployment and management of machine learning models on AWS.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "company",
+              "page_tier": "secondary",
+              "relayed": true,
+              "text": "Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "E1 states the claim verbatim, and E2 repeats the same expertise description.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events"
+            },
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events and community meetups on MLOps, generative AI, and machine learning applications. Dzenana Dzevlan – Sarajevo, Bosnia and Herzegovina Community Hero Dzenana Dzevlan is a co-founder and Technical Manager at allOps Solutions, an APN Partner company."
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/"
+      ]
+    },
+    {
+      "id": "F28",
+      "claim_id": "C28",
+      "claim": "Ayyanar Jeyakrishnan frequently speaks at industry events and community meetups on MLOps, generative AI, and machine learning applications.",
+      "quote": "He is passionate about sharing his knowledge and frequently speaks at industry events and community meetups on MLOps, generative AI, and machine learning applications.",
+      "category": "other",
+      "about": "person",
+      "numbers": [],
+      "origin_url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpts state that Ayyanar Jeyakrishnan “frequently speaks at industry events and community meetups on MLOps, generative AI, and machine learning applications.”",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events"
+            },
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "and community meetups on MLOps, generative AI, and machine learning applications. Dzenana Dzevlan – Sarajevo, Bosnia and Herzegovina Community Hero Dzenana Dzevlan is a co-founder and Technical Manager at allOps Solutions, an APN Partner company. She is an expert practice lecturer at International Burch University, and actively shares her knowledge in DevOps, generative AI, and other emerging technologies. Dzenana’s passion for technology extends beyond the classroom, as she actively mentors"
+            },
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "cohort of new AWS Heroes! These individuals exemplify expertise and dedication to leveraging AWS technologies and sharing knowledge. Their contributions to the AWS community are greatly appreciated, and today we’re excited to celebrate them. Ayyanar Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "AWS’s published AWS Heroes profile explicitly says Ayyanar Jeyakrishnan frequently speaks at industry events and community meetups on MLOps, generative AI, and machine learning applications, and his GitHub profile independently describes speaking at conferences and meet-ups on those subjects.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events and community meetups on MLOps, generative AI, and machine learning applications. Dzenana Dzevlan – Sarajevo, Bosnia and Herzegovina Community Hero Dzenana Dzevlan is a co-founder and Technical Manager at allOps Solutions, an APN Partner company."
+            },
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Jeyakrishnan – Bengaluru, India Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at Wells Fargo. He is a seasoned machine learning and cloud enthusiast with a strong focus on AWS technologies. Ayyanar’s expertise includes creating data platforms and architecting DevOps and MLOps solutions to streamline the deployment and management of machine learning models on AWS. He is passionate about sharing his knowledge and frequently speaks at industry events"
+            },
+            {
+              "source": "S3",
+              "url": "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "and community meetups on MLOps, generative AI, and machine learning applications. Dzenana Dzevlan – Sarajevo, Bosnia and Herzegovina Community Hero Dzenana Dzevlan is a co-founder and Technical Manager at allOps Solutions, an APN Partner company. She is an expert practice lecturer at International Burch University, and actively shares her knowledge in DevOps, generative AI, and other emerging technologies. Dzenana’s passion for technology extends beyond the classroom, as she actively mentors"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "responsibilities, I'm passionate about knowledge sharing. I've had the privilege of serving as a speaker, delivering tech talks and workshops on a wide range of topics at conferences and meet-ups. Some of my favorite subjects to discuss include Generative AI, MLOps, DevOps, Cloud, and Platform Engineering. I look forward to connecting with like-minded professionals and exploring opportunities to contribute to transformative tech initiatives. Let's connect and engage in meaningful discussions"
+            },
+            {
+              "source": "S1",
+              "url": "https://github.com/jayyanar",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "hands-on, in-depth involvement in cutting-edge fields such as DevOps, Cloud Computing, Big Data, Machine Learning, and Artificial Intelligence. This comprehensive knowledge allows me to adapt and innovate in an ever-evolving tech landscape. Beyond my day-to-day responsibilities, I'm passionate about knowledge sharing. I've had the privilege of serving as a speaker, delivering tech talks and workshops on a wide range of topics at conferences and meet-ups. Some of my favorite subjects"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/",
+        "https://github.com/jayyanar"
+      ]
+    },
+    {
+      "id": "F29",
+      "claim_id": "C29",
+      "claim": "Microsoft Build //localhost:bengaluru has the topic AI Applications.",
+      "quote": "Topic: AI Applications",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin_url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpts state that Microsoft Build //localhost:bengaluru has Topic: AI Applications.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "technologies? Microsoft Reactor provides events, training, and community resources to help developers, entrepreneurs and startups build on AI technology and more. Join us! Go back Microsoft Build //localhost:bengaluru 20 June, 2026 | 5:00 AM - 8:00 AM (UTC) Coordinated Universal Time Location: Bengaluru Address: JRC Palladio - Billapura cross. Sarjapur, Sarjapura - Attibele Rd, JRC Palladio, Thyvakanahally, Tyayakana Halli, Karnataka 562125 Format: In person (Bengaluru) Topic: AI Applications Language: English"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "8:00 AM (UTC) Coordinated Universal Time Location: Bengaluru Address: JRC Palladio - Billapura cross. Sarjapur, Sarjapura - Attibele Rd, JRC Palladio, Thyvakanahally, Tyayakana Halli, Karnataka 562125 Format: In person (Bengaluru) Topic: AI Applications Language: English This in-person event is built for developers and cloud engineers who want to design, build, and deploy real-world AI solutions on Azure. Expect a hands-on, implementation-focused experience using Microsoft Foundry and GitHub Copilot with live"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The Microsoft Reactor event page identifies “Microsoft Build //localhost:bengaluru” and lists its topic as “AI Applications.”",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "technologies? Microsoft Reactor provides events, training, and community resources to help developers, entrepreneurs and startups build on AI technology and more. Join us! Go back Microsoft Build //localhost:bengaluru 20 June, 2026 | 5:00 AM - 8:00 AM (UTC) Coordinated Universal Time Location: Bengaluru Address: JRC Palladio - Billapura cross. Sarjapur, Sarjapura - Attibele Rd, JRC Palladio, Thyvakanahally, Tyayakana Halli, Karnataka 562125 Format: In person (Bengaluru) Topic: AI Applications Language: English"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "8:00 AM (UTC) Coordinated Universal Time Location: Bengaluru Address: JRC Palladio - Billapura cross. Sarjapur, Sarjapura - Attibele Rd, JRC Palladio, Thyvakanahally, Tyayakana Halli, Karnataka 562125 Format: In person (Bengaluru) Topic: AI Applications Language: English This in-person event is built for developers and cloud engineers who want to design, build, and deploy real-world AI solutions on Azure. Expect a hands-on, implementation-focused experience using Microsoft Foundry and GitHub Copilot with live"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://developer.microsoft.com/en-us/reactor/events/27065/"
+      ]
+    },
+    {
+      "id": "F30",
+      "claim_id": "C30",
+      "claim": "Microsoft Build //localhost:bengaluru is part of the Microsoft Build //localhost:Asia Series.",
+      "quote": "This event is part of the Microsoft Build //localhost:Asia Series.",
+      "category": "other",
+      "about": "company",
+      "numbers": [],
+      "origin_url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+      "origin_tier": "secondary",
+      "also_in": [],
+      "label": "unverified",
+      "reason": "only repeated by secondary press; no primary or company source found",
+      "passes": [
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The excerpts explicitly say the Microsoft Build //localhost:bengaluru event is part of the Microsoft Build //localhost:Asia Series.",
+          "model": "gpt-5.4-mini",
+          "cited": [
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "guests. So we can accurately anticipate guest count, cancel your registration if you do not plan on attending. Please be ready to present your registration confirmation email at the door if requested This event is part of the Microsoft Build //localhost:Asia Series. Click here to visit the Series Page where you could see all the upcoming and on-demand events. Change language English (United States) Español (España) 日本語 (日本) Português (Brasil)"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "part of the Microsoft Build //localhost:Asia Series. Click here to visit the Series Page where you could see all the upcoming and on-demand events. Change language English (United States) Español (España) 日本語 (日本) Português (Brasil) 中文（中国） 中文（台灣） Čeština (Česko) Deutsch (Deutschland) Magyar (Magyarország) Français (France) Indonesia (Indonesia) Italiano (Italia) 한국어(대한민국) Nederlands (Nederland) Polski (Polska) Svenska (Sverige) ไทย (ไทย) Türkçe (Türkiye) Tiếng Việt (Việt Nam) Your time zone (UTC-12:00) Dateline Standard"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Microsoft Build //localhost:bengaluru | Microsoft Reactor Skip to main content About Sign in Global navigation Home Sign in About Build Cloud Native Apps Ready for AI? Discover how to build and scale cloud-native apps with Azure. Register now LEARN, CONNECT, BUILD Microsoft Reactor Join Microsoft Reactor and engage with developers live Ready to get started with AI and the latest technologies? Microsoft Reactor provides events, training, and community resources to"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "help developers, entrepreneurs and startups build on AI technology and more. Join us! LEARN, CONNECT, BUILD Microsoft Reactor Join Microsoft Reactor and engage with developers live Ready to get started with AI and the latest technologies? Microsoft Reactor provides events, training, and community resources to help developers, entrepreneurs and startups build on AI technology and more. Join us! Go back Microsoft Build //localhost:bengaluru 20 June, 2026 | 5:00 AM -"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "technologies? Microsoft Reactor provides events, training, and community resources to help developers, entrepreneurs and startups build on AI technology and more. Join us! Go back Microsoft Build //localhost:bengaluru 20 June, 2026 | 5:00 AM - 8:00 AM (UTC) Coordinated Universal Time Location: Bengaluru Address: JRC Palladio - Billapura cross. Sarjapur, Sarjapura - Attibele Rd, JRC Palladio, Thyvakanahally, Tyayakana Halli, Karnataka 562125 Format: In person (Bengaluru) Topic: AI Applications Language: English"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "8:00 AM (UTC) Coordinated Universal Time Location: Bengaluru Address: JRC Palladio - Billapura cross. Sarjapur, Sarjapura - Attibele Rd, JRC Palladio, Thyvakanahally, Tyayakana Halli, Karnataka 562125 Format: In person (Bengaluru) Topic: AI Applications Language: English This in-person event is built for developers and cloud engineers who want to design, build, and deploy real-world AI solutions on Azure. Expect a hands-on, implementation-focused experience using Microsoft Foundry and GitHub Copilot with live"
+            }
+          ]
+        },
+        {
+          "verdict": "supported",
+          "discrepancy": null,
+          "note": "The Microsoft Reactor event page identifies the event as Microsoft Build //localhost:bengaluru and explicitly states that it is part of the Microsoft Build //localhost:Asia Series.",
+          "model": "gpt-5.6-terra",
+          "cited": [
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "guests. So we can accurately anticipate guest count, cancel your registration if you do not plan on attending. Please be ready to present your registration confirmation email at the door if requested This event is part of the Microsoft Build //localhost:Asia Series. Click here to visit the Series Page where you could see all the upcoming and on-demand events. Change language English (United States) Español (España) 日本語 (日本) Português (Brasil)"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "part of the Microsoft Build //localhost:Asia Series. Click here to visit the Series Page where you could see all the upcoming and on-demand events. Change language English (United States) Español (España) 日本語 (日本) Português (Brasil) 中文（中国） 中文（台灣） Čeština (Česko) Deutsch (Deutschland) Magyar (Magyarország) Français (France) Indonesia (Indonesia) Italiano (Italia) 한국어(대한민국) Nederlands (Nederland) Polski (Polska) Svenska (Sverige) ไทย (ไทย) Türkçe (Türkiye) Tiếng Việt (Việt Nam) Your time zone (UTC-12:00) Dateline Standard"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "Microsoft Build //localhost:bengaluru | Microsoft Reactor Skip to main content About Sign in Global navigation Home Sign in About Build Cloud Native Apps Ready for AI? Discover how to build and scale cloud-native apps with Azure. Register now LEARN, CONNECT, BUILD Microsoft Reactor Join Microsoft Reactor and engage with developers live Ready to get started with AI and the latest technologies? Microsoft Reactor provides events, training, and community resources to"
+            },
+            {
+              "source": "S7",
+              "url": "https://developer.microsoft.com/en-us/reactor/events/27065/",
+              "tier": "secondary",
+              "page_tier": "secondary",
+              "relayed": false,
+              "text": "help developers, entrepreneurs and startups build on AI technology and more. Join us! LEARN, CONNECT, BUILD Microsoft Reactor Join Microsoft Reactor and engage with developers live Ready to get started with AI and the latest technologies? Microsoft Reactor provides events, training, and community resources to help developers, entrepreneurs and startups build on AI technology and more. Join us! Go back Microsoft Build //localhost:bengaluru 20 June, 2026 | 5:00 AM -"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://developer.microsoft.com/en-us/reactor/events/27065/"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "title": "Independent proof of career record and technical leadership",
+      "what_is_missing": "The public profile makes broad claims about over 20 years of IT expertise and technical leadership, but the ledger identifies these as self-stated rather than independently confirmed. Claims about building data platforms and architecting DevOps and MLOps solutions are also not supported here by named projects, employer confirmation, customer references, or measurable outcomes.",
+      "why_it_matters": "Investors, enterprise clients, and journalists need to distinguish a personal bio from a documented professional record. Without third-party evidence, it is difficult to assess seniority, scope of responsibility, and delivered technical impact.",
+      "evidence": [
+        "F1",
+        "F6",
+        "F26",
+        "F27"
+      ],
+      "fix": "Publish a concise career record with verifiable employers, roles, dates, selected projects, and references or case studies that can independently confirm the work."
+    },
+    {
+      "title": "Community traction is presented without independent validation",
+      "what_is_missing": "The profile cites a DataOps meetup community with 2350+ members and a LinkedIn page with around 1300+ followers, but both figures are treated as self-reported in the ledger. Other activity and engagement claims also remain unverified, leaving no clear public trail of event archives, attendee evidence, partner organizations, or community outcomes.",
+      "why_it_matters": "Audience size alone does not establish an active or influential community. A serious counterparty will want proof of engagement, repeat participation, speaker quality, and the practical value created for members.",
+      "evidence": [
+        "F2",
+        "F3",
+        "F8",
+        "F22",
+        "F23"
+      ],
+      "fix": "Maintain public event pages and a periodic community report that links to agendas, speakers, attendance evidence, recordings, partner acknowledgements, and current platform metrics."
+    },
+    {
+      "title": "High-profile affiliations and recognitions are not clearly substantiated",
+      "what_is_missing": "The ledger does not independently verify public claims connecting Ayyanar Jeyakrishnan with an AWS Machine Learning Hero designation, a senior role at Wells Fargo, AzConf, or a Microsoft Build event. The public-facing material needs direct, authoritative links and a clear explanation of what each affiliation, recognition, or speaking role involved.",
+      "why_it_matters": "Recognitions and major-company affiliations can materially shape credibility, so ambiguity creates avoidable diligence risk. If a claim cannot be readily confirmed from an authoritative record, readers may question the accuracy of the wider profile.",
+      "evidence": [
+        "F4",
+        "F5",
+        "F12",
+        "F13",
+        "F15",
+        "F28"
+      ],
+      "fix": "Create a verified media and credentials page linking directly to authoritative organizer, employer, and program records, with a short description of each role or recognition."
+    }
+  ],
+  "summary": "Ayyanar Jeyakrishnan presents himself publicly as a technical leader with over 20 years of IT expertise, and he says he started working at 16. He also says he has built community reach through a DataOps Labs Meetup group with 2350+ members and a DataOps Labs India LinkedIn page with Around 1300+ followers. His public profile also describes him as a machine learning and cloud enthusiast with a strong focus on AWS technologies, and says his work includes creating data platforms and architecting DevOps and MLOps solutions for AWS. These numbers are only the company’s own word, not independently verified: over 20 years, 16, 2350+, and Around 1300+. Other claims about his event activity, speaker roles, ratings, bookings, testimonials, and location could not be verified from the findings provided.",
+  "lint": [],
+  "conflicts": [
+    {
+      "ids": [
+        "F1"
+      ],
+      "claims": [
+        "Ayyanar Jeyakrishnan says, \"With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table.\""
+      ],
+      "what": "E3 says “With over 20 years of IT expertise” while E1 and E2 say “With over 20 years of dedicated IT expertise”; the 20-year figure matches exactly.",
+      "sources": [
+        "https://github.com/jayyanar",
+        "https://luma.com/user/jayyanar"
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from . import config
 from .fetch import read_snapshot
-from .util import tokenize, number_keys
+from .util import tokenize, number_keys, subject_keys
 
 EXTRACT_SYSTEM = """You extract atomic, checkable factual claims about a named person and their company from one web page.
 Rules:
@@ -22,14 +22,13 @@ def extract_claims(identity: dict, sources: list[dict], llm, log,
     name = identity["full_name"]
     company = identity.get("company") or ""
     claims: list[dict] = []
-    surname = (name.split() or [name])[-1].lower()
-    company_key = (company.split() or [company])[0].lower()
+    keys = subject_keys(identity)
     for src in sources:
         if src["status"] != "ok":
             continue
         text = read_snapshot(src["snapshot"])[:14000]
         low = text.lower()
-        if surname not in low and (not company_key or company_key not in low):
+        if not any(k in low for k in keys):
             # A page that never names the person or the company cannot yield a claim about them.
             # Without this the extractor invents one from a page that is merely on topic.
             log("claims", f"{src['id']} never names the subject, skipped", url=src["url"])

@@ -218,7 +218,7 @@ def combine(claim: dict, p1: dict, p2: dict) -> tuple[str, str]:
         if "partially_supported" in (v1, v2):
             detail = " and details differ: " + str(p1.get("discrepancy") or p2.get("discrepancy") or "")
         relayed_pages = sorted({c["url"] for p in (p1, p2) for c in p["cited"] if c.get("relayed")})
-        where = "stated only by the company itself (own site or issued release)"
+        where = "stated only by the subject or their own company (own profile or site, or a release they issued)"
         if relayed_pages:
             where += "; " + relayed_pages[0] + " repeats the company's announcement rather than confirming it"
         return "partially_verified", where + "; no regulator or independent primary source confirms it" + detail

@@ -8,7 +8,7 @@ import httpx
 
 from . import config
 from .fetch import fetch
-from .util import host_of
+from .util import host_of, subject_keys
 
 
 def classify_source(url: str, company_domains: list[str]) -> str:
@@ -44,26 +44,72 @@ def classify_source(url: str, company_domains: list[str]) -> str:
 
 
 def query_plan(identity: dict) -> list[str]:
-    name = identity["full_name"]
-    company = identity.get("company") or ""
-    plan = [
-        f"{company} ADGM FSRA financial services permission register",
-        f"{company} DFSA decision notice",
-        f"{company} regulator fine penalty",
-        f"{company} regulatory action",
-        f"{company} press release funding round",
-        f'"{company}" site:globenewswire.com',
-        f'"{company}" site:prnewswire.com',
-        f"{company} milestone first fintech announcement",
-        f"{company} Series B Mubadala",
-        f"{company} Forbes Middle East fintech list",
-        f"{company} assets under management clients users",
-        f"{company} profitable revenue",
-        f"{name} {company} co-founder CEO interview",
-        f"{name} {company} founded",
-        f'"{name}" fintech',
-    ]
-    return [q for q in plan if q.strip()]
+    """Searches about the person always run. Searches about the company run only when a company was
+    identified: with a blank company the templates collapse into generic queries (a register page, a
+    wire service home page) that say nothing about the subject and crowd out the pages that do."""
+    name = (identity.get("full_name") or "").strip()
+    company = (identity.get("company") or "").strip()
+    plan: list[str] = []
+    if name:
+        plan += [
+            f'"{name}"',
+            f'"{name}" founder OR CEO OR "managing director" OR partner',
+            f'"{name}" Dubai OR "Abu Dhabi" OR UAE',
+            f'"{name}" interview OR podcast OR keynote',
+        ]
+    if company:
+        plan += [
+            f"{company} ADGM FSRA financial services permission register",
+            f"{company} DFSA decision notice",
+            f"{company} regulator fine penalty",
+            f"{company} regulatory action",
+            f"{company} press release funding round",
+            f'"{company}" site:globenewswire.com',
+            f'"{company}" site:prnewswire.com',
+            f"{company} milestone first fintech announcement",
+            f"{company} Series B Mubadala",
+            f"{company} Forbes Middle East fintech list",
+            f"{company} assets under management clients users",
+            f"{company} profitable revenue",
+        ]
+        if name:
+            plan += [f"{name} {company} co-founder CEO interview", f"{name} {company} founded"]
+    seen, out = set(), []
+    for q in plan:
+        q = " ".join(q.split())
+        if q and q not in seen:
+            seen.add(q)
+            out.append(q)
+    return out
+
+
+def select_candidates(candidates: dict[str, dict], identity: dict,
+                      max_sources: int = config.MAX_SOURCES) -> tuple[list[dict], list[dict]]:
+    """Choose which search results to fetch. A result is kept only if its title, snippet or URL names
+    the subject (see subject_keys), or it is one of the pages identify used to name the person.
+    Kept results are ranked by tier, then by how many searches found them, with the company's own
+    pages capped so press and interviews get slots. Returns (to fetch, skipped as not about the subject)."""
+    keys = subject_keys(identity)
+    company_domains = identity.get("company_domains") or []
+    relevant, skipped = [], []
+    for c in candidates.values():
+        blob = f"{c.get('title') or ''} {c.get('snippet') or ''} {c['url']}".lower()
+        if "identify" in c["queries"] or any(k in blob for k in keys):
+            relevant.append(c)
+        else:
+            skipped.append(c)
+    order = {"primary": 0, "company": 1, "secondary": 2}
+    relevant.sort(key=lambda c: (order[classify_source(c["url"], company_domains)], -len(c["queries"])))
+    ranked, company_n = [], 0
+    for c in relevant:
+        if classify_source(c["url"], company_domains) == "company":
+            if company_n >= config.MAX_COMPANY_SOURCES:
+                continue
+            company_n += 1
+        ranked.append(c)
+        if len(ranked) >= max_sources:
+            break
+    return ranked, skipped
 
 
 def research(identity: dict, run_id: str, search, log, max_sources: int = config.MAX_SOURCES) -> list[dict]:
@@ -83,30 +129,18 @@ def research(identity: dict, run_id: str, search, log, max_sources: int = config
             else:
                 candidates[url]["queries"].append(q)
     for u in identity.get("evidence_urls") or []:
-        candidates.setdefault(u, {"url": u, "title": "", "snippet": "", "queries": ["identify"]})
+        candidates.setdefault(u, {"url": u, "title": "", "snippet": "", "queries": []})["queries"].append("identify")
     if not candidates:
         raise RuntimeError("research found no candidate sources")
 
-    # Rank: primary first, then company, then by how many queries hit it.
-    order = {"primary": 0, "company": 1, "secondary": 2}
-    ranked_all = sorted(
-        candidates.values(),
-        key=lambda c: (order[classify_source(c["url"], company_domains)], -len(c["queries"])),
-    )
-    # The company's own pages are capped so press and interviews get slots too; a founder's public
-    # presence is what the press repeats, and press-only numbers are what the refused list is for.
-    ranked, company_n = [], 0
-    for c in ranked_all:
-        tier = classify_source(c["url"], company_domains)
-        if tier == "company":
-            if company_n >= config.MAX_COMPANY_SOURCES:
-                continue
-            company_n += 1
-        ranked.append(c)
-        if len(ranked) >= max_sources:
-            break
-    log("research", f"fetching {len(ranked)} of {len(candidates)} candidate urls",
-        fetched=[c["url"] for c in ranked], skipped=[c["url"] for c in candidates.values() if c not in ranked])
+    ranked, skipped = select_candidates(candidates, identity, max_sources)
+    log("research", f"fetching {len(ranked)} of {len(candidates)} candidate urls; "
+                    f"{len(skipped)} set aside because they do not name the subject",
+        keys=subject_keys(identity), fetched=[c["url"] for c in ranked], skipped=[c["url"] for c in skipped])
+    if not ranked:
+        who = identity.get("full_name") or "the subject"
+        raise RuntimeError(f"search returned {len(candidates)} pages but none of them names {who}; there is nothing about "
+                           f"this person to research")
 
     client = httpx.Client(follow_redirects=True, timeout=config.FETCH_TIMEOUT,
                           headers={"User-Agent": config.USER_AGENT,
@@ -137,5 +171,6 @@ def research(identity: dict, run_id: str, search, log, max_sources: int = config
             http_status=res.http_status, chars=len(res.text), error=res.error or None)
     ok = sum(1 for s in sources if s["status"] == "ok")
     if ok == 0:
-        raise RuntimeError("no source could be fetched; nothing to verify against")
+        raise RuntimeError(f"none of the {len(sources)} pages about the subject could be read (blocked, timed out or "
+                           f"rendered by JavaScript); nothing to verify against")
     return sources

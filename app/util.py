@@ -106,3 +106,33 @@ def numbers_with_units(text: str) -> list[tuple[float, str]]:
 
 def dumps(obj) -> str:
     return json.dumps(obj, ensure_ascii=False, indent=2)
+
+
+_GENERIC_COMPANY_WORDS = {"the", "group", "holding", "holdings", "llc", "ltd", "limited", "inc", "fz", "fze", "fzco",
+                          "dmcc", "capital", "partners", "global", "international", "digital", "and", "co"}
+
+
+def subject_keys(identity: dict) -> list[str]:
+    """Lowercase strings whose presence means a text is about the subject: the full name, the surname,
+    the LinkedIn slug without its numeric suffix, and the first distinctive word of the company.
+    Research uses them to decide which search results are worth fetching; the claims stage uses the
+    same keys to decide which fetched pages may yield claims, so the two stages cannot disagree."""
+    keys: list[str] = []
+    name = " ".join((identity.get("full_name") or "").lower().split())
+    if name:
+        keys.append(name)
+        parts = name.split()
+        if len(parts) > 1 and len(parts[-1]) >= 4:
+            keys.append(parts[-1])
+    slug = re.sub(r"[-_]?\d+[a-z0-9]*$", "", (identity.get("slug") or "").lower())
+    if len(slug) >= 5:
+        keys.append(slug)
+    words = [w for w in re.findall(r"[a-z0-9]+", (identity.get("company") or "").lower()) if w not in _GENERIC_COMPANY_WORDS]
+    if words and len(words[0]) >= 3:
+        keys.append(words[0])
+    seen, out = set(), []
+    for k in keys:
+        if k not in seen:
+            seen.add(k)
+            out.append(k)
+    return out

@@ -1,0 +1,264 @@
+url: https://github.com/jayyanar
+final_url: https://github.com/jayyanar
+fetched_at: 2026-09-15T11:41:42+00:00
+status: ok
+http_status: 200
+title: jayyanar (Ayyanar Jeyakrishnan) · GitHubLinkedInYouTube
+error: 
+---
+jayyanar (Ayyanar Jeyakrishnan) · GitHub
+Skip to content
+Navigation Menu
+Sign in
+Appearance settings
+Platform
+AI CODE CREATION
+GitHub CopilotWrite better code with AI
+GitHub Copilot appDirect agents from issue to merge
+MCP RegistryIntegrate external tools
+DEVELOPER WORKFLOWS
+ActionsAutomate any workflow
+CodespacesInstant dev environments
+IssuesPlan and track work
+Code ReviewManage code changes
+Code QualityEnforce quality at merge
+APPLICATION SECURITY
+GitHub Advanced SecurityFind and fix vulnerabilities
+Code securitySecure your code as you build
+Secret protectionStop leaks before they start
+EXPLORE
+Why GitHub
+Documentation
+Blog
+Changelog
+Marketplace
+View all features
+Solutions
+BY COMPANY SIZE
+Enterprises
+Small and medium teams
+Startups
+Nonprofits
+BY USE CASE
+App Modernization
+DevSecOps
+DevOps
+CI/CD
+View all use cases
+BY INDUSTRY
+Healthcare
+Financial services
+Manufacturing
+Government
+View all industries
+View all solutions
+Resources
+EXPLORE BY TOPIC
+AI
+Software Development
+DevOps
+Security
+View all topics
+EXPLORE BY TYPE
+Customer stories
+Events & webinars
+Ebooks & reports
+Business insights
+GitHub Skills
+SUPPORT & SERVICES
+Documentation
+Customer support
+Community forum
+Trust center
+Partners
+View all resources
+Open Source
+COMMUNITY
+GitHub SponsorsFund open source developers
+PROGRAMS
+Security Lab
+Maintainer Community
+GitHub Stars
+Archive Program
+REPOSITORIES
+Topics
+Trending
+Collections
+Enterprise
+ENTERPRISE SOLUTIONS
+Enterprise platformAI-powered developer platform
+AVAILABLE ADD-ONS
+GitHub Advanced SecurityEnterprise-grade security features
+Copilot for BusinessEnterprise-grade AI features
+Premium SupportEnterprise-grade 24/7 support
+Pricing
+Search/
+Sign in
+Sign up
+Appearance settings
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+Dismiss alert
+jayyanar
+Follow
+Overview
+Repositories
+63
+Projects
+0
+Packages
+0
+Stars
+27
+More
+Overview
+Repositories
+Projects
+Packages
+Stars
+jayyanar
+Follow
+Ayyanar Jeyakrishnan
+jayyanar
+Follow
+Passionate AI Learner;
+My Best Quality: Perseverance
+76
+followers
+·
+8
+following
+https://www.dataopslabs.com/
+https://blog.dataopslabs.com/
+in/jayyanar
+@DataOpsLabs
+Achievements
+Achievements
+Organizations
+Block or report user
+Block or report jayyanar
+Block user
+Prevent this user from interacting with your repositories and sending you notifications.
+Learn more about blocking users.
+You must be logged in to block users.
+Close all issues, pull requests, and discussions opened by this user
+Content in all repositories owned by your account will be closed.
+Add an optional note
+Maximum 250 characters. Please don’t include any personal information such as legal names or email addresses. Markdown is supported. This note will only be visible to you.
+Block user
+Report abuse
+Contact GitHub support about this user’s behavior.
+Learn more about reporting abuse.
+Report abuse
+Overview
+Repositories
+63
+Projects
+0
+Packages
+0
+Stars
+27
+More
+Overview
+Repositories
+Projects
+Packages
+Stars
+jayyanar/README.md
+I'm Ayyanar Jeyakrishnan ; aka AJ.
+With over 20 years of dedicated IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the table.
+As a strategic thinker, my focus is always on the long-term goals, and I thrive in collaborative environments, working closely with diverse stakeholders, including CXOs, technology leaders, and executive teams.
+My professional journey has been characterized by hands-on, in-depth involvement in cutting-edge fields such as DevOps, Cloud Computing, Big Data, Machine Learning, and Artificial Intelligence. This comprehensive knowledge allows me to adapt and innovate in an ever-evolving tech landscape.
+Beyond my day-to-day responsibilities, I'm passionate about knowledge sharing. I've had the privilege of serving as a speaker, delivering tech talks and workshops on a wide range of topics at conferences and meet-ups. Some of my favorite subjects to discuss include Generative AI, MLOps, DevOps, Cloud, and Platform Engineering.
+I look forward to connecting with like-minded professionals and exploring opportunities to contribute to transformative tech initiatives. Let's connect and engage in meaningful discussions about the future of technology and its impact on our world.
+I started a DataOps Labs Meetup group to share my knowledge and other people to share their experience with 2350+ Members and Counting..
+I started a DataOps Labs India Linkedin Page with Around 1300+ Followers
+Shared all training / session materials here at YouTube for community members.
+https://www.youtube.com/@DataOpsLabsIndia
+MLOps with AWS Sagemaker Training Videos
+Participants Counts Session 1 - 207
+Participants Counts Session 2 - 93
+Participants Counts Session 3 - 53
+Introduction
+QuickView of DevOps and its Benefits
+What is MLOps
+MLops Advantages and Its benefits
+Machine Learning Lifecycle and Personas and Technology Involved
+MLOps Addressed ML Lifecycle Important Challenge
+Sagemaker Highlevel Understanding and Sagemaker Lifecycle
+MLOPS with Sagemaker - Reference Architecture
+Setup Terraform
+Create Sagemaker Studio - Domain, Userprofile
+Test Sagemaker Pipeline from SageMaker studio
+My Presentation in Other Conferences and Events.
+Machine Learning Meetup @NVidia
+https://www.meetup.com/bangalore-ai-tech-talks/events/290561644/
+Deploy MultiModel using Nvidia Triton Inference Server using AWS Sagemaker
+Blog in Dev.to and Medium
+What is new in AWS QuickSights
+What is new in AWS DataExchange
+Will ChatGPT replace Google Search Now
+Improve Productivity Using CodeCatalyst
+Amazon Opensearch Going Serverless
+AWS Sagemaker Geospatial Potentially Saved Fraud
+Github Stats
+Connect with me
+Popular repositories
+Loading
+gen-ai-labs-demos
+gen-ai-labs-demos
+Public
+gen-ai-labs-demos
+Jupyter Notebook
+6
+6
+genai-apps
+genai-apps
+Public
+Learn and Launch an Generative AI Application.
+Jupyter Notebook
+5
+learning-aws-bedrock
+learning-aws-bedrock
+Public
+learning-aws-bedrock
+Python
+4
+2
+deploy-react-kubernetes
+deploy-react-kubernetes
+Public
+Forked from IBM/deploy-react-kubernetes
+Built for developers who are interested in learning how to deploy a React application on Kubernetes, this pattern uses the React and Redux framework and calls the OMDb API to look up movie informat…
+JavaScript
+2
+openclaw-elastic-aws-agentcore
+openclaw-elastic-aws-agentcore
+Public
+Python
+2
+conda-installer
+conda-installer
+Public
+Shell
+1
+Something went wrong, please refresh the page to try again.
+If the problem persists, check the GitHub status page
+or contact support.
+Uh oh!
+There was an error while loading. Please reload this page.
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+You can’t perform that action at this time.

@@ -1,0 +1,145 @@
+{"ts": "2026-09-15T11:41:29+00:00", "stage": "run", "message": "created", "data": {"url": "https://www.linkedin.com/in/jayyanar/"}}
+{"ts": "2026-09-15T11:41:29+00:00", "stage": "identify", "message": "started"}
+{"ts": "2026-09-15T11:41:32+00:00", "stage": "identify", "message": "8 search results from 2 queries", "data": {"queries": ["jayyanar founder", "jayyanar CEO company UAE"]}}
+{"ts": "2026-09-15T11:41:35+00:00", "stage": "llm", "message": "gpt-5.4-mini: 712 in, 151 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:41:35+00:00", "stage": "identify", "message": "Ayyanar Jeyakrishnan, IT expert / technical leader at ", "data": {"confidence": 0.98, "reasoning": "Multiple snippets explicitly identify the handle jayyanar as Ayyanar Jeyakrishnan (aka AJ) and describe him as having over 20 years of IT expertise, but no clear current company or location is provided."}}
+{"ts": "2026-09-15T11:41:35+00:00", "stage": "identify", "message": "no company identified; researching the person by name only. Track B is built for a founder, CEO or fund manager, so expect few checkable claims", "data": {"warning": true}}
+{"ts": "2026-09-15T11:41:35+00:00", "stage": "research", "message": "started"}
+{"ts": "2026-09-15T11:41:36+00:00", "stage": "research", "message": "4 results: '\"Ayyanar Jeyakrishnan\"'"}
+{"ts": "2026-09-15T11:41:38+00:00", "stage": "research", "message": "2 results: '\"Ayyanar Jeyakrishnan\" founder OR CEO OR \"managing director\" OR partner'"}
+{"ts": "2026-09-15T11:41:39+00:00", "stage": "research", "message": "1 results: '\"Ayyanar Jeyakrishnan\" Dubai OR \"Abu Dhabi\" OR UAE'"}
+{"ts": "2026-09-15T11:41:41+00:00", "stage": "research", "message": "4 results: '\"Ayyanar Jeyakrishnan\" interview OR podcast OR keynote'"}
+{"ts": "2026-09-15T11:41:41+00:00", "stage": "research", "message": "fetching 12 of 12 candidate urls; 0 set aside because they do not name the subject", "data": {"keys": ["ayyanar jeyakrishnan", "jeyakrishnan", "jayyanar"], "fetched": ["https://github.com/jayyanar", "https://topmate.io/jayyanar", "https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/", "https://builder.aws.com/community/heroes/AyyanarJeyakrishnan", "https://medium.com/@jayyanar", "https://www.instagram.com/p/DFsP819Tud1/", "https://developer.microsoft.com/en-us/reactor/events/27065/", "https://topmate.io/jayyanar/118992", "https://soundcloud.com/ayyanar-jeyakrishnan", "https://www.youtube.com/watch?v=pqermZA_ZG8", "https://medium.com/@jayyanar/aws-sagemaker-geospatial-potentially-saved-fraud-4ad9aa728e13", "https://luma.com/user/jayyanar"], "skipped": []}}
+{"ts": "2026-09-15T11:41:43+00:00", "stage": "research", "message": "S1 ok secondary https://github.com/jayyanar", "data": {"http_status": 200, "chars": 6904, "error": null}}
+{"ts": "2026-09-15T11:41:43+00:00", "stage": "research", "message": "S2 ok secondary https://topmate.io/jayyanar", "data": {"http_status": 200, "chars": 10077, "error": null}}
+{"ts": "2026-09-15T11:41:43+00:00", "stage": "research", "message": "S3 ok secondary https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/", "data": {"http_status": 200, "chars": 12478, "error": null}}
+{"ts": "2026-09-15T11:41:43+00:00", "stage": "research", "message": "S4 could_not_check secondary https://builder.aws.com/community/heroes/AyyanarJeyakrishnan", "data": {"http_status": 200, "chars": 18, "error": "page returned almost no readable text (probably rendered by JavaScript)"}}
+{"ts": "2026-09-15T11:41:43+00:00", "stage": "research", "message": "S5 could_not_check secondary https://medium.com/@jayyanar", "data": {"http_status": 403, "chars": 0, "error": "HTTP 403"}}
+{"ts": "2026-09-15T11:41:43+00:00", "stage": "research", "message": "S6 could_not_check secondary https://www.instagram.com/p/DFsP819Tud1/", "data": {"http_status": null, "chars": 0, "error": "request failed: [Errno 61] Connection refused"}}
+{"ts": "2026-09-15T11:41:43+00:00", "stage": "research", "message": "S7 ok secondary https://developer.microsoft.com/en-us/reactor/events/27065/", "data": {"http_status": 200, "chars": 6981, "error": null}}
+{"ts": "2026-09-15T11:41:43+00:00", "stage": "research", "message": "S8 ok secondary https://topmate.io/jayyanar/118992", "data": {"http_status": 200, "chars": 516, "error": null}}
+{"ts": "2026-09-15T11:41:43+00:00", "stage": "research", "message": "S9 ok secondary https://soundcloud.com/ayyanar-jeyakrishnan", "data": {"http_status": 200, "chars": 364, "error": null}}
+{"ts": "2026-09-15T11:41:43+00:00", "stage": "research", "message": "S10 ok secondary https://www.youtube.com/watch?v=pqermZA_ZG8", "data": {"http_status": 200, "chars": 241, "error": null}}
+{"ts": "2026-09-15T11:41:43+00:00", "stage": "research", "message": "S11 could_not_check secondary https://medium.com/@jayyanar/aws-sagemaker-geospatial-potentially-saved-fraud-4ad9aa728e13", "data": {"http_status": 403, "chars": 0, "error": "HTTP 403"}}
+{"ts": "2026-09-15T11:41:43+00:00", "stage": "research", "message": "S12 ok secondary https://luma.com/user/jayyanar", "data": {"http_status": 200, "chars": 260, "error": null}}
+{"ts": "2026-09-15T11:41:43+00:00", "stage": "claims", "message": "started"}
+{"ts": "2026-09-15T11:41:45+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1886 in, 387 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:41:45+00:00", "stage": "claims", "message": "6 claims from S1 (secondary)"}
+{"ts": "2026-09-15T11:41:47+00:00", "stage": "llm", "message": "gpt-5.4-mini: 2367 in, 184 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:41:47+00:00", "stage": "claims", "message": "5 claims from S2 (secondary)"}
+{"ts": "2026-09-15T11:41:49+00:00", "stage": "llm", "message": "gpt-5.4-mini: 2790 in, 378 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:41:49+00:00", "stage": "claims", "message": "6 claims from S3 (secondary)"}
+{"ts": "2026-09-15T11:41:51+00:00", "stage": "llm", "message": "gpt-5.4-mini: 2666 in, 250 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:41:51+00:00", "stage": "claims", "message": "5 claims from S7 (secondary)"}
+{"ts": "2026-09-15T11:41:53+00:00", "stage": "llm", "message": "gpt-5.4-mini: 458 in, 116 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:41:53+00:00", "stage": "claims", "message": "3 claims from S8 (secondary)"}
+{"ts": "2026-09-15T11:41:54+00:00", "stage": "llm", "message": "gpt-5.4-mini: 411 in, 60 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:41:54+00:00", "stage": "claims", "message": "1 claims from S9 (secondary)"}
+{"ts": "2026-09-15T11:41:56+00:00", "stage": "llm", "message": "gpt-5.4-mini: 394 in, 202 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:41:56+00:00", "stage": "claims", "message": "3 claims from S10 (secondary)"}
+{"ts": "2026-09-15T11:41:58+00:00", "stage": "llm", "message": "gpt-5.4-mini: 400 in, 181 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:41:58+00:00", "stage": "claims", "message": "4 claims from S12 (secondary)"}
+{"ts": "2026-09-15T11:41:58+00:00", "stage": "claims", "message": "33 raw claims, 30 selected after dedupe (cap 72)"}
+{"ts": "2026-09-15T11:41:58+00:00", "stage": "verify", "message": "started"}
+{"ts": "2026-09-15T11:41:58+00:00", "stage": "verify", "message": "corpus: 149 passages from 8 sources; 4 claims at a time"}
+{"ts": "2026-09-15T11:41:59+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1185 in, 59 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:41:59+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1227 in, 72 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:41:59+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1186 in, 106 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:41:59+00:00", "stage": "llm", "message": "gpt-5.6-terra: server rejected temperature, retrying without it"}
+{"ts": "2026-09-15T11:41:59+00:00", "stage": "llm", "message": "gpt-5.6-terra: server rejected temperature, retrying without it"}
+{"ts": "2026-09-15T11:42:00+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1185 in, 72 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:00+00:00", "stage": "llm", "message": "gpt-5.6-terra: server rejected temperature, retrying without it"}
+{"ts": "2026-09-15T11:42:01+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1498 in, 56 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:01+00:00", "stage": "verify", "message": "F4 unverified: Ayyanar Jeyakrishnan is named in the video title.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:01+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1440 in, 76 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:01+00:00", "stage": "verify", "message": "F3 partially_verified: Ayyanar Jeyakrishnan says, \"I started a DataOps Labs India Linkedin Page with Around 1300+", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); https://github.com/jayyanar repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-15T11:42:02+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1474 in, 61 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:02+00:00", "stage": "verify", "message": "F2 partially_verified: Ayyanar Jeyakrishnan says, \"I started a DataOps Labs Meetup group to share my knowledge an", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); https://github.com/jayyanar repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-15T11:42:02+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1427 in, 76 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:02+00:00", "stage": "verify", "message": "F1 partially_verified: Ayyanar Jeyakrishnan says, \"With over 20 years of dedicated IT expertise, I bring a wealth", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); https://github.com/jayyanar repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-15T11:42:02+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1171 in, 60 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:02+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1204 in, 59 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:03+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1213 in, 60 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:03+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1166 in, 89 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:03+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1501 in, 56 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:03+00:00", "stage": "llm", "message": "gpt-5.6-terra: JSON parse failed, retrying once", "data": {"error": "bad JSON from model: Unterminated string starting at: line 1 column 101 (char 100); reply began '{\"verdict\":\"supported\",\"supporting_excerpts\":[\"E1\"],\"relayed_excerpts\":[],\"discrepancy\":null,\"note\":\"The YouTube title explicitly includes both “Ayyanar Jeyakrishnan” and “AzConf.”}'"}}
+{"ts": "2026-09-15T11:42:04+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1204 in, 59 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:04+00:00", "stage": "verify", "message": "F7 unverified: Ayyanar Jeyakrishnan joined in August 2024.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:04+00:00", "stage": "llm", "message": "gpt-5.6-terra: 570 in, 52 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:04+00:00", "stage": "verify", "message": "F8 unverified: Ayyanar Jeyakrishnan has hosted 5 events.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:05+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1407 in, 78 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:05+00:00", "stage": "verify", "message": "F6 partially_verified: Ayyanar Jeyakrishnan has over 20 years of IT expertise.", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); https://github.com/jayyanar repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-15T11:42:05+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1212 in, 63 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:05+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1515 in, 57 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:05+00:00", "stage": "verify", "message": "F5 unverified: The video title identifies Ayyanar Jeyakrishnan in connection with AzConf.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:05+00:00", "stage": "llm", "message": "gpt-5.4-mini: 611 in, 51 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:06+00:00", "stage": "llm", "message": "gpt-5.4-mini: 608 in, 47 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:07+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1443 in, 66 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:07+00:00", "stage": "verify", "message": "F9 unverified: Ayyanar Jeyakrishnan (AJ) (@jayyanar) | Topmate", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:07+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1223 in, 61 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:07+00:00", "stage": "llm", "message": "gpt-5.6-terra: 611 in, 57 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:07+00:00", "stage": "verify", "message": "F10 unverified: 5/520 ratings", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:07+00:00", "stage": "llm", "message": "gpt-5.6-terra: 608 in, 56 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:07+00:00", "stage": "verify", "message": "F11 unverified: 57bookings", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:07+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1271 in, 55 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:08+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1210 in, 63 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:08+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1506 in, 67 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:08+00:00", "stage": "verify", "message": "F12 unverified: Machine Learning Hero Ayyanar Jeyakrishnan is a Principal Engineer/Executive Director at W", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:08+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1285 in, 62 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:09+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1498 in, 61 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:09+00:00", "stage": "verify", "message": "F13 unverified: Ayyanar Jeyakrishnan is a Machine Learning Hero.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:09+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1217 in, 64 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:09+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1465 in, 56 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:09+00:00", "stage": "verify", "message": "F15 unverified: Ayyanar Jeyakrishnan is listed as the Speaker for Microsoft Build //localhost:bengaluru.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:10+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1241 in, 68 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:10+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1190 in, 66 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:10+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1518 in, 58 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:10+00:00", "stage": "verify", "message": "F14 unverified: Ayyanar Jeyakrishnan is based in Bengaluru, India.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:11+00:00", "stage": "llm", "message": "gpt-5.6-terra: 2153 in, 62 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:11+00:00", "stage": "verify", "message": "F16 unverified: Microsoft Build //localhost:bengaluru is scheduled for 20 June, 2026.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:11+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1195 in, 56 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:12+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1136 in, 55 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:12+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1518 in, 70 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:12+00:00", "stage": "verify", "message": "F17 unverified: Microsoft Build //localhost:bengaluru is an in-person event in Bengaluru.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:12+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1400 in, 58 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:12+00:00", "stage": "verify", "message": "F18 unverified: Ayyanar Jeyakrishnan (AJ) offers \"Interview prep & tips\".", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:13+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1215 in, 69 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:13+00:00", "stage": "llm", "message": "gpt-5.6-terra: 820 in, 59 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:13+00:00", "stage": "verify", "message": "F19 unverified: The session is priced at ₹800.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:13+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1223 in, 52 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:14+00:00", "stage": "llm", "message": "gpt-5.6-terra: 906 in, 48 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:14+00:00", "stage": "verify", "message": "F20 unverified: The session lasts 15 mins.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:14+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1167 in, 65 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:14+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1464 in, 54 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:14+00:00", "stage": "verify", "message": "F21 unverified: The page is for Ayyanar Jeyakrishnan.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:14+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1090 in, 46 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:15+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1338 in, 61 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:15+00:00", "stage": "verify", "message": "F22 unverified: Ayyanar Jeyakrishnan says, \"Participants Counts Session 1 - 207\"", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:15+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1136 in, 53 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:15+00:00", "stage": "llm", "message": "gpt-5.6-terra: 911 in, 55 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:15+00:00", "stage": "verify", "message": "F23 unverified: Ayyanar Jeyakrishnan has attended 15 events.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:16+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1090 in, 57 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:16+00:00", "stage": "verify", "message": "F24 unverified: 18testimonials", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:16+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1220 in, 90 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:16+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1279 in, 84 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:17+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1357 in, 70 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:17+00:00", "stage": "verify", "message": "F25 partially_verified: Started working very early age (16).", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); https://topmate.io/jayyanar repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-15T11:42:17+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1258 in, 77 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:18+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1511 in, 54 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:18+00:00", "stage": "verify", "message": "F27 partially_verified: Ayyanar Jeyakrishnan’s expertise includes creating data platforms and architecting DevOps ", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/ repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-15T11:42:18+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1286 in, 55 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:18+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1520 in, 115 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:18+00:00", "stage": "verify", "message": "F26 partially_verified: Ayyanar Jeyakrishnan is a seasoned machine learning and cloud enthusiast with a strong foc", "data": {"pass1": "supported", "pass2": "supported", "reason": "stated only by the company itself (own site or issued release); https://aws.amazon.com/blogs/aws/introducing-the-last-cohort-of-aws-heroes-this-year-november-2024/ repeats the company's announcement rather than confirming it; no regulator or independent primary source confirms it"}}
+{"ts": "2026-09-15T11:42:19+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1292 in, 75 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:19+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1518 in, 102 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:19+00:00", "stage": "verify", "message": "F28 unverified: Ayyanar Jeyakrishnan frequently speaks at industry events and community meetups on MLOps, ", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:19+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1444 in, 62 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:19+00:00", "stage": "verify", "message": "F29 unverified: Microsoft Build //localhost:bengaluru has the topic AI Applications.", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:20+00:00", "stage": "llm", "message": "gpt-5.6-terra: 1520 in, 77 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:20+00:00", "stage": "verify", "message": "F30 unverified: Microsoft Build //localhost:bengaluru is part of the Microsoft Build //localhost:Asia Seri", "data": {"pass1": "supported", "pass2": "supported", "reason": "only repeated by secondary press; no primary or company source found"}}
+{"ts": "2026-09-15T11:42:20+00:00", "stage": "gaps", "message": "started"}
+{"ts": "2026-09-15T11:42:32+00:00", "stage": "llm", "message": "gpt-5.6-terra: 2611 in, 770 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:32+00:00", "stage": "gaps", "message": "three gaps named", "data": {"titles": ["Independent proof of career record and technical leadership", "Community traction is presented without independent validation", "High-profile affiliations and recognitions are not clearly substantiated"]}}
+{"ts": "2026-09-15T11:42:32+00:00", "stage": "report", "message": "started"}
+{"ts": "2026-09-15T11:42:33+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1147 in, 176 out", "data": {"stop": "stop"}}
+{"ts": "2026-09-15T11:42:33+00:00", "stage": "human_gate", "message": "draft ready, waiting for a human to approve or reject", "data": {"lint_warnings": 0}}

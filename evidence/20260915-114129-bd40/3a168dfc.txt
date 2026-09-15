@@ -1,0 +1,17 @@
+url: https://luma.com/user/jayyanar
+final_url: https://luma.com/user/jayyanar
+fetched_at: 2026-09-15T11:41:43+00:00
+status: ok
+http_status: 200
+title: Ayyanar Jeyakrishnan · Luma
+error: 
+---
+Ayyanar Jeyakrishnan · Luma
+Discover Events
+Sign In
+Ayyanar Jeyakrishnan
+@jayyanar
+With over 20 years of IT expertise, I bring a wealth of experience coupled with strong analytical and technical leadership skills to the ta
+Joined August 2024
+5Hosted
+15Attended

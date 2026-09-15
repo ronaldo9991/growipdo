@@ -36,6 +36,9 @@ def run_pipeline(run: Run) -> Run:
         run.save()
         run.log("identify", f"{identity['full_name']}, {identity.get('role')} at {identity.get('company')}",
                 confidence=identity["confidence"], reasoning=identity.get("reasoning"))
+        if not (identity.get("company") or "").strip():
+            run.log("identify", "no company identified; researching the person by name only. Track B is built for a "
+                                "founder, CEO or fund manager, so expect few checkable claims", warning=True)
 
         run.set_stage("research")
         sources = research(identity, run.id, web_search, run.log)
@@ -48,7 +51,7 @@ def run_pipeline(run: Run) -> Run:
         run.ledger["claims"] = claims
         run.save()
         if not claims:
-            raise RuntimeError("no claims extracted from any source")
+            raise RuntimeError(no_claims_message(identity, sources))
 
         run.set_stage("verify")
         findings = verify_claims(claims, sources, llm1, llm2, run.log)
@@ -95,6 +98,18 @@ def run_pipeline(run: Run) -> Run:
         run.fail(exc)
         raise
     return run
+
+
+def no_claims_message(identity: dict, sources: list[dict]) -> str:
+    """Why a run stopped with nothing to verify, in words a reviewer can act on."""
+    who = identity.get("full_name") or "the subject"
+    readable = sum(1 for s in sources if s.get("status") == "ok")
+    msg = (f"no checkable claim about {who} was found: {len(sources)} pages were fetched, {readable} were readable, "
+           f"and none stated a fact about {who}")
+    if not (identity.get("company") or "").strip():
+        msg += (f". No company was identified for {who}, so there was no company, funding or regulatory record to check. "
+                f"Track B is built for a founder, CEO or fund manager of a UAE company with a public footprint")
+    return msg + "."
 
 
 def write_diagnostic(run: Run) -> str:
