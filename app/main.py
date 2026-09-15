@@ -25,11 +25,26 @@ app.mount("/static", StaticFiles(directory=str(HERE / "static")), name="static")
 _TEMPLATES = {p.stem: p.read_text(encoding="utf-8") for p in (HERE / "templates").glob("*.html")}
 
 
+def _asset_version() -> str:
+    """Short content hash of the stylesheet and script. Appended to their URLs so a deploy is never
+    hidden behind a browser's cached copy of the previous CSS."""
+    import hashlib
+    h = hashlib.sha256()
+    for name in ("style.css", "app.js"):
+        h.update((HERE / "static" / name).read_bytes())
+    return h.hexdigest()[:10]
+
+
+ASSET_V = _asset_version()
+
+
 def page(name: str, title: str, track: str = "", **vars) -> HTMLResponse:
     body = _TEMPLATES[name]
     if name != "home":
         body = _TEMPLATES["_page_open"] + body + _TEMPLATES["_page_close"]
     html = _TEMPLATES["_head"] + body + _TEMPLATES["_foot"]
+    html = html.replace('href="/static/style.css"', f'href="/static/style.css?v={ASSET_V}"').replace(
+        'src="/static/app.js"', f'src="/static/app.js?v={ASSET_V}"')
     vars = {"title": title, "script": "", "track": track, **vars}
     for k, v in vars.items():
         html = html.replace("{{" + k + "}}", str(v))

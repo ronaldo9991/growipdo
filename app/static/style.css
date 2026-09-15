@@ -43,7 +43,7 @@ code,.mono{font-family:var(--mono);font-size:.9em}
 .crumb{font-size:12px;color:var(--ink-3);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em}
 .crumb a{color:var(--ink-3)}
 /* hero */
-.hero{height:100vh;width:100%;padding:12px}
+.hero{height:100vh;height:100svh;min-height:560px;width:100%;padding:12px}
 .hero .inner{position:relative;height:100%;width:100%;overflow:hidden;border-radius:var(--r);background:#000}
 @media (min-width:768px){.hero .inner{border-radius:var(--r-lg)}}
 .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -57,11 +57,12 @@ code,.mono{font-family:var(--mono);font-size:.9em}
 .hero .word h1{font-weight:500;line-height:.85;letter-spacing:-.07em;color:var(--cream);font-size:21vw;white-space:nowrap}
 @media (min-width:640px){.hero .word h1{font-size:20vw}}@media (min-width:768px){.hero .word h1{font-size:19vw}}
 @media (min-width:1024px){.hero .word h1{font-size:13.5vw}}@media (min-width:1280px){.hero .word h1{font-size:13vw}}
-.hero .side{grid-column:span 12;display:flex;flex-direction:column;gap:20px;padding-bottom:24px}
-@media (min-width:1024px){.hero .side{grid-column:span 4;padding-bottom:40px}}
+.hero .side{grid-column:span 12;display:flex;flex-direction:column;gap:20px;padding-bottom:calc(24px + env(safe-area-inset-bottom,0px))}
+@media (min-width:1024px){.hero .side{grid-column:span 4;padding-bottom:calc(40px + env(safe-area-inset-bottom,0px))}}
 .hero .lede{font-size:12px;color:rgba(225,224,204,.7);line-height:1.2;margin:0}
 @media (min-width:640px){.hero .lede{font-size:14px}}@media (min-width:768px){.hero .lede{font-size:16px}}
-.hero .ctas{display:flex;flex-wrap:wrap;gap:10px}
+.hero .ctas{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:640px){.hero .ctas{display:flex;flex-wrap:wrap;gap:14px}}
 /* words pull up */
 .pull{display:inline-flex;flex-wrap:wrap}
 .pull .w{display:inline-block;position:relative;opacity:0;transform:translateY(20px);transition:transform .6s var(--ease),opacity .6s var(--ease)}
@@ -70,16 +71,40 @@ code,.mono{font-family:var(--mono);font-size:.9em}
 .reveal{opacity:0;transform:translateY(20px);transition:transform .8s var(--ease),opacity .8s var(--ease)}
 .reveal.on{opacity:1;transform:none}
 /* pill button with arrow circle */
-.pillbtn{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;border-radius:999px;background:var(--cream);color:#000;padding:4px 4px 4px 20px;font-size:14px;font-weight:500;border:0;cursor:pointer;transition:gap .2s;white-space:nowrap}
-.pillbtn:hover{gap:12px;text-decoration:none}
-.pillbtn .arr{display:flex;width:36px;height:36px;align-items:center;justify-content:center;border-radius:50%;background:#000;transition:transform .2s}
-.pillbtn:hover .arr{transform:scale(1.1)}
+.pillbtn{display:inline-flex;align-items:center;justify-content:space-between;gap:12px;align-self:flex-start;box-sizing:border-box;min-height:48px;
+  border-radius:999px;background:var(--cream);color:#000;padding:4px 4px 4px 20px;font-size:14px;font-weight:500;border:1px solid transparent;cursor:pointer;white-space:nowrap;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;
+  transition:transform .15s var(--ease),background-color .15s,border-color .15s}
+.pillbtn:hover{text-decoration:none}
+.pillbtn .arr{display:flex;flex:none;width:38px;height:38px;align-items:center;justify-content:center;border-radius:50%;background:#000;transition:transform .2s var(--ease)}
 .pillbtn .arr svg{width:16px;height:16px;color:var(--cream)}
-@media (min-width:640px){.pillbtn{font-size:16px}.pillbtn .arr{width:40px;height:40px}}
-.pillbtn.ghost{background:transparent;color:var(--cream);border:1px solid var(--line-2)}
+.pillbtn.ghost{background:transparent;color:var(--cream);border-color:var(--line-2)}
 .pillbtn.ghost .arr{background:var(--cream)}.pillbtn.ghost .arr svg{color:#000}
 .pillbtn small{display:block;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;opacity:.7;line-height:1}
-.pillbtn .lbl2{display:flex;flex-direction:column;gap:2px;line-height:1.1;text-align:left}
+.pillbtn .lbl2{display:flex;flex-direction:column;gap:3px;line-height:1.1;text-align:left}
+/* hover only where a real pointer can hover; nothing changes size, so no tap is swallowed and nothing sticks */
+@media (hover:hover) and (pointer:fine){
+  .pillbtn:hover .arr{transform:translateX(3px)}
+  .pillbtn:hover{background:#efeedd}
+  .pillbtn.ghost:hover{background:rgba(225,224,204,.08);border-color:rgba(225,224,204,.4)}
+}
+/* pressed feedback for every input type */
+.pillbtn:active{transform:scale(.97);background:#cfcdb6}
+.pillbtn.ghost:active{background:rgba(225,224,204,.16)}
+/* phones: full-width targets, taller, bigger arrow, no hunting for a small pill */
+@media (max-width:639px){
+  .hero .pillbtn{width:100%;min-height:56px;padding:6px 6px 6px 20px}
+  .hero .pillbtn .arr{width:44px;height:44px}
+  .hero .pillbtn .lbl2{font-size:16px}
+}
+@media (min-width:640px){.pillbtn{font-size:16px}.pillbtn .arr{width:40px;height:40px}}
+/* an entrance must not leave an invisible button that still takes taps */
+.reveal:not(.on){pointer-events:none}
+/* tap hygiene for every other control */
+a,button,summary,select,label,.btn,.tab,input[type=submit]{-webkit-tap-highlight-color:transparent}
+button,.btn,.tab,summary,.run-row,.track,.topnav a{touch-action:manipulation}
+.btn:active,.tab:active{transform:scale(.97)}
+.track:active{transform:scale(.99)}
 /* generic controls */
 .btn{appearance:none;border:1px solid var(--line-2);background:transparent;color:var(--ink);font:500 13.5px var(--sans);padding:8px 14px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s;display:inline-flex;align-items:center;gap:6px}
 .btn:hover{background:var(--hover);text-decoration:none}
@@ -216,4 +241,4 @@ input.text,textarea.text,select{width:100%;background:var(--bg);border:1px solid
 .in,.fade{animation:rise .5s var(--ease)}
 @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .foot{margin-top:40px;color:var(--ink-3);font-size:12.5px;display:flex;gap:16px;flex-wrap:wrap}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.pull .w,.reveal{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.pull .w,.reveal{opacity:1;transform:none;pointer-events:auto}.pillbtn:active,.btn:active,.tab:active,.track:active{transform:none}}
