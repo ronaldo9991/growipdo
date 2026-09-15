@@ -7,13 +7,16 @@
     </div>
     <div class="actions">
       <span class="chip" id="statusChip">created</span>
-      <a class="btn" id="draftLink" href="/runs/{{run_id}}/draft" hidden>Review draft</a>
-      <a class="btn" href="/runs/{{run_id}}/diagnostic.md" id="mdLink" hidden>diagnostic.md</a>
-      <a class="btn" href="/runs/{{run_id}}/ledger.json" target="_blank" rel="noopener">ledger.json</a>
-      <a class="btn" href="/runs/{{run_id}}/evidence.zip">evidence.zip</a>
+      <a class="btn primary" id="draftLink" href="/runs/{{run_id}}/draft" hidden>Review draft</a>
+      <details class="files"><summary class="btn">Files</summary><div class="menu">
+        <a href="/runs/{{run_id}}/diagnostic.md" id="mdLink" hidden>diagnostic.md</a>
+        <a href="/runs/{{run_id}}/ledger.json" target="_blank" rel="noopener">ledger.json</a>
+        <a href="/runs/{{run_id}}/evidence.zip">evidence.zip</a>
+      </div></details>
     </div>
   </div>
   <div class="stages" id="stages"></div>
+  <div class="progress" id="progress" aria-live="polite"></div>
   <div class="stats" id="stats"></div>
   <div class="err" id="runError"></div>
   <div class="cols">
@@ -22,7 +25,7 @@
       <div class="card" id="gapsCard" hidden><h2>Three biggest gaps</h2><div id="gaps"></div></div>
       <div class="card" id="conflictsCard" hidden><h2>Conflicts between sources</h2><p class="hint">These findings stand, but another source gives a different figure for the same thing. Quote neither number without naming its source.</p><div id="conflicts"></div></div>
       <div class="card" id="findingsCard" hidden><h2>Findings ledger</h2><div class="tabs" id="tabs"></div><div id="findings"></div></div>
-      <div class="card"><h2>Log</h2><div class="log" id="log"></div></div>
+      <details class="card logcard" id="logCard"><summary><h2>Log</h2></summary><div class="log" id="log"></div></details>
     </div>
     <div class="stack">
       <div class="card gate" id="gate"></div>

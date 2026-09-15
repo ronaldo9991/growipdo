@@ -41,6 +41,77 @@
   });
   $$(".reveal").forEach((el) => setTimeout(() => el.classList.add("on"), parseInt(el.dataset.delay || "0", 10)));
 
+  /* ---------- usability helpers shared by both tracks ---------- */
+  const ux = window.__ux = {};
+  ux.shortUrl = (u) => {
+    try {
+      const x = new URL(u); const host = x.hostname.replace(/^www\./, "");
+      let path = decodeURIComponent(x.pathname).replace(/\/$/, "");
+      if (path.length > 34) { const parts = path.split("/").filter(Boolean); const last = parts[parts.length - 1] || ""; path = "/…/" + (last.length > 28 ? last.slice(0, 27) + "…" : last); }
+      return host + path;
+    } catch (e) { return String(u || "").slice(0, 60); }
+  };
+  ux.link = (u) => `<a class="src" href="${esc(u)}" title="${esc(u)}" target="_blank" rel="noopener">${esc(ux.shortUrl(u))}</a>`;
+  ux.ago = (iso) => {
+    if (!iso) return ""; const sec = Math.max(0, (Date.now() - Date.parse(iso)) / 1000);
+    if (sec < 60) return "just now"; const m = Math.floor(sec / 60); if (m < 60) return `${m} min ago`;
+    const h = Math.floor(m / 60); if (h < 24) return `${h} h ago`; const d = Math.floor(h / 24); return d === 1 ? "yesterday" : `${d} days ago`;
+  };
+  ux.clock = (iso) => { const t = Math.max(0, Math.floor((Date.now() - Date.parse(iso)) / 1000)); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`; };
+  setInterval(() => $$("[data-since]").forEach((el) => { el.textContent = ux.clock(el.dataset.since); }), 1000);
+  ux.EXPECT = { diagnostic: "about 6 minutes", radar: "about 2 minutes" };
+  ux.bar = (cfg) => {
+    let el = $("#actionbar");
+    if (!cfg) { if (el) el.hidden = true; document.body.classList.remove("has-bar"); return; }
+    if (!el) { el = document.createElement("div"); el.id = "actionbar"; el.className = "actionbar"; el.setAttribute("role", "status"); document.body.appendChild(el); }
+    el.hidden = false; document.body.classList.add("has-bar");
+    const act = cfg.action ? (cfg.action.href ? `<a class="btn primary" href="${esc(cfg.action.href)}">${esc(cfg.action.label)}</a>` : `<button type="button" class="btn primary" id="abBtn">${esc(cfg.action.label)}</button>`) : "";
+    el.innerHTML = `<div class="ab-text"><b>${cfg.spin ? '<span class="spin"></span>' : ""}${esc(cfg.title)}</b>${cfg.sub ? `<span>${cfg.sub}</span>` : ""}</div>${act}`;
+    if (cfg.action && cfg.action.onClick) $("#abBtn").addEventListener("click", cfg.action.onClick);
+  };
+  ux.jump = (sel) => {
+    /* On touch screens nothing is focused: the browser would scroll the control into view on its own and a
+       phone would open the keyboard over the buttons. With a mouse, focus first, then scroll. */
+    const t = $(sel); if (!t) return;
+    const f = t.querySelector("input:not([type=hidden]),select,textarea");
+    if (f && matchMedia("(pointer: fine)").matches) f.focus({ preventScroll: true });
+    const top = Math.max(0, t.getBoundingClientRect().top + window.scrollY - 84);
+    window.scrollTo({ top, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    /* Some browsers skip or stall smooth scrolling (background tabs, battery saver). Never leave the button doing nothing. */
+    setTimeout(() => { if (Math.abs(window.scrollY - top) > 4) window.scrollTo(0, top); }, 1200);
+  };
+  ux.title = (state, who, trackName) => {
+    const map = { created: "Starting", running: "Running", draft: "Needs review", approved: "Approved", rejected: "Rejected", failed: "Failed" };
+    document.title = `${map[state] || state} · ${who || "Run"} · ${trackName}`;
+  };
+  ux.rerun = async (kind, input) => {
+    const r = await fetch(kind === "radar" ? "/radar/run" : "/run", { method: "POST", body: new URLSearchParams(kind === "radar" ? { subjects: input } : { url: input }), headers: { Accept: "application/json" } });
+    const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.detail || String(r.status));
+    location.href = kind === "radar" ? `/radar/runs/${j.id}` : `/runs/${j.id}`;
+  };
+  ux.running = (s) => ["created", "running"].includes(s.status);
+  ux.progress = (el, s, stages, hints, kind) => {
+    if (!el) return;
+    if (ux.running(s)) {
+      const i = stages.indexOf(s.stage);
+      el.innerHTML = `<b><span class="spin"></span>Step ${Math.max(1, i + 1)} of ${stages.length}: ${esc(hints[s.stage] || "starting")}</b><span>Running for <span data-since="${esc(s.created_at)}">${ux.clock(s.created_at)}</span>. Usually takes ${ux.EXPECT[kind]}. You can leave this page; the run keeps going.</span>`;
+    } else if (s.status === "failed") {
+      el.innerHTML = `<b class="bad">Stopped at ${esc((s.stage || "start").replace("_", " "))}</b><span>${esc(s.error || "")}</span><button type="button" class="btn" data-rerun>Run again</button>`;
+      const b = el.querySelector("[data-rerun]");
+      b.addEventListener("click", async () => { b.disabled = true; b.innerHTML = '<span class="spin"></span>Starting'; try { await ux.rerun(kind, s.input_url); } catch (ex) { b.disabled = false; b.textContent = "Run again"; } });
+    } else el.innerHTML = "";
+  };
+  ux.scrollActiveStage = (stagesEl) => {
+    const a = stagesEl && stagesEl.querySelector(".stage.active, .stage.failed");
+    if (a && stagesEl.scrollWidth > stagesEl.clientWidth) stagesEl.scrollLeft = Math.max(0, a.offsetLeft - 16);
+  };
+  ux.logOpen = (details, running) => { if (details && !details.dataset.touched) details.open = running; };
+  document.addEventListener("click", (e) => {
+    const sum = e.target.closest("#logCard > summary"); if (sum) sum.parentElement.dataset.touched = "1";
+    $$("details.files[open]").forEach((d) => { if (!d.contains(e.target)) d.open = false; });
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") $$("details.files[open]").forEach((d) => { d.open = false; }); });
+
   /* run lists: every .runs[data-kind] on the page */
   async function renderLists() {
     const els = $$(".runs[data-kind]"); if (!els.length) return;
@@ -63,8 +134,8 @@
             ? `<span class="r">${c.respond_now ?? "-"} respond</span><span class="p">${c.watch ?? "-"} watch</span><span class="a">${c.ambiguous ?? "-"} ambiguous</span>`
             : `<span class="v">${c.verified ?? "-"} ok</span><span class="p">${c.partially_verified ?? "-"} partial</span><span class="r">${c.unverified ?? "-"} refused</span>`;
           const sub = r.kind === "radar" ? "Track A · weekly brief" : "Track B · diagnostic" + (r.role ? " · " + esc(r.role) : "");
-          return `<a class="run-row" href="${href}"><div><div class="name">${esc(r.subject || r.input_url)}</div><div class="sub">${sub}</div></div>
-            <div class="sub">${esc(r.id)}</div><div class="counts">${counts}</div>${chip(r.status)}</a>`;
+          return `<a class="run-row" href="${href}" title="Run ${esc(r.id)}"><div class="main"><div class="name">${esc(r.subject || r.input_url)}</div><div class="sub">${sub}</div></div>
+            <div class="meta"><span class="counts">${counts}</span><span class="when">${esc(ux.ago(r.created_at))}</span></div>${chip(r.status)}</a>`;
         }).join("") : '<div class="empty">No runs yet.</div>';
       } catch (ex) { el.innerHTML = `<div class="empty">Could not load runs: ${esc(ex.message)}</div>`; }
     }
@@ -119,10 +190,16 @@
   async function index() {
     const form = $("#runForm");
     if (!form) return;
+    const urlIn = $("#url");
+    document.querySelectorAll("[data-fill]").forEach((b) => b.addEventListener("click", () => { urlIn.value = b.dataset.fill; urlIn.focus(); }));
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const btn = $("#runBtn"), err = $("#runErr");
       err.textContent = "";
+      if (!/linkedin\.com\/in\/[^/?#\s]+/i.test($("#url").value.trim())) {
+        err.textContent = "Paste a LinkedIn profile link, like https://www.linkedin.com/in/markchahwan";
+        $("#url").focus(); return;
+      }
       btn.disabled = true; btn.innerHTML = '<span class="spin"></span>Starting';
       try {
         const j = await postForm("/run", { url: $("#url").value.trim() });
@@ -142,7 +219,7 @@
     const sc = $("#statusChip"); sc.className = "chip " + s.status; sc.textContent = s.status.replace(/_/g, " ");
     $("#draftLink").hidden = !["draft", "approved", "rejected"].includes(s.status);
     $("#mdLink").hidden = $("#draftLink").hidden;
-    $("#runError").textContent = s.error || "";
+    $("#runError").textContent = "";
     // stages
     const cur = STAGES.indexOf(s.stage);
     $("#stages").innerHTML = STAGES.map((st, i) => {
@@ -153,6 +230,7 @@
       else if (i === cur) cls = "active";
       return `<div class="stage ${cls}"><b>${esc(st.replace("_", " "))}</b><span>${esc(STAGE_HINT[st])}</span></div>`;
     }).join("");
+    window.__ux.scrollActiveStage($("#stages"));
     // stats
     const c = s.counts || {};
     const n = (L.findings || []).length;
@@ -166,6 +244,15 @@
     [...statsEl.querySelectorAll(".stat b")].forEach((b, i) => { if (prevV[i] != null) b.dataset.v = prevV[i]; });
     window.__animateStats(statsEl);
     window.__rail($("#stages"), STAGES, s.stage, ["draft", "approved", "rejected"].includes(s.status));
+    const ux = window.__ux;
+    ux.progress($("#progress"), s, STAGES, STAGE_HINT, "diagnostic");
+    ux.title(s.status, subj.full_name, "Track B");
+    $("#draftLink").textContent = s.status === "draft" ? "Review draft" : "Read diagnostic";
+    ux.logOpen($("#logCard"), ux.running(s));
+    if (ux.running(s)) ux.bar({ spin: true, title: `Step ${Math.max(1, STAGES.indexOf(s.stage) + 1)} of ${STAGES.length}`, sub: `${esc(STAGE_HINT[s.stage] || "starting")} \u00b7 <span data-since="${esc(s.created_at)}">${ux.clock(s.created_at)}</span>` });
+    else if (s.status === "draft") ux.bar({ title: "Draft ready", sub: "Needs a named approver", action: { label: "Review and approve", href: `/runs/${s.id}/draft` } });
+    else if (s.status === "failed") ux.bar({ title: "Run failed", sub: "The reason is under the steps", action: { label: "Run again", onClick: () => ux.rerun("diagnostic", s.input_url) } });
+    else ux.bar(null);
     // summary
     if (L.summary) { $("#summaryCard").hidden = false; $("#summary").innerHTML = `<p>${esc(L.summary)}</p>`; }
     // gaps
@@ -177,7 +264,7 @@
     // conflicts
     const C = L.conflicts || [];
     $("#conflictsCard").hidden = !C.length;
-    if (C.length) $("#conflicts").innerHTML = C.map((c) => `<div class="gap"><b class="t">${esc(c.ids.join(" and "))}</b><p>${esc(c.what)}</p>${c.claims.map((x) => `<p class="hint">${esc(x)}</p>`).join("")}${c.sources.map((u) => `<a class="src" href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>`).join("")}</div>`).join("");
+    if (C.length) $("#conflicts").innerHTML = C.map((c) => `<div class="gap"><b class="t">${esc(c.ids.join(" and "))}</b><p>${esc(c.what)}</p>${c.claims.map((x) => `<p class="hint">${esc(x)}</p>`).join("")}${c.sources.map((u) => window.__ux.link(u)).join("")}</div>`).join("");
     // findings
     const F = L.findings || [];
     if (F.length) {
@@ -192,11 +279,11 @@
           <summary><span class="fid">${esc(f.id)}</span><div><div class="claim">${esc(f.claim)}</div><div class="cat">${esc(f.category)} · ${esc(f.about)} · from ${esc(f.origin_tier)}</div></div>${chip(f.label)}</summary>
           <div class="body">
             <p><b>Why:</b> ${esc(f.reason)}</p>
-            ${(f.sources || []).length ? `<p><b>Sources:</b><br>${f.sources.map((u) => `<a class="src" href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>`).join("")}</p>` : ""}
-            <p><b>First seen:</b> <a class="src" href="${esc(f.origin_url)}" target="_blank" rel="noopener">${esc(f.origin_url)}</a></p>
+            ${(f.sources || []).length ? `<p><b>Sources:</b><br>${f.sources.map((u) => window.__ux.link(u)).join("")}</p>` : ""}
+            <p><b>First seen:</b> ${window.__ux.link(f.origin_url)}</p>
             ${(f.passes || []).map((p, i) => `<div class="pass"><b>Pass ${i + 1} · ${esc(p.model)} · ${esc(p.verdict)}</b>
               <div>${esc(p.note || "")}${p.discrepancy ? " Discrepancy: " + esc(p.discrepancy) : ""}</div>
-              ${(p.cited || []).slice(0, 2).map((c) => `<div class="ex">${esc(c.text)}<br><span class="chip ${esc(c.tier)} plain">${esc(c.tier)}</span> ${esc(c.url)}</div>`).join("")}
+              ${(p.cited || []).slice(0, 2).map((c) => `<div class="ex">${esc(c.text)}<br><span class="chip ${esc(c.tier)} plain">${esc(c.tier)}</span> ${esc(window.__ux.shortUrl(c.url))}</div>`).join("")}
             </div>`).join("")}
           </div>
         </details>`).join("") || '<div class="empty">Nothing in this bucket.</div>';
@@ -295,6 +382,9 @@
       const warns = d.ledger.lint || [];
       if (warns.length) { $("#warnCard").hidden = false; $("#warns").innerHTML = warns.map((w) => `<li>${esc(w)}</li>`).join(""); }
       renderGate(s, d.ledger, "draft");
+      window.__ux.title(s.status, subj.full_name, "Track B review");
+      if (s.status === "draft") window.__ux.bar({ title: "Approve or reject", sub: "The form is after the document", action: { label: "Go to approval", onClick: () => window.__ux.jump("#gate") } });
+      else window.__ux.bar(null);
     } catch (ex) { $("#doc").innerHTML = `<div class="empty">${esc(ex.message)}</div>`; }
   }
 
@@ -328,12 +418,16 @@
   }
 
   let filter = "all";
-  function mentionCard(m, L, rid, s) {
+  function mentionCard(m, L, rid, s, where) {
     const f = m.final || {}, p1 = m.pass1 || {}, p2 = m.pass2;
     const resp = (L.responses || {})[m.id];
     const ch = m.channel === "linkedin" ? "LinkedIn · snippet only, not fetched" : `${m.channel} · ${m.fetch_status || ""}`;
     let gateHtml = "";
-    if (f.ambiguous && s.status !== "failed") {
+    const inList = where === "list";
+    const needs = f.ambiguous || (f.about_subject !== "no" && f.risk === "respond_now");
+    if (inList) {
+      if (needs) gateHtml = `<a class="btn jumpbtn" href="#act-${esc(m.id)}">${f.ambiguous ? "Decide this above" : "Review this above"}</a>`;
+    } else if (f.ambiguous && s.status !== "failed") {
       gateHtml = `<form class="inline-form decide-form" data-m="${esc(m.id)}">
         <div class="decide"><label class="lbl">About the subject?<select name="about_subject"><option value="yes">Yes, it is ${esc(m.subject)}</option><option value="no">No, a namesake</option></select></label>
         <label class="lbl">Risk<select name="risk"><option value="watch">Watch</option><option value="ignore">Ignore</option><option value="respond_now">Respond now</option></select></label></div>
@@ -358,11 +452,11 @@
         gateHtml = `<div class="hint">Draft declined by ${esc(resp.declined_by)}: ${esc(resp.decline_note)}</div>`;
       }
     }
-    return `<details class="mention" ${f.ambiguous || f.risk === "respond_now" ? "open" : ""}>
+    return `<details class="mention" ${inList ? "" : `id="act-${esc(m.id)}" open`}>
       <summary><span class="fid">${esc(m.id)}</span><div><div class="title">${esc(m.title || m.url)}</div><div class="sub">${chip(m.channel)} ${m.seen_before === true ? chip("seen before", "plain") : m.seen_before === false ? chip("new", "plain") : ""} ${m.reach ? chip("reach " + m.reach.bucket, "plain") : ""} <span>${esc(m.publisher)}</span> <span>${esc(m.date || "undated")}</span> <span>${esc(m.subject)}</span></div></div>
       <div class="chips">${f.ambiguous ? chip("ambiguous") : ""}${f.about_subject === "no" ? chip("namesake", "plain") : chip(f.risk || "pending")}${f.sentiment ? chip(f.sentiment, f.sentiment + " plain") : ""}</div></summary>
       <div class="body">
-        <p><a class="src" href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.url)}</a></p>
+        <p>${window.__ux.link(m.url)}</p>
         <p>${esc(m.snippet)}</p>
         <p><b>Decision:</b> ${esc(f.why || "")}</p>
         <div class="pass"><b>Pass 1 · ${esc(p1.model)} · about ${esc(p1.about_subject)} · ${esc(p1.risk)} · ${esc(p1.sentiment)} · confidence ${(p1.confidence ?? 0).toFixed(2)}</b><div>${esc(p1.reason)}</div>${p1.quote ? `<div class="ex">${esc(p1.quote)}</div>` : ""}</div>
@@ -419,12 +513,13 @@
     $("#meta").textContent = `${when(s.created_at)}${L.profile ? "  ·  " + (L.profile.disambiguators || []).slice(0, 3).join(" · ") : ""}`;
     const sc = $("#statusChip"); sc.className = "chip " + s.status; sc.textContent = s.status.replace(/_/g, " ");
     $("#briefLink").hidden = !["draft", "approved"].includes(s.status); $("#mdLink").hidden = $("#briefLink").hidden;
-    $("#runError").textContent = s.error || "";
+    $("#runError").textContent = "";
     const cur = STAGES.indexOf(s.stage);
     $("#stages").innerHTML = STAGES.map((st, i) => {
       let cls = ""; if (s.status === "failed" && i === cur) cls = "failed"; else if (["draft", "approved"].includes(s.status)) cls = "done"; else if (i < cur) cls = "done"; else if (i === cur) cls = "active";
       return `<div class="stage ${cls}"><b>${esc(st.replace("_", " "))}</b><span>${esc(HINT[st])}</span></div>`;
     }).join("");
+    window.__ux.scrollActiveStage($("#stages"));
     const statsEl = $("#stats");
     const prevV = [...statsEl.querySelectorAll(".stat b")].map((b) => b.dataset.v);
     statsEl.innerHTML = `<div class="stat"><b>${c.about_subject ?? (L.mentions || []).length}</b><span>mentions about them</span></div>
@@ -433,18 +528,33 @@
     [...statsEl.querySelectorAll(".stat b")].forEach((b, i) => { if (prevV[i] != null) b.dataset.v = prevV[i]; });
     window.__animateStats(statsEl);
     window.__rail($("#stages"), STAGES, s.stage, ["draft", "approved"].includes(s.status));
+    const ux = window.__ux;
+    ux.progress($("#progress"), s, STAGES, HINT, "radar");
+    ux.title(s.status, (L.subjects || []).join(" and "), "Track A");
+    ux.logOpen($("#logCard"), ux.running(s));
+    const pending = (L.mentions || []).filter((m) => m.final);
+    const ambN = pending.filter((m) => m.final.ambiguous).length;
+    const respN = pending.filter((m) => !m.final.ambiguous && m.final.about_subject !== "no" && m.final.risk === "respond_now" && !(L.responses || {})[m.id]).length;
+    const firstAmb = pending.find((m) => m.final.ambiguous);
+    const firstResp = pending.find((m) => !m.final.ambiguous && m.final.about_subject !== "no" && m.final.risk === "respond_now" && !(L.responses || {})[m.id]);
+    if (ux.running(s)) ux.bar({ spin: true, title: `Step ${Math.max(1, STAGES.indexOf(s.stage) + 1)} of ${STAGES.length}`, sub: `${esc(HINT[s.stage] || "starting")} \u00b7 <span data-since="${esc(s.created_at)}">${ux.clock(s.created_at)}</span>` });
+    else if (s.status === "draft" && ambN) ux.bar({ title: `${ambN} item${ambN > 1 ? "s need" : " needs"} your decision`, sub: "The two readings disagreed", action: { label: "Decide", onClick: () => ux.jump(`#act-${firstAmb.id}`) } });
+    else if (s.status === "draft" && respN) ux.bar({ title: `${respN} mention${respN > 1 ? "s" : ""} may need a reply`, sub: "Nothing is drafted until you approve", action: { label: "Review", onClick: () => ux.jump(`#act-${firstResp.id}`) } });
+    else if (s.status === "draft") ux.bar({ title: "Brief ready", sub: "Needs a named approver", action: { label: "Approve", onClick: () => ux.jump("#gate") } });
+    else if (s.status === "failed") ux.bar({ title: "Run failed", sub: "The reason is under the steps", action: { label: "Run again", onClick: () => ux.rerun("radar", s.input_url) } });
+    else ux.bar(null);
     if (L.profile) { $("#profileCard").hidden = false; $("#profile").innerHTML = `<p>${esc(L.profile.profile)}</p><p>${(L.profile.disambiguators || []).map((x) => chip(x, "plain")).join(" ")}</p>`; }
     const M = (L.mentions || []).filter((m) => m.final);
     if (M.length) {
       const amb = M.filter((m) => m.final.ambiguous), resp = M.filter((m) => m.final.about_subject !== "no" && m.final.risk === "respond_now" && !m.final.ambiguous);
-      $("#ambCard").hidden = !amb.length; $("#ambiguous").innerHTML = amb.map((m) => mentionCard(m, L, rid, s)).join("");
-      $("#respondCard").hidden = !resp.length; $("#respond").innerHTML = resp.map((m) => mentionCard(m, L, rid, s)).join("");
+      $("#ambCard").hidden = !amb.length; $("#ambiguous").innerHTML = amb.map((m) => mentionCard(m, L, rid, s, "action")).join("");
+      $("#respondCard").hidden = !resp.length; $("#respond").innerHTML = resp.map((m) => mentionCard(m, L, rid, s, "action")).join("");
       $("#mentionsCard").hidden = false;
       const counts = { all: M.length, respond_now: 0, watch: 0, ignore: 0, namesake: 0 };
       M.forEach((m) => { if (m.final.about_subject === "no") counts.namesake++; else counts[m.final.risk]++; });
       $("#tabs").innerHTML = ["all", "respond_now", "watch", "ignore", "namesake"].map((k) => `<button class="tab ${filter === k ? "on" : ""}" data-f="${k}">${k.replace("_", " ")} · ${counts[k]}</button>`).join("");
       $("#tabs").querySelectorAll(".tab").forEach((b) => b.addEventListener("click", () => { filter = b.dataset.f; renderRadar(d, rid); }));
-      $("#mentions").innerHTML = M.filter((m) => filter === "all" || (filter === "namesake" ? m.final.about_subject === "no" : m.final.about_subject !== "no" && m.final.risk === filter)).map((m) => mentionCard(m, L, rid, s)).join("") || '<div class="empty">Nothing here.</div>';
+      $("#mentions").innerHTML = M.filter((m) => filter === "all" || (filter === "namesake" ? m.final.about_subject === "no" : m.final.about_subject !== "no" && m.final.risk === filter)).map((m) => mentionCard(m, L, rid, s, "list")).join("") || '<div class="empty">Nothing here.</div>';
       wireForms(rid, () => radarRun(true));
     }
     renderGate(s, L, rid, "run");
@@ -495,6 +605,9 @@
       $("#doc").innerHTML = md(text);
       const warns = d.ledger.lint || []; if (warns.length) { $("#warnCard").hidden = false; $("#warns").innerHTML = warns.map((w) => `<li>${esc(w)}</li>`).join(""); }
       renderGate(s, d.ledger, rid, "brief");
+      window.__ux.title(s.status, (d.ledger.subjects || []).join(" and "), "Track A brief");
+      if (s.status === "draft") window.__ux.bar({ title: "Approve the brief", sub: "The form is after the brief", action: { label: "Go to approval", onClick: () => window.__ux.jump("#gate") } });
+      else window.__ux.bar(null);
     } catch (ex) { $("#doc").innerHTML = `<div class="empty">${esc(ex.message)}</div>`; }
   }
   radarIndex(); radarRun(false); radarBrief();

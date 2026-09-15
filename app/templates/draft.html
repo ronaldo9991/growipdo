@@ -8,7 +8,11 @@
     <div class="actions">
       <span class="chip" id="statusChip"></span>
       <a class="btn" href="/runs/{{run_id}}">Run detail</a>
-      <a class="btn" href="/runs/{{run_id}}/diagnostic.md">diagnostic.md</a>
+      <details class="files"><summary class="btn">Files</summary><div class="menu">
+        <a href="/runs/{{run_id}}/diagnostic.md">diagnostic.md</a>
+        <a href="/runs/{{run_id}}/ledger.json" target="_blank" rel="noopener">ledger.json</a>
+        <a href="/runs/{{run_id}}/evidence.zip">evidence.zip</a>
+      </div></details>
     </div>
   </div>
   <div class="cols">

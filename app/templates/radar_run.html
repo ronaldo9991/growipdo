@@ -7,13 +7,16 @@
     </div>
     <div class="actions">
       <span class="chip" id="statusChip">created</span>
-      <a class="btn" id="briefLink" href="/radar/runs/{{run_id}}/brief" hidden>Read the brief</a>
-      <a class="btn" href="/radar/runs/{{run_id}}/brief.md" id="mdLink" hidden>brief.md</a>
-      <a class="btn" href="/radar/runs/{{run_id}}/ledger.json" target="_blank" rel="noopener">ledger.json</a>
-      <a class="btn" href="/radar/runs/{{run_id}}/evidence.zip">evidence.zip</a>
+      <a class="btn primary" id="briefLink" href="/radar/runs/{{run_id}}/brief" hidden>Read the brief</a>
+      <details class="files"><summary class="btn">Files</summary><div class="menu">
+        <a href="/radar/runs/{{run_id}}/brief.md" id="mdLink" hidden>brief.md</a>
+        <a href="/radar/runs/{{run_id}}/ledger.json" target="_blank" rel="noopener">ledger.json</a>
+        <a href="/radar/runs/{{run_id}}/evidence.zip">evidence.zip</a>
+      </div></details>
     </div>
   </div>
   <div class="stages" id="stages"></div>
+  <div class="progress" id="progress" aria-live="polite"></div>
   <div class="stats" id="stats"></div>
   <div class="err" id="runError"></div>
   <div class="cols">
@@ -21,7 +24,7 @@
       <div class="card" id="ambCard" hidden><h2>Ambiguous, held for you</h2><p class="hint">The two classifiers disagreed. The system did not guess. Decide each one and it moves out of this list with your name on it.</p><div id="ambiguous"></div></div>
       <div class="card" id="respondCard" hidden><h2>Respond now</h2><p class="hint">No reply exists until you approve drafting one. Then the draft waits for your approval. The system never posts.</p><div id="respond"></div></div>
       <div class="card" id="mentionsCard" hidden><h2>All mentions</h2><div class="tabs" id="tabs"></div><div id="mentions"></div></div>
-      <div class="card"><h2>Log</h2><div class="log" id="log"></div></div>
+      <details class="card logcard" id="logCard"><summary><h2>Log</h2></summary><div class="log" id="log"></div></details>
     </div>
     <div class="stack">
       <div class="card gate" id="gate"></div>

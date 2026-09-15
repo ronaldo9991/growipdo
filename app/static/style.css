@@ -166,7 +166,7 @@ input.text,textarea.text,select{width:100%;background:var(--bg);border:1px solid
 .run-row .name{font-weight:500}.run-row .sub{font:12px var(--mono);color:var(--ink-3)}
 .run-row .counts{display:flex;gap:10px;font:500 12px var(--mono)}
 .counts .v{color:var(--ok)}.counts .p{color:var(--warn)}.counts .r{color:var(--bad)}.counts .a{color:var(--amb)}
-@media (max-width:700px){.run-row{grid-template-columns:1fr auto}.run-row .counts,.run-row .when{display:none}}
+
 .skel{height:52px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,var(--panel),var(--panel-2),var(--panel));background-size:200% 100%;animation:shimmer 1.4s linear infinite}
 @keyframes shimmer{from{background-position:200% 0}to{background-position:-200% 0}}
 /* stepper */
@@ -242,3 +242,100 @@ input.text,textarea.text,select{width:100%;background:var(--bg);border:1px solid
 @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .foot{margin-top:40px;color:var(--ink-3);font-size:12.5px;display:flex;gap:16px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.pull .w,.reveal{opacity:1;transform:none;pointer-events:auto}.pillbtn:active,.btn:active,.tab:active,.track:active{transform:none}}
+
+/* ===================== usability pass ===================== */
+/* nothing may push a column wider than the window */
+.stack,.stack>*,.card,.cols>*{min-width:0}
+/* shrinkable text columns plus ordinary wrapping: long words and links break only when they would overflow,
+   without letting narrow columns collapse to one character */
+.card,.doc,.gap,.pass,.finding .claim,.mention .title,.source .u{overflow-wrap:break-word}
+.pass .ex,.log div>span:last-child{overflow-wrap:anywhere}
+.finding summary,.mention summary{grid-template-columns:auto minmax(0,1fr) auto}
+.source{grid-template-columns:auto minmax(0,1fr)}
+.finding .fid,.mention .fid,.chip{white-space:nowrap}
+.src{display:block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:4px 0;word-break:normal}
+/* progress line under the steps */
+.progress{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:-4px 0 16px;font-size:13.5px;color:var(--ink-2)}
+.progress:empty{display:none}
+.progress b{color:var(--ink);font-weight:500;display:inline-flex;align-items:center;gap:8px}
+.progress b.bad{color:var(--bad)}
+.progress .spin{margin-right:0}
+/* download links live in one menu instead of a row of buttons */
+.files{position:relative}
+.files>summary{list-style:none}
+.files>summary::-webkit-details-marker{display:none}
+.files>summary::after{content:"";display:inline-block;width:6px;height:6px;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);margin:-3px 0 0 6px}
+.files .menu{position:absolute;right:0;top:calc(100% + 6px);z-index:30;min-width:200px;background:var(--panel-2);border:1px solid var(--line-2);border-radius:12px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.45)}
+.files .menu a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:8px;color:var(--ink);font:13px var(--mono)}
+.files .menu a:hover{background:var(--hover);text-decoration:none}
+.files .menu a[hidden]{display:none}
+/* the log is detail, so it folds away once a run is finished */
+.logcard>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;min-height:32px}
+.logcard>summary::-webkit-details-marker{display:none}
+.logcard>summary h2{margin:0}
+.logcard>summary::after{content:"Show";font-size:12.5px;color:var(--ink-3)}
+.logcard[open]>summary::after{content:"Hide"}
+.logcard[open]>summary{margin-bottom:10px}
+/* run list: name, counts, time, status; stacks on phones instead of squeezing */
+.run-row{grid-template-columns:minmax(0,1fr) auto auto}
+.run-row .main{min-width:0}
+.run-row .name,.run-row .sub{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.run-row .meta{display:flex;align-items:center;gap:14px;font:500 12px var(--mono);color:var(--ink-3)}
+.run-row .meta .counts{display:flex;gap:10px}
+@media (max-width:700px){
+  .run-row{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"main status" "meta meta";row-gap:8px}
+  .run-row .main{grid-area:main}
+  .run-row>.chip{grid-area:status;align-self:start}
+  .run-row .meta{grid-area:meta;flex-wrap:wrap;gap:6px 12px}
+}
+/* phones: steps become one swipeable row with the current step in view */
+@media (max-width:700px){
+  .stages{display:flex;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .stages::-webkit-scrollbar{display:none}
+  .stage{flex:0 0 auto;scroll-snap-align:start;border-bottom:0!important;border-right:1px solid var(--line)!important;padding:12px 14px}
+  .stage span{display:none}
+}
+/* phones and tablets: the next step stays within thumb reach */
+.actionbar{display:none}
+@media (max-width:1000px){
+  .actionbar:not([hidden]){display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:45;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 18px;border-radius:999px;background:#000;border:1px solid var(--line-2);box-shadow:0 14px 40px rgba(0,0,0,.55);animation:rise .3s var(--ease)}
+  .actionbar .ab-text{display:flex;flex-direction:column;min-width:0;line-height:1.25}
+  .actionbar .ab-text b{font-weight:500;color:var(--cream);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:8px}
+  .actionbar .ab-text span{font-size:12px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .actionbar .spin{margin-right:0}
+  .actionbar .btn{min-height:44px;flex:none}
+  body.has-bar .stage-wrap{padding-bottom:130px}
+}
+#gate,#ambCard,#respondCard,[id^="act-"]{scroll-margin-top:84px}
+/* touch screens: every control at least 44px tall */
+@media (pointer:coarse){
+  .topnav .pill{padding-top:0;padding-bottom:0}
+  .topnav a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px}
+  .btn,.tab,select,input.text,textarea.text,.field input{min-height:44px}
+  .tab{padding:0 14px}
+  .src{min-height:36px;line-height:28px}
+  .logcard>summary{min-height:44px}
+}
+.linkbtn{appearance:none;background:none;border:0;padding:0;color:var(--ink);text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:3px;font:inherit;cursor:pointer}
+@media (pointer:coarse){.linkbtn{min-height:44px}}
+@media (prefers-reduced-motion:reduce){.actionbar:not([hidden]){animation:none}}
+
+/* phones: give text the width. Less nested padding, verdict chips under the claim, sources stacked */
+@media (max-width:700px){
+  .frame{padding:6px}
+  .stage-wrap{padding:64px 14px 48px}
+  .card{padding:16px}
+  .finding summary,.mention summary{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"fid text" ". chips";row-gap:8px;padding:12px}
+  .finding summary>.fid,.mention summary>.fid{grid-area:fid}
+  .finding summary>div:not(.chips),.mention summary>div:not(.chips){grid-area:text}
+  .finding summary>.chip,.mention summary>.chips{grid-area:chips;justify-self:start}
+  .mention .chips{justify-content:flex-start}
+  .finding .body,.mention .body{padding:2px 12px 12px}
+  .source{grid-template-columns:1fr;row-gap:4px}
+  .source>.chip{justify-self:start}
+}
+/* touch: inline text links get a finger-sized hit area without moving the layout */
+@media (pointer:coarse){.crumb a{display:inline-block;padding:14px 0;margin:-14px 0}}
+.jumpbtn{margin-top:10px}
+/* profile facts are phrases, not labels: let them wrap inside the narrow side column */
+#profile .chip{white-space:normal;max-width:100%;text-align:left;border-radius:12px;line-height:1.35;padding:4px 10px}
