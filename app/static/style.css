@@ -339,3 +339,6 @@ input.text,textarea.text,select{width:100%;background:var(--bg);border:1px solid
 .jumpbtn{margin-top:10px}
 /* profile facts are phrases, not labels: let them wrap inside the narrow side column */
 #profile .chip{white-space:normal;max-width:100%;text-align:left;border-radius:12px;line-height:1.35;padding:4px 10px}
+/* small motif on each track card */
+.track-art{width:64px;height:64px;border-radius:12px;object-fit:cover;border:1px solid var(--line);opacity:.9}
+.track:hover .track-art{opacity:1}
