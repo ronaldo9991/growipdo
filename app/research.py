@@ -146,7 +146,7 @@ def research(identity: dict, run_id: str, search, log, max_sources: int = config
                           headers={"User-Agent": config.USER_AGENT,
                                    "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
                                    "Accept-Language": "en-US,en;q=0.9"})
-    with ThreadPoolExecutor(max_workers=6) as pool:
+    with ThreadPoolExecutor(max_workers=max(1, config.FETCH_WORKERS)) as pool:
         fetched = list(pool.map(lambda c: fetch(c["url"], run_id, client), ranked))
     client.close()
 

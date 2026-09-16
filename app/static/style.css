@@ -342,3 +342,49 @@ input.text,textarea.text,select{width:100%;background:var(--bg);border:1px solid
 /* small motif on each track card */
 .track-art{width:64px;height:64px;border-radius:12px;object-fit:cover;border:1px solid var(--line);opacity:.9}
 .track:hover .track-art{opacity:1}
+
+/* ===================== inside pages: sections, verdict, sign-off ===================== */
+/* one section at a time instead of one very long page */
+.sectabs{display:flex;gap:4px;flex-wrap:wrap;padding:4px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+.sectabs button{flex:0 0 auto;border:0;background:transparent;color:var(--ink-2);font:500 13.5px var(--sans);padding:9px 16px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.sectabs button:hover{color:var(--ink);background:var(--hover)}
+.sectabs button.on{background:var(--cream);color:#000}
+.sectabs .n{font:500 12px var(--mono);opacity:.75}
+.sectabs button.on .n{opacity:.6}
+.sectabs .dot{width:7px;height:7px;border-radius:50%;background:var(--warn)}
+@media (pointer:coarse){.sectabs button{min-height:44px}}
+@media (max-width:700px){.sectabs{overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}.sectabs::-webkit-scrollbar{display:none}}
+.sec[hidden]{display:none}
+/* verdict bar: the shape of the result in one line */
+.verdict{display:flex;flex-direction:column;gap:8px;margin:0 0 18px}
+.verdict:empty{display:none}
+.verdict .meter{display:flex;height:10px;border-radius:999px;overflow:hidden;border:1px solid var(--line);background:var(--panel)}
+.verdict .meter i{display:block;height:100%}
+.verdict i.v{background:var(--ok)}.verdict i.p{background:var(--warn)}.verdict i.r{background:var(--bad)}
+.verdict i.ig{background:rgba(225,224,204,.25)}.verdict i.w{background:var(--warn)}.verdict i.rn{background:var(--bad)}.verdict i.am{background:var(--amb)}
+.verdict .key{display:flex;gap:14px;flex-wrap:wrap;font:500 12.5px var(--sans);color:var(--ink-2)}
+.verdict .key b{color:var(--ink);font-weight:600}
+.verdict .key span{display:inline-flex;align-items:center;gap:6px}
+.verdict .key i{width:9px;height:9px;border-radius:2px;display:inline-block}
+/* sign-off */
+.gate h2{margin-bottom:6px}
+.checks{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.checks li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--ink-2)}
+.checks li::before{content:"";flex:none;width:16px;height:16px;margin-top:1px;border:1px solid var(--line-2);border-radius:5px}
+.checks li.done::before{background:var(--ok);border-color:var(--ok)}
+.checks a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line-2)}
+@media (pointer:coarse){.checks a{display:inline-block;padding:10px 0;margin:-10px 0}}
+.receipt{padding:12px 14px;border-radius:12px;background:var(--ok-bg);border:1px solid var(--ok-line);color:var(--ok)}
+.receipt b{display:block;margin-bottom:2px}
+.receipt .note{color:var(--ink-2);margin-top:8px;font-size:13px}
+/* one tap decisions */
+.quick{display:grid;gap:6px;margin-top:10px}
+.quick button{width:100%;justify-content:space-between}
+.quick button small{font-weight:400;color:var(--ink-3)}
+.quick button.primary small{color:rgba(0,0,0,.55)}
+.queue-item{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:14px;margin-bottom:10px}
+.queue-item h3{font-size:14px;color:var(--ink);text-transform:none;letter-spacing:0;margin-bottom:6px;font-weight:500}
+.queue-item .why{font-size:13px;color:var(--ink-2);margin:6px 0 0}
+.queue-item .readings{display:grid;gap:6px;margin-top:10px}
+.queue-item .reading{font:12.5px var(--mono);color:var(--ink-3);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.queue-empty{color:var(--ink-3);font-size:13.5px}

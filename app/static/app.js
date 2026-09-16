@@ -112,6 +112,79 @@
   });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") $$("details.files[open]").forEach((d) => { d.open = false; }); });
 
+  ux.goSection = (id, sel) => {
+    if (ux._sections) ux._sections.show(id);
+    setTimeout(() => ux.jump(sel || "#sectabs"), 30);
+  };
+  /* one sign-off panel, used by both tracks */
+  ux.signoff = (el, cfg) => {
+    const done = (c) => c.done ? " done" : "";
+    if (cfg.status === "approved" && cfg.approval) {
+      el.innerHTML = `<h2>Signed off</h2><div class="receipt"><b>${esc(cfg.approval.by)}</b>${esc(cfg.approval.at.replace("T", " ").slice(0, 16))} UTC<div class="note">${esc(cfg.approval.note)}</div></div>`;
+      return;
+    }
+    if (cfg.status === "rejected" && cfg.rejection) {
+      el.innerHTML = `<h2>Rejected</h2><div class="bad-banner"><b>${esc(cfg.rejection.by)}</b><p style="margin:8px 0 0">${esc(cfg.rejection.note)}</p></div>`;
+      return;
+    }
+    if (cfg.status === "failed") {
+      el.innerHTML = `<h2>Sign-off</h2><div class="bad-banner"><b>Run failed</b><p style="margin:8px 0 0">${esc(cfg.error || "")}</p></div><p class="hint">Nothing can be approved from a failed run.</p>`;
+      return;
+    }
+    if (cfg.status !== "draft") {
+      el.innerHTML = `<h2>Sign-off</h2><p class="hint"><span class="spin"></span>${esc(cfg.waiting || "Waiting for a result.")}</p>`;
+      return;
+    }
+    el.innerHTML = `<h2>Sign-off</h2><p class="hint">You are approving ${esc(cfg.what)}. Your name and note go into the ledger and the document header.</p>
+      <ul class="checks">${(cfg.checks || []).map((c, i) => `<li class="${done(c)}"><a href="#" data-check="${i}">${esc(c.label)}</a></li>`).join("")}</ul>
+      ${window.__gateNote()}
+      <form id="approveForm">${window.__tokenField()}
+        <label class="lbl">Your name</label><input class="text" name="by" required placeholder="Full name" value="${esc(ux.name.get())}">
+        <label class="lbl">What did you check?</label><textarea class="text" name="note" rows="3" required placeholder="At least 10 characters"></textarea>
+        <div class="err" id="gateErr"></div>
+        <div style="display:flex;gap:10px;margin-top:12px"><button class="btn primary" type="submit">${esc(cfg.approveLabel || "Approve")}</button>${cfg.reject ? '<button class="btn danger" type="button" id="rejectBtn">Reject</button>' : ""}</div>
+      </form>`;
+    $$("[data-check]", el).forEach((a) => a.addEventListener("click", (e) => {
+      e.preventDefault(); const c = (cfg.checks || [])[+a.dataset.check]; if (c) ux.goSection(c.sec, c.sel);
+    }));
+    const form = $("#approveForm", el);
+    const submit = async (action) => {
+      const data = Object.fromEntries(new FormData(form).entries());
+      $("#gateErr", el).textContent = "";
+      if (!String(data.by || "").trim()) { $("#gateErr", el).textContent = "Your name is required."; return; }
+      ux.name.set(data.by);
+      try { await cfg.onSubmit(action, data); } catch (ex) { $("#gateErr", el).textContent = ex.message; }
+    };
+    form.addEventListener("submit", (e) => { e.preventDefault(); submit("approve"); });
+    const rb = $("#rejectBtn", el); if (rb) rb.addEventListener("click", () => submit("reject"));
+  };
+  /* the approver's name, remembered so signing off is not retyped every time */
+  ux.name = {
+    get: () => { try { return localStorage.getItem("approver_name") || ""; } catch (e) { return ""; } },
+    set: (v) => { try { if (v && v.trim()) localStorage.setItem("approver_name", v.trim()); } catch (e) {} },
+  };
+  /* in-page sections: one at a time, remembered per run */
+  ux.sections = (tabsEl, defs, runId) => {
+    const key = "sec:" + runId;
+    let want = null; try { want = sessionStorage.getItem(key); } catch (e) {}
+    const names = defs.map((d) => d.id);
+    if (!names.includes(want)) want = defs.find((d) => d.attention)?.id || names[0];
+    tabsEl.innerHTML = defs.map((d) => `<button type="button" data-sec="${d.id}" class="${d.id === want ? "on" : ""}">${esc(d.label)}${d.attention ? '<span class="dot"></span>' : ""}${d.n != null ? `<span class="n">${d.n}</span>` : ""}</button>`).join("");
+    const show = (id) => {
+      $$(".sec").forEach((el) => { el.hidden = el.dataset.sec !== id; });
+      $$("button", tabsEl).forEach((b) => b.classList.toggle("on", b.dataset.sec === id));
+      try { sessionStorage.setItem(key, id); } catch (e) {}
+    };
+    $$("button", tabsEl).forEach((b) => b.addEventListener("click", () => show(b.dataset.sec)));
+    show(want);
+    return { show };
+  };
+  ux.verdict = (el, parts) => {
+    const total = parts.reduce((t, p) => t + p.n, 0) || 1;
+    el.innerHTML = `<div class="meter">${parts.map((p) => p.n ? `<i class="${p.cls}" style="width:${(p.n / total) * 100}%"></i>` : "").join("")}</div>
+      <div class="key">${parts.map((p) => `<span><i class="${p.cls}"></i><b>${p.n}</b> ${esc(p.label)}</span>`).join("")}</div>`;
+  };
+
   /* run lists: every .runs[data-kind] on the page */
   async function renderLists() {
     const els = $$(".runs[data-kind]"); if (!els.length) return;
@@ -234,41 +307,40 @@
     // stats
     const c = s.counts || {};
     const n = (L.findings || []).length;
-    const statsEl = $("#stats");
-    const prevV = [...statsEl.querySelectorAll(".stat b")].map((b) => b.dataset.v);
-    statsEl.innerHTML = `
-      <div class="stat"><b>${(L.sources || []).length}</b><span>sources</span></div>
-      <div class="stat v"><b>${c.verified ?? 0}</b><span>verified</span></div>
-      <div class="stat p"><b>${c.partially_verified ?? 0}</b><span>partially verified</span></div>
-      <div class="stat r"><b>${c.unverified ?? 0}</b><span>refused of ${n}</span></div>`;
-    [...statsEl.querySelectorAll(".stat b")].forEach((b, i) => { if (prevV[i] != null) b.dataset.v = prevV[i]; });
-    window.__animateStats(statsEl);
     window.__rail($("#stages"), STAGES, s.stage, ["draft", "approved", "rejected"].includes(s.status));
+    window.__ux.verdict($("#verdict"), [
+      {cls: "v", n: c.verified ?? 0, label: "verified"},
+      {cls: "p", n: c.partially_verified ?? 0, label: "partially verified"},
+      {cls: "r", n: c.unverified ?? 0, label: "refused"},
+    ]);
     const ux = window.__ux;
     ux.progress($("#progress"), s, STAGES, STAGE_HINT, "diagnostic");
     ux.title(s.status, subj.full_name, "Track B");
-    $("#draftLink").textContent = s.status === "draft" ? "Review draft" : "Read diagnostic";
     ux.logOpen($("#logCard"), ux.running(s));
     if (ux.running(s)) ux.bar({ spin: true, title: `Step ${Math.max(1, STAGES.indexOf(s.stage) + 1)} of ${STAGES.length}`, sub: `${esc(STAGE_HINT[s.stage] || "starting")} \u00b7 <span data-since="${esc(s.created_at)}">${ux.clock(s.created_at)}</span>` });
-    else if (s.status === "draft") ux.bar({ title: "Draft ready", sub: "Needs a named approver", action: { label: "Review and approve", href: `/runs/${s.id}/draft` } });
+    else if (s.status === "draft") ux.bar({ title: "Draft ready", sub: "Needs a named approver", action: { label: "Sign off", onClick: () => ux.goSection("diagnostic", "#gate") } });
     else if (s.status === "failed") ux.bar({ title: "Run failed", sub: "The reason is under the steps", action: { label: "Run again", onClick: () => ux.rerun("diagnostic", s.input_url) } });
     else ux.bar(null);
-    // summary
-    if (L.summary) { $("#summaryCard").hidden = false; $("#summary").innerHTML = `<p>${esc(L.summary)}</p>`; }
-    // gaps
-    if ((L.gaps || []).length) {
-      $("#gapsCard").hidden = false;
-      $("#gaps").innerHTML = L.gaps.map((g, i) => `<div class="gap"><span class="n">${i + 1}</span><b class="t">${esc(g.title)}</b>
-        <p>${esc(g.what_is_missing)} ${esc(g.why_it_matters)}</p><p class="fix">Fix: ${esc(g.fix)}</p><div class="ev">Evidence: ${esc((g.evidence || []).join(", "))}</div></div>`).join("");
+    // the document itself, read on this page instead of a second one
+    if (["draft", "approved", "rejected"].includes(s.status) && !renderRun._doc) {
+      renderRun._doc = true;
+      fetch(`/runs/${s.id}/diagnostic.md`).then((r) => (r.ok ? r.text() : Promise.reject())).then((t) => { $("#doc").innerHTML = md(t); }).catch(() => {});
     }
+    // sections
+    const F0 = L.findings || [];
+    window.__ux.sections($("#sectabs"), [
+      {id: "diagnostic", label: "Diagnostic"},
+      {id: "findings", label: "Findings", n: F0.length},
+      {id: "sources", label: "Sources", n: (L.sources || []).length},
+      {id: "log", label: "Log"},
+    ], s.id);
     // conflicts
     const C = L.conflicts || [];
-    $("#conflictsCard").hidden = !C.length;
-    if (C.length) $("#conflicts").innerHTML = C.map((c) => `<div class="gap"><b class="t">${esc(c.ids.join(" and "))}</b><p>${esc(c.what)}</p>${c.claims.map((x) => `<p class="hint">${esc(x)}</p>`).join("")}${c.sources.map((u) => window.__ux.link(u)).join("")}</div>`).join("");
+    const conflictsHost = $("#conflicts");
+    if (conflictsHost) conflictsHost.innerHTML = C.map((c) => `<div class="gap"><b class="t">${esc(c.ids.join(" and "))}</b><p>${esc(c.what)}</p>${c.claims.map((x) => `<p class="hint">${esc(x)}</p>`).join("")}${c.sources.map((u) => window.__ux.link(u)).join("")}</div>`).join("");
     // findings
     const F = L.findings || [];
     if (F.length) {
-      $("#findingsCard").hidden = false;
       const counts = { all: F.length, verified: 0, partially_verified: 0, unverified: 0 };
       F.forEach((f) => counts[f.label]++);
       $("#tabs").innerHTML = ["all", "verified", "partially_verified", "unverified"].map((k) =>
@@ -305,45 +377,39 @@
   }
   function renderGate(s, L, page) {
     const g = $("#gate"); if (!g) return;
-    const rid = s.id;
-    if (s.status === "approved") {
-      g.innerHTML = `<h2>Human gate</h2><div class="ok-banner"><b>Approved</b> by ${esc(s.approval.by)}<br><span class="hint" style="color:inherit">${when(s.approval.at)}</span><p style="margin:8px 0 0">${esc(s.approval.note)}</p></div>`;
-    } else if (s.status === "rejected") {
-      g.innerHTML = `<h2>Human gate</h2><div class="bad-banner"><b>Rejected</b> by ${esc(s.rejection.by)}<p style="margin:8px 0 0">${esc(s.rejection.note)}</p></div>`;
-    } else if (s.status === "draft") {
-      const warns = (L && L.lint) || [];
-      g.innerHTML = `<h2>Human gate</h2>
-        <p class="hint">Read the refused list and open the sources before you sign. Your name and note go into the ledger and the diagnostic header.</p>
-        ${warns.length && page === "run" ? `<ul class="warnlist">${warns.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>` : ""}
-        ${page === "run" ? `<p><a class="btn" href="/runs/${esc(rid)}/draft">Open the full draft</a></p>` : ""}
-        ${window.__gateNote()}
-        <form id="approveForm">${window.__tokenField()}<label class="lbl">Your name</label><input class="text" name="by" required placeholder="Full name">
-        <label class="lbl">What did you check?</label><textarea class="text" name="note" rows="3" required placeholder="At least 10 characters"></textarea>
-        <div class="err" id="gateErr"></div>
-        <div style="display:flex;gap:10px;margin-top:12px"><button class="btn primary" type="submit">Approve</button><button class="btn danger" type="button" id="rejectBtn">Reject</button></div></form>`;
-      const form = $("#approveForm");
-      const submit = async (action) => {
-        const data = Object.fromEntries(new FormData(form).entries());
-        $("#gateErr").textContent = "";
-        try { await postForm(`/runs/${rid}/${action}`, data); location.reload(); }
-        catch (ex) { $("#gateErr").textContent = ex.message; }
-      };
-      form.addEventListener("submit", (e) => { e.preventDefault(); submit("approve"); });
-      $("#rejectBtn").addEventListener("click", () => submit("reject"));
-    } else if (s.status === "failed") {
-      g.innerHTML = `<h2>Human gate</h2><div class="bad-banner"><b>Run failed</b><p style="margin:8px 0 0">${esc(s.error)}</p></div><p class="hint">Fix the cause and start a new run. Nothing is approved from a failed run.</p>`;
-    } else {
-      g.innerHTML = `<h2>Human gate</h2><p class="hint"><span class="spin"></span>Waiting for the pipeline to produce a draft.</p>`;
-    }
+    const refused = (L.findings || []).filter((f) => f.label === "unverified").length;
+    const subj = (s.subject || {}).full_name || "this subject";
+    window.__ux._sections = window.__ux._sections || null;
+    window.__ux.signoff(g, {
+      status: s.status, approval: s.approval, rejection: s.rejection, error: s.error,
+      waiting: "Waiting for the pipeline to produce a draft.",
+      what: `the diagnostic for ${subj}`,
+      reject: true,
+      checks: [
+        {label: `Read the ${refused} refused claim${refused === 1 ? "" : "s"}`, sec: "findings", sel: "#findingsSec"},
+        {label: "Open at least one source", sec: "sources", sel: "#sourcesSec"},
+        {label: "Read the summary and the three gaps", sec: "diagnostic", sel: "#diagnosticSec"},
+      ],
+      onSubmit: async (action, data) => { await postForm(`/runs/${s.id}/${action}`, data); location.reload(); },
+    });
   }
   async function runPage(once) {
     const app = $("#app"); if (!app || !$("#stages") || app.dataset.kind === "radar") return;
     const rid = app.dataset.run;
+    let seen = null, lines = 0;
     async function tick() {
       try {
-        const [d, log] = await Promise.all([getJSON(`/runs/${rid}/ledger.json`), getJSON(`/runs/${rid}/log`)]);
-        renderRun(d); renderLog(log);
-        if (!once && ["created", "running"].includes(d.run.status)) setTimeout(tick, 3000);
+        /* The status is a few hundred bytes; the ledger of a finished run is hundreds of kilobytes.
+           Only pull the heavy documents when the run has actually moved. */
+        const st = await getJSON(`/runs/${rid}/status`);
+        if (st.updated_at !== seen) {
+          seen = st.updated_at;
+          const [d, log] = await Promise.all([getJSON(`/runs/${rid}/ledger.json`), getJSON(`/runs/${rid}/log`)]);
+          lines = log.length; renderRun(d); renderLog(log);
+        } else if (st.log_lines !== lines) {
+          const log = await getJSON(`/runs/${rid}/log`); lines = log.length; renderLog(log);
+        }
+        if (!once && ["created", "running"].includes(st.status)) setTimeout(tick, 2000);
       } catch (ex) { $("#runError").textContent = ex.message; if (!once) setTimeout(tick, 5000); }
     }
     tick();
@@ -485,30 +551,40 @@
       });
     });
   }
-  function renderGate(s, L, rid, page) {
-    const g = $("#gate"); if (!g) return;
-    if (s.status === "approved") {
-      g.innerHTML = `<h2>Human gate</h2><div class="ok-banner"><b>Brief approved</b> by ${esc(s.approval.by)}<br><span class="hint" style="color:inherit">${when(s.approval.at)}</span><p style="margin:8px 0 0">${esc(s.approval.note)}</p></div>`;
-    } else if (s.status === "draft") {
-      const amb = (L.mentions || []).filter((m) => m.final && m.final.ambiguous).length;
-      g.innerHTML = `<h2>Human gate</h2><p class="hint">Approving circulates the brief as it stands. ${amb ? `<b>${amb} ambiguous item${amb > 1 ? "s are" : " is"} still undecided</b>; you can approve anyway, they stay listed as held.` : "No ambiguous items remain."}</p>
-        ${page === "run" ? `<p><a class="btn" href="/radar/runs/${esc(rid)}/brief">Read the full brief</a></p>` : ""}
-        ${window.__gateNote()}
-        <form id="approveForm">${window.__tokenField()}<label class="lbl">Your name</label><input class="text" name="by" required placeholder="Full name">
-        <label class="lbl">What did you check?</label><textarea class="text" name="note" rows="3" required placeholder="At least 10 characters"></textarea>
-        <div class="err" id="gateErr"></div><div style="margin-top:12px"><button class="btn primary" type="submit">Approve brief</button></div></form>`;
-      $("#approveForm").addEventListener("submit", async (e) => {
-        e.preventDefault(); const d = Object.fromEntries(new FormData(e.target).entries());
-        try { await postForm(`/radar/runs/${rid}/approve`, d); location.reload(); } catch (ex) { $("#gateErr").textContent = ex.message; }
-      });
-    } else if (s.status === "failed") {
-      g.innerHTML = `<h2>Human gate</h2><div class="bad-banner"><b>Run failed</b><p style="margin:8px 0 0">${esc(s.error)}</p></div>`;
-    } else {
-      g.innerHTML = `<h2>Human gate</h2><p class="hint"><span class="spin"></span>Waiting for the pipeline to produce a brief.</p>`;
-    }
+  function queueItem(m, L, rid, s) {
+    const f = m.final || {}, p1 = m.pass1 || {}, p2 = m.pass2 || {};
+    const reading = (p, n) => p && p.model ? `<div class="reading">Pass ${n} · ${esc(p.model)} · about ${esc(p.about_subject)} · ${esc(p.risk)} · confidence ${(p.confidence ?? 0).toFixed(2)}</div>` : "";
+    const opts = [
+      {about: "yes", risk: "ignore", label: "It is them", sub: "nothing to do", primary: true},
+      {about: "yes", risk: "watch", label: "It is them", sub: "keep watching"},
+      {about: "yes", risk: "respond_now", label: "It is them", sub: "needs a reply"},
+      {about: "no", risk: "ignore", label: "Not them", sub: "a namesake"},
+    ];
+    return `<div class="queue-item" id="act-${esc(m.id)}">
+      <div class="sub">${chip(m.channel)} ${m.seen_before ? chip("seen before", "plain") : chip("new", "plain")} ${m.reach ? chip("reach " + m.reach.bucket, "plain") : ""} <span>${esc(m.publisher)}</span> <span>${esc(m.date || "undated")}</span></div>
+      <h3>${esc(m.title || m.url)}</h3>
+      ${window.__ux.link(m.url)}
+      <p class="why">${esc(m.snippet || "")}</p>
+      <p class="why"><b>Held because:</b> ${esc(f.why || "")}</p>
+      <div class="readings">${reading(p1, 1)}${reading(p2, 2)}</div>
+      <div class="quick">${opts.map((o) => `<button type="button" class="btn${o.primary ? " primary" : ""}" data-m="${esc(m.id)}" data-about="${o.about}" data-risk="${o.risk}">${o.label} <small>${o.sub}</small></button>`).join("")}</div>
+      <div class="err"></div>
+    </div>`;
+  }
+  function wireQueue(rid, reload) {
+    document.querySelectorAll(".queue-item .quick button").forEach((b) => b.addEventListener("click", async () => {
+      const item = b.closest(".queue-item"), err = $(".err", item);
+      const by = window.__ux.name.get() || ($("#qname") ? $("#qname").value.trim() : "");
+      if (!by) { err.textContent = "Add your name above first; decisions are recorded against it."; if ($("#qname")) $("#qname").focus(); return; }
+      window.__ux.name.set(by);
+      [...item.querySelectorAll("button")].forEach((x) => { x.disabled = true; });
+      err.textContent = "";
+      try { await postForm(`/radar/runs/${rid}/mentions/${b.dataset.m}/decide`, {by, about_subject: b.dataset.about, risk: b.dataset.risk, note: ""}); reload(); }
+      catch (ex) { err.textContent = ex.message; [...item.querySelectorAll("button")].forEach((x) => { x.disabled = false; }); }
+    }));
   }
   function renderRadar(d, rid) {
-    const s = d.run, L = d.ledger, c = s.counts || {};
+    const s = d.run, L = d.ledger, c = s.counts || {}, ux = window.__ux;
     $("#subject").textContent = (L.subjects || []).join(" and ") || "Profiling subjects";
     $("#meta").textContent = `${when(s.created_at)}${L.profile ? "  ·  " + (L.profile.disambiguators || []).slice(0, 3).join(" · ") : ""}`;
     const sc = $("#statusChip"); sc.className = "chip " + s.status; sc.textContent = s.status.replace(/_/g, " ");
@@ -519,45 +595,69 @@
       let cls = ""; if (s.status === "failed" && i === cur) cls = "failed"; else if (["draft", "approved"].includes(s.status)) cls = "done"; else if (i < cur) cls = "done"; else if (i === cur) cls = "active";
       return `<div class="stage ${cls}"><b>${esc(st.replace("_", " "))}</b><span>${esc(HINT[st])}</span></div>`;
     }).join("");
-    window.__ux.scrollActiveStage($("#stages"));
-    const statsEl = $("#stats");
-    const prevV = [...statsEl.querySelectorAll(".stat b")].map((b) => b.dataset.v);
-    statsEl.innerHTML = `<div class="stat"><b>${c.about_subject ?? (L.mentions || []).length}</b><span>mentions about them</span></div>
-      <div class="stat r"><b>${c.respond_now ?? 0}</b><span>respond now</span></div><div class="stat p"><b>${c.watch ?? 0}</b><span>watch</span></div>
-      <div class="stat a"><b>${c.ambiguous ?? 0}</b><span>ambiguous, held</span></div>`;
-    [...statsEl.querySelectorAll(".stat b")].forEach((b, i) => { if (prevV[i] != null) b.dataset.v = prevV[i]; });
-    window.__animateStats(statsEl);
+    ux.scrollActiveStage($("#stages"));
     window.__rail($("#stages"), STAGES, s.stage, ["draft", "approved"].includes(s.status));
-    const ux = window.__ux;
     ux.progress($("#progress"), s, STAGES, HINT, "radar");
     ux.title(s.status, (L.subjects || []).join(" and "), "Track A");
-    ux.logOpen($("#logCard"), ux.running(s));
-    const pending = (L.mentions || []).filter((m) => m.final);
-    const ambN = pending.filter((m) => m.final.ambiguous).length;
-    const respN = pending.filter((m) => !m.final.ambiguous && m.final.about_subject !== "no" && m.final.risk === "respond_now" && !(L.responses || {})[m.id]).length;
-    const firstAmb = pending.find((m) => m.final.ambiguous);
-    const firstResp = pending.find((m) => !m.final.ambiguous && m.final.about_subject !== "no" && m.final.risk === "respond_now" && !(L.responses || {})[m.id]);
-    if (ux.running(s)) ux.bar({ spin: true, title: `Step ${Math.max(1, STAGES.indexOf(s.stage) + 1)} of ${STAGES.length}`, sub: `${esc(HINT[s.stage] || "starting")} \u00b7 <span data-since="${esc(s.created_at)}">${ux.clock(s.created_at)}</span>` });
-    else if (s.status === "draft" && ambN) ux.bar({ title: `${ambN} item${ambN > 1 ? "s need" : " needs"} your decision`, sub: "The two readings disagreed", action: { label: "Decide", onClick: () => ux.jump(`#act-${firstAmb.id}`) } });
-    else if (s.status === "draft" && respN) ux.bar({ title: `${respN} mention${respN > 1 ? "s" : ""} may need a reply`, sub: "Nothing is drafted until you approve", action: { label: "Review", onClick: () => ux.jump(`#act-${firstResp.id}`) } });
-    else if (s.status === "draft") ux.bar({ title: "Brief ready", sub: "Needs a named approver", action: { label: "Approve", onClick: () => ux.jump("#gate") } });
-    else if (s.status === "failed") ux.bar({ title: "Run failed", sub: "The reason is under the steps", action: { label: "Run again", onClick: () => ux.rerun("radar", s.input_url) } });
-    else ux.bar(null);
+    ux.verdict($("#verdict"), [
+      {cls: "rn", n: c.respond_now ?? 0, label: "respond now"},
+      {cls: "w", n: c.watch ?? 0, label: "watch"},
+      {cls: "am", n: c.ambiguous ?? 0, label: "held for you"},
+      {cls: "ig", n: c.ignore ?? 0, label: "nothing needed"},
+    ]);
     if (L.profile) { $("#profileCard").hidden = false; $("#profile").innerHTML = `<p>${esc(L.profile.profile)}</p><p>${(L.profile.disambiguators || []).map((x) => chip(x, "plain")).join(" ")}</p>`; }
+
     const M = (L.mentions || []).filter((m) => m.final);
+    const amb = M.filter((m) => m.final.ambiguous);
+    const resp = M.filter((m) => !m.final.ambiguous && m.final.about_subject !== "no" && m.final.risk === "respond_now");
+    const waiting = amb.length + resp.filter((m) => !(L.responses || {})[m.id] || (L.responses || {})[m.id].status === "draft").length;
+
+    ux._sections = ux.sections($("#sectabs"), [
+      {id: "queue", label: "Needs you", n: waiting, attention: waiting > 0},
+      {id: "brief", label: "Brief"},
+      {id: "mentions", label: "Mentions", n: M.length},
+      {id: "log", label: "Log"},
+    ], s.id);
+
+    $("#queue").innerHTML = waiting
+      ? `<p class="hint">Decisions are recorded against your name and carried into next week's run.</p>
+         <label class="lbl">Your name</label><input class="text" id="qname" placeholder="Full name" value="${esc(ux.name.get())}">
+         ${amb.length ? `<h2 style="margin:18px 0 8px">Held for you (${amb.length})</h2><p class="hint">The two readings disagreed, so the system did not guess.</p>${amb.map((m) => queueItem(m, L, rid, s)).join("")}` : ""}
+         ${resp.length ? `<h2 style="margin:18px 0 8px">May need a reply (${resp.length})</h2><p class="hint">No reply exists until you approve drafting one, and the system never posts.</p>${resp.map((m) => mentionCard(m, L, rid, s, "action")).join("")}` : ""}`
+      : `<p class="queue-empty">Nothing is waiting for you. ${M.length ? "Every mention was a confident call by both readings." : ""}</p>`;
+    if (waiting) { wireQueue(rid, () => radarRun(true)); wireForms(rid, () => radarRun(true)); }
+
+    if (["draft", "approved"].includes(s.status) && !renderRadar._doc) {
+      renderRadar._doc = true;
+      fetch(`/radar/runs/${rid}/brief.md`).then((r) => (r.ok ? r.text() : Promise.reject())).then((t) => { $("#doc").innerHTML = md(t); }).catch(() => {});
+    }
+
     if (M.length) {
-      const amb = M.filter((m) => m.final.ambiguous), resp = M.filter((m) => m.final.about_subject !== "no" && m.final.risk === "respond_now" && !m.final.ambiguous);
-      $("#ambCard").hidden = !amb.length; $("#ambiguous").innerHTML = amb.map((m) => mentionCard(m, L, rid, s, "action")).join("");
-      $("#respondCard").hidden = !resp.length; $("#respond").innerHTML = resp.map((m) => mentionCard(m, L, rid, s, "action")).join("");
-      $("#mentionsCard").hidden = false;
-      const counts = { all: M.length, respond_now: 0, watch: 0, ignore: 0, namesake: 0 };
+      const counts = {all: M.length, respond_now: 0, watch: 0, ignore: 0, namesake: 0};
       M.forEach((m) => { if (m.final.about_subject === "no") counts.namesake++; else counts[m.final.risk]++; });
       $("#tabs").innerHTML = ["all", "respond_now", "watch", "ignore", "namesake"].map((k) => `<button class="tab ${filter === k ? "on" : ""}" data-f="${k}">${k.replace("_", " ")} · ${counts[k]}</button>`).join("");
       $("#tabs").querySelectorAll(".tab").forEach((b) => b.addEventListener("click", () => { filter = b.dataset.f; renderRadar(d, rid); }));
       $("#mentions").innerHTML = M.filter((m) => filter === "all" || (filter === "namesake" ? m.final.about_subject === "no" : m.final.about_subject !== "no" && m.final.risk === filter)).map((m) => mentionCard(m, L, rid, s, "list")).join("") || '<div class="empty">Nothing here.</div>';
-      wireForms(rid, () => radarRun(true));
     }
-    renderGate(s, L, rid, "run");
+
+    if (ux.running(s)) ux.bar({spin: true, title: `Step ${Math.max(1, STAGES.indexOf(s.stage) + 1)} of ${STAGES.length}`, sub: `${esc(HINT[s.stage] || "starting")} · <span data-since="${esc(s.created_at)}">${ux.clock(s.created_at)}</span>`});
+    else if (s.status === "draft" && waiting) ux.bar({title: `${waiting} item${waiting > 1 ? "s need" : " needs"} you`, sub: "Decide, then sign off", action: {label: "Open", onClick: () => ux.goSection("queue", "#queueSec")}});
+    else if (s.status === "draft") ux.bar({title: "Brief ready", sub: "Needs a named approver", action: {label: "Sign off", onClick: () => ux.jump("#gate")}});
+    else if (s.status === "failed") ux.bar({title: "Run failed", sub: "The reason is under the steps", action: {label: "Run again", onClick: () => ux.rerun("radar", s.input_url)}});
+    else ux.bar(null);
+
+    ux.signoff($("#gate"), {
+      status: s.status, approval: s.approval, rejection: s.rejection, error: s.error,
+      waiting: "Waiting for the pipeline to produce a brief.",
+      what: `this week's brief for ${(L.subjects || []).join(" and ")}`,
+      approveLabel: "Approve brief",
+      checks: [
+        {label: waiting ? `Decide ${waiting} item${waiting > 1 ? "s" : ""} waiting for you` : "Nothing is waiting for you", sec: "queue", sel: "#queueSec", done: !waiting},
+        {label: "Read the brief", sec: "brief", sel: "#briefSec"},
+        {label: `Skim the ${M.length} mentions`, sec: "mentions", sel: "#mentionsSec"},
+      ],
+      onSubmit: async (action, data) => { await postForm(`/radar/runs/${rid}/approve`, data); location.reload(); },
+    });
   }
   function renderLog(entries) {
     const el = $("#log"); if (!el) return; const atBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 30;
@@ -569,12 +669,18 @@
   async function radarRun(once) {
     const app = $("#app"); if (!app || app.dataset.kind !== "radar" || !$("#stages")) return;
     const rid = app.dataset.run;
+    let seen = null, lines = 0;
     async function tick() {
       try {
-        const [d, log] = await Promise.all([getJSON(`/radar/runs/${rid}/ledger.json`), getJSON(`/radar/runs/${rid}/log`)]);
-        renderRadar(d, rid); renderLog(log);
-        const drafting = Object.values(d.ledger.responses || {}).some((r) => r.status === "drafting");
-        if (!once && (["created", "running"].includes(d.run.status) || drafting)) setTimeout(tick, 3000);
+        const st = await getJSON(`/radar/runs/${rid}/status`);
+        if (st.updated_at !== seen) {
+          seen = st.updated_at;
+          const [d, log] = await Promise.all([getJSON(`/radar/runs/${rid}/ledger.json`), getJSON(`/radar/runs/${rid}/log`)]);
+          lines = log.length; renderRadar(d, rid); renderLog(log);
+        } else if (st.log_lines !== lines) {
+          const log = await getJSON(`/radar/runs/${rid}/log`); lines = log.length; renderLog(log);
+        }
+        if (!once && (["created", "running"].includes(st.status) || st.drafting)) setTimeout(tick, 2000);
       } catch (ex) { $("#runError").textContent = ex.message; if (!once) setTimeout(tick, 5000); }
     }
     tick();
@@ -604,7 +710,6 @@
       const sc = $("#statusChip"); sc.className = "chip " + s.status; sc.textContent = s.status;
       $("#doc").innerHTML = md(text);
       const warns = d.ledger.lint || []; if (warns.length) { $("#warnCard").hidden = false; $("#warns").innerHTML = warns.map((w) => `<li>${esc(w)}</li>`).join(""); }
-      renderGate(s, d.ledger, rid, "brief");
       window.__ux.title(s.status, (d.ledger.subjects || []).join(" and "), "Track A brief");
       if (s.status === "draft") window.__ux.bar({ title: "Approve the brief", sub: "The form is after the brief", action: { label: "Go to approval", onClick: () => window.__ux.jump("#gate") } });
       else window.__ux.bar(null);

@@ -7,7 +7,7 @@
     </div>
     <div class="actions">
       <span class="chip" id="statusChip">created</span>
-      <a class="btn primary" id="draftLink" href="/runs/{{run_id}}/draft" hidden>Review draft</a>
+      <a class="btn" id="draftLink" href="/runs/{{run_id}}/draft" hidden>Full page view</a>
       <details class="files"><summary class="btn">Files</summary><div class="menu">
         <a href="/runs/{{run_id}}/diagnostic.md" id="mdLink" hidden>diagnostic.md</a>
         <a href="/runs/{{run_id}}/ledger.json" target="_blank" rel="noopener">ledger.json</a>
@@ -17,19 +17,18 @@
   </div>
   <div class="stages" id="stages"></div>
   <div class="progress" id="progress" aria-live="polite"></div>
-  <div class="stats" id="stats"></div>
+  <div class="verdict" id="verdict"></div>
   <div class="err" id="runError"></div>
   <div class="cols">
     <div class="stack">
-      <div class="card" id="summaryCard" hidden><h2>Summary</h2><div id="summary" class="doc"></div></div>
-      <div class="card" id="gapsCard" hidden><h2>Three biggest gaps</h2><div id="gaps"></div></div>
-      <div class="card" id="conflictsCard" hidden><h2>Conflicts between sources</h2><p class="hint">These findings stand, but another source gives a different figure for the same thing. Quote neither number without naming its source.</p><div id="conflicts"></div></div>
-      <div class="card" id="findingsCard" hidden><h2>Findings ledger</h2><div class="tabs" id="tabs"></div><div id="findings"></div></div>
-      <details class="card logcard" id="logCard"><summary><h2>Log</h2></summary><div class="log" id="log"></div></details>
+      <nav class="sectabs" id="sectabs" aria-label="Sections"></nav>
+      <div class="card sec" data-sec="diagnostic" id="diagnosticSec"><div class="doc" id="doc"><span class="spin"></span>Waiting for the draft</div></div>
+      <div class="card sec" data-sec="findings" id="findingsSec" hidden><div class="tabs" id="tabs"></div><div id="findings"></div></div>
+      <div class="card sec" data-sec="sources" id="sourcesSec" hidden><div id="sources" class="empty">Nothing fetched yet.</div></div>
+      <div class="card sec" data-sec="log" id="logSec" hidden><div class="log" id="log"></div></div>
     </div>
     <div class="stack">
       <div class="card gate" id="gate"></div>
-      <div class="card" id="sourcesCard"><h2>Sources</h2><div id="sources" class="empty">Nothing fetched yet.</div></div>
     </div>
   </div>
 </div>

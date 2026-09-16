@@ -213,6 +213,18 @@ def diagnostic_md(run_id: str):
     return PlainTextResponse(run.diagnostic_path.read_text(encoding="utf-8"), media_type="text/markdown; charset=utf-8")
 
 
+@app.get("/runs/{run_id}/status")
+def run_status(run_id: str):
+    """Small, cheap poll target. The ledger of a finished run is hundreds of kilobytes; a page that
+    polls every few seconds only needs to know whether anything changed."""
+    run = _load(run_id)
+    s = run.state
+    subj = s.get("subject") or {}
+    return {"id": s["id"], "status": s["status"], "stage": s.get("stage"), "updated_at": s["updated_at"],
+            "created_at": s["created_at"], "error": s.get("error"), "counts": s.get("counts") or {},
+            "subject": subj.get("full_name"), "log_lines": sum(1 for _ in open(run.folder / "log.jsonl")) if (run.folder / "log.jsonl").exists() else 0}
+
+
 @app.get("/runs/{run_id}/ledger.json")
 def ledger_json(run_id: str):
     run = _load(run_id)
@@ -275,6 +287,17 @@ def radar_brief_md(run_id: str):
     if not run.brief_path.exists():
         raise HTTPException(404, "no brief yet")
     return PlainTextResponse(run.brief_path.read_text(encoding="utf-8"), media_type="text/markdown; charset=utf-8")
+
+
+@app.get("/radar/runs/{run_id}/status")
+def radar_status(run_id: str):
+    run = _load(run_id, "radar")
+    s = run.state
+    return {"id": s["id"], "status": s["status"], "stage": s.get("stage"), "updated_at": s["updated_at"],
+            "created_at": s["created_at"], "error": s.get("error"), "counts": s.get("counts") or {},
+            "subject": ", ".join(run.ledger.get("subjects") or []),
+            "log_lines": sum(1 for _ in open(run.folder / "log.jsonl")) if (run.folder / "log.jsonl").exists() else 0,
+            "drafting": any(r.get("status") == "drafting" for r in (run.ledger.get("responses") or {}).values())}
 
 
 @app.get("/radar/runs/{run_id}/ledger.json")

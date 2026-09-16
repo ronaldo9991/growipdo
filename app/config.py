@@ -42,12 +42,15 @@ PRIMARY_HOSTS = (
 # Wire services that carry company issued releases. Treated as the company's own word.
 WIRE_HOSTS = ("globenewswire.com", "prnewswire.com", "businesswire.com", "newswire.ca", "zawya.com/en/press-release")
 
-FETCH_TIMEOUT = 40.0
+FETCH_TIMEOUT = 15.0   # a slow host is recorded as could not check rather than holding up the run
 MAX_SOURCES = 36
 MAX_COMPANY_SOURCES = 12
 MAX_CLAIMS_PER_SOURCE = 10
 MAX_CLAIMS_TOTAL = 72
-VERIFY_WORKERS = int(os.environ.get("VERIFY_WORKERS") or 4)   # claims verified concurrently
+VERIFY_WORKERS = int(os.environ.get("VERIFY_WORKERS") or 8)     # claims verified concurrently
+CLAIM_WORKERS = int(os.environ.get("CLAIM_WORKERS") or 8)       # sources read for claims concurrently
+CLASSIFY_WORKERS = int(os.environ.get("CLASSIFY_WORKERS") or 8) # mentions classified concurrently
+FETCH_WORKERS = int(os.environ.get("FETCH_WORKERS") or 12)      # pages fetched concurrently
 APPROVER_TOKEN = os.environ.get("APPROVER_TOKEN") or ""        # required on every human gate action when set
 RADAR_SCHEDULE = os.environ.get("RADAR_SCHEDULE") or ""        # e.g. "mon 09:00" (UTC); empty disables the scheduler
 RADAR_SUBJECTS = os.environ.get("RADAR_SUBJECTS") or "Nidhi Hooda, Growpido"

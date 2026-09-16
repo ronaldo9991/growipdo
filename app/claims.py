@@ -1,6 +1,8 @@
 """Stage 3: pull atomic factual claims out of each fetched source, then dedupe them."""
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor
+
 from . import config
 from .fetch import read_snapshot
 from .util import tokenize, number_keys, subject_keys
@@ -17,60 +19,62 @@ Rules:
 Return JSON: {"claims": [{"text": string, "quote": string, "category": one of regulatory|funding|traction|award|role|founding|other, "about": "person"|"company", "numbers": [strings as written]}]}"""
 
 
-def extract_claims(identity: dict, sources: list[dict], llm, log,
-                   per_source: int = config.MAX_CLAIMS_PER_SOURCE) -> list[dict]:
+def _claims_from_source(src: dict, identity: dict, keys: list[str], llm, log, per_source: int) -> list[dict]:
+    """Claims from one page. Returns an empty list when the page never names the subject."""
     name = identity["full_name"]
     company = identity.get("company") or ""
-    claims: list[dict] = []
-    keys = subject_keys(identity)
-    for src in sources:
-        if src["status"] != "ok":
+    text = read_snapshot(src["snapshot"])[:14000]
+    if not any(k in text.lower() for k in keys):
+        # A page that never names the person or the company cannot yield a claim about them.
+        # Without this the extractor invents one from a page that is merely on topic.
+        log("claims", f"{src['id']} never names the subject, skipped", url=src["url"])
+        return []
+    user = (
+        f"Subject person: {name}\nSubject company: {company}\nSource URL: {src['url']}\n"
+        f"Source tier: {src['tier']}\n\nPage text:\n{text}\n\nExtract at most {per_source} claims."
+    )
+    try:
+        out = llm.json(EXTRACT_SYSTEM, user, max_tokens=3000)
+    except Exception as e:
+        log("claims", f"extraction failed for {src['id']}", error=str(e))
+        raise
+    items = out.get("claims") if isinstance(out, dict) else out
+    page_norm = _norm(text)
+    claims, dropped = [], 0
+    for item in items or []:
+        if not isinstance(item, dict) or not item.get("text"):
             continue
-        text = read_snapshot(src["snapshot"])[:14000]
-        low = text.lower()
-        if not any(k in low for k in keys):
-            # A page that never names the person or the company cannot yield a claim about them.
-            # Without this the extractor invents one from a page that is merely on topic.
-            log("claims", f"{src['id']} never names the subject, skipped", url=src["url"])
+        if not quote_in_page(item.get("quote") or "", page_norm):
+            dropped += 1
+            log("claims", f"dropped a claim from {src['id']}: its quote is not in the page",
+                claim=item["text"][:120], quote=(item.get("quote") or "")[:120])
             continue
-        user = (
-            f"Subject person: {name}\nSubject company: {company}\nSource URL: {src['url']}\n"
-            f"Source tier: {src['tier']}\n\nPage text:\n{text}\n\nExtract at most {per_source} claims."
-        )
-        try:
-            out = llm.json(EXTRACT_SYSTEM, user, max_tokens=3000)
-        except Exception as e:
-            log("claims", f"extraction failed for {src['id']}", error=str(e))
-            raise
-        items = out.get("claims") if isinstance(out, dict) else out
-        n = 0
-        dropped = 0
-        page_norm = _norm(text)
-        for item in items or []:
-            if not isinstance(item, dict) or not item.get("text"):
-                continue
-            if not quote_in_page(item.get("quote") or "", page_norm):
-                dropped += 1
-                log("claims", f"dropped a claim from {src['id']}: its quote is not in the page",
-                    claim=item["text"][:120], quote=(item.get("quote") or "")[:120])
-                continue
-            claims.append(
-                {
-                    "text": item["text"].strip(),
-                    "quote": (item.get("quote") or "").strip(),
-                    "category": item.get("category") or "other",
-                    "about": item.get("about") or "company",
-                    "numbers": [str(x) for x in item.get("numbers") or []],
-                    "origin": src["id"],
-                    "origin_url": src["url"],
-                    "origin_tier": src["tier"],
-                }
-            )
-            n += 1
-            if n >= per_source:
-                break
-        log("claims", f"{n} claims from {src['id']} ({src['tier']})" + (f", {dropped} dropped" if dropped else ""))
+        claims.append({
+            "text": item["text"].strip(),
+            "quote": (item.get("quote") or "").strip(),
+            "category": item.get("category") or "other",
+            "about": item.get("about") or "company",
+            "numbers": [str(x) for x in item.get("numbers") or []],
+            "origin": src["id"],
+            "origin_url": src["url"],
+            "origin_tier": src["tier"],
+        })
+        if len(claims) >= per_source:
+            break
+    log("claims", f"{len(claims)} claims from {src['id']} ({src['tier']})" + (f", {dropped} dropped" if dropped else ""))
     return claims
+
+
+def extract_claims(identity: dict, sources: list[dict], llm, log,
+                   per_source: int = config.MAX_CLAIMS_PER_SOURCE) -> list[dict]:
+    """Every readable source is read independently, so sources are read concurrently. Claims keep
+    source order, which is what the round robin selection below expects."""
+    keys = subject_keys(identity)
+    readable = [s for s in sources if s["status"] == "ok"]
+    log("claims", f"reading {len(readable)} sources, {config.CLAIM_WORKERS} at a time")
+    with ThreadPoolExecutor(max_workers=max(1, config.CLAIM_WORKERS)) as pool:
+        per = list(pool.map(lambda src: _claims_from_source(src, identity, keys, llm, log, per_source), readable))
+    return [c for group in per for c in group]
 
 
 def _norm(t: str) -> str:

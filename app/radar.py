@@ -156,7 +156,7 @@ def collect(subjects: list[str], run_id: str, log) -> list[dict]:
     client = httpx.Client(follow_redirects=True, timeout=config.FETCH_TIMEOUT,
                           headers={"User-Agent": config.USER_AGENT, "Accept": "text/html,*/*;q=0.8"})
     to_fetch = [m for m in items if not m["blocked"]]
-    with ThreadPoolExecutor(max_workers=6) as pool:
+    with ThreadPoolExecutor(max_workers=max(1, config.FETCH_WORKERS)) as pool:
         fetched = list(pool.map(lambda m: fetch(m["url"], run_id, client), to_fetch))
     client.close()
     for m, res in zip(to_fetch, fetched):
@@ -320,14 +320,21 @@ def carry_forward(m: dict) -> dict | None:
             "carried_from": seen.get("run")}
 
 
+def classify_one_mention(m: dict, profile: dict, llm1: LLM, llm2: LLM, log) -> None:
+    p1 = classify_one(m, profile, llm1)
+    p2 = classify_one(m, profile, llm2) if needs_second_opinion(p1, m) else None
+    m["pass1"], m["pass2"] = p1, p2
+    m["final"] = carry_forward(m) or apply_reach(decide(p1, p2), m.get("reach") or {})
+    log("classify", f"{m['id']} {m['final']['risk']}{' AMBIGUOUS' if m['final']['ambiguous'] else ''}: {m['title'][:70]}",
+        pass1=p1["risk"], pass2=p2["risk"] if p2 else None, about=m["final"]["about_subject"])
+
+
 def classify_all(mentions: list[dict], profile: dict, llm1: LLM, llm2: LLM, log) -> None:
-    for m in mentions:
-        p1 = classify_one(m, profile, llm1)
-        p2 = classify_one(m, profile, llm2) if needs_second_opinion(p1, m) else None
-        m["pass1"], m["pass2"] = p1, p2
-        m["final"] = carry_forward(m) or apply_reach(decide(p1, p2), m.get("reach") or {})
-        log("classify", f"{m['id']} {m['final']['risk']}{' AMBIGUOUS' if m['final']['ambiguous'] else ''}: {m['title'][:70]}",
-            pass1=p1["risk"], pass2=p2["risk"] if p2 else None, about=m["final"]["about_subject"])
+    """Each mention is judged on its own, so mentions are classified concurrently. Results are written
+    back onto each mention, so the order of the list is untouched."""
+    log("classify", f"{len(mentions)} mentions, {config.CLASSIFY_WORKERS} at a time")
+    with ThreadPoolExecutor(max_workers=max(1, config.CLASSIFY_WORKERS)) as pool:
+        list(pool.map(lambda m: classify_one_mention(m, profile, llm1, llm2, log), mentions))
 
 
 # ---------- brief ----------
