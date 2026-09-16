@@ -25,6 +25,8 @@ the command needs the entry file named explicitly, and the summary scene overflo
 cut it from three dense blocks to two. What I would fix next: the front end is now large enough that
 editing it by string replacement is the wrong tool, and it deserves a proper module split.
 
+Moving the deployment into a container to get Node and a headless browser onto the server took the live site down for about ten minutes. The build succeeded, so Railway reported success, but every container died on start: the start command reached uvicorn without a shell, so it received the literal text of the port variable instead of a number. I had tested that the image builds and that it renders a video inside the container, but not that it serves the app, which is the one thing it had to do. I redeployed the previous build to bring the site back, moved the port reading into a small Python start script so neither the container nor the Procfile depends on shell expansion, and this time ran the image locally with a port set and checked the health endpoint before pushing.
+
 ## Where the code still cheats or is weak
 
 - Relevance is lexical too. Research fetches a search result only if its title, snippet or URL contains the full name, the surname, the profile slug or the company's first distinctive word, so a page that names the subject only by a nickname or initials is never fetched.

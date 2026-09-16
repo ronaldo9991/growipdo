@@ -24,4 +24,4 @@ COPY . .
 # Fetch the headless browser during the build so the first video does not pay for it.
 RUN cd video && (npx --yes remotion browser ensure || echo "browser will be fetched on first render")
 
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD ["python", "start.py"]
