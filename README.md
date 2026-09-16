@@ -164,9 +164,12 @@ The compositions live in `video/` and are plain React. To work on them:
 cd video && npm install && npm run studio
 ```
 
-Rendering needs Node and a headless browser. A minute of video takes about a minute to render.
-The `Dockerfile` at the repository root installs Python, Node and the browser libraries so the
-deployed app can render too.
+Rendering needs Node and a headless browser. The `Dockerfile` at the repository root installs
+Python, Node and the browser libraries so the deployed app can render too. On Railway a sixty
+second video takes about eighty five seconds of wall clock, measured on the two runs in
+`evidence/`: the radar video finished in 86 seconds at 4.0 MB and the diagnostic video in 82
+seconds at 5.0 MB. The render runs in the background, so the page stays usable and the button
+turns into a link when the file is ready.
 
 ## Speed
 
