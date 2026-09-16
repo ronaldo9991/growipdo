@@ -41,10 +41,6 @@
   });
   $$(".reveal").forEach((el) => setTimeout(() => el.classList.add("on"), parseInt(el.dataset.delay || "0", 10)));
 
-  /* the hero loop plays slowly so the motion sits behind the words instead of competing with them */
-  const heroVideo = $(".hero video");
-  if (heroVideo) { heroVideo.playbackRate = 0.6; heroVideo.addEventListener("loadedmetadata", () => { heroVideo.playbackRate = 0.6; }); }
-
   /* ---------- usability helpers shared by both tracks ---------- */
   const ux = window.__ux = {};
   ux.shortUrl = (u) => {
