@@ -1,0 +1,59 @@
+{
+  "data": {
+    "kicker": "Track B, prospect diagnostic",
+    "title": "Mark Chahwan",
+    "subtitle": "Group Chief Executive Officer & Co-Founder · Sarwa · UAE",
+    "runLine": "Run 20260916-123312-c36a · 2026-09-16",
+    "meterKicker": "Checked twice, against primary sources",
+    "meterTitle": "72 claims checked",
+    "meter": [
+      {
+        "label": "verified",
+        "n": 31,
+        "color": "#8fd9a8"
+      },
+      {
+        "label": "partially verified",
+        "n": 39,
+        "color": "#e8c46a"
+      },
+      {
+        "label": "refused",
+        "n": 2,
+        "color": "#f08a8a"
+      }
+    ],
+    "meterNote": "22 of 36 pages read and archived · 9 conflicts between sources",
+    "bodyKicker": "Summary",
+    "body": [
+      "Mark Chahwan comes across publicly as a founder who mixes ambition with strong claims about access and scale, but the verified record also shows serious regulatory problems. Sarwa is regulated by ADGM FSRA and was regulated by the DFSA until 14 June 2024, yet both regulators took action over offers of securities without an Approved Prospectus.",
+      "The FSRA imposed USD 122,500 and the DFSA imposed USD 191,100, reduced from USD 390,000 after mitigation and settlement discounts. The FSRA also found that 144 investors subscribed and committed approximately USD2.1 million, while USD 2 million in commitments came from over 150 potential investors."
+    ],
+    "itemsKicker": "Three biggest gaps",
+    "items": [
+      {
+        "title": "No visible account of the regulatory breaches and remediation",
+        "note": "Sarwa's public positioning stresses regulated investing, but the record provided contains no founder-facing explanation of the offers of securities made without approved prospectuses, the resulting penalties, or what changed afterward. This is material because both the FSRA and DFSA acted, the FSRA required an independent review of governance arrangements, and the regulators coordinated their investigations. The account should also state that Sarwa halted the offer and returned investor money after regulatory concerns were raised."
+      },
+      {
+        "title": "Headline business metrics lack independent support",
+        "note": "Public messaging includes major claims about client assets, profitability, user growth, funding, and investor backing, yet the findings classify these as company-stated or only partially verified rather than independently confirmed. The material does not provide independently supported financial statements, audited profitability evidence, a methodology for client-assets reporting, or primary confirmation from named investors."
+      },
+      {
+        "title": "Unclear corporate and licensing transition story",
+        "note": "The public record shows that the DIFC entity's regulatory status ended in June 2024, while the ADGM entity remains active and authorised for managing assets and arranging investment deals. Yet the findings do not show a clear founder-led explanation of why the DIFC entity withdrew, how customers and activities were transitioned, or which legal entity and permissions apply to each product. Public descriptions of broad investing, trading, crypto, advisory, and money-management services are largely company statements and are not matched to independently verified permissions in the findings."
+      }
+    ],
+    "refusedKicker": "One claim the system refused",
+    "refused": {
+      "claim": "Launched a year ago",
+      "reason": "only repeated by secondary press; no primary or company source found"
+    },
+    "signoff": {
+      "kicker": "Human gate",
+      "title": "Draft, waiting for a named approver",
+      "note": "Nothing reaches a client until a person signs it with their name."
+    },
+    "footer": "LinkedIn is never fetched. Nothing leaves without a named approver."
+  }
+}

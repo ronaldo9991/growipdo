@@ -1,0 +1,232 @@
+url: https://www.sarwa.co/blog/what-is-sarwa-and-how-does-it-work/
+final_url: https://www.sarwa.co/blog/what-is-sarwa-and-how-does-it-work
+fetched_at: 2026-09-16T12:33:54+00:00
+status: ok
+http_status: 200
+title: What Is Sarwa and How Does It Work? - Sarwa
+error: 
+---
+What Is Sarwa and How Does It Work? - Sarwa
+Help desk
+Help desk
+Home
+Trade
+Invest
+Crypto
+Save
+Pricing
+Try us out
+Login
+Login
+Login
+Home
+Invest
+Trade
+Crypto
+Save
+Pricing
+FAQ
+Privacy policy
+Data management
+Contact
+Try us out!
+What Is Sarwa? A Complete Guide to the UAE’s All-in-One Investment Platform
+Sarwa is an online financial advisor that aims to take all of the stress out of investing. Learn more about Sarwa here.
+We are Sarwa
+A one-stop shop for self-directed trading and auto-investing. We're making powerful money management tools available for all.
+Learn more.
+You have probably come across Sarwa as one of the investment or trading platforms in the United Arab Emirates. But you might still be confused about what the company actually is and how it is relevant to you as an investor or trader.
+For example, if you have always perceived Sarwa as a digital wealth manager that advocates passive investing, it may surprise you to learn that it also offers a platform for actively trading various assets in the UAE.
+You might also wonder what unique selling propositions (USPs) Sarwa has in an environment filled with many investment and trading apps. Or you might be interested in whether it is properly regulated and if your data and money will be safe with it.
+So, what is Sarwa and how does it work? To answer these questions (and the numerous questions they imply), we turn to Mark Chahwan, Sarwa’s CEO and co-founder.
+In this article, we provide his answers to many of the interesting questions you have about Sarwa and its relevance to your financial and investment goals.
+We’ll answer these questions across four major categories
+What is Sarwa? Questions about product offerings
+How does Sarwa work? Questions about using Sarwa
+What makes Sarwa unique? Questions about competitive advantages
+How did Sarwa become what it is? Questions about beginnings and growth
+What if I have more questions about Sarwa
+Sit back and relax as we plumb the depths of what Sarwa is all about.
+Do you want to better manage your money by using Sarwa’s products and services? Register an account today and be on the path towards achieving your financial goals.
+1. What is Sarwa? Questions about product offerings
+In this section, we ask Mark questions relating to Sarwa’s product offerings. We seek to clarify some confusion you might have about what Sarwa is and what it does.
+What does Sarwa do?
+Sarwa Digital Wealth (Capital) Limited (popularly known as ‘Sarwa’) is an all-in-one money management tool that helps everyone create wealth by making their money work for them in a smart way.
+Motivated by that goal, we offer various cash management, investing, trading, and risk management products to individuals in the UAE.
+Our key product offerings include:
+Sarwa Save: Sarwa Save is our cash management product. Given that traditional savings accounts offered by UAE banks pay paltry interest rates, we offer Sarwa Save as a high-yield alternative.
+With it, our users can earn high interest (current estimated returns is 3.7% for the standard option and up to 4% for the Halal option) on their emergency funds or money they are saving for some short-term financial goals.
+Unlike other high-yield savings products, Sarwa Save does not have a lock-up period, which means users can access the money in their cash accounts anytime they want it.
+Sarwa Invest (Managed Investing): For investing, we support both active and passive investing. Sarwa Invest, our first product, caters to passive investors who want a hands-off approach.
+When a user subscribes to Sarwa Invest, our expert wealth managers will create a personalised and diversified portfolio of ETFs for them based on their risk tolerance, financial goals, and time horizon.
+All they need to do is fund this account regularly (every month, according to personal finance wisdom). We have an automated investment system where you can set up automatic and recurring deposits into your investment account.
+Also, we automatically rebalance their portfolio to keep the efficient allocation formula.
+Finally, we have an option for users to include exposure to Bitcoin in their portfolio.
+Private Wealth: Private Wealth is our managed investing product for high-net-worth individuals (HNWIs). Our advisors provide comprehensive services that include financial planning, estate planning, retirement planning, and tax planning, among others.
+Since HNWIs require more complex financial management, we provide an actively managed and sophisticated menu of products (in public and private markets) that will meet their needs.
+Sarwa Trade: With Sarwa Trade, we support active investing and self-directed trading. Both active investors and traders can buy and sell a wide range of financial instruments, including stocks, options, cryptocurrencies, exchange-traded funds (ETFs), and exchange-traded commodities (ETCs).
+Sarwa Crypto: Sarwa Crypto is an additional product under Sarwa Trade. It is designed for those who are interested in actively investing in or trading cryptocurrencies.
+Black Swan Protection Program: We introduced the Black Swan Protection Program in 2025, in collaboration with Universa Investments, as a tail risk hedging solution.
+Investors and traders can hedge against the massive impacts of negative black swan events by investing a portion of their portfolios in far out-of-the-money options.
+Are you an investment platform or a trading app?
+We started in 2018 as a digital wealth management platform where users can passively invest and create wealth for the long term.
+Though we still offer our managed investment service, we have added other products to it.
+The one most relevant to this question is Sarwa Trade, which we introduced in 2022. With it, users (active investors and traders) can buy and sell various financial instruments, including stocks, ETFs, ETCs, REITs, and stock options.
+To answer this question directly, Sarwa is an all-in-one platform that supports both trading and investing. In fact, we believe that the same person can be a trader and an investor (active or passive) in pursuit of different financial goals.
+Why do you support active and passive investing?
+Instead of creating an unnecessary dichotomy between passive and active investing, we believe that both can be appropriate under different conditions.
+Passive investing is suitable for investors who don’t have the time or skills to create or manage their portfolios. On the other hand, active investing is fitting for those who believe they have the time and skills to generate alpha by creating and managing their portfolios themselves.
+Furthermore, both passive and active investment have their pros.
+The pros of passive investment include lower cost, lower risk, lower tax, easier diversification, and greater transparency, while the pros of active investment include flexibility (investors can explore various investment strategies), the possibility of generating alpha, and better risk management.
+Investors should decide which set of pros is more important to them.
+However, we also believe that investors can combine both active and passive strategies.
+For example, they can have a passively-managed core portfolio and an actively-managed satellite portfolio. Some also use passive investing in unfamiliar markets and active investing in niche segments.
+Why do you support trading?
+We support trading because our customers demand it.
+The financial markets provide multiple opportunities to profit from the short-term price movements of financial instruments across various asset classes.
+We believe in providing a platform where those with the skills to explore these opportunities can do so in a cost-effective, convenient, and secure way.
+In addition, we provide educational resources – via our blogs and YouTube – that can help beginner and expert traders gain a better understanding of financial markets and how to profit from them.
+What kinds of assets do you offer?
+The financial instruments you can access through our platform include:
+US stocks: These are individual stocks listed on the New York Stock Exchange (NYSE) and NASDAQ.
+Stock ETFs: Our stock ETF offerings include a local UAE stock ETF and thousands of US-listed ETFs that are diversified by market-cap, geography (both developed markets outside the US and emerging markets), industry, and investment theme.
+We also offer gold mining and silver mining ETFs for users interested in indirect exposure to silver’s price.
+Stock options: We offer put and call stock options that investors and traders can use to earn income and manage risk.
+Bond ETFs: Our bond ETF offerings include Treasury, corporate, and municipal bond ETFs with exposure to the US market, developed markets outside the US, and emerging markets.
+Real Estate Investment Trust (REIT) ETFs: REITs are stocks of companies that invest in real estate and those that finance mortgages. You can buy ETFs of US REITs.
+Gold and silver ETCs: These provide opportunities for direct exposure to the prices of gold and silver.
+Cryptocurrencies: We provide access to Bitcoin and popular altcoins like Litecoin, Ripple, Ethereum, Chainlink, Dogecoin, and Avalanche, among others.
+Why do you advocate ETFs so much?
+Exchange-traded funds are low-cost investment funds that enable investors to generate maximum returns with minimum costs. We truly believe they are the most efficient way our customers can benefit from diversification.
+They are also very liquid and flexible, since they are traded like stocks, which makes them different from index funds. Similarly, they are very transparent about their holdings, unlike mutual funds.
+Their innovation is another point in their favour.
+There are thousands of ETFs offering innovative ways for investors to access the financial markets. There are thematic ETFs, ESG-focused ETFs, niche ETFs, actively-managed ETFs, leveraged ETFs, and commodity ETFs (or ETCs), among others.
+2. How does Sarwa work? Questions about using Sarwa
+Now that you know what Sarwa is all about, it is time to consider how the platform works. The next set of questions we are asking centers on this.
+How can I gain access to Sarwa?
+You can download our all-in-one saving, trading, and investing app on the Google Play Store or the App Store.
+The web app is also available on our website. You can access it once you have created an account.
+What do I need to create an account?
+You can create an account on the website or via the app.
+For the first stage of account creation, you only need your name, phone number, and email address. To complete your account registration, you will need to submit a government-issued ID, a live selfie, and proof of address.
+Do I need anything extra to use any of the products?
+Once you have completed the registration, we will automatically open a Sarwa Trade account for you.
+After that, you can choose to open a Sarwa Save and Sarwa Invest account. Sarwa Crypto is also available under Sarwa Trade, so you don’t need extra registration for that.
+For Sarwa Invest, you will need to go through an onboarding process where you answer some quick questions that will help us understand you, your time horizon, and your investment experience (if any – none is required to get started).
+This allows us to match investments to your financial profile. We then build you a globally diversified portfolio of low-cost ETFs.
+You can complete the entire process in less than five minutes.
+How do deposits and withdrawals work?
+Once your account is open, we work with our selected partner, Saxo Bank, a leading Fintech and Regtech specialist, to give you a seamless funding and investment experience.
+There are three funding methods:
+Local bank transfers: We support local transfers in both AED and USD, so UAE clients have free local transfers from their AED bank account to their Sarwa account without incurring international transfer fees.
+These local transfers are processed within one to two business days.
+However, we have introduced an Instant Funding option where we credit deposits to your account from a linked bank within a few minutes (and up to one business day in some cases). This feature is available on Sarwa Trade, and a 0.99% fee applies.
+International bank transfers: These are AED transfers from international banks. They will take three to four days to process.
+While Sarwa does not charge deposit fees on these, you may incur wire transfer fees (your bank’s transfer fees and correspondent bank charges). The funds will also be converted into USD based on the prevailing FX rate.
+Debit cards: Deposits through debit cards are processed instantly.
+For UAE cards, the fee is 2.99% + 1 AED per transaction, while it is 3.99% + 1 AED per transaction for international cards.
+Withdrawals to local banks are also free, while wire transfers to international banks will result in wire transfer fees that depend on the banks involved. Sarwa does not charge withdrawal fees.
+It takes one business day for cash to settle when you sell your assets on Sarwa Trade. Withdrawal to your local bank account will take one to two business days after the funds have settled. International withdrawals will usually take more days.
+For Sarwa Invest, withdrawals from Conventional and Socially-responsible Investment (SRI) accounts will take four to six business days. It takes six to nine days for Halal accounts. International withdrawals will usually take more days.
+For Sarwa Save+ (the traditional product), the withdrawal process requires three to five business days. The Halal version requires four business days to process withdrawals.
+Do you offer instant trade execution?
+Buy and sell orders on Sarwa Trades are executed instantly in real-time during market hours.
+What’s the cost of using Sarwa’s products?
+One of our goals is to make Sarwa fees competitive and transparent.
+To trade stocks and ETFs on Sarwa Trade, you will pay a commission of $1 or 0.25% of traded value. While there are no commissions for trading cryptos, there are competitive spreads on the prices. For options, the commission is $4 per contract traded.
+For Sarwa Save, there is a 0.5% management fee on both the traditional and Halal options.
+Sarwa Invest users pay annual management fees based on the assets they have in their portfolios:
+Standard (less than $100,000): 0.85%
+Platinum (greater than $100,000): 0.7%
+Private Wealth (greater than $500,000): 0.5%
+Legacy (greater than $5,000,000): 0.4%
+What makes Sarwa unique? Questions about competitive advantages
+Now that we know what Sarwa does and how investors and traders can get started on it, we turn to questions relating to the unique selling points of Sarwa.
+3. What makes Sarwa Trade unique?
+Sarwa fees are transparent and competitive.
+Also, we offer free local bank AED transfers and do not charge any additional fees on other deposit and withdrawal methods (aside from what the facilitators charge).
+The library of educational resources we offer on our blog and YouTube is another unique selling point. Whether you are an investor or trader, you will find quality resources that will help improve your outcomes.
+Our Instant Funding solution is especially useful for traders who need to quickly catch a certain price movement to maximise profits.
+What makes Sarwa Crypto unique
+We offer competitive spreads on our crypto listings and do not charge any commission.
+Also, we provide convenient access to the crypto market by removing the need for wallets. You can buy cryptos through fiat currency and add them to your portfolio.
+What makes Sarwa Invest unique?
+Our fee is the lowest in the region when compared to our peers. Similarly, we don’t charge account opening, account closing, custody, or inactivity fees.
+Our technology also offers benefits like auto-rebalancing, which means that the way we can invest your money is seamless and gives you the same level of service that you would get if you were accessing an institutional investment manager.
+However, what we think sets us apart is the level of human expertise.
+We’re always here to answer any questions you might have, so you can call and arrange a catch-up with one of our trusted financial advisors.
+It’s this combination of human interaction and personalised advice with first-class technology that we think sets Sarwa apart from the rest of the crowd.
+What makes Sarwa Save unique?
+We offer higher yields than traditional savings accounts. Also, we do not impose any lock-in period. You can withdraw your money anytime you need it.
+Why should people trust Sarwa with their data and money?
+First, Sarwa is licensed and regulated by the Financial Services Regulatory Authority (FSRA) of the Abu Dhabi Global Markets (ADGM).
+We operate under a client-first compliance framework, with emphasis on transparency, suitability, and regional alignment.
+Similarly, we secure your data and money with 256-bit bank-level encryption, two-factor authentication, and Know-Your-Customer (KYC) compliance.
+What do Sarwa reviews typically say?
+A look through Sarwa reviews on various platforms reveals that the excellence of our customer support team is what users find most satisfying.
+This is not a surprise since we have built our products on the importance of human and personalised support.
+The user experience is another major positive.
+Customers express delight about how user-friendly and intuitive our apps are. This makes it easier and more convenient for them to navigate and explore.
+The absence of conversion, deposit, and withdrawal fees is another point that comes up frequently.
+4. How did Sarwa become what it is? Questions about beginnings and growth
+How did Sarwa start?
+Sarwa was founded in 2017 by Jad Sayegh, Nadine Mezher, and me.
+We aimed to combine our experience in technology, marketing, and consulting to build a digital investment platform that will make cost-effective investing accessible to everyone in the UAE.
+We participated in the Dubai Financial Services Authority (DFSA) Innovation Testing Licence programme in 2018 and became the first participant to go from the regulatory sandbox to a full licence later that year.
+How did Sarwa grow to become what it is?
+In terms of business model, we started in 2018 as a digital wealth management platform (which is slightly different from, but typically equated to, a robo advisor) with Sarwa Invest.
+Four years later, we launched Sarwa Trade, where we provided access to active trading of stocks and ETFs. We have also expanded our offerings to include cryptos, options, and ETCs.
+Now, we position ourselves as a multi-asset trading and investment hub.
+These changes reflect our commitment to give our customers what they demand and need to achieve their various financial goals.
+In terms of funding, we raised $1.3 million in pre-Series A funding in 2018 from investors like Shorooq Partners, Middle East Venture Partners (MEVP), and 500 Startups.
+The Series A funding (worth $8.4 million) would take place two years later, with participation from the Dubai International Financial Centre (DIFC), Abu Dhabi Investment Office (ADIO), 500 Startups, and others.
+We went on to raise Series B funding of $15 million in 2021, led by Mubadala Investment Company and with participation from Shorooq Partners, MEVP, 500 Startups, and Global Ventures.
+If I can summarise our growth in one news headline, it would be being listed in the Forbes Middle East Fintech 50 list in 2025.
+Is Sarwa profitable and self-sustaining?
+We announced our first quarterly profit in May 2024, with a net profit margin of 33% and a 124% revenue growth (quarter-on-quarter).
+After keeping the same pace, we reported full-year profitability at the end of 2025, with $880 million in assets under management, driving $3 billion in trading volume in a single year.
+We have now made the transition from venture-backed growth to self-sustained operations.
+5. What if I have more questions about Sarwa
+By now, you should have the clarity you need about what Sarwa is all about and how they operate.
+However, we understand that some of you will still have some questions that we have not covered.
+Our final question to Chahwan is how you can get answers to your unanswered questions or more clarification regarding the answers given.
+Below is his answer:
+“As we mentioned, what makes Sarwa different is the fact that we’re real people, working hard here to make sure that you and your money are informed, safe, and secure,” he said. “So we’d be delighted for you to chat on the phone or grab a cup of coffee with a member of the team whenever you like. Here at Sarwa, we feel this is a really important part of our offering, and we want to know who is using our product and what we can do to help them, allaying any fears and answering any questions they may have.”
+“We know that investing can feel a little intimidating and scary,” he continued. “That’s why we’re on a mission to change that perception by combining cutting-edge technology with the human touch. That’s why we’re making investing easy.”
+You can book a 20-minute call with a Sarwa wealth advisor to take advantage of this invitation or send an email with your inquiries to hello@sarwa.co.
+If you are ready to explore this money management platform for your savings, investing, and trading goals, register an account on the website to get started.
+Takeaways
+What started as a digital wealth manager has evolved into an all-in-one platform for saving, investing (passive and active), and trading in the UAE.
+With Sarwa Invest, Sarwa Trade, Sarwa Save, Sarwa Crypto, Private Wealth, and Black Swan Protection Program, Sarwa has ensured that there is something for everyone.
+Sarwa continues to make its mark in the UAE fintech market for its low cost, free deposits and withdrawals, customer support, and excellent user experience.
+Sarwa is duly licensed and regulated, and it uses the latest cybersecurity protocols to protect clients’ data and money.
+Ready to invest in your future? Talk to our advisory team, we will be happy to help.
+Start now
+Important Disclosure:
+The information provided in this blog is for general informational purposes only. It should not be considered as personalised investment advice. Each investor should do their due diligence before making any decision that may impact their financial situation and should have an investment strategy that reflects their risk profile and goals. The examples provided are for illustrative purposes. Past performance does not guarantee future results. Data shared from third parties is obtained from what are considered reliable sources; however, it cannot be guaranteed. Any articles, daily news, analysis, and/or other information contained in the blog should not be relied upon for investment purposes. The content provided is neither an offer to sell nor purchase any security. Opinions, news, research, analysis, prices, or other information contained on our Blog Services, or emailed to you, are provided as general market commentary. Sarwa does not warrant that the information is accurate, reliable or complete. Any third-party information provided does not reflect the views of Sarwa. Sarwa shall not be liable for any losses arising directly or indirectly from misuse of information. Each decision as to whether a self-directed investment is appropriate or proper is an independent decision by the reader. All investing is subject to risk, including the possible loss of the money invested.
+Post navigation
+Previous Previous post:
+$1 billion in client assets. Powered by your trust.
+Next Next post: Mastering Natural Gas Markets: 5 Strategies Every Trader Should Know (With Checklist)
+Home
+Invest
+Trade
+Crypto
+Save
+Pricing
+FAQ
+Privacy policy
+Data management
+Contact
+About
+Sarwa is an investing and money management platform on a mission to help everyone put their money to work. The one-stop app offers hands-off auto-investing with Sarwa Invest, do-it-yourself trading of stocks, ETFs, and crypto with Sarwa Trade, as well as high-yield low risk estimated returns with Sarwa Save.
+Social
+Sarwa seeks to encourage and educate the public about the different aspects of personal finance and investment in a way that's tailored to the needs of today's professionals. Support us by following us on social media, and receive our blog posts on your feed.
+Sarwa Digital Wealth (Capital) Limited is regulated by the Financial Services Regulatory Authority (“FSRA”) in the Abu Dhabi Global Markets (“ADGM”) and holds a Category 3C license with a Retail Client and Holding and Controlling Clients Investments and Money Endorsement. Sarwa Digital Wealth (Capital) Limited’s registered address is 16-104 & 16-114, 16th Floor, WeWok Hub71, Al Khatem Tower, Abu Dhabi Global Market, Al Maryah Island, Abu Dhabi, United Arab Emirates.
+https://www.adgm.com/public-registers/fsra/fsf/sarwa-digital-wealth-capital-limited
+All Promotional materials are provided from/by Sarwa Digital Wealth (Capital) Limited and is intended only for jurisdictions where it is authorised to provide services and does not constitute an offer or solicitation to provide services in any jurisdiction where it is not permitted to do so. Sarwa is not a bank. We can unlock high-yield accounts through our banking partners. Options trading entails significant risk and is not appropriate for all customers and may involve the potential of losing the entire investment in a relatively short period of time. Sarwa does not hold an Islamic Window endorsement from the Financial Services Regulatory Authority (FSRA). Clients are advised to conduct their own due diligence to ensure that investments align with their personal requirements.
+Past performance is no guarantee of future results. Historical returns, expected returns, and probability projections are provided for informational and illustrative purposes and may not reflect actual future performance. Information contained on this website is of a general nature only and does not consider your financial objectives or personal circumstances. All investing involves risk, including the possible loss of money you invest.
+Please visit our Disclaimer Notice page for further information.
+© 2020-2026 Sarwa Digital Wealth (Capital) Limited. All rights reserved.
+Top
+2316

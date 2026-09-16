@@ -1,0 +1,11 @@
+url: https://www.youtube.com/watch?v=Dn9so-vnG7g
+final_url: https://www.youtube.com/watch?v=Dn9so-vnG7g
+fetched_at: 2026-09-16T12:33:55+00:00
+status: ok
+http_status: 200
+title: How This Startup Revolutionized Investing in the Middle East - Mark Chahwan - YouTube
+error: 
+---
+How This Startup Revolutionized Investing in the Middle East - Mark Chahwan - YouTube
+AboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new features
+© 2026 Google LLC

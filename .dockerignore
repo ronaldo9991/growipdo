@@ -1,0 +1,12 @@
+.git
+.venv
+video/node_modules
+video/out
+runs
+evidence
+__pycache__
+**/__pycache__
+.pytest_cache
+*.pyc
+.env
+.claude

@@ -1,0 +1,61 @@
+{
+  "data": {
+    "kicker": "Track A, reputation radar",
+    "title": "Weekly brief",
+    "subtitle": "Nidhi Hooda, Growpido · 2026-09-10 to 2026-09-16",
+    "runLine": "Run 20260916-123612-4fa2 · 2026-09-16",
+    "meterKicker": "Every mention, triaged twice",
+    "meterTitle": "36 mentions about them",
+    "meter": [
+      {
+        "label": "respond now",
+        "n": 0,
+        "color": "#f08a8a"
+      },
+      {
+        "label": "watch",
+        "n": 0,
+        "color": "#e8c46a"
+      },
+      {
+        "label": "held for you",
+        "n": 2,
+        "color": "#c9b8f5"
+      },
+      {
+        "label": "nothing needed",
+        "n": 34,
+        "color": "rgba(225,224,204,0.25)"
+      }
+    ],
+    "meterNote": "27 LinkedIn, 0 news, 9 web · 4 set aside as namesakes",
+    "bodyKicker": "Read this first",
+    "body": [
+      "This week there are 36 items about Nidhi Hooda or Growpido, with 10 new since the last run, and 2 ambiguous items need a call on whether they are relevant.",
+      "One ambiguous item is a Glassdoor review for Growpido that looks neutral, so decide whether to keep watching it or ignore it.",
+      "The other ambiguous item is a Facebook movie post by someone named Nidhi Hooda, so decide whether it is the founder and should be treated as relevant."
+    ],
+    "itemsKicker": "What needs you",
+    "items": [
+      {
+        "title": "Growpido : learn, grow and success",
+        "note": "passes disagree on risk (watch vs ignore); held at watch for a human"
+      },
+      {
+        "title": "It's #MovieNight - Facebook",
+        "note": "passes disagree on whether this is the subject (unsure vs unsure); a human decides"
+      }
+    ],
+    "refusedKicker": "Set aside as a namesake",
+    "refused": {
+      "claim": "Nidhi Hooda - Assistant at Amazon",
+      "reason": "The snippet appears to describe a different LinkedIn profile for an assistant at Amazon, not the Dubai-based founder of Growpido LLC. There is no mention of the subject's reputation advisory work or disambiguators."
+    },
+    "signoff": {
+      "kicker": "Human gate",
+      "title": "Draft, waiting for a named approver",
+      "note": "Nothing reaches a client until a person signs it with their name."
+    },
+    "footer": "LinkedIn is never fetched. Nothing leaves without a named approver."
+  }
+}

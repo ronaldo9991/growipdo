@@ -143,3 +143,5 @@
 {"ts": "2026-09-15T11:42:32+00:00", "stage": "report", "message": "started"}
 {"ts": "2026-09-15T11:42:33+00:00", "stage": "llm", "message": "gpt-5.4-mini: 1147 in, 176 out", "data": {"stop": "stop"}}
 {"ts": "2026-09-15T11:42:33+00:00", "stage": "human_gate", "message": "draft ready, waiting for a human to approve or reject", "data": {"lint_warnings": 0}}
+{"ts": "2026-09-16T12:48:22+00:00", "stage": "video", "message": "rendering TrackB with Remotion"}
+{"ts": "2026-09-16T12:49:49+00:00", "stage": "video", "message": "summary video ready, 4612 KB"}

@@ -1,0 +1,9 @@
+url: https://www.sarwa.co/invite/KERUCBDA
+final_url: https://www.sarwa.co/invite/KERUCBDA
+fetched_at: 2026-09-16T12:33:53+00:00
+status: could_not_check
+http_status: 200
+title: Sarwa | Invest, Trade and Save
+error: page returned almost no readable text (probably rendered by JavaScript)
+---
+Sarwa | Invest, Trade and Save

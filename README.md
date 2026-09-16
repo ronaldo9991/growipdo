@@ -149,6 +149,38 @@ evidence/<id>/   one text snapshot per fetched url
 Railway with Nixpacks: `Procfile` and `runtime.txt` are enough. Mount a volume at `/app/runs` so the ledger
 survives redeploys, and set `EVIDENCE_DIR=/app/runs/evidence` so the snapshots do too.
 
+## One minute summary videos
+
+Every finished run can render a sixty second video of itself with Remotion. Open a run and press
+"Make 1 min video"; the file lands at `/runs/<id>/summary.mp4` or `/radar/runs/<id>/summary.mp4`.
+Six scenes: who the subject is, the verdict bar with the counts, the summary or the week's opening
+bullets, the three gaps or the items waiting for a decision, one refused claim or one namesake set
+aside, and the sign-off card. Nothing in the video is written for it: every line comes from that run's
+ledger, so each number traces back to a finding, a mention or the approval record.
+
+The compositions live in `video/` and are plain React. To work on them:
+
+```
+cd video && npm install && npm run studio
+```
+
+Rendering needs Node and a headless browser. A minute of video takes about a minute to render.
+The `Dockerfile` at the repository root installs Python, Node and the browser libraries so the
+deployed app can render too.
+
+## Speed
+
+Claim extraction, mention classification, verification and page fetching all run concurrently, with
+worker counts set by CLAIM_WORKERS, CLASSIFY_WORKERS, VERIFY_WORKERS and FETCH_WORKERS.
+
+| Run | Before | After |
+|---|---|---|
+| Track B, Mark Chahwan | 418 seconds | 137 seconds |
+| Track A, weekly radar | 203 seconds | 44 seconds |
+
+Run pages poll a small status endpoint and pull the full ledger only when the run has moved, instead
+of re-downloading hundreds of kilobytes every few seconds.
+
 ## Seven things added after the first submission
 
 1. Conflicts between sources: accepted findings that disagree on the same figure are listed in the diagnostic

@@ -1,0 +1,60 @@
+{
+  "data": {
+    "kicker": "Track B, prospect diagnostic",
+    "title": "Ayyanar Jeyakrishnan",
+    "subtitle": "IT expert / technical leader",
+    "runLine": "Run 20260915-114129-bd40 · 2026-09-15",
+    "meterKicker": "Checked twice, against primary sources",
+    "meterTitle": "30 claims checked",
+    "meter": [
+      {
+        "label": "verified",
+        "n": 0,
+        "color": "#8fd9a8"
+      },
+      {
+        "label": "partially verified",
+        "n": 7,
+        "color": "#e8c46a"
+      },
+      {
+        "label": "refused",
+        "n": 23,
+        "color": "#f08a8a"
+      }
+    ],
+    "meterNote": "8 of 12 pages read and archived · 1 conflict between sources",
+    "bodyKicker": "Summary",
+    "body": [
+      "Ayyanar Jeyakrishnan presents himself publicly as a technical leader with over 20 years of IT expertise, and he says he started working at 16. He also says he has built community reach through a DataOps Labs Meetup group with 2350+ members and a DataOps Labs India LinkedIn page with Around 1300+ followers.",
+      "His public profile also describes him as a machine learning and cloud enthusiast with a strong focus on AWS technologies, and says his work includes creating data platforms and architecting DevOps and MLOps solutions for AWS. These numbers are only the company’s own word, not independently verified: over 20 years, 16, 2350+, and Around 1300+.",
+      "Other claims about his event activity, speaker roles, ratings, bookings, testimonials, and location could not be verified from the findings provided."
+    ],
+    "itemsKicker": "Three biggest gaps",
+    "items": [
+      {
+        "title": "Independent proof of career record and technical leadership",
+        "note": "The public profile makes broad claims about over 20 years of IT expertise and technical leadership, but the ledger identifies these as self-stated rather than independently confirmed. Claims about building data platforms and architecting DevOps and MLOps solutions are also not supported here by named projects, employer confirmation, customer references, or measurable outcomes."
+      },
+      {
+        "title": "Community traction is presented without independent validation",
+        "note": "The profile cites a DataOps meetup community with 2350+ members and a LinkedIn page with around 1300+ followers, but both figures are treated as self-reported in the ledger. Other activity and engagement claims also remain unverified, leaving no clear public trail of event archives, attendee evidence, partner organizations, or community outcomes."
+      },
+      {
+        "title": "High-profile affiliations and recognitions are not clearly substantiated",
+        "note": "The ledger does not independently verify public claims connecting Ayyanar Jeyakrishnan with an AWS Machine Learning Hero designation, a senior role at Wells Fargo, AzConf, or a Microsoft Build event. The public-facing material needs direct, authoritative links and a clear explanation of what each affiliation, recognition, or speaking role involved."
+      }
+    ],
+    "refusedKicker": "One claim the system refused",
+    "refused": {
+      "claim": "Ayyanar Jeyakrishnan is named in the video title.",
+      "reason": "only repeated by secondary press; no primary or company source found"
+    },
+    "signoff": {
+      "kicker": "Human gate",
+      "title": "Draft, waiting for a named approver",
+      "note": "Nothing reaches a client until a person signs it with their name."
+    },
+    "footer": "LinkedIn is never fetched. Nothing leaves without a named approver."
+  }
+}

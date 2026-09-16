@@ -12,10 +12,10 @@ import zipfile
 from pathlib import Path
 
 from fastapi import FastAPI, Form, HTTPException, Request
-from fastapi.responses import HTMLResponse, JSONResponse, PlainTextResponse, RedirectResponse, StreamingResponse
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, PlainTextResponse, RedirectResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
-from . import config, pipeline, radar, scheduler
+from . import config, pipeline, radar, scheduler, video
 from .ledger import Run
 
 app = FastAPI(title="growpido-task")
@@ -222,7 +222,7 @@ def run_status(run_id: str):
     subj = s.get("subject") or {}
     return {"id": s["id"], "status": s["status"], "stage": s.get("stage"), "updated_at": s["updated_at"],
             "created_at": s["created_at"], "error": s.get("error"), "counts": s.get("counts") or {},
-            "subject": subj.get("full_name"), "log_lines": sum(1 for _ in open(run.folder / "log.jsonl")) if (run.folder / "log.jsonl").exists() else 0}
+            "subject": subj.get("full_name"), "video": s.get("video"), "log_lines": sum(1 for _ in open(run.folder / "log.jsonl")) if (run.folder / "log.jsonl").exists() else 0}
 
 
 @app.get("/runs/{run_id}/ledger.json")
@@ -238,6 +238,45 @@ def ledger_json(run_id: str):
 @app.get("/runs/{run_id}/log")
 def log_json(run_id: str):
     return JSONResponse(_load(run_id).read_log())
+
+
+def _start_video(run: Run, kind: str):
+    if run.state["status"] not in ("draft", "approved", "rejected"):
+        raise HTTPException(400, "the run has no result to summarise yet")
+    if (run.state.get("video") or {}).get("status") == "rendering":
+        return {"status": "rendering"}
+    ok, why = video.can_render()
+    if not ok:
+        raise HTTPException(503, why)
+    threading.Thread(target=video.start, args=(Run.load(run.id, kind), kind), daemon=True).start()
+    return {"status": "rendering"}
+
+
+def _video_file(run: Run):
+    f = run.folder / "summary.mp4"
+    if not f.exists():
+        raise HTTPException(404, "no video yet")
+    return FileResponse(f, media_type="video/mp4", filename=f"{run.id}-summary.mp4")
+
+
+@app.post("/runs/{run_id}/video")
+def run_video(run_id: str):
+    return _start_video(_load(run_id), "diagnostic")
+
+
+@app.get("/runs/{run_id}/summary.mp4")
+def run_video_file(run_id: str):
+    return _video_file(_load(run_id))
+
+
+@app.post("/radar/runs/{run_id}/video")
+def radar_video(run_id: str):
+    return _start_video(_load(run_id, "radar"), "radar")
+
+
+@app.get("/radar/runs/{run_id}/summary.mp4")
+def radar_video_file(run_id: str):
+    return _video_file(_load(run_id, "radar"))
 
 
 @app.get("/runs/{run_id}/evidence.zip")
@@ -295,7 +334,7 @@ def radar_status(run_id: str):
     s = run.state
     return {"id": s["id"], "status": s["status"], "stage": s.get("stage"), "updated_at": s["updated_at"],
             "created_at": s["created_at"], "error": s.get("error"), "counts": s.get("counts") or {},
-            "subject": ", ".join(run.ledger.get("subjects") or []),
+            "subject": ", ".join(run.ledger.get("subjects") or []), "video": s.get("video"),
             "log_lines": sum(1 for _ in open(run.folder / "log.jsonl")) if (run.folder / "log.jsonl").exists() else 0,
             "drafting": any(r.get("status") == "drafting" for r in (run.ledger.get("responses") or {}).values())}
 

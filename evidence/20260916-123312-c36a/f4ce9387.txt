@@ -1,0 +1,15 @@
+url: https://markchahwan.substack.com/
+final_url: https://markchahwan.substack.com/
+fetched_at: 2026-09-16T12:33:56+00:00
+status: ok
+http_status: 200
+title: Mark Chahwan | Substack
+error: 
+---
+Mark Chahwan | Substack
+Mark Chahwan
+I’m building a category-defining investing platform. Subscribe to learn from the journey.
+Launched a year ago
+Subscribe
+By subscribing, you agree Substack's Terms of Use, and acknowledge its Information Collection Notice and Privacy Policy.
+No thanks

@@ -112,6 +112,30 @@
   });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") $$("details.files[open]").forEach((d) => { d.open = false; }); });
 
+  /* a one minute summary of the finished run, rendered on the server with Remotion */
+  ux.video = (slot, base, v, onStart) => {
+    if (!slot) return;
+    const st = (v || {}).status;
+    if (st === "rendering") { slot.innerHTML = `<button class="btn" disabled><span class="spin"></span>Rendering video</button>`; return; }
+    if (st === "ready") {
+      slot.innerHTML = `<a class="btn" href="${base}/summary.mp4" target="_blank" rel="noopener">Play 1 min video</a><button class="btn" id="vidAgain" title="Render it again">Remake</button>`;
+    } else if (st === "failed") {
+      slot.innerHTML = `<button class="btn danger" id="vidAgain" title="${esc((v || {}).error || "")}">Video failed, try again</button>`;
+    } else {
+      slot.innerHTML = `<button class="btn" id="vidAgain">Make 1 min video</button>`;
+    }
+    const b = $("#vidAgain", slot);
+    if (b) b.addEventListener("click", async () => {
+      b.disabled = true; b.innerHTML = '<span class="spin"></span>Starting';
+      try {
+        const r = await fetch(`${base}/video`, {method: "POST", headers: {Accept: "application/json"}});
+        const jr = await r.json().catch(() => ({}));
+        if (!r.ok) throw new Error(jr.detail || `${r.status}`);
+        slot.innerHTML = `<button class="btn" disabled><span class="spin"></span>Rendering video</button>`;
+        if (onStart) onStart();
+      } catch (ex) { slot.innerHTML = `<button class="btn danger" id="vidAgain" title="${esc(ex.message)}">Video failed, try again</button>`; }
+    });
+  };
   ux.goSection = (id, sel) => {
     if (ux._sections) ux._sections.show(id);
     setTimeout(() => ux.jump(sel || "#sectabs"), 30);
@@ -317,6 +341,7 @@
     ux.progress($("#progress"), s, STAGES, STAGE_HINT, "diagnostic");
     ux.title(s.status, subj.full_name, "Track B");
     ux.logOpen($("#logCard"), ux.running(s));
+    ux.video($("#videoSlot"), `/runs/${s.id}`, s.video, () => runPage(true));
     if (ux.running(s)) ux.bar({ spin: true, title: `Step ${Math.max(1, STAGES.indexOf(s.stage) + 1)} of ${STAGES.length}`, sub: `${esc(STAGE_HINT[s.stage] || "starting")} \u00b7 <span data-since="${esc(s.created_at)}">${ux.clock(s.created_at)}</span>` });
     else if (s.status === "draft") ux.bar({ title: "Draft ready", sub: "Needs a named approver", action: { label: "Sign off", onClick: () => ux.goSection("diagnostic", "#gate") } });
     else if (s.status === "failed") ux.bar({ title: "Run failed", sub: "The reason is under the steps", action: { label: "Run again", onClick: () => ux.rerun("diagnostic", s.input_url) } });
@@ -599,6 +624,7 @@
     window.__rail($("#stages"), STAGES, s.stage, ["draft", "approved"].includes(s.status));
     ux.progress($("#progress"), s, STAGES, HINT, "radar");
     ux.title(s.status, (L.subjects || []).join(" and "), "Track A");
+    ux.video($("#videoSlot"), `/radar/runs/${rid}`, s.video, () => radarRun(true));
     ux.verdict($("#verdict"), [
       {cls: "rn", n: c.respond_now ?? 0, label: "respond now"},
       {cls: "w", n: c.watch ?? 0, label: "watch"},

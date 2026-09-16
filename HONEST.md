@@ -12,6 +12,19 @@ A live run on a profile with no company behind it (linkedin.com/in/jayyanar) fai
 
 The radar reused the Track B ledger, and my patch to give runs a kind (radar runs live under `runs/radar/`) silently did not apply because a string replace missed by whitespace and I had not asserted it; the tests still passed because nothing tested `Run.create`, and the first form submission returned a bare 500. A ledger test now covers it. The narrow viewport clipped the radar page's heading: a grid item cannot shrink below the text input's intrinsic width unless you tell it to, so the whole hero was 47 pixels wider than a phone screen. The first live run produced 40 mentions, 27 of them LinkedIn search snippets, and no news at all, which is the honest picture: the subjects' public footprint is almost entirely their own LinkedIn posts, so every item came out ignore and the brief's real content is the one item the two models split on. That item is a forensic science paper by a different Nidhi Hooda: pass 1 said namesake with confidence 0.98, pass 2 said unsure, and the rule held it at watch for a human instead of trusting either. The same run showed the weak spot in that rule: two other namesake posts (a Nidhi Vohra appointment and a Facebook movie night) slipped through as confident ignores with no second reading, harmless because ignore, but wrong, so any mention whose title does not name the subject now always gets a second reading, and the run was repeated on the fixed code. Because nothing this week rose to respond now, the two-gate response flow (a person approves drafting, the model writes, a person approves or edits the draft, nothing is ever posted) is exercised only by unit tests with a fake model and by the ambiguous-item decision on the live run, not by a live draft. What I would fix next for Track A: the week window is decided by the search engine's date string, which is missing for most LinkedIn snippets, so "this week" undercounts; and a real deployment needs a scheduler to run it every Monday, which this build does not have.
 
+## What broke while adding speed, the redesign and the videos
+
+Parallelising the pipeline was easy; the interface work broke twice in ways that only showed in a
+browser. Splicing new functions into the front end with text replacement left a duplicated line twice,
+once for the run page loop and once for the log renderer, and the page died silently until I ran a
+syntax check. Removing cards from the run page templates left one line in the script still hiding a
+card that no longer existed, so Track B rendered zero findings and printed "Cannot set properties of
+null" until I traced it. The verdict bar came out as an empty box because I reused the class name
+"track", which already styles the big cards on the home page. The first Remotion render failed because
+the command needs the entry file named explicitly, and the summary scene overflowed the frame until I
+cut it from three dense blocks to two. What I would fix next: the front end is now large enough that
+editing it by string replacement is the wrong tool, and it deserves a proper module split.
+
 ## Where the code still cheats or is weak
 
 - Relevance is lexical too. Research fetches a search result only if its title, snippet or URL contains the full name, the surname, the profile slug or the company's first distinctive word, so a page that names the subject only by a nickname or initials is never fetched.
@@ -31,4 +44,7 @@ The radar reused the Track B ledger, and my patch to give runs a kind (radar run
 - Track A LinkedIn coverage is whatever the search engine indexed as a snippet. Posts it did not index are invisible, and comments under a post are not read at all.
 - Track A's scheduler is an in-process thread: it only fires while the web process is up, and a deploy that lands within the twenty hour window after the scheduled minute will fire again from the recorded state only if the first start was never written. Memory between weeks matches on the mention URL only, so the same post surfacing under a different URL counts as new.
 - Reach is an estimate from engagement counts the search engine happened to include in the title, weighted by channel. Most LinkedIn snippets carry no count, so most items land at medium reach by channel alone.
+- The summary video is a fixed six scene shape. A run with nothing refused, or with fewer than three gaps, still gets those scenes, with a line saying nothing was refused rather than a different edit.
+- Rendering a video takes about as long as the video lasts, and it runs inside the web process rather than a queue, so two people rendering at once will compete for the same CPU.
+- Worker counts are set to eight. On a rate limited key that can be slower than fewer workers, because the wrapper waits and retries rather than failing.
 - Runs are not deterministic. Five local runs of the same URL gave between 25 and 35 verified findings, because search results shift, the claim cap is filled in extractor order, and the models are not seeded. The verdict rules are fixed; what gets checked is not.
