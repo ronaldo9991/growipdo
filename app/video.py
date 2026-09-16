@@ -145,7 +145,7 @@ def render(run: Run, kind: str) -> Path:
     out = run.folder / "summary.mp4"
     composition = "TrackA" if kind == "radar" else "TrackB"
     cmd = ["npx", "--yes", "remotion", "render", "src/index.jsx", composition, str(out),
-           f"--props={props_path}", "--log=error", "--concurrency=2"]
+           f"--props={props_path}", "--log=error", f"--concurrency={config.RENDER_CONCURRENCY}"]
     run.log("video", f"rendering {composition} with Remotion")
     proc = subprocess.run(cmd, cwd=VIDEO_DIR, capture_output=True, text=True, timeout=1800)
     if proc.returncode != 0 or not out.exists():

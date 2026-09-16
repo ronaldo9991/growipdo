@@ -51,6 +51,7 @@ VERIFY_WORKERS = int(os.environ.get("VERIFY_WORKERS") or 8)     # claims verifie
 CLAIM_WORKERS = int(os.environ.get("CLAIM_WORKERS") or 8)       # sources read for claims concurrently
 CLASSIFY_WORKERS = int(os.environ.get("CLASSIFY_WORKERS") or 8) # mentions classified concurrently
 FETCH_WORKERS = int(os.environ.get("FETCH_WORKERS") or 12)      # pages fetched concurrently
+RENDER_CONCURRENCY = int(os.environ.get("RENDER_CONCURRENCY") or 2)  # Remotion workers for a summary video
 APPROVER_TOKEN = os.environ.get("APPROVER_TOKEN") or ""        # required on every human gate action when set
 RADAR_SCHEDULE = os.environ.get("RADAR_SCHEDULE") or ""        # e.g. "mon 09:00" (UTC); empty disables the scheduler
 RADAR_SUBJECTS = os.environ.get("RADAR_SUBJECTS") or "Nidhi Hooda, Growpido"
