@@ -2,6 +2,7 @@ import React from 'react';
 import {Composition} from 'remotion';
 import {DURATION, FPS} from './theme';
 import {Summary} from './Summary';
+import {Walkthrough} from './Walkthrough';
 
 /* Placeholder data only; the server passes the real run through --props. */
 const sample = (kind) => ({
@@ -23,9 +24,22 @@ const sample = (kind) => ({
   footer: 'LinkedIn is never fetched. Nothing leaves without a named approver.',
 });
 
+/* The walkthrough is driven entirely by --props written from a real screen recording. */
+const walkSample = {clip: 'walk.webm', total: FPS * 300, cuts: []};
+
 export const Root = () => (
   <>
     <Composition id="TrackB" component={Summary} durationInFrames={DURATION} fps={FPS} width={1280} height={720} defaultProps={{data: sample('diagnostic')}} />
     <Composition id="TrackA" component={Summary} durationInFrames={DURATION} fps={FPS} width={1280} height={720} defaultProps={{data: sample('radar')}} />
+    <Composition
+      id="Walkthrough"
+      component={Walkthrough}
+      durationInFrames={walkSample.total}
+      fps={FPS}
+      width={1280}
+      height={720}
+      defaultProps={walkSample}
+      calculateMetadata={({props}) => ({durationInFrames: props.total || FPS * 300})}
+    />
   </>
 );

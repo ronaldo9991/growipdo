@@ -7,3 +7,6 @@ __pycache__/
 .claude/
 video/node_modules/
 video/out/
+
+# recorded walkthrough footage and narration, too big for the repo
+video/public/

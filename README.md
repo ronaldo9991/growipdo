@@ -171,6 +171,18 @@ second video takes about eighty five seconds of wall clock, measured on the two 
 seconds at 5.0 MB. The render runs in the background, so the page stays usable and the button
 turns into a link when the file is ready.
 
+## Five minute walkthrough
+
+There is also a long video: a real screen recording of the deployed site with a narration track.
+It drives the live app rather than a mockup, and it waits for two genuine runs to finish, so the
+footage is the system working at the speed it actually works. The recorder, the narration lines
+and the cut list live in `video/walkthrough/`, with the steps in the README there. The footage
+and the audio are kept out of git because they are large and cheap to make again.
+
+One rule holds for the narration: every number spoken over a shot has to match the run on
+screen. The first cut of the narration quoted the timings from an earlier, faster run, and all
+of those lines had to be recorded again once the real run came in slower.
+
 ## Speed
 
 Claim extraction, mention classification, verification and page fetching all run concurrently, with

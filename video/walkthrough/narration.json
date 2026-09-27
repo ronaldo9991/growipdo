@@ -1,0 +1,20 @@
+{
+  "home": "This is Growpido, running live. Two tracks share one home page. Track A watches what the public web is saying about a person or a company. Track B turns a single public profile link into a verified one page diagnostic.",
+  "trackB_form": "Track B begins with nothing but a public profile URL. Nothing here logs in anywhere, and LinkedIn itself is never fetched. Today the subject is Mark Chahwan, co-founder of Sarwa.",
+  "trackB_submit": "One click starts a real run. Everything from here is happening now, at the speed the system actually works.",
+  "trackB_running": "The stages are named, so you always know where it is. It works out who the person is from the slug, plans its searches, fetches only pages that actually name them, pulls out claims with the quote attached, then checks every claim twice using two different models.",
+  "trackB_log": "The log is the audit trail. Every line is a decision the system made, and each one can be traced back. That matters more than an answer which merely looks confident.",
+  "trackB_done": "The draft is ready. Verifying every claim twice is the slow part, and this run took about four and a half minutes from the click. An earlier version of the same pipeline took seven.",
+  "trackB_doc": "The diagnostic is one page. Every number carries the source it came from, because a number without a source does not get published.",
+  "trackB_findings": "Findings split three ways. This run verified twenty four claims, partly verified forty two, and refused six. The refused list is deliberate. When a claim cannot be confirmed twice, it fails, and it stays on the page where you can see it.",
+  "trackB_sources": "Sources are tiered. A regulator or an official register outranks the company's own website, which in turn outranks press coverage.",
+  "gate": "Nothing reaches a person without passing a human gate. The approver signs with a real name and writes down what they actually checked.",
+  "gate_approve": "That name and that note go into the ledger and into the document header, so the sign-off travels with the document from here on.",
+  "video": "The run can also summarise itself. This button renders a sixty second video from the run's own ledger, on the server. This one took just under two and a half minutes.",
+  "trackA_form": "Track A is the other half of the system. You give it the names you want watched.",
+  "trackA_running": "It searches the public web, reads every mention twice, and decides which ones actually need a person. This run took a little over two and a half minutes.",
+  "trackA_brief": "The brief is a three minute read. It carries the reach of each mention and what has changed since the previous run.",
+  "trackA_queue": "Only the mentions that need a decision reach the queue. This week nothing was waiting, so the queue is empty. When something does land there, a reply is drafted for approval, then approved a second time before it is ready. The system never posts anything by itself.",
+  "trackA_mentions": "Every mention stays open to inspection. This run read forty, ignored thirty five as irrelevant, and set aside five as a namesake, a different person who happens to share the name.",
+  "end": "Two tracks, two real runs, every claim traceable and every decision signed by a named person. That is the whole system, recorded live."
+}
