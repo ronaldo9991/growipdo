@@ -91,9 +91,17 @@ class LLM:
         return self._openai(system, user, max_tokens, temperature)
 
     def _anthropic(self, system, user, max_tokens, temperature) -> str:
+        # This messages API has no temperature parameter: sampling is steered by effort instead.
+        # The temperature the caller asks for therefore cannot be honoured on this provider, so
+        # runs are not bit for bit repeatable the way the OpenAI path at temperature 0 is.
+        # ANTHROPIC_EFFORT sets the effort level when you want one.
+        extra = {}
+        effort = config.get("ANTHROPIC_EFFORT")
+        if effort:
+            extra["output_config"] = {"effort": effort.strip()}
         msg = self.client.messages.create(
-            model=self.model, max_tokens=max_tokens, temperature=temperature, system=system,
-            messages=[{"role": "user", "content": user}],
+            model=self.model, max_tokens=max_tokens, system=system,
+            messages=[{"role": "user", "content": user}], **extra,
         )
         out = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
         if self.log:
