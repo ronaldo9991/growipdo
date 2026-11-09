@@ -99,15 +99,20 @@ class LLM:
         effort = config.get("ANTHROPIC_EFFORT")
         if effort:
             extra["output_config"] = {"effort": effort.strip()}
+        # Callers pass the size of the answer they expect, and the OpenAI path has always raised
+        # that to max(2000, n * 4) before sending it. The budgets at every call site are tuned
+        # against that headroom, so this path gives the same room rather than taking the numbers
+        # literally and failing on the longer answers, which is what it used to do.
+        ceiling = max(2000, max_tokens * 4)
         msg = self.client.messages.create(
-            model=self.model, max_tokens=max_tokens, system=system,
+            model=self.model, max_tokens=ceiling, system=system,
             messages=[{"role": "user", "content": user}], **extra,
         )
         out = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
         if self.log:
             self.log("llm", f"{self.model}: {msg.usage.input_tokens} in, {msg.usage.output_tokens} out", stop=msg.stop_reason)
         if msg.stop_reason == "max_tokens":
-            raise ModelError(f"{self.model} hit max_tokens={max_tokens}; raise the limit")
+            raise ModelError(f"{self.model} hit max_tokens={ceiling}; raise the limit")
         return out
 
     def _openai(self, system, user, max_tokens, temperature) -> str:
