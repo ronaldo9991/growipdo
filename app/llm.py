@@ -77,7 +77,8 @@ class LLM:
         self.provider = provider()
         if self.provider == "anthropic":
             import anthropic
-            self.client = anthropic.Anthropic(api_key=config.require("ANTHROPIC_API_KEY"))
+            # The SDK retries 429 and 5xx itself; eight workers at once lean on that.
+            self.client = anthropic.Anthropic(api_key=config.require("ANTHROPIC_API_KEY"), max_retries=5)
         elif self.provider == "openai":
             self.api_key = config.require("OPENAI_API_KEY")
             self.base_url = openai_base_url()
@@ -91,15 +92,28 @@ class LLM:
         return self._openai(system, user, max_tokens, temperature)
 
     def _anthropic(self, system, user, max_tokens, temperature) -> str:
-        msg = self.client.messages.create(
-            model=self.model, max_tokens=max_tokens, temperature=temperature, system=system,
-            messages=[{"role": "user", "content": user}],
-        )
+        # Claude 5.x models: temperature is fixed (a non default value is a 400), thinking is on by default
+        # and its tokens count toward max_tokens, so the budget is raised and effort kept low for these
+        # short JSON and prose tasks. A refusal comes back as a stop reason, not an error.
+        import anthropic
+        try:
+            msg = self.client.messages.create(
+                model=self.model, max_tokens=max(4096, max_tokens * 4), system=system,
+                output_config={"effort": config.get("ANTHROPIC_EFFORT") or "low"},
+                messages=[{"role": "user", "content": user}],
+            )
+        except anthropic.APIStatusError as e:
+            raise ModelError(f"{self.model}: HTTP {e.status_code}: {str(e.message)[:400]}") from e
+        except anthropic.APIConnectionError as e:
+            raise ModelError(f"{self.model}: request failed: {e}") from e
         out = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
         if self.log:
             self.log("llm", f"{self.model}: {msg.usage.input_tokens} in, {msg.usage.output_tokens} out", stop=msg.stop_reason)
         if msg.stop_reason == "max_tokens":
-            raise ModelError(f"{self.model} hit max_tokens={max_tokens}; raise the limit")
+            raise ModelError(f"{self.model} hit max_tokens={max(4096, max_tokens * 4)}; raise the limit")
+        if msg.stop_reason == "refusal":
+            det = getattr(msg, "stop_details", None)
+            raise ModelError(f"{self.model} declined the request ({getattr(det, 'category', None) or 'refusal'})")
         return out
 
     def _openai(self, system, user, max_tokens, temperature) -> str:

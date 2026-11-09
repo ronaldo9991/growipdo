@@ -81,7 +81,11 @@ python -m pytest -q
 
 ### Model API
 
-`LLM_PROVIDER=anthropic` uses the Anthropic messages API with ANTHROPIC_API_KEY.
+`LLM_PROVIDER=anthropic` (default) uses the Anthropic messages API with ANTHROPIC_API_KEY. The defaults in
+`.env.example` are `claude-haiku-5-5` as MODEL_PRIMARY for the bulk work and `claude-sonnet-5-5` as
+MODEL_SECOND_OPINION for the second reading, the gaps and the summaries. Claude 5.x models run with thinking
+on and a fixed temperature, so the wrapper sends no temperature, keeps `ANTHROPIC_EFFORT` at low for these
+short tasks, and raises max_tokens so the thinking does not eat the answer.
 `LLM_PROVIDER=openai` uses any OpenAI compatible chat completions endpoint: set OPENAI_API_KEY and, if it is
 not api.openai.com, OPENAI_BASE_URL. MODEL_PRIMARY and MODEL_SECOND_OPINION must be two different ids from
 that endpoint; the stronger one goes second.
