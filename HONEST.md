@@ -14,6 +14,21 @@ The radar reused the Track B ledger, and my patch to give runs a kind (radar run
 
 ## What broke while adding speed, the redesign and the videos
 
+Switching the models to Claude broke two things, and both were my own code rather than the
+provider. The Anthropic path had been in the repository from the start and had never once run,
+because every run until now went through the OpenAI path. The first call failed outright: the
+current SDK has no temperature parameter at all, so the temperature zero the design assumed is
+simply not available on this provider, and runs on Claude are not repeatable the way the OpenAI
+runs were. The second failure was subtler. The OpenAI path quietly raises every caller's token
+budget to four times what was asked for, and the numbers at each call site had been tuned against
+that inflation without anyone writing it down. The Anthropic path took them literally, so the gaps
+step died at a 1500 token ceiling on a live run. The fix gives both providers the same headroom.
+
+I also claimed a deploy had gone out when it had not. Railway created no deployment for one push,
+the old container kept serving, and the second live run failed with exactly the same error as the
+first. The identical ceiling in both messages is what gave it away. Pushing is not deploying, and
+a health check that returns 200 only tells you something is running, not that it is your code.
+
 Parallelising the pipeline was easy; the interface work broke twice in ways that only showed in a
 browser. Splicing new functions into the front end with text replacement left a duplicated line twice,
 once for the run page loop and once for the log renderer, and the page died silently until I ran a
